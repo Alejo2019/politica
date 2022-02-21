@@ -6,6 +6,7 @@ import {
   Text,
   View,
   Image,
+  ImageBackground,
   TouchableOpacity,Alert
 } from 'react-native';
 import { images, COLORS, CSS } from "../../../../constants";
@@ -17,7 +18,7 @@ function pagina1(props) {
 
   return (
     
-    <View style={CSS.homeContainer}>
+    < ImageBackground source={images.fondo} style={CSS.Logincontainer} >
   
       {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
         <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
@@ -29,7 +30,7 @@ function pagina1(props) {
           </View>
         </View>
       </TouchableOpacity> */}
-      <View style={CSS.containerHome}>
+
         <ScrollView>
 
           {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
@@ -66,16 +67,16 @@ function pagina1(props) {
                 color: '#132196',
                 fontWeight: 'bold'
 
-            }}> FINALIZADO TU REGISTRO, CON ÉXITO!
+            }}> TU REGISTRO A FINALIZADO CON ÉXITO!
             </Text>
 
             <TouchableOpacity
                 style={{...CSS.botonGrande1,
                     backgroundColor: '#132196'
                 }}
-                onPress={() => navigation.navigate({ routeName: 'Mainmenu' })}
+                onPress={() => navigation.navigate({ routeName: 'Login' })}
             >
-                <Text style={CSS.botonGrandeTexto}>VOLVER</Text>
+                <Text style={CSS.botonGrandeTexto}>FINALIZAR</Text>
             </TouchableOpacity>
 
             <Text style={{
@@ -108,8 +109,7 @@ function pagina1(props) {
           </TouchableOpacity> */}
 
         </ScrollView>
-      </View>
-    </View >
+      </ImageBackground>
   );
 };
 

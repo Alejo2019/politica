@@ -7,6 +7,7 @@ import {
   Text,
   View,
   Image,
+  ImageBackground,
   TouchableOpacity,
   TextInput,
   Alert
@@ -16,13 +17,13 @@ import { images, COLORS, CSS } from "../../../../constants";
 
 
 function pagina2(props) {
-  
+
   let { navigation } = props;
 
   return (
-    
-    <View style={CSS.homeContainer}>
-  
+    < ImageBackground source={images.fondo} style={CSS.Logincontainer} >
+
+
       {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
         <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
           <View>
@@ -33,10 +34,10 @@ function pagina2(props) {
           </View>
         </View>
       </TouchableOpacity> */}
-      <View style={CSS.containerHome}>
-        <ScrollView>
 
-          {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
+      <ScrollView>
+
+        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
             <View style={CSS.viewCardHome}>
               <View style={{ flex: 4, marginLeft:10 }}>
                 <View style={{ flexDirection: 'row' }}>
@@ -57,83 +58,153 @@ function pagina2(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-           <Image
-                style={CSS.img}
-                source={images.logo2}
-            />
+        <Image
+          style={CSS.img}
+          source={images.logo2}
+        />
 
-            <Text style={{
-                marginTop: hp('3%'),
-                marginBottom: hp('1'),
-                fontSize: hp('3%'),
-                textAlign: 'center',
-                color: '#132196',
-                fontWeight: 'bold'
+        <Text style={{
+          marginTop: hp('3%'),
+          marginBottom: hp('1'),
+          fontSize: hp('3%'),
+          textAlign: 'center',
+          color: '#132196',
+          fontWeight: 'bold'
 
-            }}> REGISTRO DE VOTANTES
-            </Text>
+        }}> REGISTRO DE VOTANTES
+        </Text>
 
-            <RNPickerSelect
-                  style={CSS.select}
-                 onValueChange={(value) => console.log(value)}
-                 items={[
-                     { label: "JavaScript", value: "JavaScript" },
-                     { label: "TypeScript", value: "TypeScript" },
-                     { label: "Python", value: "Python" },
-                     { label: "Java", value: "Java" },
-                     { label: "C++", value: "C++" },
-                     { label: "C", value: "C" },
-                 ]}
-             />
-             <RNPickerSelect
-                  style={CSS.select}
-                 onValueChange={(value) => console.log(value)}
-                 items={[
-                     { label: "JavaScript", value: "JavaScript" },
-                     { label: "TypeScript", value: "TypeScript" },
-                     { label: "Python", value: "Python" },
-                     { label: "Java", value: "Java" },
-                     { label: "C++", value: "C++" },
-                     { label: "C", value: "C" },
-                 ]}
-             />
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Nombre</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
 
-            <Text style={CSS.asterisco}>*</Text>
-            <TextInput style={CSS.input}
-                underlineColorAndroid="transparent"
-                placeholder="Mesa de votación"
-                placeholderTextColor="#132196"
-                autoCapitalize="none"
+        />
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Apellido</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
 
-            />
-            <Text style={CSS.asterisco}>*</Text>
-            <TextInput style={CSS.input}
-                underlineColorAndroid="transparent"
-                placeholder="Partido/Candidato"
-                placeholderTextColor="#132196"
-                autoCapitalize="none"
+        />
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Cedula</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
 
-            />
-                      
-            
+        />
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Telefono</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
 
-            <Text style={CSS.pririodad}>
-                Los campos con * es obligatorio
-            </Text>
+        />
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Correo</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
 
-            <TouchableOpacity
-                style={{
-                    ...CSS.siguiente,
-                    backgroundColor: '#132196'
-                }}
-                onPress={() => navigation.navigate({ routeName: 'Pagina3V' })}
-            >
-                <Text style={CSS.siguientetext}>GUARDAD</Text>
-            </TouchableOpacity>
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+
+        />
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Ciudad</Text>
+        </View>
+        <RNPickerSelect
+          style={CSS.select}
+          onValueChange={(value) => console.log(value)}
+          items={[
+            { label: "JavaScript", value: "JavaScript" },
+            { label: "TypeScript", value: "TypeScript" },
+            { label: "Python", value: "Python" },
+            { label: "Java", value: "Java" },
+            { label: "C++", value: "C++" },
+            { label: "C", value: "C" },
+          ]}
+        />
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Departamento</Text>
+        </View>
+        <RNPickerSelect
+          style={CSS.select}
+          onValueChange={(value) => console.log(value)}
+          items={[
+            { label: "JavaScript", value: "JavaScript" },
+            { label: "TypeScript", value: "TypeScript" },
+            { label: "Python", value: "Python" },
+            { label: "Java", value: "Java" },
+            { label: "C++", value: "C++" },
+            { label: "C", value: "C" },
+          ]}
+        />
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Mesa de votacion</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+
+        />
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Partido</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+
+        />
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Candidato</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+
+        />
+
+        <Text style={CSS.pririodad}>
+          Los campos con * es obligatorio
+        </Text>
+
+        <TouchableOpacity
+          style={{
+            ...CSS.siguiente,
+            backgroundColor: '#132196'
+          }}
+          onPress={() => navigation.navigate({ routeName: 'Pagina3V' })}
+        >
+          <Text style={CSS.siguientetext}>SIGUIENTE</Text>
+        </TouchableOpacity>
 
 
 
-          {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
+        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
             <View style={CSS.viewCardHome}>
               <View style={{ flex: 4, marginLeft:10 }}>
                 <View style={{ flexDirection: 'row' }}>
@@ -155,9 +226,8 @@ function pagina2(props) {
             </View>
           </TouchableOpacity> */}
 
-        </ScrollView>
-      </View>
-    </View >
+      </ScrollView>
+    </ImageBackground>
   );
 };
 

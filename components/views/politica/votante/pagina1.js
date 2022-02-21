@@ -6,20 +6,21 @@ import {
   Text,
   View,
   Image,
-  TouchableOpacity,Alert
+  TouchableOpacity, Alert, ImageBackground
 } from 'react-native';
 import { images, COLORS, CSS } from "../../../../constants";
 
 
 function pagina1(props) {
-  
+
   let { navigation } = props;
 
   return (
-    
-    <View style={CSS.homeContainer}>
-  
-      {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
+
+
+    < ImageBackground source = { images.fondo } style = { CSS.Logincontainer } >
+
+    {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
         <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
           <View>
             <Text style={CSS.tituloHome}>
@@ -29,10 +30,10 @@ function pagina1(props) {
           </View>
         </View>
       </TouchableOpacity> */}
-      <View style={CSS.containerHome}>
-        <ScrollView>
 
-          {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
+      <ScrollView>
+
+        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
             <View style={CSS.viewCardHome}>
               <View style={{ flex: 4, marginLeft:10 }}>
                 <View style={{ flexDirection: 'row' }}>
@@ -53,39 +54,40 @@ function pagina1(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-          <Image
-                style={CSS.img}
-                source={images.logo2}
-            />
+        <Image
+          style={CSS.img}
+          source={images.logo2}
+        />
 
-            <Text style={{
-                marginTop: hp('10%'),
-                marginBottom: hp('10'),
-                fontSize: hp('4%'),
-                textAlign: 'center',
-                color: '#132196',
-                fontWeight: 'bold'
+        <Text style={{
+          marginTop: hp('10%'),
+          marginBottom: hp('10'),
+          fontSize: hp('4%'),
+          textAlign: 'center',
+          color: '#132196',
+          fontWeight: 'bold'
 
-            }}> Hola, bienvenido!
-            </Text>
+        }}> Hola, bienvenido!
+        </Text>
 
-            <TouchableOpacity
-                style={{...CSS.botonGrande,
-                    backgroundColor: '#132196'
-                }}
-                onPress={() => navigation.navigate({ routeName: 'Pagina2V' })}
-            >
-                <Text style={CSS.botonGrandeTexto}>REGISTRARSE AHORA</Text>
-            </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            ...CSS.botonGrande,
+            backgroundColor: '#132196'
+          }}
+          onPress={() => navigation.navigate({ routeName: 'Pagina2V' })}
+        >
+          <Text style={CSS.botonGrandeTexto}>REGISTRARSE AHORA</Text>
+        </TouchableOpacity>
 
-            <Text style={{
-                marginVertical: hp('1%')
+        <Text style={{
+          marginVertical: hp('1%')
 
-            }}>
-            </Text>
+        }}>
+        </Text>
 
 
-          {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
+        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
             <View style={CSS.viewCardHome}>
               <View style={{ flex: 4, marginLeft:10 }}>
                 <View style={{ flexDirection: 'row' }}>
@@ -107,9 +109,9 @@ function pagina1(props) {
             </View>
           </TouchableOpacity> */}
 
-        </ScrollView>
-      </View>
-    </View >
+      </ScrollView>
+          </ImageBackground >
+      
   );
 };
 

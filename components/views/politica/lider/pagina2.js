@@ -7,6 +7,7 @@ import {
   Text,
   View,
   Image,
+  ImageBackground,
   TouchableOpacity,
   TextInput,
   Alert
@@ -16,13 +17,13 @@ import { images, COLORS, CSS } from "../../../../constants";
 
 
 function pagina2(props) {
-  
+
   let { navigation } = props;
 
   return (
-    
-    <View style={CSS.homeContainer}>
-  
+
+    <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
+
       {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
         <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
           <View>
@@ -33,10 +34,8 @@ function pagina2(props) {
           </View>
         </View>
       </TouchableOpacity> */}
-      <View style={CSS.containerHome}>
-        <ScrollView>
 
-          {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
+      {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
             <View style={CSS.viewCardHome}>
               <View style={{ flex: 4, marginLeft:10 }}>
                 <View style={{ flexDirection: 'row' }}>
@@ -57,77 +56,42 @@ function pagina2(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-           <Image
-                style={CSS.img}
-                source={images.logo2}
-            />
+      <Image
+        style={CSS.img}
+        source={images.logo2}
+      />
 
-            <Text style={{
-                marginTop: hp('3%'),
-                marginBottom: hp('1'),
-                fontSize: hp('3%'),
-                textAlign: 'center',
-                color: '#132196',
-                fontWeight: 'bold'
+      <Text style={{
+        marginTop: hp('10%'),
+        marginBottom: hp('10'),
+        fontSize: hp('3%'),
+        textAlign: 'center',
+        color: '#132196',
+        fontWeight: 'bold'
 
-            }}> REGISTRO DE VOTANTES
-            </Text>
+      }}> TU REGISTRO A FINALIZADO CON ÉXITO!
+      </Text>
 
-            <Text style={CSS.asterisco}>*</Text>
-            <TextInput style={CSS.input}
-                underlineColorAndroid="transparent"
-                placeholder="Lugar"
-                placeholderTextColor="#132196"
-                autoCapitalize="none"
+      <TouchableOpacity
+        style={{
+          ...CSS.botonGrande1,
+          backgroundColor: '#132196'
+        }}
+        onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}
+      >
+        <Text style={CSS.botonGrandeTexto}>FINALIZAR</Text>
+      </TouchableOpacity>
 
-            />
-            <Text style={CSS.asterisco}>*</Text>
-            <TextInput style={CSS.input}
-                underlineColorAndroid="transparent"
-                placeholder="Mesa de votación"
-                placeholderTextColor="#132196"
-                autoCapitalize="none"
+      <Text style={{
+        marginVertical: hp('1%')
 
-            />
-            <Text style={CSS.asterisco}>*</Text>
-            <TextInput style={CSS.input}
-                underlineColorAndroid="transparent"
-                placeholder="Nombre"
-                placeholderTextColor="#132196"
-                autoCapitalize="none"
-
-            />
-            <RNPickerSelect
-                  style={CSS.select}
-                 onValueChange={(value) => console.log(value)}
-                 items={[
-                     { label: "JavaScript", value: "JavaScript" },
-                     { label: "TypeScript", value: "TypeScript" },
-                     { label: "Python", value: "Python" },
-                     { label: "Java", value: "Java" },
-                     { label: "C++", value: "C++" },
-                     { label: "C", value: "C" },
-                 ]}
-             />
-            
-
-            <Text style={CSS.pririodad}>
-                Los campos con * es obligatorio
-            </Text>
-
-            <TouchableOpacity
-                style={{
-                    ...CSS.siguiente,
-                    backgroundColor: '#132196'
-                }}
-                onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}
-            >
-                <Text style={CSS.siguientetext1}>REGISTRO DE VOTANTES</Text>
-            </TouchableOpacity>
+      }}>
+      </Text>
 
 
 
-          {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
+
+      {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
             <View style={CSS.viewCardHome}>
               <View style={{ flex: 4, marginLeft:10 }}>
                 <View style={{ flexDirection: 'row' }}>
@@ -149,9 +113,7 @@ function pagina2(props) {
             </View>
           </TouchableOpacity> */}
 
-        </ScrollView>
-      </View>
-    </View >
+    </ImageBackground>
   );
 };
 
