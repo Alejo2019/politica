@@ -22,13 +22,41 @@ function pagina1(props) {
   let { navigation } = props;
 
   useEffect(() => {
-    getDataUsingSimpleGetCall()
+    //getDataUsingSimpleGetCall()
   }, []);
 
-  const getDataUsingSimpleGetCall = () => {
+  const [state, setState] = useState({
+    nombre: '',
+    apellido: '',
+    cedula: '',
+    telefono:'',
+    correo:'',
+    mesa:'',
+    partido: '',
+    candidato:'',
+  });
+
+  const hableChangeText = (nombre, value) =>{
+    setState({...state, [nombre]: value});
+  }
+
+  const envio = () => {
     axios
-      .get('http://192.168.0.118:8060/api/users')
-      .then(function (response) {
+    .post('http://192.168.0.118:8060/api/users', {
+      "nombre": (state.nombre),
+      "apellido":(state.apellido),
+      "cedula":(state.cedula),
+      "correo": (state.correo),
+     "telefono": (state.telefono),
+      "estado": false,
+      "google": false,
+      "rol": "USER_ROLE",
+      "departamento": "Valle",
+      "ciudad": "cali",
+      "mesa": (state.mesa),
+      "candidato": (state.candidato),
+      "partido": (state.partido)
+    }).then(function (response) {
         // handle success
         alert(JSON.stringify(response.data));
         console.log((response.data))
@@ -41,6 +69,7 @@ function pagina1(props) {
         // always executed
         alert('Finally called');
       });
+      navigation.navigate({ routeName: 'Pagina2' })
   };
 
   return (
@@ -105,7 +134,7 @@ function pagina1(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
-
+          onChangeText={(value) => hableChangeText('nombre', value)}
         />
         <View style={CSS.viewCardHome}>
         <Text style={CSS.asterisco}>*</Text>
@@ -115,7 +144,7 @@ function pagina1(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
-
+          onChangeText={(value) => hableChangeText('apellido', value)}
         />
         <View style={CSS.viewCardHome}>
         <Text style={CSS.asterisco}>*</Text>
@@ -125,7 +154,7 @@ function pagina1(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
-
+          onChangeText={(value) => hableChangeText('cedula', value)}
         />
         <View style={CSS.viewCardHome}>
         <Text style={CSS.asterisco}>*</Text>
@@ -135,7 +164,7 @@ function pagina1(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
-
+          onChangeText={(value) => hableChangeText('telefono', value)}
         />
         <View style={CSS.viewCardHome}>
         <Text style={CSS.asterisco}>*</Text>
@@ -143,10 +172,9 @@ function pagina1(props) {
         </View>
         <TextInput style={CSS.input}
           underlineColorAndroid="transparent"
-
           placeholderTextColor="#132196"
           autoCapitalize="none"
-
+          onChangeText={(value) => hableChangeText('correo', value)}
         />
         <View style={CSS.viewCardHome}>
         <Text style={CSS.asterisco}>*</Text>
@@ -188,7 +216,7 @@ function pagina1(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
-
+          onChangeText={(value) => hableChangeText('mesa', value)}
         />
         <View style={CSS.viewCardHome}>
         <Text style={CSS.asterisco}>*</Text>
@@ -198,7 +226,7 @@ function pagina1(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
-
+          onChangeText={(value) => hableChangeText('partido', value)}
         />
         <View style={CSS.viewCardHome}>
         <Text style={CSS.asterisco}>*</Text>
@@ -208,22 +236,27 @@ function pagina1(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
-
+          onChangeText={(value) => hableChangeText('candidato', value)}
         />
 
         <Text style={CSS.pririodad}>
           Los campos con * es obligatorio
         </Text>
 
+
         <TouchableOpacity
-          style={{
-            ...CSS.siguiente,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate({ routeName: 'Pagina2' })}
-        >
-          <Text style={CSS.siguientetext}>SIGUIENTE</Text>
-        </TouchableOpacity>
+                style={{
+                    ...CSS.siguiente,
+                    backgroundColor: '#132196'
+                }}
+                
+                onPress={envio}
+             
+            >
+                <Text style={CSS.siguientetext}>SIGUIENTE</Text>
+            </TouchableOpacity>
+
+            
 
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
