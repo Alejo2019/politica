@@ -11,6 +11,7 @@ import Pagina3screen from '../components/views/inmobiliaria/inmuebles/pagina3';
 import Pagina1vscreen from '../components/views/inmobiliaria/inmuebles2/pagina1';
 import Pagina2vscreen from '../components/views/inmobiliaria/inmuebles2/pagina2';
 import Pagina3vscreen from '../components/views/inmobiliaria/inmuebles2/pagina3';
+import Loginscreen from '../components/views/login/login'
 import { images, COLORS } from "../constants";
 
 function LogoTitle() {
@@ -108,6 +109,17 @@ const Inicio = createStackNavigator({
         },
         Pagina3V: {
           screen: Pagina3vscreen,
+          navigationOptions: ({ navigation }) => ({
+            title: 'Atras',
+            headerTitle: props => <LogoTitle />,
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: COLORS.blue,
+            },
+          })
+        },  
+        Login: {
+          screen: Loginscreen,
           navigationOptions: ({ navigation }) => ({
             title: 'Atras',
             headerTitle: props => <LogoTitle />,

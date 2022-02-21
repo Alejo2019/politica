@@ -96,9 +96,15 @@ export const CSS = StyleSheet.create({
         flex: 1,
         backgroundColor: "#fff",
     },
+    Logincontainer1: {
+        position: 'relative',
+        flex: 1,
+        backgroundColor: "blue",
+
+    },
 
     LoginLogo: {
-        flex: 3,
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
     },
@@ -114,7 +120,7 @@ export const CSS = StyleSheet.create({
         width: 250,
         height: 250,
         resizeMode: "contain",
-      },
+    },
 
     LogininputIcon: {
         position: 'absolute',
@@ -140,7 +146,7 @@ export const CSS = StyleSheet.create({
         color: '#fff',
         fontSize: hp('3%'),
         textAlign: 'center',
-   
+
 
     },
     /*LOGIN END*/
@@ -158,7 +164,23 @@ export const CSS = StyleSheet.create({
         //borderRadius: 20,
         alignItems: 'center',
         justifyContent: 'center',
-        marginLeft: wp('1%'),
+        marginLeft: wp('11%'),
+        borderRadius: 15
+    },
+    cerrar: {
+        width: wp('80%'),
+        height: hp('10%'),
+        backgroundColor: 'red',
+        //borderRadius: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginLeft: wp('11%'),
+        borderRadius: 15
+    },
+    botonGrandeTexto: {
+        color: 'white',
+        fontSize: hp('2.5%'),
+        fontWeight: 'bold'
     },
     botonGrande1: {
         width: wp('80%'),
@@ -168,6 +190,7 @@ export const CSS = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginLeft: wp('11%'),
+        borderRadius: 15
     },
     botonGrandeTexto: {
         color: 'white',
@@ -183,10 +206,6 @@ export const CSS = StyleSheet.create({
         height: 150,
         borderRadius: 100
     },
-    menuContainer: {
-        marginVertical: 30,
-        marginHorizontal: 50,
-    },
     menuBoton: {
         marginVertical: 10
     },
@@ -196,77 +215,104 @@ export const CSS = StyleSheet.create({
     img: {
         height: hp('20%'), // 70% of height device screen
         width: wp('40%'),   // 80% of width device screen
-        marginLeft: wp('25%'),
-        marginTop: hp('5%')
+        marginLeft: wp('30%'),
+        marginTop: hp('20%')
     },
     input: {
         margin: 15,
-        height: 40,
+        height: hp('5'),
+        width: wp('75%'),
+        marginLeft: hp('6.5%'),
         backgroundColor: '#B7B7BB',
-        
-     },
-     asterisco: {
-        fontSize: hp('3%'),
-        marginBottom: hp('-3%'),
-        marginLeft: hp('2%'),
+        borderRadius: 15
+
+    },
+    asterisco: {
+        fontSize: hp('2%'),
+        marginBottom: hp('-2%'),
+        marginLeft: hp('7%'),
         color: 'red',
-        
-     },
-     siguiente: {
+
+    },
+    asterisco1: {
+
+        marginBottom: hp('-2%'),
+
+
+
+    },
+    siguiente: {
         width: wp('50%'),
         height: hp('5%'),
         backgroundColor: 'red',
         //borderRadius: 20,
         alignItems: 'center',
         justifyContent: 'center',
-        marginLeft: wp('17%'),
-     },
-     siguientetext: {
+        marginLeft: wp('26.5%'),
+        borderRadius: 15,
+        marginBottom: 10
+    },
+    siguientetext: {
         color: 'white',
         fontSize: hp('2%'),
         fontWeight: 'bold'
-     },
-     siguientetext1: {
+    },
+    siguientetext1: {
         color: 'white',
         fontSize: hp('1.6%'),
         fontWeight: 'bold'
-     },
-     pririodad: {
+    },
+    siguiente1: {
+        width: wp('50%'),
+        height: hp('5%'),
+        backgroundColor: 'red',
+        //borderRadius: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: hp('2%'),
+        marginLeft: wp('26%'),
+        borderRadius: 15
+    },
+    siguientecontainer: {
+        marginTop: hp('5')
+    },
+    pririodad: {
         fontSize: hp('2%'),
         marginBottom: hp('2%'),
-        marginLeft: hp('3.2%'),
+        marginLeft: hp('8.5%'),
         color: 'red',
-     },
-     img1: {
+    },
+    img1: {
         height: hp('20%'), // 70% of height device screen
         width: wp('40%'),   // 80% of width device screen
         marginLeft: wp('25%'),
-     },
-     buscar: {
+    },
+    buscar: {
         margin: hp('2.1%'),
         height: hp('4.5%'), // 70% of height device screen
         width: wp('60%'),
         alignItems: 'center',
         backgroundColor: '#B7B7BB',
-        borderRadius: hp('4.5%'),  
+        borderRadius: hp('4.5%'),
         textAlign: 'center',
-        marginBottom: hp('5%')  
+        marginBottom: hp('5%')
 
-     },
-     select:{
-            margin: 15,
-            height: 40,
-            backgroundColor: '#B7B7BB',
-            marginTop: hp('15%')
-     },
-     inputlogin:{
-        margin: wp('5%'),
-        height: hp('5%'),
-        textAlign: 'center',
-   
+    },
+    select: {
+        margin: 15,
+        height: 40,
         backgroundColor: '#B7B7BB',
-     },
-     boton: {
+        marginTop: hp('15%')
+    },
+    inputlogin: {
+        textAlign: 'center',
+        color: '#132196'
+    },
+    inputlogin1: {
+        marginTop: hp('5%'),
+
+    },
+    boton: {
         width: wp('40%'),
         height: hp('5%'),
         backgroundColor: '#132196',
@@ -274,8 +320,8 @@ export const CSS = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginLeft: wp('5%'),
-     },
-     boton1: {
+    },
+    boton1: {
         width: wp('40%'),
         height: hp('5%'),
         backgroundColor: '#132196',
@@ -283,14 +329,23 @@ export const CSS = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginLeft: wp('10%'),
-     },
-     botontext: {
+    },
+    botontext: {
         color: 'white',
         fontSize: hp('2%'),
         fontWeight: 'bold'
-     },
+    },
+    icon: {
+        fontSize: hp('5%'),
+        color: 'black',
+        marginLeft: wp('88%'),
+        color: '#132196'
 
-    
+        
+        
+
+    }
+
 });
 
 const customTheme = { COLORS, CSS };
