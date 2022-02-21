@@ -8,7 +8,7 @@ import {
   View,
   Image
 } from 'react-native';
-import bgImage from '../img/leon.jpg';
+import bgImage from '../img/Fondos/logo.png';
 
 class AuthLoader extends Component {
 

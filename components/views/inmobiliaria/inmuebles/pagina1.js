@@ -10,9 +10,9 @@ import {
   ImageBackground,
   TouchableOpacity,
   TextInput,
-  Alert
 
 } from 'react-native';
+import { Picker } from "@react-native-picker/picker";
 import { images, COLORS, CSS } from "../../../../constants";
 import axios from "axios";
 
@@ -20,6 +20,10 @@ import axios from "axios";
 function pagina1(props) {
 
   let { navigation } = props;
+
+  const [country, setCountry] = useState('Unknown');
+
+
 
   useEffect(() => {
     getDataUsingSimpleGetCall()
@@ -33,14 +37,6 @@ function pagina1(props) {
         alert(JSON.stringify(response.data));
         console.log((response.data))
       })
-      .catch(function (error) {
-        // handle error
-        alert(error.message);
-      })
-      .finally(function () {
-        // always executed
-        alert('Finally called');
-      });
   };
 
   return (
@@ -98,8 +94,8 @@ function pagina1(props) {
         </Text>
 
         <View style={CSS.viewCardHome}>
-        <Text style={CSS.asterisco}>*</Text>
-        <Text style={CSS.asterisco1}>Nombre</Text>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Nombre</Text>
         </View>
         <TextInput style={CSS.input}
           underlineColorAndroid="transparent"
@@ -108,8 +104,8 @@ function pagina1(props) {
 
         />
         <View style={CSS.viewCardHome}>
-        <Text style={CSS.asterisco}>*</Text>
-        <Text style={CSS.asterisco1}>Apellido</Text>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Apellido</Text>
         </View>
         <TextInput style={CSS.input}
           underlineColorAndroid="transparent"
@@ -118,8 +114,30 @@ function pagina1(props) {
 
         />
         <View style={CSS.viewCardHome}>
-        <Text style={CSS.asterisco}>*</Text>
-        <Text style={CSS.asterisco1}>Cedula</Text>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Cedula</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+          keyboardType="numeric"
+
+        />
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Telefono</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+          keyboardType="numeric"
+
+        />
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Correo</Text>
         </View>
         <TextInput style={CSS.input}
           underlineColorAndroid="transparent"
@@ -128,8 +146,64 @@ function pagina1(props) {
 
         />
         <View style={CSS.viewCardHome}>
-        <Text style={CSS.asterisco}>*</Text>
-        <Text style={CSS.asterisco1}>Telefono</Text>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Ciudad</Text>
+        </View>
+        <View style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none">
+          <Picker
+            selectedValue={country}
+            onValueChange={(value, index) => setCountry(value)}
+            mode="dropdown" // Android only
+            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
+          >
+            <Picker.Item label="Seleccione" value="Unknown" />
+            <Picker.Item label="Australia" value="Australia" />
+            <Picker.Item label="Belgium" value="Belgium" />
+            <Picker.Item label="Canada" value="Canada" />
+            <Picker.Item label="India" value="India" />
+            <Picker.Item label="Japan" value="Japan" />
+          </Picker>
+        </View>
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Departamento</Text>
+        </View>
+        <View style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none">
+          <Picker
+            selectedValue={country}
+            onValueChange={(value, index) => setCountry(value)}
+            mode="dropdown" // Android only
+            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
+          >
+            <Picker.Item label="Seleccione" value="Unknown" />
+            <Picker.Item label="Australia" value="Australia" />
+            <Picker.Item label="Belgium" value="Belgium" />
+            <Picker.Item label="Canada" value="Canada" />
+            <Picker.Item label="India" value="India" />
+            <Picker.Item label="Japan" value="Japan" />
+          </Picker>
+        </View>
+
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Mesa de votacion</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+          keyboardType="numeric"
+
+        />
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Partido</Text>
         </View>
         <TextInput style={CSS.input}
           underlineColorAndroid="transparent"
@@ -138,51 +212,8 @@ function pagina1(props) {
 
         />
         <View style={CSS.viewCardHome}>
-        <Text style={CSS.asterisco}>*</Text>
-        <Text style={CSS.asterisco1}>Correo</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-
-        />
-        <View style={CSS.viewCardHome}>
-        <Text style={CSS.asterisco}>*</Text>
-        <Text style={CSS.asterisco1}>Ciudad</Text>
-        </View>
-        <RNPickerSelect
-                  style={CSS.select}
-                 onValueChange={(value) => console.log(value)}
-                 items={[
-                     { label: "JavaScript", value: "JavaScript" },
-                     { label: "TypeScript", value: "TypeScript" },
-                     { label: "Python", value: "Python" },
-                     { label: "Java", value: "Java" },
-                     { label: "C++", value: "C++" },
-                     { label: "C", value: "C" },
-                 ]}
-             />
-        <View style={CSS.viewCardHome}>
-        <Text style={CSS.asterisco}>*</Text>
-        <Text style={CSS.asterisco1}>Departamento</Text>
-        </View>
-        <RNPickerSelect
-                  style={CSS.select}
-                 onValueChange={(value) => console.log(value)}
-                 items={[
-                     { label: "JavaScript", value: "JavaScript" },
-                     { label: "TypeScript", value: "TypeScript" },
-                     { label: "Python", value: "Python" },
-                     { label: "Java", value: "Java" },
-                     { label: "C++", value: "C++" },
-                     { label: "C", value: "C" },
-                 ]}
-             />
-        <View style={CSS.viewCardHome}>
-        <Text style={CSS.asterisco}>*</Text>
-        <Text style={CSS.asterisco1}>Mesa de votacion</Text>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Candidato</Text>
         </View>
         <TextInput style={CSS.input}
           underlineColorAndroid="transparent"
@@ -191,18 +222,8 @@ function pagina1(props) {
 
         />
         <View style={CSS.viewCardHome}>
-        <Text style={CSS.asterisco}>*</Text>
-        <Text style={CSS.asterisco1}>Partido</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-
-        />
-        <View style={CSS.viewCardHome}>
-        <Text style={CSS.asterisco}>*</Text>
-        <Text style={CSS.asterisco1}>Candidato</Text>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Lider</Text>
         </View>
         <TextInput style={CSS.input}
           underlineColorAndroid="transparent"

@@ -213,10 +213,10 @@ export const CSS = StyleSheet.create({
         fontSize: 20
     },
     img: {
-        height: hp('20%'), // 70% of height device screen
+        height: hp('50%'), // 70% of height device screen
         width: wp('40%'),   // 80% of width device screen
         marginLeft: wp('30%'),
-        marginTop: hp('20%')
+        marginBottom: hp('-10%')
     },
     input: {
         margin: 15,
