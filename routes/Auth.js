@@ -3,14 +3,14 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { Image, Text } from 'react-native';
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
-import Home from '../components/views/inmobiliaria/Home';
-import Iniciov1screen from '../components/views/inmobiliaria/inmuebles/inicio';
-import Pagina1screen from '../components/views/inmobiliaria/inmuebles/pagina1';
-import Pagina2screen from '../components/views/inmobiliaria/inmuebles/pagina2';
-import Pagina3screen from '../components/views/inmobiliaria/inmuebles/pagina3';
-import Pagina1vscreen from '../components/views/inmobiliaria/inmuebles2/pagina1';
-import Pagina2vscreen from '../components/views/inmobiliaria/inmuebles2/pagina2';
-import Pagina3vscreen from '../components/views/inmobiliaria/inmuebles2/pagina3';
+import Home from '../components/views/politica/Home';
+import Iniciov1screen from '../components/views/politica/lider/inicio';
+import Pagina1screen from '../components/views/politica/lider/pagina1';
+import Pagina2screen from '../components/views/politica/lider/pagina2';
+import Pagina3screen from '../components/views/politica/lider/pagina3';
+import Pagina1vscreen from '../components/views/politica/votante/pagina1';
+import Pagina2vscreen from '../components/views/politica/votante/pagina2';
+import Pagina3vscreen from '../components/views/politica/votante/pagina3';
 import { images, COLORS } from "../constants";
 
 function LogoTitle() {
