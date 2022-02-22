@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import RNPickerSelect from "react-native-picker-select";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -15,12 +15,29 @@ import {
 
 } from 'react-native';
 import { images, COLORS, CSS } from "../../../../constants";
-
+import axios from "axios";
 
 function pagina1(props) {
 
   let { navigation } = props;
 
+  useEffect(() => {
+    getDataUsingSimpleGetCall()
+  }, []);
+
+  const [data, setdata] = useState([]);
+
+  const getDataUsingSimpleGetCall = () => {
+    axios
+      .get('http://192.168.0.118:8060/api/users')
+      .then(function (response) {
+        // handle success
+        setdata(response.data.usuarios);
+        console.log(response.data.usuarios)
+      })
+
+  };
+  //console.log(data)
   return (
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
@@ -78,30 +95,25 @@ function pagina1(props) {
         <DataTable.Header>
           <DataTable.Title>Name</DataTable.Title>
           <DataTable.Title>Candidato</DataTable.Title>
-          <DataTable.Title numeric>Lugar</DataTable.Title>
-          <DataTable.Title numeric>Mesa</DataTable.Title>
+          <DataTable.Title >Lugar</DataTable.Title>
+          <DataTable.Title >Mesa</DataTable.Title>
         </DataTable.Header>
 
+
+ {data.map((dato,index)=>(
         <DataTable.Row>
-          <DataTable.Cell>John</DataTable.Cell>
-          <DataTable.Cell>john@kindacode.com</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
+       
+        <DataTable.Cell >{dato.nombre}</DataTable.Cell>
+        <DataTable.Cell >{dato.candidato}</DataTable.Cell>
+        <DataTable.Cell >{dato.partido}</DataTable.Cell>
+        <DataTable.Cell >{dato.mesa}</DataTable.Cell>
+
         </DataTable.Row>
 
-        <DataTable.Row>
-          <DataTable.Cell>Bob</DataTable.Cell>
-          <DataTable.Cell>test@test.com</DataTable.Cell>
-          <DataTable.Cell numeric>105</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-        </DataTable.Row>
+)
+)
+} 
 
-        <DataTable.Row>
-          <DataTable.Cell>Mei</DataTable.Cell>
-          <DataTable.Cell>mei@kindacode.com</DataTable.Cell>
-          <DataTable.Cell numeric>23</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-        </DataTable.Row>
 
       </DataTable>
     </View>
