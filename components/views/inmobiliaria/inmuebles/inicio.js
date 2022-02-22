@@ -57,7 +57,7 @@ function inicio(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-        <TouchableOpacity onPress={() => navigation.navigate({ routeName: 'Login' })}>
+        <TouchableOpacity onPress={() => navigation.reset({ routeName: 'Login' })}>
 
           <Icon name="location-exit" style={CSS.icon}
           />

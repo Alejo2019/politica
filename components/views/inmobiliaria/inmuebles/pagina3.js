@@ -52,9 +52,9 @@ function pagina1(props) {
           </View>
         </View>
       </TouchableOpacity> */}
-        <ScrollView>
+      <ScrollView>
 
-          {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
+        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
             <View style={CSS.viewCardHome}>
               <View style={{ flex: 4, marginLeft:10 }}>
                 <View style={{ flexDirection: 'row' }}>
@@ -144,8 +144,8 @@ function pagina1(props) {
             </View>
           </TouchableOpacity> */}
 
-        </ScrollView>
-      
+      </ScrollView>
+
     </ImageBackground>
   );
 };
