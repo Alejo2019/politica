@@ -14,6 +14,7 @@ import {
 
 } from 'react-native';
 import { images, COLORS, CSS } from "../../../../constants";
+import { Picker } from "@react-native-picker/picker";
 
 
 function pagina2(props) {
@@ -129,34 +130,48 @@ function pagina2(props) {
           <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}>Ciudad</Text>
         </View>
-        <RNPickerSelect
-          style={CSS.select}
-          onValueChange={(value) => console.log(value)}
-          items={[
-            { label: "JavaScript", value: "JavaScript" },
-            { label: "TypeScript", value: "TypeScript" },
-            { label: "Python", value: "Python" },
-            { label: "Java", value: "Java" },
-            { label: "C++", value: "C++" },
-            { label: "C", value: "C" },
-          ]}
-        />
+        <View style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none">
+          <Picker
+            //selectedValue={country}
+            //onValueChange={(value, index) => setCountry(value)}
+            mode="dropdown" // Android only
+            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
+          >
+            <Picker.Item label="Seleccione" value="Unknown" />
+            <Picker.Item label="Australia" value="Australia" />
+            <Picker.Item label="Belgium" value="Belgium" />
+            <Picker.Item label="Canada" value="Canada" />
+            <Picker.Item label="India" value="India" />
+            <Picker.Item label="Japan" value="Japan" />
+          </Picker>
+        </View>
+
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}>Departamento</Text>
         </View>
-        <RNPickerSelect
-          style={CSS.select}
-          onValueChange={(value) => console.log(value)}
-          items={[
-            { label: "JavaScript", value: "JavaScript" },
-            { label: "TypeScript", value: "TypeScript" },
-            { label: "Python", value: "Python" },
-            { label: "Java", value: "Java" },
-            { label: "C++", value: "C++" },
-            { label: "C", value: "C" },
-          ]}
-        />
+        <View style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none">
+          <Picker
+            //selectedValue={country}
+            //onValueChange={(value, index) => setCountry(value)}
+            mode="dropdown" // Android only
+            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
+          >
+            <Picker.Item label="Seleccione" value="Unknown" />
+            <Picker.Item label="Australia" value="Australia" />
+            <Picker.Item label="Belgium" value="Belgium" />
+            <Picker.Item label="Canada" value="Canada" />
+            <Picker.Item label="India" value="India" />
+            <Picker.Item label="Japan" value="Japan" />
+          </Picker>
+        </View>
+
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}>Mesa de votacion</Text>

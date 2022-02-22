@@ -35,9 +35,9 @@ function pagina1(props) {
           </View>
         </View>
       </TouchableOpacity> */}
-        <ScrollView>
+      <ScrollView>
 
-          {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
+        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
             <View style={CSS.viewCardHome}>
               <View style={{ flex: 4, marginLeft:10 }}>
                 <View style={{ flexDirection: 'row' }}>
@@ -58,59 +58,59 @@ function pagina1(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-          <Image
-            style={CSS.img}
-            source={images.logo2}
-          />
+        <Image
+          style={CSS.img}
+          source={images.logo2}
+        />
 
-          <Text style={{
-            marginTop: hp('3%'),
-            marginBottom: hp('1'),
-            fontSize: hp('3%'),
-            textAlign: 'center',
-            color: '#132196',
-            fontWeight: 'bold'
+        <Text style={{
+          marginTop: hp('3%'),
+          marginBottom: hp('1'),
+          fontSize: hp('3%'),
+          textAlign: 'center',
+          color: '#132196',
+          fontWeight: 'bold'
 
-          }}> REGISTRO DE VOTANTES
-          </Text>
-          <View style={{paddingTop: hp('5%'), paddingHorizontal: wp('3%'),}}>
-      <DataTable>
-        <DataTable.Header>
-          <DataTable.Title>Name</DataTable.Title>
-          <DataTable.Title>Candidato</DataTable.Title>
-          <DataTable.Title numeric>Lugar</DataTable.Title>
-          <DataTable.Title numeric>Mesa</DataTable.Title>
-        </DataTable.Header>
+        }}> REGISTRO DE VOTANTES
+        </Text>
+        <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('3%'), }}>
+          <DataTable>
+            <DataTable.Header>
+              <DataTable.Title>Name</DataTable.Title>
+              <DataTable.Title>Candidato</DataTable.Title>
+              <DataTable.Title numeric>Lugar</DataTable.Title>
+              <DataTable.Title numeric>Mesa</DataTable.Title>
+            </DataTable.Header>
 
-        <DataTable.Row>
-          <DataTable.Cell>John</DataTable.Cell>
-          <DataTable.Cell>john@kindacode.com</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-        </DataTable.Row>
+            <DataTable.Row>
+              <DataTable.Cell>John</DataTable.Cell>
+              <DataTable.Cell>john@kindacode.com</DataTable.Cell>
+              <DataTable.Cell numeric>33</DataTable.Cell>
+              <DataTable.Cell numeric>33</DataTable.Cell>
+            </DataTable.Row>
 
-        <DataTable.Row>
-          <DataTable.Cell>Bob</DataTable.Cell>
-          <DataTable.Cell>test@test.com</DataTable.Cell>
-          <DataTable.Cell numeric>105</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-        </DataTable.Row>
+            <DataTable.Row>
+              <DataTable.Cell>Bob</DataTable.Cell>
+              <DataTable.Cell>test@test.com</DataTable.Cell>
+              <DataTable.Cell numeric>105</DataTable.Cell>
+              <DataTable.Cell numeric>33</DataTable.Cell>
+            </DataTable.Row>
 
-        <DataTable.Row>
-          <DataTable.Cell>Mei</DataTable.Cell>
-          <DataTable.Cell>mei@kindacode.com</DataTable.Cell>
-          <DataTable.Cell numeric>23</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-        </DataTable.Row>
+            <DataTable.Row>
+              <DataTable.Cell>Mei</DataTable.Cell>
+              <DataTable.Cell>mei@kindacode.com</DataTable.Cell>
+              <DataTable.Cell numeric>23</DataTable.Cell>
+              <DataTable.Cell numeric>33</DataTable.Cell>
+            </DataTable.Row>
 
-      </DataTable>
-    </View>
-
-
-         
+          </DataTable>
+        </View>
 
 
-          {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
+
+
+
+        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
             <View style={CSS.viewCardHome}>
               <View style={{ flex: 4, marginLeft:10 }}>
                 <View style={{ flexDirection: 'row' }}>
@@ -132,8 +132,8 @@ function pagina1(props) {
             </View>
           </TouchableOpacity> */}
 
-        </ScrollView>
-      
+      </ScrollView>
+
     </ImageBackground>
   );
 };
