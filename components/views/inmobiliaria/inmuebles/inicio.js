@@ -14,6 +14,8 @@ import { images, COLORS, CSS } from "../../../../constants";
 
 function inicio(props) {
 
+  
+
   let { navigation } = props;
 
   return (
@@ -98,7 +100,7 @@ function inicio(props) {
               ...CSS.botonGrande,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate('Pagina3Screen')}
+            onPress={() => navigation.navigate('Pagina3')}
           >
             <Text style={CSS.botonGrandeTexto}>VISUALIZAR VOTANTES</Text>
           </TouchableOpacity>
