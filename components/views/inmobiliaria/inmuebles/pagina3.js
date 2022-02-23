@@ -93,7 +93,7 @@ function pagina1(props) {
           <View style={{paddingTop: hp('5%'), paddingHorizontal: wp('3%'),}}>
       <DataTable>
         <DataTable.Header>
-          <DataTable.Title>Name</DataTable.Title>
+          <DataTable.Title>Nombre</DataTable.Title>
           <DataTable.Title>Candidato</DataTable.Title>
           <DataTable.Title >Lugar</DataTable.Title>
           <DataTable.Title >Mesa</DataTable.Title>

@@ -213,10 +213,12 @@ export const CSS = StyleSheet.create({
         fontSize: 20
     },
     img: {
-        height: hp('50%'), // 70% of height device screen
-        width: wp('40%'),   // 80% of width device screen
-        marginLeft: wp('30%'),
-        marginBottom: hp('-10%')
+        width: wp('60%'),
+        height: hp('50'),
+        resizeMode: "contain",  
+        marginLeft: wp('24%'),
+        marginBottom: hp('-10%'),
+
     },
     input: {
         margin: 15,
@@ -224,7 +226,9 @@ export const CSS = StyleSheet.create({
         width: wp('75%'),
         marginLeft: hp('6.5%'),
         backgroundColor: '#B7B7BB',
-        borderRadius: 15
+        borderRadius: 15,
+        textAlign: 'center',
+        color:'#132196'
 
     },
     asterisco: {
