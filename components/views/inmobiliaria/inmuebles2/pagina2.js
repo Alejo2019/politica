@@ -77,7 +77,7 @@ function pagina2(props) {
 
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Testigo de votación</Text>
+          <Text style={CSS.asterisco1}>Nombre</Text>
         </View>
         <TextInput style={CSS.input}
           underlineColorAndroid="transparent"
