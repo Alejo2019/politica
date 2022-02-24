@@ -230,7 +230,17 @@ function pagina1(props) {
             <Picker.Item label="Japan" value="Japan" />
           </Picker>
         </View>
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Lugar de votacion</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+          keyboardType="numeric"
 
+        />
 
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>

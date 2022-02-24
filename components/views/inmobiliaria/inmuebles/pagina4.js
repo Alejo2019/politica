@@ -184,6 +184,29 @@ function pagina4(props) {
           autoCapitalize="none"
           onChangeText={(value) => hableChangeText('correo', value)}
         />
+        
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Departamento</Text>
+        </View>
+        <View style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none">
+          <Picker
+            selectedValue={country}
+            onValueChange={(value, index) => setCountry(value)}
+            mode="dropdown" // Android only
+            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
+          >
+            <Picker.Item label="Seleccione" value="Unknown" />
+            <Picker.Item label="Australia" value="Australia" />
+            <Picker.Item label="Belgium" value="Belgium" />
+            <Picker.Item label="Canada" value="Canada" />
+            <Picker.Item label="India" value="India" />
+            <Picker.Item label="Japan" value="Japan" />
+          </Picker>
+        </View>
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}>Ciudad</Text>
@@ -208,26 +231,15 @@ function pagina4(props) {
         </View>
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Departamento</Text>
+          <Text style={CSS.asterisco1}>Lugar de votacion</Text>
         </View>
-        <View style={CSS.input}
+        <TextInput style={CSS.input}
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
-          autoCapitalize="none">
-          <Picker
-            selectedValue={country}
-            onValueChange={(value, index) => setCountry(value)}
-            mode="dropdown" // Android only
-            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
-          >
-            <Picker.Item label="Seleccione" value="Unknown" />
-            <Picker.Item label="Australia" value="Australia" />
-            <Picker.Item label="Belgium" value="Belgium" />
-            <Picker.Item label="Canada" value="Canada" />
-            <Picker.Item label="India" value="India" />
-            <Picker.Item label="Japan" value="Japan" />
-          </Picker>
-        </View>
+          autoCapitalize="none"
+          keyboardType="numeric"
+
+        />
 
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
