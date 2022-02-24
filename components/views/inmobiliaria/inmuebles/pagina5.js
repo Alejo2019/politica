@@ -75,54 +75,63 @@ function pagina5(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-          <Image
-            style={CSS.img}
-            source={images.logo2}
-          />
+        <Image
+          style={CSS.img}
+          source={images.logo2}
+        />
 
-          <Text style={{
-            marginTop: hp('3%'),
-            marginBottom: hp('1'),
-            fontSize: hp('3%'),
-            textAlign: 'center',
-            color: '#132196',
-            fontWeight: 'bold'
+        <Text style={{
+          marginTop: hp('3%'),
+          marginBottom: hp('1'),
+          fontSize: hp('3%'),
+          textAlign: 'center',
+          color: '#132196',
+          fontWeight: 'bold'
 
-          }}> REGISTRO DE TESTIGÓS
-          </Text>
-          <View style={{paddingTop: hp('5%'), paddingHorizontal: wp('3%'),}}>
-      <DataTable>
-        <DataTable.Header>
-          <DataTable.Title>Nombre</DataTable.Title>
-          <DataTable.Title>Candidato</DataTable.Title>
-          <DataTable.Title >Lugar</DataTable.Title>
-          <DataTable.Title >Mesa</DataTable.Title>
-        </DataTable.Header>
-
-
- {data.map((dato,index)=>(
-        <DataTable.Row>
-       
-        <DataTable.Cell >{dato.nombre}</DataTable.Cell>
-        <DataTable.Cell >{dato.candidato}</DataTable.Cell>
-        <DataTable.Cell >{dato.partido}</DataTable.Cell>
-        <DataTable.Cell >{dato.mesa}</DataTable.Cell>
-
-        </DataTable.Row>
-
-)
-)
-} 
+        }}> REGISTRO DE TESTIGÓS
+        </Text>
+        <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('3%'), }}>
+          <DataTable>
+            <DataTable.Header>
+              <DataTable.Title>Nombre</DataTable.Title>
+              <DataTable.Title>Candidato</DataTable.Title>
+              <DataTable.Title >Lugar</DataTable.Title>
+              <DataTable.Title >Mesa</DataTable.Title>
+            </DataTable.Header>
 
 
-      </DataTable>
-    </View>
+            {data.map((dato, index) => (
+              <DataTable.Row>
+
+                <DataTable.Cell >{dato.nombre}</DataTable.Cell>
+                <DataTable.Cell >{dato.candidato}</DataTable.Cell>
+                <DataTable.Cell >{dato.partido}</DataTable.Cell>
+                <DataTable.Cell >{dato.mesa}</DataTable.Cell>
+
+              </DataTable.Row>
+
+            )
+            )
+            }
 
 
-         
+          </DataTable>
+        </View>
+
+        <TouchableOpacity
+          style={{
+            ...CSS.siguiente,
+            backgroundColor: '#132196',
+            marginTop: hp('5%')
+          }}
+
+        >
+          <Text style={CSS.siguientetext}>GENERAR REPORTE</Text>
+        </TouchableOpacity>
 
 
-          {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
+
+        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
             <View style={CSS.viewCardHome}>
               <View style={{ flex: 4, marginLeft:10 }}>
                 <View style={{ flexDirection: 'row' }}>
