@@ -33,34 +33,34 @@ function pagina1(props) {
     nombre: '',
     apellido: '',
     cedula: '',
-    telefono:'',
-    correo:'',
-    mesa:'',
+    telefono: '',
+    correo: '',
+    mesa: '',
     partido: '',
-    candidato:'',
+    candidato: '',
   });
 
-  const hableChangeText = (nombre, value) =>{
-    setState({...state, [nombre]: value});
+  const hableChangeText = (nombre, value) => {
+    setState({ ...state, [nombre]: value });
   }
 
   const envio = () => {
     axios
-    .post('http://192.168.0.118:8060/api/users', {
-      "nombre": (state.nombre),
-      "apellido":(state.apellido),
-      "cedula":(state.cedula),
-      "correo": (state.correo),
-     "telefono": (state.telefono),
-      "estado": false,
-      "google": false,
-      "rol": "USER_ROLE",
-      "departamento": "Valle",
-      "ciudad": "cali",
-      "mesa": (state.mesa),
-      "candidato": (state.candidato),
-      "partido": (state.partido)
-    }).then(function (response) {
+      .post('http://192.168.0.118:8060/api/users', {
+        "nombre": (state.nombre),
+        "apellido": (state.apellido),
+        "cedula": (state.cedula),
+        "correo": (state.correo),
+        "telefono": (state.telefono),
+        "estado": false,
+        "google": false,
+        "rol": "USER_ROLE",
+        "departamento": "Valle",
+        "ciudad": "cali",
+        "mesa": (state.mesa),
+        "candidato": (state.candidato),
+        "partido": (state.partido)
+      }).then(function (response) {
         // handle success
         alert(JSON.stringify(response.data));
         console.log((response.data))
@@ -73,7 +73,7 @@ function pagina1(props) {
         // always executed
         alert('Finally called');
       });
-      navigation.navigate({ routeName: 'Pagina2' })
+    navigation.navigate({ routeName: 'Pagina2' })
   };
 
   return (
@@ -184,28 +184,7 @@ function pagina1(props) {
           autoCapitalize="none"
           onChangeText={(value) => hableChangeText('correo', value)}
         />
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Ciudad</Text>
-        </View>
-        <View style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none">
-          <Picker
-            selectedValue={country}
-            onValueChange={(value, index) => setCountry(value)}
-            mode="dropdown" // Android only
-            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
-          >
-            <Picker.Item label="Seleccione" value="Unknown" />
-            <Picker.Item label="Australia" value="Australia" />
-            <Picker.Item label="Belgium" value="Belgium" />
-            <Picker.Item label="Canada" value="Canada" />
-            <Picker.Item label="India" value="India" />
-            <Picker.Item label="Japan" value="Japan" />
-          </Picker>
-        </View>
+
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}>Departamento</Text>
@@ -228,6 +207,30 @@ function pagina1(props) {
             <Picker.Item label="Japan" value="Japan" />
           </Picker>
         </View>
+
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Ciudad</Text>
+        </View>
+        <View style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none">
+          <Picker
+            selectedValue={country}
+            onValueChange={(value, index) => setCountry(value)}
+            mode="dropdown" // Android only
+            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
+          >
+            <Picker.Item label="Seleccione" value="Unknown" />
+            <Picker.Item label="Australia" value="Australia" />
+            <Picker.Item label="Belgium" value="Belgium" />
+            <Picker.Item label="Canada" value="Canada" />
+            <Picker.Item label="India" value="India" />
+            <Picker.Item label="Japan" value="Japan" />
+          </Picker>
+        </View>
+
 
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
@@ -277,18 +280,18 @@ function pagina1(props) {
 
 
         <TouchableOpacity
-                style={{
-                    ...CSS.siguiente,
-                    backgroundColor: '#132196'
-                }}
-                
-                onPress={envio}
-             
-            >
-                <Text style={CSS.siguientetext}>SIGUIENTE</Text>
-            </TouchableOpacity>
+          style={{
+            ...CSS.siguiente,
+            backgroundColor: '#132196'
+          }}
 
-            
+          onPress={envio}
+
+        >
+          <Text style={CSS.siguientetext}>SIGUIENTE</Text>
+        </TouchableOpacity>
+
+
 
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>

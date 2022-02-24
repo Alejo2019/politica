@@ -127,7 +127,7 @@ function pagina4(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> REGISTRO DE VOTANTES
+        }}> REGISTRO DE TESTIGÓ
         </Text>
 
         <View style={CSS.viewCardHome}>
