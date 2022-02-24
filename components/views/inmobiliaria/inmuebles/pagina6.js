@@ -12,7 +12,7 @@ import {
 import { images, COLORS, CSS } from "../../../../constants";
 
 
-function inicio(props) {
+function pagina6(props) {
 
   
 
@@ -60,11 +60,7 @@ function inicio(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-        <TouchableOpacity  onPress={() => Validador1()}>
-
-          <Icon name="location-exit" style={CSS.icon}
-          />
-        </TouchableOpacity>
+        
         <Image
           style={CSS.img}
           source={images.logo2}
@@ -87,27 +83,18 @@ function inicio(props) {
             ...CSS.siguiente2,
             backgroundColor: '#132196'
           }}
-          onPress={() => navigation.navigate({ routeName: 'Pagina6' })}
+          onPress={() => navigation.navigate({ routeName: 'Pagina1' })}
         >
-          <Text style={CSS.siguientetext}>VOTANTES</Text>
+          <Text style={CSS.siguientetext}>REGISTRO DE VOTANTES</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={{
             ...CSS.siguiente2,
             backgroundColor: '#132196'
           }}
-          onPress={() => navigation.navigate('Pagina7')}
+          onPress={() => navigation.navigate('Pagina3')}
         >
-          <Text style={CSS.siguientetext}>TESTIGÓS</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate('Pagina8')}
-        >
-          <Text style={CSS.siguientetext}>VOTOS</Text>
+          <Text style={CSS.siguientetext}>VISUALIZAR VOTANTES</Text>
         </TouchableOpacity>
       </View>
 
@@ -139,4 +126,4 @@ function inicio(props) {
   );
 };
 
-export default inicio;
+export default pagina6;

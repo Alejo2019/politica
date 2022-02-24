@@ -10,6 +10,9 @@ import Pagina2screen from '../components/views/inmobiliaria/inmuebles/pagina2';
 import Pagina3screen from '../components/views/inmobiliaria/inmuebles/pagina3';
 import Pagina4screen from '../components/views/inmobiliaria/inmuebles/pagina4';
 import Pagina5screen from '../components/views/inmobiliaria/inmuebles/pagina5';
+import Pagina6screen from '../components/views/inmobiliaria/inmuebles/pagina6';
+import Pagina7screen from '../components/views/inmobiliaria/inmuebles/pagina7';
+import Pagina8screen from '../components/views/inmobiliaria/inmuebles/pagina8';
 import Pagina1vscreen from '../components/views/inmobiliaria/inmuebles2/pagina1';
 import Pagina2vscreen from '../components/views/inmobiliaria/inmuebles2/pagina2';
 import Pagina3vscreen from '../components/views/inmobiliaria/inmuebles2/pagina3';
@@ -103,6 +106,39 @@ const Inicio = createStackNavigator({
         },
         Pagina5: {
           screen: Pagina5screen,
+          navigationOptions: ({ navigation }) => ({
+            title: 'Atras',
+            headerTitle: props => <LogoTitle />,
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: COLORS.blue,
+            },
+          })
+        },
+        Pagina6: {
+          screen: Pagina6screen,
+          navigationOptions: ({ navigation }) => ({
+            title: 'Atras',
+            headerTitle: props => <LogoTitle />,
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: COLORS.blue,
+            },
+          })
+        },
+        Pagina7: {
+          screen: Pagina7screen,
+          navigationOptions: ({ navigation }) => ({
+            title: 'Atras',
+            headerTitle: props => <LogoTitle />,
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: COLORS.blue,
+            },
+          })
+        },
+        Pagina8: {
+          screen: Pagina8screen,
           navigationOptions: ({ navigation }) => ({
             title: 'Atras',
             headerTitle: props => <LogoTitle />,
