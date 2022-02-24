@@ -8,9 +8,14 @@ import Iniciov1screen from '../components/views/inmobiliaria/inmuebles/inicio';
 import Pagina1screen from '../components/views/inmobiliaria/inmuebles/pagina1';
 import Pagina2screen from '../components/views/inmobiliaria/inmuebles/pagina2';
 import Pagina3screen from '../components/views/inmobiliaria/inmuebles/pagina3';
+import Pagina4screen from '../components/views/inmobiliaria/inmuebles/pagina4';
+import Pagina5screen from '../components/views/inmobiliaria/inmuebles/pagina5';
 import Pagina1vscreen from '../components/views/inmobiliaria/inmuebles2/pagina1';
 import Pagina2vscreen from '../components/views/inmobiliaria/inmuebles2/pagina2';
 import Pagina3vscreen from '../components/views/inmobiliaria/inmuebles2/pagina3';
+import Pagina1escreen from '../components/views/inmobiliaria/inmuebles3/pagina1';
+import Pagina2escreen from '../components/views/inmobiliaria/inmuebles3/pagina2';
+import Pagina3escreen from '../components/views/inmobiliaria/inmuebles3/pagina3';
 import Loginscreen from '../components/views/login/login'
 import { images, COLORS } from "../constants";
 
@@ -85,6 +90,28 @@ const Inicio = createStackNavigator({
             },
           })
         },
+        Pagina4: {
+          screen: Pagina4screen,
+          navigationOptions: ({ navigation }) => ({
+            title: 'Atras',
+            headerTitle: props => <LogoTitle />,
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: COLORS.blue,
+            },
+          })
+        },
+        Pagina5: {
+          screen: Pagina5screen,
+          navigationOptions: ({ navigation }) => ({
+            title: 'Atras',
+            headerTitle: props => <LogoTitle />,
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: COLORS.blue,
+            },
+          })
+        },
         Pagina1V: {
           screen: Pagina1vscreen,
           navigationOptions: ({ navigation }) => ({
@@ -117,7 +144,40 @@ const Inicio = createStackNavigator({
               backgroundColor: COLORS.blue,
             },
           })
-        },  
+        }, 
+        Pagina1E: {
+          screen: Pagina1escreen,
+          navigationOptions: ({ navigation }) => ({
+            title: 'Atras',
+            headerTitle: props => <LogoTitle />,
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: COLORS.blue,
+            },
+          })
+        }, 
+        Pagina2E: {
+          screen: Pagina2escreen,
+          navigationOptions: ({ navigation }) => ({
+            title: 'Atras',
+            headerTitle: props => <LogoTitle />,
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: COLORS.blue,
+            },
+          })
+        }, 
+        Pagina3E: {
+          screen: Pagina3escreen,
+          navigationOptions: ({ navigation }) => ({
+            title: 'Atras',
+            headerTitle: props => <LogoTitle />,
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: COLORS.blue,
+            },
+          })
+        }, 
         Login: {
           screen: Loginscreen,
           navigationOptions: ({ navigation }) => ({

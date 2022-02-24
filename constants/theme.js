@@ -58,16 +58,89 @@ export const CSS = StyleSheet.create({
         shadowRadius: 6.27,
         elevation: 5,
     },
+    cardHome1: {
+        width: WIDTH - 10,
+        height: 150,
+        backgroundColor: COLORS.white,
+        margin: 5,
+        borderRadius: 8,
+        borderColor: COLORS.blue,
+        borderWidth: 0.5,
+        alignSelf: "center",
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 0.34,
+        shadowRadius: 6.27,
+        elevation: 5,
+    },
     viewCardHome: {
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
     },
     tituloHome: {
-        fontSize: 30,
-        color: COLORS.blue,
+        fontSize: hp('1.9%'),
+        color: '#132196',
         textAlign: 'left',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginLeft: wp('3%')
+    },
+    tituloHome1: {
+        margin: 15,
+        marginTop: hp('-1%'),
+        height: hp('5'),
+        width: wp('26%'),
+        backgroundColor: '#B7B7BB',
+        borderRadius: hp('1.5%'),
+        textAlign: 'center',
+        color:'#132196'
+    },
+    tituloHome2: {
+        margin: 15,
+        marginTop: hp('2%'),
+        width: wp('26%'),
+        borderRadius: hp('1.5%'),
+        textAlign: 'center',
+        color:'#132196'
+    },
+    tituloHome3: {
+        margin: 15,
+        marginTop: hp('-1%'),
+        width: wp('26%'),
+        borderRadius: hp('1.5%'),
+        textAlign: 'center',
+        color:'#132196'
+
+    },
+    tituloHome4: {
+        margin: 15,
+        marginTop: hp('-1%'),
+        width: wp('26%'),
+        borderRadius: hp('1.5%'),
+        textAlign: 'center',
+        color:'#132196'
+    },
+    tituloHome5: {
+        fontSize: hp('1.9%'),
+        width: wp('50%'),
+        color: '#132196',
+        textAlign: 'left',
+        fontWeight: 'bold',
+        marginLeft: wp('3%')
+    },
+    tituloHome6: {
+        margin: 15,
+
+        height: hp('5'),
+        width: wp('26%'),
+        backgroundColor: '#B7B7BB',
+        borderRadius: hp('1.5%'),
+        textAlign: 'center',
+        color:'#132196'
     },
     textDescriHome: {
         color: COLORS.lightGray,
@@ -275,6 +348,17 @@ export const CSS = StyleSheet.create({
         justifyContent: 'center',
         marginTop: hp('2%'),
         marginLeft: wp('26%'),
+        borderRadius: 15
+    },
+    siguiente2: {
+        width: wp('60%'),
+        height: hp('5%'),
+        backgroundColor: 'red',
+        //borderRadius: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: hp('2%'),
+        marginLeft: wp('22%'),
         borderRadius: 15
     },
     siguientecontainer: {

@@ -12,7 +12,7 @@ import {
 import { images, COLORS, CSS } from "../../../../constants";
 
 
-function inicio(props) {
+function pagina1(props) {
 
   
 
@@ -71,7 +71,6 @@ function inicio(props) {
         />
 
         <Text style={{
-          marginTop: hp('3%'),
           marginBottom: hp('4'),
           fontSize: hp('4%'),
           textAlign: 'center',
@@ -81,44 +80,33 @@ function inicio(props) {
         }}> Hola, bienvenido!
         </Text>
 
-        <View >
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate({ routeName: 'Pagina1' })}
-        >
-          <Text style={CSS.siguientetext}>REGISTRO DE VOTANTES</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate('Pagina3')}
-        >
-          <Text style={CSS.siguientetext}>VISUALIZAR VOTANTES</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate('Pagina4')}
-        >
-          <Text style={CSS.siguientetext}>REGISTRO DE TESTIGÓS</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate('Pagina5')}
-        >
-          <Text style={CSS.siguientetext}>VISUALIZAR TESTIGÓS</Text>
-        </TouchableOpacity>
-      </View>
+        <View style={CSS.botonGrande2}>
+          <TouchableOpacity
+            style={{
+              ...CSS.botonGrande,
+              backgroundColor: '#132196'
+            }}
+            onPress={() => navigation.navigate({ routeName: 'Pagina2E' })}
+          >
+            <Text style={CSS.botonGrandeTexto}>REGISTRO E14</Text>
+          </TouchableOpacity>
+
+          <Text style={{
+            marginVertical: hp('1%')
+
+          }}>
+          </Text>
+
+          <TouchableOpacity
+            style={{
+              ...CSS.botonGrande,
+              backgroundColor: '#132196'
+            }}
+            onPress={() => navigation.navigate('Pagina3E')}
+          >
+            <Text style={CSS.botonGrandeTexto}>VISUALIZAR REGISTRO</Text>
+          </TouchableOpacity>
+        </View>
 
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
@@ -148,4 +136,4 @@ function inicio(props) {
   );
 };
 
-export default inicio;
+export default pagina1;

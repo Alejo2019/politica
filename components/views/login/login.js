@@ -21,6 +21,9 @@ function Login(props) {
   Validador1 = async () => {
     props.navigation.navigate('Pagina1V');
   };
+  Validador2 = async () => {
+    props.navigation.navigate('Pagina1E');
+  };
 
   return (
     // <ImageBackground source={images.backstart} style={CSS.Logincontainer}>
@@ -140,7 +143,7 @@ function Login(props) {
         >
           <Text style={CSS.siguientetext}>INICIAR SESIÓN</Text>
         </TouchableOpacity>
-        {/* <TouchableOpacity
+        <TouchableOpacity
           style={{
             ...CSS.siguiente1,
             backgroundColor: '#132196'
@@ -148,7 +151,16 @@ function Login(props) {
           onPress={() => Validador1()}
         >
           <Text style={CSS.siguientetext}>VOTANTES</Text>
-        </TouchableOpacity> */}
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            ...CSS.siguiente1,
+            backgroundColor: '#132196'
+          }}
+          onPress={() => Validador2()}
+        >
+          <Text style={CSS.siguientetext}>E14</Text>
+        </TouchableOpacity>
       </View>
 
 
