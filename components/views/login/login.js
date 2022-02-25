@@ -144,7 +144,7 @@ function Login(props) {
           <Text style={CSS.siguientetext}>INICIAR SESIÓN</Text>
         </TouchableOpacity>
         
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={{
             ...CSS.siguiente1,
             backgroundColor: '#132196'
@@ -152,7 +152,7 @@ function Login(props) {
           onPress={() => Validador2()}
         >
           <Text style={CSS.siguientetext}>E14</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
 
 
