@@ -2,8 +2,6 @@ import React from "react";
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { Image, Text } from 'react-native';
-import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
-import Home from '../components/views/inmobiliaria/Home';
 import Iniciov1screen from '../components/views/politica/lider/inicio';
 import Pagina1screen from '../components/views/politica/lider/pagina1';
 import Pagina2screen from '../components/views/politica/lider/pagina2';
@@ -13,10 +11,6 @@ import Pagina5screen from '../components/views/politica/lider/pagina5';
 import Pagina6screen from '../components/views/politica/lider/pagina6';
 import Pagina7screen from '../components/views/politica/lider/pagina7';
 import Pagina8screen from '../components/views/politica/lider/pagina8';
-import Pagina1escreen from '../components/views/politica/testigos/pagina1';
-import Pagina2escreen from '../components/views/politica/testigos/pagina2';
-import Pagina3escreen from '../components/views/politica/testigos/pagina3';
-import Loginscreen from '../components/views/login/login'
 import { images, COLORS } from "../constants";
 
 function LogoTitle() {
@@ -35,17 +29,6 @@ const Inicio = createStackNavigator({
 
     inicio:{
       screen:createStackNavigator({
-        // Mainmenu: {
-        //   screen: Home,
-        //   navigationOptions: ({ navigation }) => ({
-        //     title: 'Atras',
-        //     headerTitle: props => <LogoTitle />,
-        //     headerTitleAlign: 'center',
-        //     headerStyle: {
-        //       backgroundColor: COLORS.blue,
-        //     },
-        //   })
-        // },
         Iniciov1: {
           screen: Iniciov1screen,
           navigationOptions: ({ navigation }) => ({
@@ -144,52 +127,7 @@ const Inicio = createStackNavigator({
               backgroundColor: COLORS.blue,
             },
           })
-        }, 
-        Pagina1E: {
-          screen: Pagina1escreen,
-          navigationOptions: ({ navigation }) => ({
-            title: 'Atras',
-            headerTitle: props => <LogoTitle />,
-            headerTitleAlign: 'center',
-            headerStyle: {
-              backgroundColor: COLORS.blue,
-            },
-          })
-        }, 
-        Pagina2E: {
-          screen: Pagina2escreen,
-          navigationOptions: ({ navigation }) => ({
-            title: 'Atras',
-            headerTitle: props => <LogoTitle />,
-            headerTitleAlign: 'center',
-            headerStyle: {
-              backgroundColor: COLORS.blue,
-            },
-          })
-        }, 
-        Pagina3E: {
-          screen: Pagina3escreen,
-          navigationOptions: ({ navigation }) => ({
-            title: 'Atras',
-            headerTitle: props => <LogoTitle />,
-            headerTitleAlign: 'center',
-            headerStyle: {
-              backgroundColor: COLORS.blue,
-            },
-          })
-        }, 
-        Login: {
-          screen: Loginscreen,
-          navigationOptions: ({ navigation }) => ({
-            title: 'Atras',
-            headerTitle: props => <LogoTitle />,
-            headerTitleAlign: 'center',
-            headerStyle: {
-              backgroundColor: COLORS.blue,
-            },
-          })
-        }  
-          
+        },           
       },{
         navigationOptions:{
           headerShown:false

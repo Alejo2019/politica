@@ -14,11 +14,12 @@ import { images, COLORS, CSS } from "../../../../constants";
 
 function inicio(props) {
 
-  
+  const Token = await AsyncStorage.getItem('token');
 
   let { navigation } = props;
   Validador1 = async () => {
-    navigation.navigate('Login');
+    console.log('token', Token);
+    // navigation.navigate('Login');
   };
 
   return (

@@ -10,16 +10,15 @@ import {
   TouchableOpacity, Alert
 } from 'react-native';
 import { images, COLORS, CSS } from "../../../../constants";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
-function pagina1(props) {
-
-  
+function pagina1(props) {  
 
   let { navigation } = props;
-  Validador1 = async () => {
-    navigation.navigate('Login');
-  };
+  const Close = async () => {
+    await AsyncStorage.removeItem('token');
+    navigation.navigate({ routeName: 'Auth' })
+  }
 
   return (
 
@@ -60,7 +59,7 @@ function pagina1(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-        <TouchableOpacity  onPress={() => Validador1()}>
+        <TouchableOpacity  onPress={() => Close()}>
 
           <Icon name="location-exit" style={CSS.icon}
           />

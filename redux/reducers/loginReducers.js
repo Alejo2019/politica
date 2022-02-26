@@ -2,31 +2,30 @@ import Globals from '../../helpers/GlobalsCreators'
 
 const initialState = {
     datalogin: {},
-    error:"",
+    error: "",
 }
 
 
 export default (state = initialState, action) => {
 
-        switch (action.type) {
-            case Globals.Auth.POST_AUTH:
-            
-                return{
-                    ...state,
-                    datalogin: state.datalogin = action.payload,
-               
-                }
+    switch (action.type) {
+        case Globals.Auth.POST_AUTH:
 
-            case Globals.Auth.LOGIN_ERROR:
-                return{
-                    ...state,
-                    error:state.error = action.payload
+            return {
+                ...state,
+                datalogin: state.datalogin = action.payload,
+            }
 
-                }
-            
-            default:
-            return  state
-                
-        }
-    
+        case Globals.Auth.LOGIN_ERROR:
+            console.log('ttata', typeof action.payload);
+            return {
+                ...state,
+                error: state.error = action.payload
+            }
+
+        default:
+            return state
+
+    }
+
 }
