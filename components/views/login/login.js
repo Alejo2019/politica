@@ -6,23 +6,54 @@ import {
   ImageBackground,
   Image,
   TextInput,
-  TouchableOpacity, Alert, ActivityIndicator
+  TouchableOpacity, Alert, ActivityIndicator, ScrollView
 } from 'react-native';
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { images, COLORS, CSS } from "../../../constants";
+import axios from "axios";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import AwesomeAlert from 'react-native-awesome-alerts';
 
 function Login(props) {
   let { navigation } = props;
 
-  Validador = async () => {
-    props.navigation.navigate('Iniciov1');
+  const [state, setState] = useState({
+    correo: '',
+    contraseña: '',
+  });
+
+  const [showAlert, setShowAlert] = useState(false);
+  const hableChangeText = (nombre, value) => {
+    setState({ ...state, [nombre]: value });
+  }
+
+  const Validador = async (dispatch) => {
+    console.log(state);
+    await axios
+      .post('http://192.168.0.118:8060/api/auth/login', {
+        "correo": (state.correo),
+        "contraseña": (state.contraseña)
+      }).then(function (response) {
+        console.log(response.data);
+        AsyncStorage.setItem('token', response.data.token);
+        AsyncStorage.setItem('rol', response.data.usuario.rol);
+        AsyncStorage.setItem('user', JSON.stringify(response.data.usuario));
+        if (response.data.usuario.rol === 'LIDER_ROLE') {
+          navigation.navigate('Iniciov1');
+        }else if (response.data.usuario.rol === 'TESTIGO_ROLE')  {
+          navigation.navigate('Pagina1E');
+        }else {
+          navigation.navigate('Iniciov1');
+        }
+      })
+      .catch(function (error) {
+        setShowAlert(true);
+      })
   };
-  Validador1 = async () => {
-    props.navigation.navigate('Pagina1V');
-  };
-  Validador2 = async () => {
-    props.navigation.navigate('Pagina1E');
+
+  const hideAlert = (value) => {
+    setShowAlert(value);
   };
 
   return (
@@ -113,38 +144,61 @@ function Login(props) {
               </View>
             </View>
           </TouchableOpacity> */}
+      <AwesomeAlert
+        show={showAlert}
+        showProgress={false}
+        title="Datos incorrectos"
+        message="Usuario o contraseña incorrectos"
+        closeOnTouchOutside={true}
+        closeOnHardwareBackPress={false}
+        showCancelButton={true}
+        showConfirmButton={false}
+        cancelText="Cerrar"
+        cancelButtonColor="#132196"
+        onCancelPressed={() => {
+          hideAlert(false);
+        }}
+      />
       <Image
         style={CSS.img}
         source={images.logo2}
       />
-      <View style={CSS.inputlogin1}>
-        <Text style={CSS.inputlogin}>Usuario</Text>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-        />
+      <ScrollView>
 
-        <Text style={CSS.inputlogin}>Contraseña</Text>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-        />
-      </View>
+        <View style={CSS.inputlogin1}>
+          <Text style={CSS.inputlogin}>Usuario</Text>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('correo', value)}
+          />
 
-      <View style={CSS.siguientecontainer}>
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente1,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => Validador()}
-        >
-          <Text style={CSS.siguientetext}>INICIAR SESIÓN</Text>
-        </TouchableOpacity>
-        
-        {/* <TouchableOpacity
+          <Text style={CSS.inputlogin}>Contraseña</Text>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            secureTextEntry={true}
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('contraseña', value)}
+          />
+        </View>
+
+        <View style={CSS.siguientecontainer}>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente1,
+              backgroundColor: '#132196',
+              marginBottom: 10
+            }}
+            onPress={() => Validador()}
+          >
+            <Text style={CSS.siguientetext}>INICIAR SESIÓN</Text>
+          </TouchableOpacity>
+
+          {/* <TouchableOpacity
           style={{
             ...CSS.siguiente1,
             backgroundColor: '#132196'
@@ -153,7 +207,8 @@ function Login(props) {
         >
           <Text style={CSS.siguientetext}>E14</Text>
         </TouchableOpacity> */}
-      </View>
+        </View>
+      </ScrollView>
 
 
       {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>

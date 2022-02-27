@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import {
@@ -10,16 +10,16 @@ import {
   TouchableOpacity, Alert
 } from 'react-native';
 import { images, COLORS, CSS } from "../../../../constants";
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function inicio(props) {
 
-  
-
   let { navigation } = props;
-  Validador1 = async () => {
-    navigation.navigate('Login');
-  };
+
+  const Close = async () => {
+    await AsyncStorage.removeItem('token');
+    navigation.navigate({ routeName: 'Auth' })
+  }
 
   return (
 
@@ -60,7 +60,7 @@ function inicio(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-        <TouchableOpacity  onPress={() => Validador1()}>
+        <TouchableOpacity onPress={() => Close()}>
 
           <Icon name="location-exit" style={CSS.icon}
           />
@@ -82,34 +82,34 @@ function inicio(props) {
         </Text>
 
         <View >
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate({ routeName: 'Pagina6' })}
-        >
-          <Text style={CSS.siguientetext}>VOTANTES</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate('Pagina7')}
-        >
-          <Text style={CSS.siguientetext}>TESTIGÓS</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate('Pagina8')}
-        >
-          <Text style={CSS.siguientetext}>VOTOS</Text>
-        </TouchableOpacity>
-      </View>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente2,
+              backgroundColor: '#132196'
+            }}
+            onPress={() => navigation.navigate({ routeName: 'Pagina6' })}
+          >
+            <Text style={CSS.siguientetext}>VOTANTES</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente2,
+              backgroundColor: '#132196'
+            }}
+            onPress={() => navigation.navigate('Pagina7')}
+          >
+            <Text style={CSS.siguientetext}>TESTIGÓS</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente2,
+              backgroundColor: '#132196'
+            }}
+            onPress={() => navigation.navigate('Pagina8')}
+          >
+            <Text style={CSS.siguientetext}>VOTOS</Text>
+          </TouchableOpacity>
+        </View>
 
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>

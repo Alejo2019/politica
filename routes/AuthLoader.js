@@ -9,6 +9,7 @@ import {
   Image
 } from 'react-native';
 import bgImage from '../img/Fondos/logo.png';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 class AuthLoader extends Component {
 
@@ -18,7 +19,15 @@ class AuthLoader extends Component {
   }
 
   _bootstrapAsync = async () => {
-    this.props.navigation.navigate('Login');
+    const Rol = await AsyncStorage.getItem('rol');
+    const Token = await AsyncStorage.getItem('token');
+    if (Rol === 'LIDER_ROLE') {
+      this.props.navigation.navigate(Token ? 'App' : 'Auth');
+    }else if (Rol === 'TESTIGO_ROLE')  {
+      this.props.navigation.navigate(Token ? 'AppTestigo' : 'Auth');
+    }else {
+      this.props.navigation.navigate(Token ? 'App' : 'Auth');
+    }
   };
 
   render() {

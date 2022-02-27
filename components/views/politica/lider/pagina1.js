@@ -138,6 +138,7 @@ function pagina1(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
+          selectionColor="#132196"
           onChangeText={(value) => hableChangeText('nombre', value)}
         />
         <View style={CSS.viewCardHome}>
@@ -148,6 +149,7 @@ function pagina1(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
+          selectionColor="#132196"
           onChangeText={(value) => hableChangeText('apellido', value)}
         />
         <View style={CSS.viewCardHome}>
@@ -158,6 +160,7 @@ function pagina1(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
+          selectionColor="#132196"
           onChangeText={(value) => hableChangeText('cedula', value)}
           keyboardType="numeric"
 
@@ -170,6 +173,7 @@ function pagina1(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
+          selectionColor="#132196"
           onChangeText={(value) => hableChangeText('telefono', value)}
           keyboardType="numeric"
 
@@ -182,6 +186,7 @@ function pagina1(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
+          selectionColor="#132196"
           onChangeText={(value) => hableChangeText('correo', value)}
         />
 
@@ -192,7 +197,8 @@ function pagina1(props) {
         <View style={CSS.input}
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
-          autoCapitalize="none">
+          autoCapitalize="none"
+          selectionColor="#132196">
           <Picker
             selectedValue={country}
             onValueChange={(value, index) => setCountry(value)}
@@ -215,7 +221,8 @@ function pagina1(props) {
         <View style={CSS.input}
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
-          autoCapitalize="none">
+          autoCapitalize="none"
+          selectionColor="#132196">
           <Picker
             selectedValue={country}
             onValueChange={(value, index) => setCountry(value)}
@@ -238,6 +245,7 @@ function pagina1(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
+          selectionColor="#132196"
           keyboardType="numeric"
 
         />
@@ -250,6 +258,7 @@ function pagina1(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
+          selectionColor="#132196"
           keyboardType="numeric"
 
         />
@@ -261,6 +270,7 @@ function pagina1(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
+          selectionColor="#132196"
           onChangeText={(value) => hableChangeText('mesa', value)}
         />
         <View style={CSS.viewCardHome}>
@@ -271,6 +281,7 @@ function pagina1(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
+          selectionColor="#132196"
           onChangeText={(value) => hableChangeText('partido', value)}
         />
         <View style={CSS.viewCardHome}>
@@ -281,6 +292,7 @@ function pagina1(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
+          selectionColor="#132196"
           onChangeText={(value) => hableChangeText('candidato', value)}
         />
 
