@@ -17,7 +17,7 @@ import { images, COLORS, CSS } from "../../../../constants";
 import { Picker } from "@react-native-picker/picker";
 
 
-function pagina2(props) {
+function pagina3(props) {
 
   let { navigation } = props;
 
@@ -37,7 +37,7 @@ function pagina2(props) {
       </TouchableOpacity> */}
 
       <ScrollView>
-        {/* <View style={CSS.cardHome}>
+        <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate('Pagina5E')}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 4, marginLeft: 10 }}>
               <View style={{ flexDirection: 'row' }}>
@@ -110,9 +110,9 @@ function pagina2(props) {
               </View>
             </View>
           </View>
-        </View> */}
+        </TouchableOpacity>
 
-        <View style={CSS.cardHome}>
+        {/* <View style={CSS.cardHome}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 3, alignItems: 'center' }}>
               <View style={{ flexDirection: 'row' }}>
@@ -168,38 +168,32 @@ function pagina2(props) {
               </View>
               <View style={{ flexDirection: 'row' }}>
                 <View style={{ alignSelf: 'center' }}>
-                  <TextInput style={CSS.tituloHome1}
+                  <Text style={CSS.tituloHome1}
                     underlineColorAndroid="transparent"
                     placeholderTextColor="#132196"
                     autoCapitalize="none"
-                    keyboardType="numeric"
-
-                  />
+                    keyboardType="numeric">520</Text>
                 </View>
                 <View style={{ alignSelf: 'center' }}>
-                  <TextInput style={CSS.tituloHome1}
+                  <Text style={CSS.tituloHome1}
                     underlineColorAndroid="transparent"
                     placeholderTextColor="#132196"
                     autoCapitalize="none"
-                    keyboardType="numeric"
-
-                  />
+                    keyboardType="numeric">10</Text>
                 </View>
                 <View style={{ alignSelf: 'center' }}>
-                  <TextInput style={CSS.tituloHome1}
+                  <Text style={CSS.tituloHome1}
                     underlineColorAndroid="transparent"
                     placeholderTextColor="#132196"
                     autoCapitalize="none"
-                    keyboardType="numeric"
-
-                  />
+                    keyboardType="numeric">400</Text>
                 </View>
               </View>
             </View>
           </View>
-        </View>
+        </View> */}
 
-        <View style={CSS.cardHome} >
+        {/* <View style={CSS.cardHome} >
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 3, alignItems: 'center' }}>
               <View style={{ flexDirection: 'row' }}>
@@ -213,13 +207,12 @@ function pagina2(props) {
                   <Text style={CSS.tituloHome5}>
                     CANDIDATO 1
                   </Text>
-                  <TextInput style={CSS.tituloHome6}
+                  <Text style={CSS.tituloHome6}
                     underlineColorAndroid="transparent"
                     placeholderTextColor="#132196"
                     autoCapitalize="none"
-                    keyboardType="numeric"
+                    keyboardType="numeric">405</Text>
 
-                  />
                 </View>
               </View>
             </View>
@@ -239,13 +232,11 @@ function pagina2(props) {
                   <Text style={CSS.tituloHome5}>
                     CANDIDATO 2
                   </Text>
-                  <TextInput style={CSS.tituloHome6}
+                  <Text style={CSS.tituloHome6}
                     underlineColorAndroid="transparent"
                     placeholderTextColor="#132196"
                     autoCapitalize="none"
-                    keyboardType="numeric"
-
-                  />
+                    keyboardType="numeric">588</Text>
                 </View>
               </View>
             </View>
@@ -265,13 +256,59 @@ function pagina2(props) {
                   <Text style={CSS.tituloHome5}>
                     CANDIDATO 3
                   </Text>
-                  <TextInput style={CSS.tituloHome6}
+                  <Text style={CSS.tituloHome6}
                     underlineColorAndroid="transparent"
                     placeholderTextColor="#132196"
                     autoCapitalize="none"
-                    keyboardType="numeric"
-
-                  />
+                    keyboardType="numeric">100</Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View style={CSS.cardHome} >
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 3, alignItems: 'center' }}>
+              <View style={{ flexDirection: 'row' }}>
+                <View>
+                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                </View>
+                <View>
+                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome5}>
+                    CANDIDATO 4
+                  </Text>
+                  <Text style={CSS.tituloHome6}
+                    underlineColorAndroid="transparent"
+                    placeholderTextColor="#132196"
+                    autoCapitalize="none"
+                    keyboardType="numeric">900</Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View style={CSS.cardHome} >
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 3, alignItems: 'center' }}>
+              <View style={{ flexDirection: 'row' }}>
+                <View>
+                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                </View>
+                <View>
+                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome5}>
+                    CANDIDATO 3
+                  </Text>
+                  <Text style={CSS.tituloHome6}
+                    underlineColorAndroid="transparent"
+                    placeholderTextColor="#132196"
+                    autoCapitalize="none"
+                    keyboardType="numeric">900</Text>
                 </View>
               </View>
             </View>
@@ -288,12 +325,11 @@ function pagina2(props) {
                   </Text>
 
                 </View>
-                <TextInput style={CSS.tituloHome7}
+                <Text style={CSS.tituloHome6}
                   underlineColorAndroid="transparent"
                   placeholderTextColor="#132196"
                   autoCapitalize="none"
-                  keyboardType="numeric"
-                />
+                  keyboardType="numeric">900</Text>
               </View>
             </View>
           </View>
@@ -304,16 +340,15 @@ function pagina2(props) {
               <View style={{ flexDirection: 'row' }}>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome5}>
-                  VOTO NULOS:
+                    VOTO NULOS:
                   </Text>
 
                 </View>
-                <TextInput style={CSS.tituloHome7}
+                <Text style={CSS.tituloHome6}
                   underlineColorAndroid="transparent"
                   placeholderTextColor="#132196"
                   autoCapitalize="none"
-                  keyboardType="numeric"
-                />
+                  keyboardType="numeric">900</Text>
               </View>
             </View>
           </View>
@@ -324,16 +359,15 @@ function pagina2(props) {
               <View style={{ flexDirection: 'row' }}>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome5}>
-                  VOTOS NO MARCADOS:
+                    VOTOS NO MARCADOS:
                   </Text>
 
                 </View>
-                <TextInput style={CSS.tituloHome7}
+                <Text style={CSS.tituloHome6}
                   underlineColorAndroid="transparent"
                   placeholderTextColor="#132196"
                   autoCapitalize="none"
-                  keyboardType="numeric"
-                />
+                  keyboardType="numeric">900</Text>
               </View>
             </View>
           </View>
@@ -343,28 +377,27 @@ function pagina2(props) {
             <View style={{ flex: 2, alignItems: 'center' }}>
               <View style={{ flexDirection: 'row' }}>
                 <View style={{ alignSelf: 'center' }}>
-                  <Text style={{fontSize: hp('1.9%'),
-        width: wp('50%'),
-        color: '#132196',
-        textAlign: 'left',
-        fontWeight: 'bold',
-        marginLeft: wp('3%')}}>
-                  TOTAL VOTOS EN LA MESA:
+                  <Text style={{
+                    fontSize: hp('1.9%'),
+                    width: wp('50%'),
+                    color: '#132196',
+                    textAlign: 'left',
+                    fontWeight: 'bold',
+                    marginLeft: wp('3%')
+                  }}>
+                    TOTAL VOTOS EN LA MESA:
                   </Text>
 
                 </View>
-                <TextInput style={CSS.tituloHome7}
+                <Text style={CSS.tituloHome6}
                   underlineColorAndroid="transparent"
                   placeholderTextColor="#132196"
                   autoCapitalize="none"
-                  keyboardType="numeric"
-                />
+                  keyboardType="numeric">900</Text>
               </View>
             </View>
           </View>
         </View>
-
-
         <TouchableOpacity
           style={{
             ...CSS.siguiente,
@@ -374,12 +407,12 @@ function pagina2(props) {
           onPress={() => navigation.navigate('Pagina1E')}
 
         >
-          <Text style={CSS.siguientetext}>FINALIZAR</Text>
-        </TouchableOpacity>
+          <Text style={CSS.siguientetext}>VOLVER</Text>
+        </TouchableOpacity> */}
 
       </ScrollView>
     </ImageBackground>
   );
 };
 
-export default pagina2;
+export default pagina3;

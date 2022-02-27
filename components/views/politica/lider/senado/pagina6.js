@@ -14,10 +14,10 @@ import {
   Alert
 
 } from 'react-native';
-import { images, COLORS, CSS } from "../../../../constants";
+import { images, COLORS, CSS } from "../../../../../constants";
 import axios from "axios";
 
-function pagina1(props) {
+function pagina6(props) {
 
   let { navigation } = props;
 
@@ -88,7 +88,7 @@ function pagina1(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> REGISTRO DE VOTANTES
+        }}> REGISTRO DE TESTIGÓS
         </Text>
         <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('3%'), }}>
           <DataTable>
@@ -113,8 +113,11 @@ function pagina1(props) {
             )
             )
             }
+
+
           </DataTable>
         </View>
+
         <TouchableOpacity
           style={{
             ...CSS.siguiente,
@@ -125,8 +128,6 @@ function pagina1(props) {
         >
           <Text style={CSS.siguientetext}>GENERAR REPORTE</Text>
         </TouchableOpacity>
-
-
 
 
 
@@ -158,4 +159,4 @@ function pagina1(props) {
   );
 };
 
-export default pagina1;
+export default pagina6;

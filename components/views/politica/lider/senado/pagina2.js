@@ -13,11 +13,11 @@ import {
 
 } from 'react-native';
 import { Picker } from "@react-native-picker/picker";
-import { images, COLORS, CSS } from "../../../../constants";
+import { images, COLORS, CSS } from "../../../../../constants";
 import axios from "axios";
 
 
-function pagina1(props) {
+function pagina2(props) {
 
   let { navigation } = props;
 
@@ -73,7 +73,7 @@ function pagina1(props) {
         // always executed
         alert('Finally called');
       });
-    navigation.navigate({ routeName: 'Pagina2' })
+    navigation.navigate({ routeName: 'Pagina2E' })
   };
 
   return (
@@ -190,7 +190,7 @@ function pagina1(props) {
           onChangeText={(value) => hableChangeText('correo', value)}
         />
 
-        <View style={CSS.viewCardHome}>
+        {/* <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}>Departamento</Text>
         </View>
@@ -236,7 +236,7 @@ function pagina1(props) {
             <Picker.Item label="India" value="India" />
             <Picker.Item label="Japan" value="Japan" />
           </Picker>
-        </View>
+        </View> */}
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}>Lugar de votacion</Text>
@@ -343,4 +343,4 @@ function pagina1(props) {
   );
 };
 
-export default pagina1;
+export default pagina2;

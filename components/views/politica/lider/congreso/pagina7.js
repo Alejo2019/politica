@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import {
@@ -9,17 +9,17 @@ import {
   ImageBackground,
   TouchableOpacity, Alert
 } from 'react-native';
-import { images, COLORS, CSS } from "../../../../constants";
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { images, COLORS, CSS } from "../../../../../constants";
 
-function inicio(props) {
+
+function pagina7(props) {
+
+  
 
   let { navigation } = props;
-
-  const Close = async () => {
-    await AsyncStorage.removeItem('token');
-    navigation.navigate({ routeName: 'Auth' })
-  }
+  Validador1 = async () => {
+    navigation.navigate('Login');
+  };
 
   return (
 
@@ -60,11 +60,7 @@ function inicio(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-        <TouchableOpacity onPress={() => Close()}>
-
-          <Icon name="location-exit" style={CSS.icon}
-          />
-        </TouchableOpacity>
+        
         <Image
           style={CSS.img}
           source={images.logo2}
@@ -82,34 +78,25 @@ function inicio(props) {
         </Text>
 
         <View >
-          <TouchableOpacity
-            style={{
-              ...CSS.siguiente2,
-              backgroundColor: '#132196'
-            }}
-            onPress={() => navigation.navigate({ routeName: '' })}
-          >
-            <Text style={CSS.siguientetext}>CAMPAÑA PRECIDENCIAL</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              ...CSS.siguiente2,
-              backgroundColor: '#132196'
-            }}
-            onPress={() => navigation.navigate('Pagina1')}
-          >
-            <Text style={CSS.siguientetext}>CAMPAÑA AL CONGRESO</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              ...CSS.siguiente2,
-              backgroundColor: '#132196'
-            }}
-            onPress={() => navigation.navigate('Pagina1E')}
-          >
-            <Text style={CSS.siguientetext}>CAMPAÑA AL SENADO</Text>
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity
+          style={{
+            ...CSS.siguiente2,
+            backgroundColor: '#132196'
+          }}
+          onPress={() => navigation.navigate({ routeName: 'Pagina2' })}
+        >
+          <Text style={CSS.siguientetext}>REGISTRO DE VOTANTES</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            ...CSS.siguiente2,
+            backgroundColor: '#132196'
+          }}
+          onPress={() => navigation.navigate('Pagina4')}
+        >
+          <Text style={CSS.siguientetext}>VISUALIZAR VOTANTES</Text>
+        </TouchableOpacity>
+      </View>
 
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
@@ -139,4 +126,4 @@ function inicio(props) {
   );
 };
 
-export default inicio;
+export default pagina7;

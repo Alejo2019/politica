@@ -101,7 +101,7 @@ function pagina1(props) {
               ...CSS.botonGrande,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate('Pagina3E')}
+            onPress={() => navigation.navigate('Pagina4E')}
           >
             <Text style={CSS.botonGrandeTexto}>VISUALIZAR REGISTRO</Text>
           </TouchableOpacity>

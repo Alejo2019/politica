@@ -13,11 +13,11 @@ import {
 
 } from 'react-native';
 import { Picker } from "@react-native-picker/picker";
-import { images, COLORS, CSS } from "../../../../constants";
+import { images, COLORS, CSS } from "../../../../../constants";
 import axios from "axios";
 
 
-function pagina4(props) {
+function pagina5(props) {
 
   let { navigation } = props;
 
@@ -73,7 +73,7 @@ function pagina4(props) {
         // always executed
         alert('Finally called');
       });
-      navigation.navigate({ routeName: 'Pagina2' })
+      navigation.navigate({ routeName: 'Pagina2E' })
   };
 
   return (
@@ -330,4 +330,4 @@ function pagina4(props) {
   );
 };
 
-export default pagina4;
+export default pagina5;
