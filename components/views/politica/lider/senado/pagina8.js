@@ -81,7 +81,7 @@ function pagina8(props) {
             ...CSS.siguiente2,
             backgroundColor: '#132196'
           }}
-          onPress={() => navigation.navigate('Pagina5E')}
+          onPress={() => navigation.navigate('Pagina5I')}
         >
           <Text style={CSS.siguientetext}>REGISTRO DE TESTIGÓS</Text>
         </TouchableOpacity>
@@ -90,7 +90,7 @@ function pagina8(props) {
             ...CSS.siguiente2,
             backgroundColor: '#132196'
           }}
-          onPress={() => navigation.navigate('Pagina6E')}
+          onPress={() => navigation.navigate('Pagina6I')}
         >
           <Text style={CSS.siguientetext}>VISUALIZAR TESTIGÓS</Text>
         </TouchableOpacity>

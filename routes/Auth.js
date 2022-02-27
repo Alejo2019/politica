@@ -160,7 +160,7 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina2E: {
+    Pagina2I: {
         screen: Pagina2Sscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
@@ -171,7 +171,7 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina3E: {
+      Pagina3I: {
         screen: Pagina3Sscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
@@ -182,7 +182,7 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina4E: {
+      Pagina4I: {
         screen: Pagina4Sscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
@@ -193,7 +193,7 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina5E: {
+      Pagina5I: {
         screen: Pagina5Sscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
@@ -204,7 +204,7 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina6E: {
+      Pagina6I: {
         screen: Pagina6Sscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
@@ -215,7 +215,7 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina7E: {
+      Pagina7I: {
         screen: Pagina7Sscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
@@ -226,7 +226,7 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina8E: {
+      Pagina8I: {
         screen: Pagina8Sscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
@@ -237,7 +237,7 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina9E: {
+      Pagina9I: {
         screen: Pagina9Sscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',

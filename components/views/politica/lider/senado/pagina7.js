@@ -81,7 +81,7 @@ function pagina7(props) {
             ...CSS.siguiente2,
             backgroundColor: '#132196'
           }}
-          onPress={() => navigation.navigate({ routeName: 'Pagina2E' })}
+          onPress={() => navigation.navigate({ routeName: 'Pagina2I' })}
         >
           <Text style={CSS.siguientetext}>REGISTRO DE VOTANTES</Text>
         </TouchableOpacity>
@@ -90,7 +90,7 @@ function pagina7(props) {
             ...CSS.siguiente2,
             backgroundColor: '#132196'
           }}
-          onPress={() => navigation.navigate('Pagina4E')}
+          onPress={() => navigation.navigate('Pagina4I')}
         >
           <Text style={CSS.siguientetext}>VISUALIZAR VOTANTES</Text>
         </TouchableOpacity>

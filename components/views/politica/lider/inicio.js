@@ -105,7 +105,7 @@ function inicio(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate('Pagina1E')}
+            onPress={() => navigation.navigate('Pagina1I')}
           >
             <Text style={CSS.siguientetext}>CAMPAÑA AL SENADO</Text>
           </TouchableOpacity>
