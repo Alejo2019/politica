@@ -31,7 +31,7 @@ function Login(props) {
   const Validador = async (dispatch) => {
     console.log(state);
     await axios
-      .post('http://192.168.1.3:8060/api/auth/login', {
+      .post('http://192.168.0.118:8060/api/auth/login', {
         "correo": (state.correo),
         "contraseña": (state.contraseña)
       }).then(function (response) {
