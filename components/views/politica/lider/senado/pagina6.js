@@ -88,7 +88,7 @@ function pagina6(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> REGISTRO DE TESTIGÓS
+        }}>TESTIGÓS AL SENADO
         </Text>
         <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('3%'), }}>
           <DataTable>

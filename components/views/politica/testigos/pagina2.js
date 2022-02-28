@@ -33,7 +33,7 @@ function pagina2(props) {
       let value = await AsyncStorage.getItem('token');
       setToken(value);
     } catch (error) {
-     console.log(error)
+      console.log(error)
     }
   };
 
@@ -68,7 +68,7 @@ function pagina2(props) {
       </TouchableOpacity> */}
 
       <ScrollView>
-        <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate('Pagina3E')}>
+        <View style={CSS.cardHome} onPress={() => navigation.navigate('Pagina3E')}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 4, marginLeft: 10 }}>
               <View style={{ flexDirection: 'row' }}>
@@ -141,9 +141,9 @@ function pagina2(props) {
               </View>
             </View>
           </View>
-        </TouchableOpacity>
+        </View>
 
-        {/* <View style={CSS.cardHome}>
+        <View style={CSS.cardHome}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 3, alignItems: 'center' }}>
               <View style={{ flexDirection: 'row' }}>
@@ -333,9 +333,9 @@ function pagina2(props) {
               </View>
             </View>
           </View>
-        </View> */}
+        </View>
 
-        {/* <TouchableOpacity
+        <TouchableOpacity
           style={{
             ...CSS.siguiente,
             backgroundColor: '#132196'
@@ -345,7 +345,7 @@ function pagina2(props) {
 
         >
           <Text style={CSS.siguientetext}>FINALIZAR</Text>
-        </TouchableOpacity> */}
+        </TouchableOpacity>
 
       </ScrollView>
     </ImageBackground>

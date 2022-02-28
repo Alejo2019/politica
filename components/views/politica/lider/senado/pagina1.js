@@ -66,12 +66,12 @@ function pagina1(props) {
         <Text style={{
           marginTop: hp('3%'),
           marginBottom: hp('4'),
-          fontSize: hp('4%'),
+          fontSize: hp('3%'),
           textAlign: 'center',
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> Senado!
+        }}> CAMPAÑA AL SENADO
         </Text>
 
         <View >
