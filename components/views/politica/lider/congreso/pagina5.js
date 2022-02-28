@@ -13,31 +13,43 @@ import {
 
 } from 'react-native';
 import { Picker } from "@react-native-picker/picker";
-import { images, COLORS, CSS } from "../../../../constants";
+import { images, COLORS, CSS } from "../../../../../constants";
 import axios from "axios";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
-function pagina1(props) {
+function pagina5(props) {
 
   let { navigation } = props;
 
-  const [country, setCountry] = useState('Unknown');
-
-
+  const [token, setToken] = useState("");
 
   useEffect(() => {
-    //getDataUsingSimpleGetCall()
+    getToken()
   }, []);
+
+  const getToken = async () => {
+    try {
+      let value = await AsyncStorage.getItem('token');
+      setToken(value);
+    } catch (error) {
+     console.log(error)
+    }
+  };
 
   const [state, setState] = useState({
     nombre: '',
     apellido: '',
     cedula: '',
-    telefono: '',
     correo: '',
-    mesa: '',
-    partido: '',
-    candidato: '',
+    contraseña: '',
+    ciudad: '',
+    departamento: '',
+    lugar: '',
+    zona: '',
+    puesto: '',
+    telefono:'',
+    zona:''
+
   });
 
   const hableChangeText = (nombre, value) => {
@@ -46,20 +58,22 @@ function pagina1(props) {
 
   const envio = () => {
     axios
-      .post('http://192.168.1.6:8060/api/users', {
+      .post('http://192.168.0.118:8060/api/testigos', {
         "nombre": (state.nombre),
         "apellido": (state.apellido),
         "cedula": (state.cedula),
         "correo": (state.correo),
+        "contraseña": (state.contraseña),
         "telefono": (state.telefono),
         "estado": false,
         "google": false,
-        "rol": "USER_ROLE",
+        "rol":"TESTIGO_ROLE",
         "departamento": "Valle",
-        "ciudad": "cali",
-        "mesa": (state.mesa),
-        "candidato": (state.candidato),
-        "partido": (state.partido)
+        "ciudad": "cali"
+      },{
+        headers:{
+          'x-token': token
+        }
       }).then(function (response) {
         // handle success
         alert(JSON.stringify(response.data));
@@ -127,7 +141,7 @@ function pagina1(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> REGISTRO DE VOTANTES
+        }}> REGISTRO DE TESTIGÓS
         </Text>
 
         <View style={CSS.viewCardHome}>
@@ -187,49 +201,35 @@ function pagina1(props) {
 
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Departamento</Text>
+          <Text style={CSS.asterisco1}>Contraseña</Text>
         </View>
-        <View style={CSS.input}
+        <TextInput style={CSS.input}
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
-          autoCapitalize="none">
-          <Picker
-            selectedValue={country}
-            onValueChange={(value, index) => setCountry(value)}
-            mode="dropdown" // Android only
-            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
-          >
-            <Picker.Item label="Seleccione" value="Unknown" />
-            <Picker.Item label="Australia" value="Australia" />
-            <Picker.Item label="Belgium" value="Belgium" />
-            <Picker.Item label="Canada" value="Canada" />
-            <Picker.Item label="India" value="India" />
-            <Picker.Item label="Japan" value="Japan" />
-          </Picker>
-        </View>
+          autoCapitalize="none"
+          onChangeText={(value) => hableChangeText('contraseña', value)}
+        />
 
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Departamento</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+          onChangeText={(value) => hableChangeText('departamento', value)}
+        />
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}>Ciudad</Text>
         </View>
-        <View style={CSS.input}
+        <TextInput style={CSS.input}
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
-          autoCapitalize="none">
-          <Picker
-            selectedValue={country}
-            onValueChange={(value, index) => setCountry(value)}
-            mode="dropdown" // Android only
-            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
-          >
-            <Picker.Item label="Seleccione" value="Unknown" />
-            <Picker.Item label="Australia" value="Australia" />
-            <Picker.Item label="Belgium" value="Belgium" />
-            <Picker.Item label="Canada" value="Canada" />
-            <Picker.Item label="India" value="India" />
-            <Picker.Item label="Japan" value="Japan" />
-          </Picker>
-        </View>
+          autoCapitalize="none"
+          onChangeText={(value) => hableChangeText('ciudad', value)}
+        />
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}>Lugar de votacion</Text>
@@ -239,51 +239,21 @@ function pagina1(props) {
           placeholderTextColor="#132196"
           autoCapitalize="none"
           keyboardType="numeric"
-
+          onChangeText={(value) => hableChangeText('lugar', value)}
         />
-
-        <View style={CSS.viewCardHome}>
+      <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Mesa de votacion</Text>
+          <Text style={CSS.asterisco1}>Zona</Text>
         </View>
         <TextInput style={CSS.input}
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
           keyboardType="numeric"
-
-        />
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Partido</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          onChangeText={(value) => hableChangeText('mesa', value)}
-        />
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Candidato</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          onChangeText={(value) => hableChangeText('partido', value)}
-        />
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Lider</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          onChangeText={(value) => hableChangeText('candidato', value)}
+          onChangeText={(value) => hableChangeText('lugar', value)}
         />
 
+  
         <Text style={CSS.pririodad}>
           Los campos con * es obligatorio
         </Text>
@@ -331,4 +301,4 @@ function pagina1(props) {
   );
 };
 
-export default pagina1;
+export default pagina5;

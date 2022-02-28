@@ -1,46 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
-import RNPickerSelect from "react-native-picker-select";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import { DataTable } from 'react-native-paper';
 import {
   ScrollView,
   Text,
   View,
   Image,
-  TouchableOpacity,
-  TextInput,
   ImageBackground,
-  Alert
-
+  TouchableOpacity, Alert
 } from 'react-native';
-import { images, COLORS, CSS } from "../../../../constants";
-import axios from "axios";
+import { images, COLORS, CSS } from "../../../../../constants";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-function pagina5(props) {
+function pagina1(props) {
 
   let { navigation } = props;
 
-  useEffect(() => {
-    getDataUsingSimpleGetCall()
-  }, []);
+  
 
-  const [data, setdata] = useState([]);
-
-  const getDataUsingSimpleGetCall = () => {
-    axios
-      .get('http://192.168.0.118:8060/api/users')
-      .then(function (response) {
-        // handle success
-        setdata(response.data.usuarios);
-        console.log(response.data.usuarios)
-      })
-
-  };
-  //console.log(data)
   return (
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
+
 
       {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
         <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
@@ -52,6 +33,7 @@ function pagina5(props) {
           </View>
         </View>
       </TouchableOpacity> */}
+
       <ScrollView>
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
@@ -75,6 +57,11 @@ function pagina5(props) {
               </View>
             </View>
           </TouchableOpacity> */}
+        <TouchableOpacity onPress={() => Close()}>
+
+          <Icon name="location-exit" style={CSS.icon}
+          />
+        </TouchableOpacity>
         <Image
           style={CSS.img}
           source={images.logo2}
@@ -82,53 +69,44 @@ function pagina5(props) {
 
         <Text style={{
           marginTop: hp('3%'),
-          marginBottom: hp('1'),
-          fontSize: hp('3%'),
+          marginBottom: hp('4'),
+          fontSize: hp('4%'),
           textAlign: 'center',
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> REGISTRO DE TESTIGÓS
+        }}> Congreso!
         </Text>
-        <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('3%'), }}>
-          <DataTable>
-            <DataTable.Header>
-              <DataTable.Title>Nombre</DataTable.Title>
-              <DataTable.Title>Candidato</DataTable.Title>
-              <DataTable.Title >Lugar</DataTable.Title>
-              <DataTable.Title >Mesa</DataTable.Title>
-            </DataTable.Header>
 
-
-            {data.map((dato, index) => (
-              <DataTable.Row>
-
-                <DataTable.Cell >{dato.nombre}</DataTable.Cell>
-                <DataTable.Cell >{dato.candidato}</DataTable.Cell>
-                <DataTable.Cell >{dato.partido}</DataTable.Cell>
-                <DataTable.Cell >{dato.mesa}</DataTable.Cell>
-
-              </DataTable.Row>
-
-            )
-            )
-            }
-
-
-          </DataTable>
+        <View >
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente2,
+              backgroundColor: '#132196'
+            }}
+            onPress={() => navigation.navigate({ routeName: 'Pagina7' })}
+          >
+            <Text style={CSS.siguientetext}>VOTANTES</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente2,
+              backgroundColor: '#132196'
+            }}
+            onPress={() => navigation.navigate('Pagina8')}
+          >
+            <Text style={CSS.siguientetext}>TESTIGÓS</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente2,
+              backgroundColor: '#132196'
+            }}
+            onPress={() => navigation.navigate('Pagina9')}
+          >
+            <Text style={CSS.siguientetext}>VOTOS</Text>
+          </TouchableOpacity>
         </View>
-
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente,
-            backgroundColor: '#132196',
-            marginTop: hp('5%')
-          }}
-
-        >
-          <Text style={CSS.siguientetext}>GENERAR REPORTE</Text>
-        </TouchableOpacity>
-
 
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
@@ -152,11 +130,10 @@ function pagina5(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-
       </ScrollView>
 
     </ImageBackground>
   );
 };
 
-export default pagina5;
+export default pagina1;

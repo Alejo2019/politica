@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import RNPickerSelect from "react-native-picker-select";
-import Checkbox from 'expo-checkbox';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { DataTable } from 'react-native-paper';
 import {
@@ -15,13 +14,12 @@ import {
   Alert
 
 } from 'react-native';
-import { images, COLORS, CSS } from "../../../../constants";
+import { images, COLORS, CSS } from "../../../../../constants";
 import axios from "axios";
 
-function pagina8(props) {
-  const [isChecked, setChecked] = useState(false);
-  let { navigation } = props;
+function pagina6(props) {
 
+  let { navigation } = props;
 
   useEffect(() => {
     getDataUsingSimpleGetCall()
@@ -31,7 +29,7 @@ function pagina8(props) {
 
   const getDataUsingSimpleGetCall = () => {
     axios
-      .get('http://192.168.0.118:8060/api/users')
+      .get('http://192.168.1.6:8060/api/users')
       .then(function (response) {
         // handle success
         setdata(response.data.usuarios);
@@ -90,7 +88,7 @@ function pagina8(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> REGISTRO DE VOTANTES
+        }}> REGISTRO DE TESTIGÓS
         </Text>
         <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('3%'), }}>
           <DataTable>
@@ -99,43 +97,39 @@ function pagina8(props) {
               <DataTable.Title>Candidato</DataTable.Title>
               <DataTable.Title >Lugar</DataTable.Title>
               <DataTable.Title >Mesa</DataTable.Title>
-              <DataTable.Title >¿Voto?</DataTable.Title>
             </DataTable.Header>
 
 
-            {/* //{data.map((dato, index) => ( */}
-            <DataTable.Row>
+            {data.map((dato, index) => (
+              <DataTable.Row>
 
-              <DataTable.Cell >hola</DataTable.Cell>
-              <DataTable.Cell >hola</DataTable.Cell>
-              <DataTable.Cell >hola</DataTable.Cell>
-              <DataTable.Cell >hola</DataTable.Cell>
-              <DataTable.Cell >
-                <Checkbox style={{ margin: 8 }} value={isChecked} onValueChange={setChecked} />
-              </DataTable.Cell>
+                <DataTable.Cell >{dato.nombre}</DataTable.Cell>
+                <DataTable.Cell >{dato.candidato}</DataTable.Cell>
+                <DataTable.Cell >{dato.partido}</DataTable.Cell>
+                <DataTable.Cell >{dato.mesa}</DataTable.Cell>
 
+              </DataTable.Row>
 
-            </DataTable.Row>
-
-            {/* )
             )
-            } */}
-          </DataTable>
+            )
+            }
 
+
+          </DataTable>
         </View>
 
         <TouchableOpacity
           style={{
             ...CSS.siguiente,
             backgroundColor: '#132196',
-            marginTop: hp('4%')
+            marginTop: hp('5%')
           }}
 
-          onPress={() => navigation.navigate('Iniciov1')}
-
         >
-          <Text style={CSS.siguientetext}>GUARDAR</Text>
+          <Text style={CSS.siguientetext}>GENERAR REPORTE</Text>
         </TouchableOpacity>
+
+
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
             <View style={CSS.viewCardHome}>
@@ -165,4 +159,4 @@ function pagina8(props) {
   );
 };
 
-export default pagina8;
+export default pagina6;

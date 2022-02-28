@@ -87,27 +87,27 @@ function inicio(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate({ routeName: 'Pagina6' })}
+            onPress={() => navigation.navigate({ routeName: '' })}
           >
-            <Text style={CSS.siguientetext}>VOTANTES</Text>
+            <Text style={CSS.siguientetext}>CAMPAÑA PRECIDENCIAL</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={{
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate('Pagina7')}
+            onPress={() => navigation.navigate('Pagina1')}
           >
-            <Text style={CSS.siguientetext}>TESTIGÓS</Text>
+            <Text style={CSS.siguientetext}>CAMPAÑA AL CONGRESO</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={{
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate('Pagina8')}
+            onPress={() => navigation.navigate('Pagina1I')}
           >
-            <Text style={CSS.siguientetext}>VOTOS</Text>
+            <Text style={CSS.siguientetext}>CAMPAÑA AL SENADO</Text>
           </TouchableOpacity>
         </View>
 

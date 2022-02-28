@@ -13,10 +13,10 @@ import {
   Alert
 
 } from 'react-native';
-import { images, COLORS, CSS } from "../../../../constants";
+import { images, COLORS, CSS } from "../../../../../constants";
 
 
-function pagina2(props) {
+function pagina3(props) {
 
   let { navigation } = props;
 
@@ -117,4 +117,4 @@ function pagina2(props) {
   );
 };
 
-export default pagina2;
+export default pagina3;

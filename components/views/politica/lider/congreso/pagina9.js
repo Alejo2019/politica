@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import RNPickerSelect from "react-native-picker-select";
+import Checkbox from 'expo-checkbox';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { DataTable } from 'react-native-paper';
 import {
@@ -14,12 +15,13 @@ import {
   Alert
 
 } from 'react-native';
-import { images, COLORS, CSS } from "../../../../constants";
+import { images, COLORS, CSS } from "../../../../../constants";
 import axios from "axios";
 
-function pagina1(props) {
-
+function pagina9(props) {
+  const [isChecked, setChecked] = useState(false);
   let { navigation } = props;
+
 
   useEffect(() => {
     getDataUsingSimpleGetCall()
@@ -97,38 +99,43 @@ function pagina1(props) {
               <DataTable.Title>Candidato</DataTable.Title>
               <DataTable.Title >Lugar</DataTable.Title>
               <DataTable.Title >Mesa</DataTable.Title>
+              <DataTable.Title >¿Voto?</DataTable.Title>
             </DataTable.Header>
 
 
-            {data.map((dato, index) => (
-              <DataTable.Row>
+            {/* //{data.map((dato, index) => ( */}
+            <DataTable.Row>
 
-                <DataTable.Cell >{dato.nombre}</DataTable.Cell>
-                <DataTable.Cell >{dato.candidato}</DataTable.Cell>
-                <DataTable.Cell >{dato.partido}</DataTable.Cell>
-                <DataTable.Cell >{dato.mesa}</DataTable.Cell>
+              <DataTable.Cell >hola</DataTable.Cell>
+              <DataTable.Cell >hola</DataTable.Cell>
+              <DataTable.Cell >hola</DataTable.Cell>
+              <DataTable.Cell >hola</DataTable.Cell>
+              <DataTable.Cell >
+                <Checkbox style={{ margin: 8 }} value={isChecked} onValueChange={setChecked} />
+              </DataTable.Cell>
 
-              </DataTable.Row>
 
+            </DataTable.Row>
+
+            {/* )
             )
-            )
-            }
+            } */}
           </DataTable>
+
         </View>
+
         <TouchableOpacity
           style={{
             ...CSS.siguiente,
             backgroundColor: '#132196',
-            marginTop: hp('5%')
+            marginTop: hp('4%')
           }}
 
+          onPress={() => navigation.navigate('Iniciov1')}
+
         >
-          <Text style={CSS.siguientetext}>GENERAR REPORTE</Text>
+          <Text style={CSS.siguientetext}>GUARDAR</Text>
         </TouchableOpacity>
-
-
-
-
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
             <View style={CSS.viewCardHome}>
@@ -158,4 +165,4 @@ function pagina1(props) {
   );
 };
 
-export default pagina1;
+export default pagina9;

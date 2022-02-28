@@ -77,6 +77,44 @@ export const CSS = StyleSheet.create({
         shadowRadius: 6.27,
         elevation: 5,
     },
+    cardHome2: {
+        width: WIDTH - 10,
+        height: 150,
+        backgroundColor: COLORS.white,
+        margin: 5,
+        borderRadius: 8,
+        borderColor: COLORS.blue,
+        borderWidth: 0.5,
+        alignSelf: "center",
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 0.34,
+        shadowRadius: 6.27,
+        elevation: 5,
+    },
+    cardHome3: {
+        width: WIDTH - 10,
+        height: hp('10%'),
+        backgroundColor: COLORS.white,
+        margin: 5,
+        borderRadius: 8,
+        borderColor: COLORS.blue,
+        borderWidth: 0.5,
+        alignSelf: "center",
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 0.34,
+        shadowRadius: 6.27,
+        elevation: 5,
+    },
     viewCardHome: {
         flex: 1,
         flexDirection: 'row',
@@ -141,6 +179,17 @@ export const CSS = StyleSheet.create({
         borderRadius: hp('1.5%'),
         textAlign: 'center',
         color:'#132196'
+    },
+    tituloHome7: {
+        margin: 15,
+
+        height: hp('5'),
+        width: wp('30%'),
+        backgroundColor: '#B7B7BB',
+        borderRadius: hp('1.5%'),
+        textAlign: 'center',
+        color:'#132196',
+ 
     },
     textDescriHome: {
         color: COLORS.lightGray,

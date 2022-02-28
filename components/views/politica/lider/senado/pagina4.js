@@ -14,10 +14,10 @@ import {
   Alert
 
 } from 'react-native';
-import { images, COLORS, CSS } from "../../../../constants";
+import { images, COLORS, CSS } from "../../../../../constants";
 import axios from "axios";
 
-function pagina1(props) {
+function pagina4(props) {
 
   let { navigation } = props;
 
@@ -158,4 +158,4 @@ function pagina1(props) {
   );
 };
 
-export default pagina1;
+export default pagina4;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import {
@@ -9,15 +9,14 @@ import {
   ImageBackground,
   TouchableOpacity, Alert
 } from 'react-native';
-import { images, COLORS, CSS } from "../../../../constants";
+import { images, COLORS, CSS } from "../../../../../constants";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
-function pagina7(props) {
+function pagina1(props) {
 
   let { navigation } = props;
-  Validador1 = async () => {
-    navigation.navigate('Login');
-  };
+
+ 
 
   return (
 
@@ -58,6 +57,7 @@ function pagina7(props) {
               </View>
             </View>
           </TouchableOpacity> */}
+        
         <Image
           style={CSS.img}
           source={images.logo2}
@@ -71,30 +71,38 @@ function pagina7(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> Hola, bienvenido!
+        }}> Senado!
         </Text>
 
         <View >
-        
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate('Pagina4')}
-        >
-          <Text style={CSS.siguientetext}>REGISTRO DE TESTIGÓS</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate('Pagina5')}
-        >
-          <Text style={CSS.siguientetext}>VISUALIZAR TESTIGÓS</Text>
-        </TouchableOpacity>
-      </View>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente2,
+              backgroundColor: '#132196'
+            }}
+            onPress={() => navigation.navigate({ routeName: 'Pagina7I' })}
+          >
+            <Text style={CSS.siguientetext}>VOTANTES</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente2,
+              backgroundColor: '#132196'
+            }}
+            onPress={() => navigation.navigate('Pagina8I')}
+          >
+            <Text style={CSS.siguientetext}>TESTIGÓS</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente2,
+              backgroundColor: '#132196'
+            }}
+            onPress={() => navigation.navigate('Pagina9I')}
+          >
+            <Text style={CSS.siguientetext}>VOTOS</Text>
+          </TouchableOpacity>
+        </View>
 
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
@@ -124,4 +132,4 @@ function pagina7(props) {
   );
 };
 
-export default pagina7;
+export default pagina1;

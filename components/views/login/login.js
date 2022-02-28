@@ -1,5 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
+import RNPickerSelect from "react-native-picker-select";
+import { Picker } from "@react-native-picker/picker";
 import {
   Text,
   View,
@@ -17,6 +19,7 @@ import AwesomeAlert from 'react-native-awesome-alerts';
 
 function Login(props) {
   let { navigation } = props;
+  const [country, setCountry] = useState('Unknown');
 
   const [state, setState] = useState({
     correo: '',
@@ -31,7 +34,7 @@ function Login(props) {
   const Validador = async (dispatch) => {
     console.log(state);
     await axios
-      .post('http://192.168.0.118:8060/api/auth/login', {
+      .post('http://192.168.1.6:8060/api/auth/login', {
         "correo": (state.correo),
         "contraseña": (state.contraseña)
       }).then(function (response) {
@@ -42,9 +45,9 @@ function Login(props) {
         AsyncStorage.setItem('user', JSON.stringify(response.data.usuario));
         if (response.data.usuario.rol === 'LIDER_ROLE') {
           navigation.navigate('Iniciov1');
-        }else if (response.data.usuario.rol === 'TESTIGO_ROLE')  {
+        } else if (response.data.usuario.rol === 'TESTIGO_ROLE') {
           navigation.navigate('Pagina1E');
-        }else {
+        } else {
           navigation.navigate('Iniciov1');
         }
       })
@@ -186,7 +189,25 @@ function Login(props) {
             onChangeText={(value) => hableChangeText('contraseña', value)}
           />
         </View>
-
+        <View style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+          selectionColor="#132196">
+          <Picker
+            selectedValue={country}
+            onValueChange={(value, index) => setCountry(value)}
+            mode="dropdown" // Android only
+            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", color: '#132196'}}
+          >
+            <Picker.Item label="Seleccione el pais" value="Unknown" />
+            <Picker.Item label="Australia" value="Australia" />
+            <Picker.Item label="Belgium" value="Belgium" />
+            <Picker.Item label="Canada" value="Canada" />
+            <Picker.Item label="India" value="India" />
+            <Picker.Item label="Japan" value="Japan" />
+          </Picker>
+        </View>
         <View style={CSS.siguientecontainer}>
           <TouchableOpacity
             style={{
@@ -209,6 +230,7 @@ function Login(props) {
           <Text style={CSS.siguientetext}>E14</Text>
         </TouchableOpacity> */}
         </View>
+
       </ScrollView>
 
 
