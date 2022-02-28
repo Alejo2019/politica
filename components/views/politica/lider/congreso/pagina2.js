@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import RNPickerSelect from "react-native-picker-select";
+import { Picker } from "@react-native-picker/picker";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import {
   ScrollView,
@@ -12,7 +13,6 @@ import {
   TextInput,
 
 } from 'react-native';
-import { Picker } from "@react-native-picker/picker";
 import { images, COLORS, CSS } from "../../../../../constants";
 import axios from "axios";
 
@@ -190,7 +190,7 @@ function pagina2(props) {
           onChangeText={(value) => hableChangeText('correo', value)}
         />
 
-        {/* <View style={CSS.viewCardHome}>
+        <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}>Departamento</Text>
         </View>
@@ -236,7 +236,7 @@ function pagina2(props) {
             <Picker.Item label="India" value="India" />
             <Picker.Item label="Japan" value="Japan" />
           </Picker>
-        </View> */}
+        </View>
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}>Lugar de votacion</Text>
