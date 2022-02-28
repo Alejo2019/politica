@@ -29,11 +29,11 @@ function pagina1(props) {
 
   const getDataUsingSimpleGetCall = () => {
     axios
-      .get('http://192.168.0.118:8060/api/users')
+      .get('http://192.168.0.118:8060/api/votantes')
       .then(function (response) {
         // handle success
-        setdata(response.data.usuarios);
-        console.log(response.data.usuarios)
+        setdata(response.data.votante);
+        console.log(response.data.votante)
       })
 
   };
@@ -104,9 +104,9 @@ function pagina1(props) {
               <DataTable.Row>
 
                 <DataTable.Cell >{dato.nombre}</DataTable.Cell>
-                <DataTable.Cell >{dato.candidato}</DataTable.Cell>
-                <DataTable.Cell >{dato.partido}</DataTable.Cell>
-                <DataTable.Cell >{dato.mesa}</DataTable.Cell>
+                <DataTable.Cell >{dato.cedula}</DataTable.Cell>
+                <DataTable.Cell >{dato.lugar}</DataTable.Cell>
+                <DataTable.Cell >{dato.zona}</DataTable.Cell>
 
               </DataTable.Row>
 

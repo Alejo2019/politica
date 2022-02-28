@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import RNPickerSelect from "react-native-picker-select";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -15,11 +15,42 @@ import {
 } from 'react-native';
 import { images, COLORS, CSS } from "../../../../constants";
 import { Picker } from "@react-native-picker/picker";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 function pagina2(props) {
 
   let { navigation } = props;
+
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    getToken()
+  }, []);
+
+  const getToken = async () => {
+    try {
+      let value = await AsyncStorage.getItem('token');
+      setToken(value);
+    } catch (error) {
+     console.log(error)
+    }
+  };
+
+  const [state, setState] = useState({
+    totalSufragantes: '',
+    totalVotosUrna: '',
+    totalVotosIncinerados: '',
+    telefono: '',
+    correo: '',
+    mesa: '',
+    partido: '',
+    candidato: '',
+  });
+
+  const hableChangeText = (nombre, value) => {
+    setState({ ...state, [nombre]: value });
+  }
 
   return (
     < ImageBackground source={images.fondo} style={CSS.Logincontainer} >
@@ -173,7 +204,7 @@ function pagina2(props) {
                     placeholderTextColor="#132196"
                     autoCapitalize="none"
                     keyboardType="numeric"
-
+                    onChangeText={(value) => hableChangeText('totalSufragantes', value)}
                   />
                 </View>
                 <View style={{ alignSelf: 'center' }}>
