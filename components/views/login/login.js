@@ -189,7 +189,20 @@ function Login(props) {
             onChangeText={(value) => hableChangeText('contraseña', value)}
           />
         </View>
-        <View style={CSS.input}
+        
+        <View style={CSS.siguientecontainer}>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente1,
+              backgroundColor: '#132196',
+              marginLeft: hp('12.5%')
+            }}
+            onPress={() => Validador()}
+          >
+            <Text style={CSS.siguientetext}>INICIAR SESIÓN</Text>
+          </TouchableOpacity>
+
+          <View style={CSS.input}
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
@@ -200,22 +213,29 @@ function Login(props) {
             mode="dropdown" // Android only
             style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", color: '#132196'}}
           >
-            <Picker.Item label="Seleccione el pais" value="Unknown" />
+            {/* <Picker.Item label="Seleccione el pais" value="Unknown" /> */}
             <Picker.Item label="Colombia" value="Colombia" />
-
+            <Picker.Item label="Argentina" value="Argentina" />
+            <Picker.Item label="Bolivia" value="Bolivia" />
+            <Picker.Item label="Brasil" value="Brasil" />
+            <Picker.Item label="Chile" value="Chile" />
+            <Picker.Item label="Costa Rica" value="Costa Rica" />
+            <Picker.Item label="Cuba" value="Cuba" />
+            <Picker.Item label="Ecuador" value="Ecuador" />
+            <Picker.Item label="El Salvador" value="El Salvador" />
+            <Picker.Item label="Guatemala" value="Guatemala" />
+            <Picker.Item label="Haití" value="Haití" />
+            <Picker.Item label="Honduras" value="Honduras" />
+            <Picker.Item label="México" value="México" />
+            <Picker.Item label="Nicaragua" value="Nicaragua" />
+            <Picker.Item label="Panamá" value="Panamá" />
+            <Picker.Item label="Paraguay" value="Paraguay" />
+            <Picker.Item label="Perú" value="Perú" />
+            <Picker.Item label="República Dominicana" value="República Dominicana" />
+            <Picker.Item label="Uruguay" value="Uruguay" />
+            <Picker.Item label="Venezuela" value="Venezuela" />
           </Picker>
         </View>
-        <View style={CSS.siguientecontainer}>
-          <TouchableOpacity
-            style={{
-              ...CSS.siguiente1,
-              backgroundColor: '#132196',
-              marginBottom: 10
-            }}
-            onPress={() => Validador()}
-          >
-            <Text style={CSS.siguientetext}>INICIAR SESIÓN</Text>
-          </TouchableOpacity>
 
           {/* <TouchableOpacity
           style={{
