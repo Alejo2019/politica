@@ -200,11 +200,8 @@ function Login(props) {
             style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", color: '#132196'}}
           >
             <Picker.Item label="Seleccione el pais" value="Unknown" />
-            <Picker.Item label="Australia" value="Australia" />
-            <Picker.Item label="Belgium" value="Belgium" />
-            <Picker.Item label="Canada" value="Canada" />
-            <Picker.Item label="India" value="India" />
-            <Picker.Item label="Japan" value="Japan" />
+            <Picker.Item label="Colombia" value="Colombia" />
+
           </Picker>
         </View>
         <View style={CSS.siguientecontainer}>
