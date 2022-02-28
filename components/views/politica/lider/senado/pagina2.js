@@ -46,7 +46,7 @@ function pagina2(props) {
 
   const envio = () => {
     axios
-      .post('http://192.168.1.6:8060/api/users', {
+      .post('http://192.168.0.118:8060/api/users', {
         "nombre": (state.nombre),
         "apellido": (state.apellido),
         "cedula": (state.cedula),
