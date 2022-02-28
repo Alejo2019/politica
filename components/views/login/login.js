@@ -41,6 +41,7 @@ function Login(props) {
         console.log(response.data);
         AsyncStorage.setItem('token', response.data.token);
         AsyncStorage.setItem('rol', response.data.usuario.rol);
+        AsyncStorage.setItem('id', response.data.usuario.uid);
         AsyncStorage.setItem('user', JSON.stringify(response.data.usuario));
         if (response.data.usuario.rol === 'LIDER_ROLE') {
           navigation.navigate('Iniciov1');
