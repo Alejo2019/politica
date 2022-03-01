@@ -86,7 +86,7 @@ let rol = "TESTIGO_ROLE"
         // always executed
         alert('Finally called');
       });
-    navigation.navigate({ routeName: 'Pagina2' })
+    navigation.navigate({ routeName: 'Pagina8' })
   };
 console.log(state)
   return (

@@ -88,7 +88,7 @@ function pagina6(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}>TESTIGOS AL SENADO
+        }}>TESTIGOS A ENTES TERRITORIALES
         </Text>
         <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('3%'), }}>
           <DataTable>
