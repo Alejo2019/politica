@@ -82,10 +82,6 @@ let rol = "TESTIGO_ROLE"
         // handle error
         alert(error.message);
         console.log(errors)
-      })
-      .finally(function () {
-        // always executed
-        alert('Finally called');
       });
     navigation.navigate({ routeName: 'Pagina8' })
   };

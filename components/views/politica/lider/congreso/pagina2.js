@@ -85,10 +85,6 @@ function pagina2(props) {
       .catch(function (error) {
         // handle error
         alert(error.message);
-      })
-      .finally(function () {
-        // always executed
-        alert('Finally called');
       });
     navigation.navigate({ routeName: 'Pagina7' }) 
   };

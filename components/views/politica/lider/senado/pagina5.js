@@ -15,6 +15,7 @@ import {
 import { Picker } from "@react-native-picker/picker";
 import { images, COLORS, CSS } from "../../../../../constants";
 import axios from "axios";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 function pagina5(props) {
@@ -22,44 +23,55 @@ function pagina5(props) {
   let { navigation } = props;
 
   const [country, setCountry] = useState('Unknown');
-
+  const [token, setToken] = useState("");
 
 
   useEffect(() => {
-    //getDataUsingSimpleGetCall()
+    getToken()
   }, []);
+
+
+  const getToken = async () => {
+    try {
+      let value = await AsyncStorage.getItem('token');
+      setToken(value);
+    } catch (error) {
+     console.log(error)
+    }
+  };
 
   const [state, setState] = useState({
     nombre: '',
     apellido: '',
     cedula: '',
-    telefono:'',
-    correo:'',
-    mesa:'',
-    partido: '',
-    candidato:'',
+    correo: '',
+    contraseña: '',
+    ciudad: '',
+    departamento: '',
+    lugar: '',
+    zona: ''
   });
-
   const hableChangeText = (nombre, value) =>{
     setState({...state, [nombre]: value});
   }
 
   const envio = () => {
     axios
-    .post('http://192.168.0.118:8060/api/users', {
-      "nombre": (state.nombre),
+    .post('http://192.168.0.118:8060/api/testigos', {
+      "nombre":(state.nombre),
       "apellido":(state.apellido),
       "cedula":(state.cedula),
-      "correo": (state.correo),
-     "telefono": (state.telefono),
-      "estado": false,
-      "google": false,
-      "rol": "USER_ROLE",
-      "departamento": "Valle",
-      "ciudad": "cali",
-      "mesa": (state.mesa),
-      "candidato": (state.candidato),
-      "partido": (state.partido)
+      "correo":(state.correo),
+      "contraseña":(state.contraseña),
+      "ciudad":(state.ciudad),
+      "departamento":(state.departamento),
+      "lugar":(state.lugar),
+      "zona":(state.zona),
+      "rol":"TESTIGO_ROLE"
+    }, {
+      headers: {
+        'x-token': token
+      }
     }).then(function (response) {
         // handle success
         alert(JSON.stringify(response.data));
@@ -69,10 +81,6 @@ function pagina5(props) {
         // handle error
         alert(error.message);
       })
-      .finally(function () {
-        // always executed
-        alert('Finally called');
-      });
       navigation.navigate({ routeName: 'Pagina8I' })
   };
 
@@ -80,253 +88,195 @@ function pagina5(props) {
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
 
-      {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
-        <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
-          <View>
-            <Text style={CSS.tituloHome}>
-            <Text style={CSS.cardHomeTitleTitle}>Hola usuario
-              </Text>
+    {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
+      <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
+        <View>
+          <Text style={CSS.tituloHome}>
+          <Text style={CSS.cardHomeTitleTitle}>Hola usuario
             </Text>
+          </Text>
+        </View>
+      </View>
+    </TouchableOpacity> */}
+
+    <ScrollView>
+
+      {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 4, marginLeft:10 }}>
+              <View style={{ flexDirection: 'row' }}>
+                <View>
+                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
+                    algun texto
+                  </Text>
+                </View>
+              </View>
+            </View>
+
+            <View style={{ flex: 1, alignSelf:'center' }} >
+              <Icon name="chevron-right" size={80}
+                color={COLORS.blue} />
+            </View>
           </View>
-        </View>
-      </TouchableOpacity> */}
+        </TouchableOpacity> */}
+      <Image
+        style={CSS.img}
+        source={images.logo2}
+      />
 
-      <ScrollView>
+      <Text style={{
+        marginBottom: hp('1'),
+        fontSize: hp('3%'), 
+        textAlign: 'center',
+        color: '#132196',
+        fontWeight: 'bold'
 
-        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
-            <View style={CSS.viewCardHome}>
-              <View style={{ flex: 4, marginLeft:10 }}>
-                <View style={{ flexDirection: 'row' }}>
-                  <View>
-                    <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                  </View>
-                  <View style={{ alignSelf: 'center' }}>
-                    <Text style={CSS.tituloHome}>
-                      algun texto
-                    </Text>
-                  </View>
+      }}> REGISTRO DE TESTIGOS
+      </Text>
+
+      <View style={CSS.viewCardHome}>
+        <Text style={CSS.asterisco}>*</Text>
+        <Text style={CSS.asterisco1}>Nombre</Text>
+      </View>
+      <TextInput style={CSS.input}
+        underlineColorAndroid="transparent"
+        placeholderTextColor="#132196"
+        autoCapitalize="none"
+        onChangeText={(value) => hableChangeText('nombre', value)}
+      />
+      <View style={CSS.viewCardHome}>
+        <Text style={CSS.asterisco}>*</Text>
+        <Text style={CSS.asterisco1}>Apellido</Text>
+      </View>
+      <TextInput style={CSS.input}
+        underlineColorAndroid="transparent"
+        placeholderTextColor="#132196"
+        autoCapitalize="none"
+        onChangeText={(value) => hableChangeText('apellido', value)}
+      />
+      <View style={CSS.viewCardHome}>
+        <Text style={CSS.asterisco}>*</Text>
+        <Text style={CSS.asterisco1}>Cedula</Text>
+      </View>
+      <TextInput style={CSS.input}
+        underlineColorAndroid="transparent"
+        placeholderTextColor="#132196"
+        autoCapitalize="none"
+        onChangeText={(value) => hableChangeText('cedula', value)}
+        keyboardType="numeric"
+
+      />
+      <View style={CSS.viewCardHome}>
+        <Text style={CSS.asterisco}>*</Text>
+        <Text style={CSS.asterisco1}>Correo</Text>
+      </View>
+      <TextInput style={CSS.input}
+        underlineColorAndroid="transparent"
+        placeholderTextColor="#132196"
+        autoCapitalize="none"
+        onChangeText={(value) => hableChangeText('correo', value)}
+      />
+
+      <View style={CSS.viewCardHome}>
+        <Text style={CSS.asterisco}>*</Text>
+        <Text style={CSS.asterisco1}>Contraseña</Text>
+      </View>
+      <TextInput style={CSS.input}
+        underlineColorAndroid="transparent"
+        placeholderTextColor="#132196"
+        autoCapitalize="none"
+        onChangeText={(value) => hableChangeText('contraseña', value)}
+      />
+
+      <View style={CSS.viewCardHome}>
+        <Text style={CSS.asterisco}>*</Text>
+        <Text style={CSS.asterisco1}>Departamento</Text>
+      </View>
+      <TextInput style={CSS.input}
+        underlineColorAndroid="transparent"
+        placeholderTextColor="#132196"
+        autoCapitalize="none"
+        onChangeText={(value) => hableChangeText('departamento', value)}
+      />
+      <View style={CSS.viewCardHome}>
+        <Text style={CSS.asterisco}>*</Text>
+        <Text style={CSS.asterisco1}>Ciudad</Text>
+      </View>
+      <TextInput style={CSS.input}
+        underlineColorAndroid="transparent"
+        placeholderTextColor="#132196"
+        autoCapitalize="none"
+        onChangeText={(value) => hableChangeText('ciudad', value)}
+      />
+      <View style={CSS.viewCardHome}>
+        <Text style={CSS.asterisco}>*</Text>
+        <Text style={CSS.asterisco1}>Lugar de votacion</Text>
+      </View>
+      <TextInput style={CSS.input}
+        underlineColorAndroid="transparent"
+        placeholderTextColor="#132196"
+        autoCapitalize="none"
+        onChangeText={(value) => hableChangeText('lugar', value)}
+      />
+    <View style={CSS.viewCardHome}>
+        <Text style={CSS.asterisco}>*</Text>
+        <Text style={CSS.asterisco1}>Zona</Text>
+      </View>
+      <TextInput style={CSS.input}
+        underlineColorAndroid="transparent"
+        placeholderTextColor="#132196"
+        autoCapitalize="none"
+        onChangeText={(value) => hableChangeText('zona', value)}
+      />
+
+
+      <Text style={CSS.pririodad}>
+        Los campos con * es obligatorio
+      </Text>
+
+
+      <TouchableOpacity
+        style={{
+          ...CSS.siguiente,
+          backgroundColor: '#132196'
+        }}
+
+        onPress={envio}
+
+      >
+        <Text style={CSS.siguientetext}>SIGUIENTE</Text>
+      </TouchableOpacity>
+
+
+
+
+      {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 4, marginLeft:10 }}>
+              <View style={{ flexDirection: 'row' }}>
+                <View>
+                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
+                    algun texto
+                  </Text>
                 </View>
               </View>
-
-              <View style={{ flex: 1, alignSelf:'center' }} >
-                <Icon name="chevron-right" size={80}
-                  color={COLORS.blue} />
-              </View>
             </View>
-          </TouchableOpacity> */}
-        <Image
-          style={CSS.img}
-          source={images.logo2}
-        />
 
-        <Text style={{
-          marginTop: hp('3%'),
-          marginBottom: hp('1'),
-          fontSize: hp('3%'),
-          textAlign: 'center',
-          color: '#132196',
-          fontWeight: 'bold'
-
-        }}> REGISTRO DE TESTIGO
-        </Text>
-
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Testigó de votacion</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          onChangeText={(value) => hableChangeText('nombre', value)}
-        />
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Apellido</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          onChangeText={(value) => hableChangeText('apellido', value)}
-        />
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Cedula</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          onChangeText={(value) => hableChangeText('cedula', value)}
-          keyboardType="numeric"
-
-        />
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Telefono</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          onChangeText={(value) => hableChangeText('telefono', value)}
-          keyboardType="numeric"
-
-        />
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Correo</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          onChangeText={(value) => hableChangeText('correo', value)}
-        />
-        
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Departamento</Text>
-        </View>
-        <View style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none">
-          <Picker
-            selectedValue={country}
-            onValueChange={(value, index) => setCountry(value)}
-            mode="dropdown" // Android only
-            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
-          >
-            <Picker.Item label="Seleccione" value="Unknown" />
-            <Picker.Item label="Australia" value="Australia" />
-            <Picker.Item label="Belgium" value="Belgium" />
-            <Picker.Item label="Canada" value="Canada" />
-            <Picker.Item label="India" value="India" />
-            <Picker.Item label="Japan" value="Japan" />
-          </Picker>
-        </View>
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Ciudad</Text>
-        </View>
-        <View style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none">
-          <Picker
-            selectedValue={country}
-            onValueChange={(value, index) => setCountry(value)}
-            mode="dropdown" // Android only
-            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
-          >
-            <Picker.Item label="Seleccione" value="Unknown" />
-            <Picker.Item label="Australia" value="Australia" />
-            <Picker.Item label="Belgium" value="Belgium" />
-            <Picker.Item label="Canada" value="Canada" />
-            <Picker.Item label="India" value="India" />
-            <Picker.Item label="Japan" value="Japan" />
-          </Picker>
-        </View>
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Lugar de votacion</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          keyboardType="numeric"
-
-        />
-
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Mesa de votacion</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          keyboardType="numeric"
-
-        />
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Partido</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          onChangeText={(value) => hableChangeText('mesa', value)}
-        />
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Candidato</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          onChangeText={(value) => hableChangeText('partido', value)}
-        />
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Lider</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          onChangeText={(value) => hableChangeText('candidato', value)}
-        />
-
-        <Text style={CSS.pririodad}>
-          Los campos con * es obligatorio
-        </Text>
-
-
-        <TouchableOpacity
-                style={{
-                    ...CSS.siguiente,
-                    backgroundColor: '#132196'
-                }}
-                
-                onPress={envio}
-             
-            >
-                <Text style={CSS.siguientetext}>SIGUIENTE</Text>
-            </TouchableOpacity>
-
-            
-
-
-        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
-            <View style={CSS.viewCardHome}>
-              <View style={{ flex: 4, marginLeft:10 }}>
-                <View style={{ flexDirection: 'row' }}>
-                  <View>
-                    <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                  </View>
-                  <View style={{ alignSelf: 'center' }}>
-                    <Text style={CSS.tituloHome}>
-                      algun texto
-                    </Text>
-                  </View>
-                </View>
-              </View>
-
-              <View style={{ flex: 1, alignSelf:'center' }} >
-                <Icon name="chevron-right" size={80}
-                  color={COLORS.blue} />
-              </View>
+            <View style={{ flex: 1, alignSelf:'center' }} >
+              <Icon name="chevron-right" size={80}
+                color={COLORS.blue} />
             </View>
-          </TouchableOpacity> */}
+          </View>
+        </TouchableOpacity> */}
 
-      </ScrollView>
-    </ImageBackground>
+    </ScrollView>
+  </ImageBackground>
   );
 };
 
