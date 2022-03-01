@@ -61,7 +61,7 @@ function pagina2(props) {
 
   const envio = () => {
     axios
-      .post('http://192.168.0.118:8060/api/votantes', {
+      .post('http://192.168.1.6:8060/api/votantes', {
         "nombre": (state.nombre),
         "apellido": (state.apellido),
         "cedula": (state.cedula),
@@ -74,6 +74,7 @@ function pagina2(props) {
         "lugar": (state.lugar),
         "zona": (state.zona)
       }, {
+        
         headers: {
           'x-token': token
         }
@@ -131,12 +132,14 @@ function pagina2(props) {
               </View>
             </View>
           </TouchableOpacity> */}
+
         <Image
           style={CSS.img}
           source={images.logo2}
         />
 
         <Text style={{
+
           marginBottom: hp('1'),
           fontSize: hp('3%'),
           textAlign: 'center',

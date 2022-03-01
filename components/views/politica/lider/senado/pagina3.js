@@ -66,6 +66,7 @@ function pagina3(props) {
         marginBottom: hp('10'),
         fontSize: hp('3%'),
         textAlign: 'center',
+        
         color: '#132196',
         fontWeight: 'bold'
 

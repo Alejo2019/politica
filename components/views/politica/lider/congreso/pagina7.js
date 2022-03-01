@@ -82,6 +82,7 @@ function pagina7(props) {
           style={{
             ...CSS.siguiente2,
             backgroundColor: '#132196'
+            
           }}
           onPress={() => navigation.navigate({ routeName: 'Pagina2' })}
         >

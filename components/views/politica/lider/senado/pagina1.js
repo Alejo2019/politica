@@ -87,8 +87,7 @@ function pagina1(props) {
           <TouchableOpacity
             style={{
               ...CSS.siguiente2,
-              backgroundColor: '#132196'
-            }}
+              backgroundColor: '#132196'            }}
             onPress={() => navigation.navigate('Pagina8I')}
           >
             <Text style={CSS.siguientetext}>TESTIGOS</Text>

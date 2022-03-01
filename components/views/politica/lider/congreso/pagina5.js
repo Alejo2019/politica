@@ -58,7 +58,7 @@ let rol = "TESTIGO_ROLE"
 
   const envio = () => {
     axios
-      .post('http://192.168.0.118:8060/api/users/620b384eab0dd338af806b91', {
+      .post('http://192.168.1.6:8060/api/users/620b384eab0dd338af806b91', {
         "nombre": (state.nombre),
         "apellido": (state.apellido),
         "cedula": (state.cedula),
@@ -86,6 +86,7 @@ let rol = "TESTIGO_ROLE"
       .finally(function () {
         // always executed
         alert('Finally called');
+        
       });
     navigation.navigate({ routeName: 'Pagina8' })
   };

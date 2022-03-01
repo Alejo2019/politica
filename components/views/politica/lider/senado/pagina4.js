@@ -29,7 +29,7 @@ function pagina4(props) {
 
   const getDataUsingSimpleGetCall = () => {
     axios
-      .get('http://192.168.0.118:8060/api/users')
+      .get('http://192.168.1.6:8060/api/users')
       .then(function (response) {
         // handle success
         setdata(response.data.usuarios);
@@ -86,6 +86,7 @@ function pagina4(props) {
           fontSize: hp('3%'),
           textAlign: 'center',
           color: '#132196',
+          
           fontWeight: 'bold'
 
         }}> VOTANTES A ENTES TERRITORIALES

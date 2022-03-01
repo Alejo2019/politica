@@ -29,7 +29,7 @@ function pagina6(props) {
 
   const getDataUsingSimpleGetCall = () => {
     axios
-      .get('http://192.168.0.118:8060/api/testigos')
+      .get('http://192.168.1.6:8060/api/testigos')
       .then(function (response) {
         // handle success
         setdata(response.data.testigos);
@@ -88,6 +88,7 @@ function pagina6(props) {
           color: '#132196',
           fontWeight: 'bold'
 
+          
         }}> TESTIGOS A LA CAMARA
         </Text>
         <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('3%'), }}>

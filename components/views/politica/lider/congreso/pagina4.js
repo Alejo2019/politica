@@ -29,7 +29,7 @@ function pagina4(props) {
 
   const getDataUsingSimpleGetCall = () => {
     axios
-      .get('http://192.168.0.118:8060/api/votantes')
+      .get('http://192.168.1.6:8060/api/votantes')
       .then(function (response) {
         // handle success
         setdata(response.data.votantes);
@@ -89,6 +89,7 @@ function pagina4(props) {
           fontWeight: 'bold'
 
         }}> VOTANTES A LA CAMARA
+        
         </Text>
         <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('3%'), }}>
           <DataTable>

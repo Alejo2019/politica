@@ -51,7 +51,7 @@ function pagina2(props) {
 
   const envio = () => {
     axios
-    .post('http://192.168.0.118:8060/api/votantes', {
+    .post('http://192.168.1.6:8060/api/votantes', {
       "nombre": (state.nombre),
       "apellido": (state.apellido),
       "cedula": (state.cedula),
@@ -131,7 +131,7 @@ function pagina2(props) {
           fontSize: hp('3%'),
           textAlign: 'center',
           color: '#132196',
-          fontWeight: 'bold'
+        fontWeight: 'bold'
 
         }}> REGISTRO DE VOTANTES
         </Text>

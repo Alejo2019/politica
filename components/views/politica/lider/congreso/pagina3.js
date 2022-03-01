@@ -19,6 +19,7 @@ import { images, COLORS, CSS } from "../../../../../constants";
 function pagina3(props) {
 
   let { navigation } = props;
+  
 
   return (
 

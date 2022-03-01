@@ -84,6 +84,7 @@ function pagina8(props) {
           onPress={() => navigation.navigate('Pagina5')}
         >
           <Text style={CSS.siguientetext}>REGISTRO DE TESTIGOS</Text>
+          
         </TouchableOpacity>
         <TouchableOpacity
           style={{

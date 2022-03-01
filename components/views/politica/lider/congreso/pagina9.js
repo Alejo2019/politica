@@ -4,6 +4,7 @@ import RNPickerSelect from "react-native-picker-select";
 import Checkbox from 'expo-checkbox';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { DataTable } from 'react-native-paper';
+
 import {
   ScrollView,
   Text,
@@ -31,7 +32,7 @@ function pagina9(props) {
 
   const getDataUsingSimpleGetCall = () => {
     axios
-      .get('http://192.168.0.118:8060/api/users')
+      .get('http://192.168.1.6:8060/api/users')
       .then(function (response) {
         // handle success
         setdata(response.data.usuarios);
@@ -88,6 +89,7 @@ function pagina9(props) {
           fontSize: hp('3%'),
           textAlign: 'center',
           color: '#132196',
+          
           fontWeight: 'bold'
 
         }}> REGISTRO DE VOTANTES

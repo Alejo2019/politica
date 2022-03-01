@@ -89,6 +89,7 @@ function pagina1(props) {
             <Text style={CSS.siguientetext}>VOTANTES</Text>
           </TouchableOpacity>
           <TouchableOpacity
+          
             style={{
               ...CSS.siguiente2,
               backgroundColor: '#132196'
