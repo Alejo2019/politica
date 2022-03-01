@@ -45,7 +45,8 @@ function pagina5(props) {
     ciudad: '',
     departamento: '',
     lugar: '',
-    zona: ''
+    zona: '',
+    puesto: ''
   });
 
 let rol = "TESTIGO_ROLE"
@@ -58,19 +59,17 @@ let rol = "TESTIGO_ROLE"
 
   const envio = () => {
     axios
-      .post('http://192.168.0.118:8060/api/users/620b384eab0dd338af806b91', {
-        "nombre": (state.nombre),
-        "apellido": (state.apellido),
-        "cedula": (state.cedula),
-        "correo": (state.telefono),
-        "contraseña": (state.contraseña),
-        "ciudad": (state.ciudad),
-        "departamento": (state.departamento),
-        "lugar": (state.lugar),
-        "zona": (state.zona),
-        "rol": rol,
-        "borrado": false,
-        headers:{
+      .post('http://192.168.0.118:8060/api/testigos', {
+        "nombre":(state.nombre),
+        "apellido":(state.apellido),
+        "cedula":(state.cedula),
+        "correo":(state.correo),
+        "contraseña":(state.contraseña),
+        "ciudad":(state.ciudad),
+        "departamento":(state.departamento),
+        "rol":"TESTIGO_ROLE"
+      }, {
+        headers: {
           'x-token': token
         }
       }).then(function (response) {
@@ -89,7 +88,7 @@ let rol = "TESTIGO_ROLE"
       });
     navigation.navigate({ routeName: 'Pagina2' })
   };
-
+console.log(state)
   return (
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
