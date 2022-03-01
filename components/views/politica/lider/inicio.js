@@ -107,7 +107,7 @@ function inicio(props) {
             }}
             onPress={() => navigation.navigate('Pagina1I')}
           >
-            <Text style={CSS.siguientetext}>CAMPAÑA AL SENADO</Text>
+            <Text style={CSS.siguientetext}>ENTES TERRITORIALES</Text>
           </TouchableOpacity>
         </View>
 

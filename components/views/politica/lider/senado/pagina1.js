@@ -71,7 +71,7 @@ function pagina1(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> CAMPAÑA AL SENADO
+        }}> ENTES TERRITORIALES
         </Text>
 
         <View >

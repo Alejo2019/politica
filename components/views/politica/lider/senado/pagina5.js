@@ -73,7 +73,7 @@ function pagina5(props) {
         // always executed
         alert('Finally called');
       });
-      navigation.navigate({ routeName: 'Pagina2I' })
+      navigation.navigate({ routeName: 'Pagina8I' })
   };
 
   return (

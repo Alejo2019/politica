@@ -72,7 +72,7 @@ function pagina7(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> REGISTRO AL SENADO
+        }}> ENTES TERRITORIALES
         </Text>
 
         <View >
