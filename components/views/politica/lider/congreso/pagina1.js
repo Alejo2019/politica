@@ -57,11 +57,11 @@ function pagina1(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-        <TouchableOpacity onPress={() => Close()}>
+        {/* <TouchableOpacity onPress={() => Close()}>
 
           <Icon name="location-exit" style={CSS.icon}
           />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <Image
           style={CSS.img}
           source={images.logo2}
@@ -75,7 +75,7 @@ function pagina1(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> CAMPAÑA AL CONGRESO
+        }}> CAMARA DE REPRESENTANTES
         </Text>
 
         <View >
@@ -95,7 +95,7 @@ function pagina1(props) {
             }}
             onPress={() => navigation.navigate('Pagina8')}
           >
-            <Text style={CSS.siguientetext}>TESTIGÓS</Text>
+            <Text style={CSS.siguientetext}>TESTIGOS</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={{

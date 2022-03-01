@@ -74,7 +74,7 @@ function pagina7(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> REGISTRO AL CONGRESO
+        }}> REGISTRO A LA CAMARA
         </Text>
 
         <View >

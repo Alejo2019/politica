@@ -71,7 +71,7 @@ function pagina8(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> REGISTRO AL CONGRESO
+        }}> REGISTRO A LA CAMARA
         </Text>
 
         <View >
@@ -83,7 +83,7 @@ function pagina8(props) {
           }}
           onPress={() => navigation.navigate('Pagina5')}
         >
-          <Text style={CSS.siguientetext}>REGISTRO DE TESTIGÓS</Text>
+          <Text style={CSS.siguientetext}>REGISTRO DE TESTIGOS</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={{
@@ -92,7 +92,7 @@ function pagina8(props) {
           }}
           onPress={() => navigation.navigate('Pagina6')}
         >
-          <Text style={CSS.siguientetext}>VISUALIZAR TESTIGÓS</Text>
+          <Text style={CSS.siguientetext}>VISUALIZAR TESTIGOS</Text>
         </TouchableOpacity>
       </View>
 

@@ -98,7 +98,7 @@ function inicio(props) {
             }}
             onPress={() => navigation.navigate('Pagina1')}
           >
-            <Text style={CSS.siguientetext}>CAMPAÑA AL CONGRESO</Text>
+            <Text style={CSS.siguientetext}>CAMARA DE REPRESENTANTES</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={{

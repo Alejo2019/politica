@@ -83,7 +83,7 @@ function pagina8(props) {
           }}
           onPress={() => navigation.navigate('Pagina5I')}
         >
-          <Text style={CSS.siguientetext}>REGISTRO DE TESTIGÓS</Text>
+          <Text style={CSS.siguientetext}>REGISTRO DE TESTIGOS</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={{
@@ -92,7 +92,7 @@ function pagina8(props) {
           }}
           onPress={() => navigation.navigate('Pagina6I')}
         >
-          <Text style={CSS.siguientetext}>VISUALIZAR TESTIGÓS</Text>
+          <Text style={CSS.siguientetext}>VISUALIZAR TESTIGOS</Text>
         </TouchableOpacity>
       </View>
 
