@@ -45,12 +45,12 @@ function pagina5(props) {
     ciudad: '',
     departamento: '',
     lugar: '',
-    zona: '',
-    puesto: '',
-    telefono:'',
-    zona:''
-
+    zona: ''
   });
+
+let rol = "TESTIGO_ROLE"
+
+
 
   const hableChangeText = (nombre, value) => {
     setState({ ...state, [nombre]: value });
@@ -58,19 +58,18 @@ function pagina5(props) {
 
   const envio = () => {
     axios
-      .post('http://192.168.0.118:8060/api/testigos', {
+      .post('http://192.168.0.118:8060/api/users/620b384eab0dd338af806b91', {
         "nombre": (state.nombre),
         "apellido": (state.apellido),
         "cedula": (state.cedula),
-        "correo": (state.correo),
+        "correo": (state.telefono),
         "contraseña": (state.contraseña),
-        "telefono": (state.telefono),
-        "estado": false,
-        "google": false,
-        "rol":"TESTIGO_ROLE",
-        "departamento": "Valle",
-        "ciudad": "cali"
-      },{
+        "ciudad": (state.ciudad),
+        "departamento": (state.departamento),
+        "lugar": (state.lugar),
+        "zona": (state.zona),
+        "rol": rol,
+        "borrado": false,
         headers:{
           'x-token': token
         }
@@ -82,6 +81,7 @@ function pagina5(props) {
       .catch(function (error) {
         // handle error
         alert(error.message);
+        console.log(errors)
       })
       .finally(function () {
         // always executed
@@ -177,18 +177,6 @@ function pagina5(props) {
         />
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Telefono</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          onChangeText={(value) => hableChangeText('telefono', value)}
-          keyboardType="numeric"
-
-        />
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}>Correo</Text>
         </View>
         <TextInput style={CSS.input}
@@ -237,7 +225,6 @@ function pagina5(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
-          keyboardType="numeric"
           onChangeText={(value) => hableChangeText('lugar', value)}
         />
       <View style={CSS.viewCardHome}>
@@ -248,8 +235,7 @@ function pagina5(props) {
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
-          keyboardType="numeric"
-          onChangeText={(value) => hableChangeText('lugar', value)}
+          onChangeText={(value) => hableChangeText('zona', value)}
         />
 
   

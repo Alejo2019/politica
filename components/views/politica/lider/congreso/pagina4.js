@@ -32,8 +32,8 @@ function pagina4(props) {
       .get('http://192.168.0.118:8060/api/votantes')
       .then(function (response) {
         // handle success
-        setdata(response.data.votante);
-        console.log(response.data.votante)
+        setdata(response.data.votantes);
+        console.log(response.data.votantes)
       })
 
   };

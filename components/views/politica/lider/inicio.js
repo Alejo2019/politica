@@ -89,7 +89,7 @@ function inicio(props) {
             }}
             onPress={() => navigation.navigate({ routeName: '' })}
           >
-            <Text style={CSS.siguientetext}>CAMPAÑA PRECIDENCIAL</Text>
+            <Text style={CSS.siguientetext}>CAMPAÑA PRESIDENCIAL</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={{
