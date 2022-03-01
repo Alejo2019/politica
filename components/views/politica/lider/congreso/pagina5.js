@@ -45,8 +45,7 @@ function pagina5(props) {
     ciudad: '',
     departamento: '',
     lugar: '',
-    zona: '',
-    puesto: ''
+    zona: ''
   });
 
 let rol = "TESTIGO_ROLE"
@@ -67,6 +66,8 @@ let rol = "TESTIGO_ROLE"
         "contraseña":(state.contraseña),
         "ciudad":(state.ciudad),
         "departamento":(state.departamento),
+        "lugar":(state.lugar),
+        "zona":(state.zona),
         "rol":"TESTIGO_ROLE"
       }, {
         headers: {
@@ -88,7 +89,7 @@ let rol = "TESTIGO_ROLE"
       });
     navigation.navigate({ routeName: 'Pagina8' })
   };
-console.log(state)
+
   return (
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
