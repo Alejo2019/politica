@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import RNPickerSelect from "react-native-picker-select";
+import Checkbox from 'expo-checkbox';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import {
   ScrollView,
@@ -20,6 +21,8 @@ import axios from "axios";
 function pagina2(props) {
 
   let { navigation } = props;
+  const [isChecked, setChecked] = useState(false);
+  const [isChecked1, setChecked1] = useState(false);
 
   const [country, setCountry] = useState('Unknown');
 
@@ -295,6 +298,17 @@ function pagina2(props) {
           selectionColor="#132196"
           onChangeText={(value) => hableChangeText('candidato', value)}
         />
+
+        <View style={CSS.inputcheck}>
+          <View style={{ flexDirection: 'row' }}>
+            <Text style={CSS.asteriscocheck}>*</Text>
+            <Text style={CSS.checkbox}>¿Voto?</Text>
+            <Text style={CSS.checkbox}>Si</Text>
+            <Checkbox style={{ marginTop: hp('1%') }} value={isChecked} onValueChange={setChecked} />
+            <Text style={CSS.checkbox}>No</Text>
+            <Checkbox style={{ marginTop: hp('1%') }} value={isChecked1} onValueChange={setChecked1} />
+          </View>
+        </View>
 
         <Text style={CSS.pririodad}>
           Los campos con * es obligatorio

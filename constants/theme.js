@@ -135,7 +135,7 @@ export const CSS = StyleSheet.create({
         backgroundColor: '#B7B7BB',
         borderRadius: hp('1.5%'),
         textAlign: 'center',
-        color:'#132196'
+        color: '#132196'
     },
     tituloHome2: {
         margin: 15,
@@ -143,7 +143,7 @@ export const CSS = StyleSheet.create({
         width: wp('26%'),
         borderRadius: hp('1.5%'),
         textAlign: 'center',
-        color:'#132196'
+        color: '#132196'
     },
     tituloHome3: {
         margin: 15,
@@ -151,7 +151,7 @@ export const CSS = StyleSheet.create({
         width: wp('26%'),
         borderRadius: hp('1.5%'),
         textAlign: 'center',
-        color:'#132196'
+        color: '#132196'
 
     },
     tituloHome4: {
@@ -160,7 +160,7 @@ export const CSS = StyleSheet.create({
         width: wp('26%'),
         borderRadius: hp('1.5%'),
         textAlign: 'center',
-        color:'#132196'
+        color: '#132196'
     },
     tituloHome5: {
         fontSize: hp('1.9%'),
@@ -178,7 +178,7 @@ export const CSS = StyleSheet.create({
         backgroundColor: '#B7B7BB',
         borderRadius: hp('1.5%'),
         textAlign: 'center',
-        color:'#132196'
+        color: '#132196'
     },
     tituloHome7: {
         margin: 15,
@@ -188,8 +188,8 @@ export const CSS = StyleSheet.create({
         backgroundColor: '#B7B7BB',
         borderRadius: hp('1.5%'),
         textAlign: 'center',
-        color:'#132196',
- 
+        color: '#132196',
+
     },
     textDescriHome: {
         color: COLORS.lightGray,
@@ -337,7 +337,7 @@ export const CSS = StyleSheet.create({
     img: {
         width: wp('60%'),
         height: hp('50'),
-        resizeMode: "contain",  
+        resizeMode: "contain",
         marginLeft: wp('24%'),
         marginBottom: hp('-10%'),
 
@@ -350,7 +350,7 @@ export const CSS = StyleSheet.create({
         backgroundColor: '#B7B7BB',
         borderRadius: 15,
         textAlign: 'center',
-        color:'#132196'
+        color: '#132196'
 
     },
     asterisco: {
@@ -400,14 +400,14 @@ export const CSS = StyleSheet.create({
         borderRadius: 15
     },
     siguiente2: {
-        width: wp('60%'),
+        width: wp('75%'),
         height: hp('5%'),
         backgroundColor: 'red',
         //borderRadius: 20,
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: hp('2%'),
-        marginLeft: wp('22%'),
+        marginLeft: wp('14%'),
         borderRadius: 15
     },
     siguientecontainer: {
@@ -477,11 +477,28 @@ export const CSS = StyleSheet.create({
         color: 'black',
         marginLeft: wp('88%'),
         color: '#132196'
+    },
+    checkbox: {
+        marginLeft: wp('2%'),
+        marginRight: wp('2%'),
+        marginTop: hp('1%')
+    },
+    asteriscocheck: {
+        fontSize: hp('2%'),
+        marginBottom: hp('-2%'),
+        marginLeft: hp('0.5%'),
+        color: 'red',
+    },
+    inputcheck: {
+        margin: 15,
+        height: hp('5'),
+        width: wp('75%'),
+        marginLeft: hp('6.5%'),
+        borderRadius: 15,
+        textAlign: 'center',
+        color: '#132196'
 
-        
-        
-
-    }
+    },
 
 });
 

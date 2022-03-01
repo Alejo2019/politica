@@ -88,7 +88,7 @@ function pagina4(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> VOTANTES AL CONGRESO
+        }}> VOTANTES A LA CAMARA
         </Text>
         <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('3%'), }}>
           <DataTable>

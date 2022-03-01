@@ -140,7 +140,7 @@ function pagina5(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> REGISTRO DE TESTIGÓS
+        }}> REGISTRO DE TESTIGOS
         </Text>
 
         <View style={CSS.viewCardHome}>
