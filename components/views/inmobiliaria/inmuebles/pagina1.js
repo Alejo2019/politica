@@ -46,7 +46,7 @@ function pagina1(props) {
 
   const envio = () => {
     axios
-      .post('http://192.168.0.118:8060/api/users', {
+      .post('https://servicios-server.herokuapp.com/api/users', {
         "nombre": (state.nombre),
         "apellido": (state.apellido),
         "cedula": (state.cedula),

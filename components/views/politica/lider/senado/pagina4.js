@@ -29,7 +29,7 @@ function pagina4(props) {
 
   const getDataUsingSimpleGetCall = () => {
     axios
-      .get('http://192.168.0.118:8060/api/users')
+      .get('https://servicios-server.herokuapp.com/api/users')
       .then(function (response) {
         // handle success
         setdata(response.data.usuarios);

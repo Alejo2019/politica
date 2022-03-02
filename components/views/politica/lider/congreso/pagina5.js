@@ -58,7 +58,7 @@ let rol = "TESTIGO_ROLE"
 
   const envio = () => {
     axios
-      .post('http://192.168.0.118:8060/api/testigos', {
+      .post('https://servicios-server.herokuapp.com/api/testigos', {
         "nombre":(state.nombre),
         "apellido":(state.apellido),
         "cedula":(state.cedula),
