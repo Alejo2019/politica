@@ -58,19 +58,19 @@ let rol = "TESTIGO_ROLE"
 
   const envio = () => {
     axios
-      .post('http://192.168.1.6:8060/api/users/620b384eab0dd338af806b91', {
-        "nombre": (state.nombre),
-        "apellido": (state.apellido),
-        "cedula": (state.cedula),
-        "correo": (state.telefono),
-        "contraseña": (state.contraseña),
-        "ciudad": (state.ciudad),
-        "departamento": (state.departamento),
-        "lugar": (state.lugar),
-        "zona": (state.zona),
-        "rol": rol,
-        "borrado": false,
-        headers:{
+      .post('https://servicios-server.herokuapp.com/api/testigos', {
+        "nombre":(state.nombre),
+        "apellido":(state.apellido),
+        "cedula":(state.cedula),
+        "correo":(state.correo),
+        "contraseña":(state.contraseña),
+        "ciudad":(state.ciudad),
+        "departamento":(state.departamento),
+        "lugar":(state.lugar),
+        "zona":(state.zona),
+        "rol":"TESTIGO_ROLE"
+      }, {
+        headers: {
           'x-token': token
         }
       }).then(function (response) {
@@ -82,11 +82,6 @@ let rol = "TESTIGO_ROLE"
         // handle error
         alert(error.message);
         console.log(errors)
-      })
-      .finally(function () {
-        // always executed
-        alert('Finally called');
-        
       });
     navigation.navigate({ routeName: 'Pagina8' })
   };

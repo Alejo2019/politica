@@ -1,22 +1,21 @@
 {
   "expo": {
-    "name": "Inmobiliaria",
-    "slug": "Inmobiliaria",
+    "name": "Politica",
+    "slug": "Politica",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
-    "icon": "./assets/leon.png",
-    "splash":{
+    "icon": "./assets/voto.png",
+    "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "notification": {
-      
-      "icon": "./assets/leon.png",
+      "icon": "./assets/voto.png",
       "color": "#FFA73F",
       "androidMode": "default",
-      "androidCollapsedTitle": "Updates from Inmobiliaria",
+      "androidCollapsedTitle": "Updates from Politica",
       "iosDisplayInForeground": true
     },
     "updates": {
@@ -30,15 +29,16 @@
       "usesIcloudStorage": true
     },
     "android": {
+      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "useNextNotificationsApi": true
+      "useNextNotificationsApi": true,
+      "package": "com.adnhades.Politica"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     }
-   
   }
 }

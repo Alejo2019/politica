@@ -61,7 +61,7 @@ function pagina2(props) {
 
   const envio = () => {
     axios
-      .post('http://192.168.1.6:8060/api/votantes', {
+      .post('https://servicios-server.herokuapp.com/api/votantes', {
         "nombre": (state.nombre),
         "apellido": (state.apellido),
         "cedula": (state.cedula),
@@ -86,10 +86,6 @@ function pagina2(props) {
       .catch(function (error) {
         // handle error
         alert(error.message);
-      })
-      .finally(function () {
-        // always executed
-        alert('Finally called');
       });
     navigation.navigate({ routeName: 'Pagina7' }) 
   };

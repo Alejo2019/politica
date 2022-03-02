@@ -16,6 +16,7 @@ import {
 import { Picker } from "@react-native-picker/picker";
 import { images, COLORS, CSS } from "../../../../../constants";
 import axios from "axios";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 function pagina2(props) {
@@ -25,13 +26,23 @@ function pagina2(props) {
   const [isChecked1, setChecked1] = useState(false);
 
   const [country, setCountry] = useState('Unknown');
-
+  const [token, setToken] = useState("");
 
 
   useEffect(() => {
-    //getDataUsingSimpleGetCall()
+    getToken()
   }, []);
 
+  const getToken = async () => {
+    try {
+      let value = await AsyncStorage.getItem('token');
+      setToken(value);
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+  
   const [state, setState] = useState({
     nombre: '',
     apellido: '',
@@ -51,7 +62,7 @@ function pagina2(props) {
 
   const envio = () => {
     axios
-    .post('http://192.168.1.6:8060/api/votantes', {
+    .post('https://servicios-server.herokuapp.com/api/votantes', {
       "nombre": (state.nombre),
       "apellido": (state.apellido),
       "cedula": (state.cedula),
