@@ -478,6 +478,13 @@ export const CSS = StyleSheet.create({
         marginLeft: wp('88%'),
         color: '#132196'
     },
+    pdf: {
+        fontSize: hp('4%'),
+        marginLeft: wp('88%'),
+        color: '#132196',
+        marginBottom: hp('-5%'),
+        marginTop: hp('5%')
+    },
     checkbox: {
         marginLeft: wp('2%'),
         marginRight: wp('2%'),
@@ -499,9 +506,13 @@ export const CSS = StyleSheet.create({
         color: '#132196'
 
     },
-    // scrollView:{
-    //     horizontal: 'true'
-    //  },
+    reporte: {
+        marginLeft: hp('4.5%'),
+    },
+    reporte1: {
+        marginLeft: hp('6%'),
+        alignItems: 'center'
+    }
 
 });
 

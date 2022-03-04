@@ -81,7 +81,6 @@ function pagina4(props) {
         />
 
         <Text style={{
-          marginTop: hp('3%'),
           marginBottom: hp('1'),
           fontSize: hp('3%'),
           textAlign: 'center',
@@ -89,20 +88,64 @@ function pagina4(props) {
           fontWeight: 'bold'
 
         }}> VOTANTES A LA CAMARA
-        
+
         </Text>
-        <View style={CSS.viewCardHome}>
-            <Text style={CSS.asterisco}>*</Text>
-            <Text style={CSS.asterisco1}>meta</Text>
+
+        <View style={{ ...CSS.viewCardHome, marginTop: hp('5%') }}>
+          <View style={{ flex: 3, alignItems: 'center' }}>
+
+
+            <View style={{ flexDirection: 'row' }}>
+              <View style={{ alignSelf: 'center' }}>
+                <Text style={CSS.tituloHome4}>
+                  META
+                </Text>
+              </View>
+              <View style={{ alignSelf: 'center' }}>
+                <Text style={CSS.tituloHome4}>
+                  VOTOS SI
+                </Text>
+              </View>
+              <View style={{ alignSelf: 'center' }}>
+                <Text style={CSS.tituloHome4}>
+                  VOTOS NO
+                </Text>
+              </View>
+            </View>
+            <View style={{ flexDirection: 'row' }}>
+              <View style={{ alignSelf: 'center' }}>
+                <TextInput style={CSS.tituloHome1}
+                  underlineColorAndroid="transparent"
+                  placeholderTextColor="#132196"
+                  autoCapitalize="none"
+                  keyboardType="numeric"
+                  onChangeText={(value) => hableChangeText('totalSufragantes', value)}
+                >30</TextInput>
+              </View>
+              <View style={{ alignSelf: 'center' }}>
+                <TextInput style={CSS.tituloHome1}
+                  underlineColorAndroid="transparent"
+                  placeholderTextColor="#132196"
+                  autoCapitalize="none"
+                  keyboardType="numeric"
+                  onChangeText={(value) => hableChangeText('totalSufragantes', value)}
+                >30</TextInput>
+              </View>
+              <View style={{ alignSelf: 'center' }}>
+                <TextInput style={CSS.tituloHome1}
+                  underlineColorAndroid="transparent"
+                  placeholderTextColor="#132196"
+                  autoCapitalize="none"
+                  keyboardType="numeric"
+                  onChangeText={(value) => hableChangeText('totalSufragantes', value)}
+                >30</TextInput>
+              </View>
+            </View>
           </View>
-          <View style={CSS.viewCardHome}>
-            <Text style={CSS.asterisco}>*</Text>
-            <Text style={CSS.asterisco1}>votos si</Text>
-          </View>
-          <View style={CSS.viewCardHome}>
-            <Text style={CSS.asterisco}>*</Text>
-            <Text style={CSS.asterisco1}>votos no</Text>
-          </View>
+        </View>
+        <TouchableOpacity >
+          <Icon name="book" style={CSS.pdf}/>
+        </TouchableOpacity>
         <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('3%'), }}>
           <DataTable>
             <DataTable.Header>
@@ -113,23 +156,23 @@ function pagina4(props) {
             </DataTable.Header>
 
 
-            
-              <DataTable.Row>
 
-                {/* <DataTable.Cell >{dato.nombre}</DataTable.Cell>
+            <DataTable.Row>
+
+              {/* <DataTable.Cell >{dato.nombre}</DataTable.Cell>
                 <DataTable.Cell >{dato.cedula}</DataTable.Cell>
                 <DataTable.Cell >{dato.lugar}</DataTable.Cell>
                 <DataTable.Cell >{dato.zona}</DataTable.Cell> */}
-                <DataTable.Cell >luis</DataTable.Cell>
-                <DataTable.Cell >Candidato</DataTable.Cell>
-                <DataTable.Cell >30</DataTable.Cell>
-                <DataTable.Cell >3</DataTable.Cell>
+              <DataTable.Cell >luis</DataTable.Cell>
+              <DataTable.Cell >Candidato</DataTable.Cell>
+              <DataTable.Cell >30</DataTable.Cell>
+              <DataTable.Cell >3</DataTable.Cell>
 
-                
 
-              </DataTable.Row>
 
-            
+            </DataTable.Row>
+
+
           </DataTable>
         </View>
         <TouchableOpacity
@@ -139,20 +182,11 @@ function pagina4(props) {
             marginTop: hp('5%')
           }}
 
+          onPress={() => navigation.navigate({ routeName: 'Pagina1' })}
+
         >
-          <Text style={CSS.siguientetext}>GENERAR REPORTE</Text>
+          <Text style={CSS.siguientetext}>GUARDAR</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-            style={{
-              ...CSS.siguiente,
-              backgroundColor: '#132196'
-            }}
-
-            onPress={() => navigation.navigate({ routeName: 'Pagina1' })}
-
-          >
-            <Text style={CSS.siguientetext}>VOLVER</Text>
-          </TouchableOpacity>
 
 
 
