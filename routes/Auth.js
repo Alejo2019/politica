@@ -3,6 +3,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { Image, Text } from 'react-native';
 import Iniciov1screen from '../components/views/politica/lider/inicio';
+import Iniciov2screen from '../components/views/politica/lider/inicio2';
 import Pagina1screen from '../components/views/politica/lider/congreso/pagina1';
 import Pagina2screen from '../components/views/politica/lider/congreso/pagina2';
 import Pagina3screen from '../components/views/politica/lider/congreso/pagina3';
@@ -41,6 +42,17 @@ const Inicio = createStackNavigator({
     screen: createStackNavigator({
       Iniciov1: {
         screen: Iniciov1screen,
+        navigationOptions: ({ navigation }) => ({
+          title: 'Atras',
+          headerTitle: props => <LogoTitle />,
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: COLORS.blue,
+          },
+        })
+      },
+      Iniciov2: {
+        screen: Iniciov2screen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,

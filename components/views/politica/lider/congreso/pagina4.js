@@ -91,29 +91,45 @@ function pagina4(props) {
         }}> VOTANTES A LA CAMARA
         
         </Text>
+        <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>meta</Text>
+          </View>
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>votos si</Text>
+          </View>
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>votos no</Text>
+          </View>
         <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('3%'), }}>
           <DataTable>
             <DataTable.Header>
               <DataTable.Title>Nombre</DataTable.Title>
-              <DataTable.Title>Candidato</DataTable.Title>
-              <DataTable.Title >Lugar</DataTable.Title>
-              <DataTable.Title >Mesa</DataTable.Title>
+              <DataTable.Title>Cedula</DataTable.Title>
+              <DataTable.Title>Ciudad</DataTable.Title>
+              <DataTable.Title >¿Votos?</DataTable.Title>
             </DataTable.Header>
 
 
-            {data.map((dato, index) => (
+            
               <DataTable.Row>
 
-                <DataTable.Cell >{dato.nombre}</DataTable.Cell>
+                {/* <DataTable.Cell >{dato.nombre}</DataTable.Cell>
                 <DataTable.Cell >{dato.cedula}</DataTable.Cell>
                 <DataTable.Cell >{dato.lugar}</DataTable.Cell>
-                <DataTable.Cell >{dato.zona}</DataTable.Cell>
+                <DataTable.Cell >{dato.zona}</DataTable.Cell> */}
+                <DataTable.Cell >luis</DataTable.Cell>
+                <DataTable.Cell >Candidato</DataTable.Cell>
+                <DataTable.Cell >30</DataTable.Cell>
+                <DataTable.Cell >3</DataTable.Cell>
+
+                
 
               </DataTable.Row>
 
-            )
-            )
-            }
+            
           </DataTable>
         </View>
         <TouchableOpacity
@@ -126,6 +142,17 @@ function pagina4(props) {
         >
           <Text style={CSS.siguientetext}>GENERAR REPORTE</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+            style={{
+              ...CSS.siguiente,
+              backgroundColor: '#132196'
+            }}
+
+            onPress={() => navigation.navigate({ routeName: 'Pagina1' })}
+
+          >
+            <Text style={CSS.siguientetext}>VOLVER</Text>
+          </TouchableOpacity>
 
 
 

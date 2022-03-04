@@ -86,35 +86,38 @@ function pagina4(props) {
           fontSize: hp('3%'),
           textAlign: 'center',
           color: '#132196',
-          
+
           fontWeight: 'bold'
 
         }}> VOTANTES A ENTES TERRITORIALES
         </Text>
-        <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('3%'), }}>
+        <View style={{ paddingTop: hp('5%') /*, paddingHorizontal: wp('10%'),*/ }}>
+        <ScrollView style={CSS.scrollView}>
+
           <DataTable>
             <DataTable.Header>
-              <DataTable.Title>Nombre</DataTable.Title>
+              <DataTable.Title>Lider</DataTable.Title>
               <DataTable.Title>Candidato</DataTable.Title>
-              <DataTable.Title >Lugar</DataTable.Title>
-              <DataTable.Title >Mesa</DataTable.Title>
+              <DataTable.Title>Meta</DataTable.Title>
+              <DataTable.Title >Votos</DataTable.Title>
+              <DataTable.Title >Nombre votante</DataTable.Title>
             </DataTable.Header>
 
 
-            {data.map((dato, index) => (
-              <DataTable.Row>
 
-                <DataTable.Cell >{dato.nombre}</DataTable.Cell>
-                <DataTable.Cell >{dato.candidato}</DataTable.Cell>
-                <DataTable.Cell >{dato.partido}</DataTable.Cell>
-                <DataTable.Cell >{dato.mesa}</DataTable.Cell>
+            <DataTable.Row>
 
-              </DataTable.Row>
+              <DataTable.Cell >luis</DataTable.Cell>
+              <DataTable.Cell >Candidato</DataTable.Cell>
+              <DataTable.Cell >30</DataTable.Cell>
+              <DataTable.Cell >3</DataTable.Cell>
+              <DataTable.Cell >Daniel Gonzales</DataTable.Cell>
 
-            )
-            )
-            }
+            </DataTable.Row>
+
+
           </DataTable>
+        </ScrollView>
         </View>
         <TouchableOpacity
           style={{
@@ -125,6 +128,17 @@ function pagina4(props) {
 
         >
           <Text style={CSS.siguientetext}>GENERAR REPORTE</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            ...CSS.siguiente,
+            backgroundColor: '#132196'
+          }}
+
+          onPress={() => navigation.navigate({ routeName: 'Pagina1I' })}
+
+        >
+          <Text style={CSS.siguientetext}>VOLVER</Text>
         </TouchableOpacity>
 
 

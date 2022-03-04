@@ -86,7 +86,7 @@ function pagina1(props) {
             }}
             onPress={() => navigation.navigate({ routeName: 'Pagina7' })}
           >
-            <Text style={CSS.siguientetext}>VOTANTES</Text>
+            <Text style={CSS.siguientetext}>REGISTRO POSIBLES VOTANTES</Text>
           </TouchableOpacity>
           <TouchableOpacity
           
@@ -96,16 +96,25 @@ function pagina1(props) {
             }}
             onPress={() => navigation.navigate('Pagina8')}
           >
-            <Text style={CSS.siguientetext}>TESTIGOS</Text>
+            <Text style={CSS.siguientetext}>REGISTRO METAS POR LIDER</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={{
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate('Pagina9')}
+            onPress={() => navigation.navigate('Pagina2')}
           >
-            <Text style={CSS.siguientetext}>VOTOS</Text>
+            <Text style={CSS.siguientetext}>REGISTRO DE VOTOS</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente2,
+              backgroundColor: '#132196'
+            }}
+            onPress={() => navigation.navigate('Pagina4')}
+          >
+            <Text style={CSS.siguientetext}>REPORTE Y CONSULTA</Text>
           </TouchableOpacity>
         </View>
 

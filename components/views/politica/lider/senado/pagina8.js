@@ -7,6 +7,7 @@ import {
   View,
   Image,
   ImageBackground,
+  TextInput,
   TouchableOpacity, Alert
 } from 'react-native';
 import { images, COLORS, CSS } from "../../../../../constants";
@@ -15,9 +16,7 @@ import { images, COLORS, CSS } from "../../../../../constants";
 function pagina8(props) {
 
   let { navigation } = props;
-  Validador1 = async () => {
-    navigation.navigate('Login');
-  };
+
 
   return (
 
@@ -63,6 +62,8 @@ function pagina8(props) {
           source={images.logo2}
         />
 
+
+
         <Text style={{
           marginTop: hp('3%'),
           marginBottom: hp('4'),
@@ -71,30 +72,70 @@ function pagina8(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> ENTES TERRITORIALES
+        }}> REGISTRO DE METAS POR LIDER
         </Text>
 
         <View >
-        
-        <TouchableOpacity
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Votos prometidos camara</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            keyboardType="numeric"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Votos prometidos senado</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            keyboardType="numeric"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          {/* <TouchableOpacity
           style={{
             ...CSS.siguiente2,
             backgroundColor: '#132196'
           }}
-          onPress={() => navigation.navigate('Pagina5I')}
+          onPress={() => navigation.navigate('Pagina5')}
         >
           <Text style={CSS.siguientetext}>REGISTRO DE TESTIGOS</Text>
+          
         </TouchableOpacity>
         <TouchableOpacity
           style={{
             ...CSS.siguiente2,
             backgroundColor: '#132196'
           }}
-          onPress={() => navigation.navigate('Pagina6I')}
+          onPress={() => navigation.navigate('Pagina6')}
         >
           <Text style={CSS.siguientetext}>VISUALIZAR TESTIGOS</Text>
-        </TouchableOpacity>
-      </View>
+        </TouchableOpacity> */}
+          <Text style={CSS.pririodad}>
+            Los campos con * es obligatorio
+          </Text>
+
+
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente,
+              backgroundColor: '#132196'
+            }}
+
+            onPress={() => navigation.navigate({ routeName: 'Pagina1I' })}
+
+          >
+            <Text style={CSS.siguientetext}>GUARDAR</Text>
+          </TouchableOpacity>
+        </View>
 
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>

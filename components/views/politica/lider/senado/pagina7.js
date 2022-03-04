@@ -7,6 +7,7 @@ import {
   View,
   Image,
   ImageBackground,
+  TextInput,
   TouchableOpacity, Alert
 } from 'react-native';
 import { images, COLORS, CSS } from "../../../../../constants";
@@ -64,7 +65,7 @@ function pagina7(props) {
           source={images.logo2}
         />
 
-        <Text style={{
+<Text style={{
           marginTop: hp('3%'),
           marginBottom: hp('4'),
           fontSize: hp('3%'),
@@ -72,28 +73,81 @@ function pagina7(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> ENTES TERRITORIALES
+        }}> REGISTRO POSIBLES VOTANTES
         </Text>
 
         <View >
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate({ routeName: 'Pagina2I' })}
-        >
-          <Text style={CSS.siguientetext}>REGISTRO DE VOTANTES</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate('Pagina4I')}
-        >
-          <Text style={CSS.siguientetext}>VISUALIZAR VOTANTES</Text>
-        </TouchableOpacity>
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Numero de cedula</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            keyboardType="numeric"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Nombre</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Apellido</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Lugar de votación</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Mesa de votación </Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            keyboardType="numeric"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <Text style={CSS.pririodad}>
+            Los campos con * es obligatorio
+          </Text>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente,
+              backgroundColor: '#132196'
+            }}
+
+            onPress={() => navigation.navigate({ routeName: 'Pagina1I' })}
+
+          >
+            <Text style={CSS.siguientetext}>GUARDAR</Text>
+          </TouchableOpacity>
       </View>
 
 

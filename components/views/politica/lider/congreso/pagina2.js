@@ -147,6 +147,19 @@ function pagina2(props) {
 
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Numero de cedula</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+          selectionColor="#132196"
+          onChangeText={(value) => hableChangeText('cedula', value)}
+          keyboardType="numeric"
+
+        />
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}>Nombre</Text>
         </View>
         <TextInput style={CSS.input}
@@ -169,18 +182,29 @@ function pagina2(props) {
         />
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Cedula</Text>
+          <Text style={CSS.asterisco1}>Lugar de votacion</Text>
         </View>
         <TextInput style={CSS.input}
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
           selectionColor="#132196"
-          onChangeText={(value) => hableChangeText('cedula', value)}
-          keyboardType="numeric"
+          onChangeText={(value) => hableChangeText('lugar', value)}
 
         />
         <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Mesa de votación </Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+          selectionColor="#132196"
+          onChangeText={(value) => hableChangeText('zona', value)}
+
+        />
+        {/* <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}>Telefono</Text>
         </View>
@@ -192,10 +216,10 @@ function pagina2(props) {
           onChangeText={(value) => hableChangeText('telefono', value)}
           keyboardType="numeric"
 
-        />
+        /> */}
 
 
-        <View style={CSS.viewCardHome}>
+        {/* <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}>Departamento</Text>
         </View>
@@ -219,34 +243,12 @@ function pagina2(props) {
           onChangeText={(value) => hableChangeText('ciudad', value)}
         />
 
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Zona de votacion</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          selectionColor="#132196"
-          onChangeText={(value) => hableChangeText('zona', value)}
-
-        />
+        
 
 
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Lugar de votacion</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          selectionColor="#132196"
-          onChangeText={(value) => hableChangeText('lugar', value)}
+         */}
 
-        />
-
-        <View style={CSS.viewCardHome}>
+        {/* <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}> Puesto</Text>
         </View>
@@ -258,30 +260,73 @@ function pagina2(props) {
           keyboardType="numeric"
           onChangeText={(value) => hableChangeText('puesto', value)}
 
-        />
+        /> */}
 
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Mesa de votacion</Text>
+          <Text style={CSS.asterisco1}>Selección de candidato por camara</Text>
         </View>
-        <TextInput style={CSS.input}
+        <View style={CSS.input}
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
-          selectionColor="#132196"
-          keyboardType="numeric"
-          onChangeText={(value) => hableChangeText('mesa', value)}
+          selectionColor="#132196">
+          <Picker
+            selectedValue={country}
+            onValueChange={(value, index) => setCountry(value)}
+            mode="dropdown" // Android only
+            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
+          >
+            <Picker.Item label="Seleccione" value="Unknown" />
+            <Picker.Item label="Candidato 1" value="Candidato 1" />
+            <Picker.Item label="Candidato 2" value="Candidato 2" />
+            <Picker.Item label="Candidato 3" value="Candidato 3" />
+            
+          </Picker>
+        </View>
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Selección de candidato por senado</Text>
+        </View>
+        <View style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+          selectionColor="#132196">
+          <Picker
+            selectedValue={country}
+            onValueChange={(value, index) => setCountry(value)}
+            mode="dropdown" // Android only
+            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
+          >
+            <Picker.Item label="Seleccione" value="Unknown" />
+            <Picker.Item label="Candidato 1" value="Candidato 1" />
+            <Picker.Item label="Candidato 2" value="Candidato 2" />
+            <Picker.Item label="Candidato 3" value="Candidato 3" />
+            
+          </Picker>
+        </View>
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>¿Voto?</Text>
+        </View>
+        <View style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+          selectionColor="#132196">
+          <Picker
+            selectedValue={country}
+            onValueChange={(value, index) => setCountry(value)}
+            mode="dropdown" // Android only
+            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
+          >
+            <Picker.Item label="Seleccione" value="Unknown" />
+            <Picker.Item label="Si" value="Si" />
+            <Picker.Item label="No" value="No" />
 
-        />
-        <View style={CSS.inputcheck}>
-          <View style={{ flexDirection: 'row' }}>
-          <Text style={CSS.asteriscocheck}>*</Text>
-          <Text style={CSS.checkbox}>¿Voto?</Text>
-          <Text style={CSS.checkbox}>Si</Text>
-            <Checkbox style={{ marginTop: hp('1%') }} value={isChecked} onValueChange={setChecked} />
-            <Text style={CSS.checkbox}>No</Text>
-            <Checkbox style={{ marginTop: hp('1%')  }} value={isChecked1} onValueChange={setChecked1} />
-          </View>
+            
+          </Picker>
         </View>
 
 
@@ -297,10 +342,10 @@ function pagina2(props) {
             backgroundColor: '#132196'
           }}
 
-          onPress={envio}
+          onPress={() => navigation.navigate({ routeName: 'Pagina1' })}
 
         >
-          <Text style={CSS.siguientetext}>SIGUIENTE</Text>
+          <Text style={CSS.siguientetext}>GUARDAR</Text>
         </TouchableOpacity>
 
 

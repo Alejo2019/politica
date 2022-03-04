@@ -198,9 +198,9 @@ export const CSS = StyleSheet.create({
         fontSize: 17
     },
     HomeProviderimagen: {
-        width: 60,
-        height: 60,
-        margin: 5,
+        height: hp('5%'),
+        width: wp('30%'),
+        margin: hp('1%'),
         resizeMode: 'contain'
     },
 
@@ -499,6 +499,9 @@ export const CSS = StyleSheet.create({
         color: '#132196'
 
     },
+    // scrollView:{
+    //     horizontal: 'true'
+    //  },
 
 });
 

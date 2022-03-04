@@ -16,7 +16,7 @@ function pagina1(props) {
 
   let { navigation } = props;
 
- 
+
 
   return (
 
@@ -57,7 +57,7 @@ function pagina1(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-        
+
         <Image
           style={CSS.img}
           source={images.logo2}
@@ -82,25 +82,37 @@ function pagina1(props) {
             }}
             onPress={() => navigation.navigate({ routeName: 'Pagina7I' })}
           >
-            <Text style={CSS.siguientetext}>VOTANTES</Text>
+            <Text style={CSS.siguientetext}>REGISTRO POSIBLES VOTANTES</Text>
           </TouchableOpacity>
           <TouchableOpacity
+
             style={{
               ...CSS.siguiente2,
-              backgroundColor: '#132196'            }}
+              backgroundColor: '#132196'
+            }}
             onPress={() => navigation.navigate('Pagina8I')}
           >
-            <Text style={CSS.siguientetext}>TESTIGOS</Text>
+            <Text style={CSS.siguientetext}>REGISTRO METAS POR LIDER</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={{
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate('Pagina9I')}
+            onPress={() => navigation.navigate('Pagina2I')}
           >
-            <Text style={CSS.siguientetext}>VOTOS</Text>
+            <Text style={CSS.siguientetext}>REGISTRO DE VOTOS</Text>
           </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente2,
+              backgroundColor: '#132196'
+            }}
+            onPress={() => navigation.navigate('Pagina4I')}
+          >
+            <Text style={CSS.siguientetext}>REPORTE Y CONSULTA</Text>
+          </TouchableOpacity>
+
         </View>
 
 

@@ -7,6 +7,7 @@ import {
   View,
   Image,
   ImageBackground,
+  TextInput,
   TouchableOpacity, Alert
 } from 'react-native';
 import { images, COLORS, CSS } from "../../../../../constants";
@@ -14,7 +15,7 @@ import { images, COLORS, CSS } from "../../../../../constants";
 
 function pagina7(props) {
 
-  
+
 
   let { navigation } = props;
   Validador1 = async () => {
@@ -60,7 +61,7 @@ function pagina7(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-        
+
         <Image
           style={CSS.img}
           source={images.logo2}
@@ -74,11 +75,83 @@ function pagina7(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> REGISTRO A LA CAMARA
+        }}> REGISTRO POSIBLES VOTANTES
         </Text>
 
         <View >
-        <TouchableOpacity
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Numero de cedula</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            keyboardType="numeric"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Nombre</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Apellido</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Lugar de votación</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Mesa de votación </Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            keyboardType="numeric"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <Text style={CSS.pririodad}>
+            Los campos con * es obligatorio
+          </Text>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente,
+              backgroundColor: '#132196'
+            }}
+
+            onPress={() => navigation.navigate({ routeName: 'Pagina1' })}
+
+          >
+            <Text style={CSS.siguientetext}>GUARDAR</Text>
+          </TouchableOpacity>
+        </View>
+        {/* <TouchableOpacity
           style={{
             ...CSS.siguiente2,
             backgroundColor: '#132196'
@@ -97,7 +170,24 @@ function pagina7(props) {
         >
           <Text style={CSS.siguientetext}>VISUALIZAR VOTANTES</Text>
         </TouchableOpacity>
-      </View>
+        <TouchableOpacity
+          style={{
+            ...CSS.siguiente2,
+            backgroundColor: '#132196'
+          }}
+          onPress={() => navigation.navigate('Pagina4')}
+        >
+          <Text style={CSS.siguientetext}>VISUALIZAR VOTANTES</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            ...CSS.siguiente2,
+            backgroundColor: '#132196'
+          }}
+          onPress={() => navigation.navigate('Pagina4')}
+        >
+          <Text style={CSS.siguientetext}>VISUALIZAR VOTANTES</Text>
+        </TouchableOpacity> */}
 
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>

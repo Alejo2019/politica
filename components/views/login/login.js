@@ -189,20 +189,7 @@ function Login(props) {
             onChangeText={(value) => hableChangeText('contraseña', value)}
           />
         </View>
-        
-        <View style={CSS.siguientecontainer}>
-          <TouchableOpacity
-            style={{
-              ...CSS.siguiente1,
-              backgroundColor: '#132196',
-              marginLeft: hp('12.5%')
-            }}
-            onPress={() => Validador()}
-          >
-            <Text style={CSS.siguientetext}>INICIAR SESIÓN</Text>
-          </TouchableOpacity>
-
-          <View style={CSS.input}
+        <View style={CSS.input}
           underlineColorAndroid="transparent"
           placeholderTextColor="#132196"
           autoCapitalize="none"
@@ -236,6 +223,20 @@ function Login(props) {
             <Picker.Item label="Venezuela" value="Venezuela" />
           </Picker>
         </View>
+        
+        <View style={CSS.siguientecontainer}>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente1,
+              backgroundColor: '#132196',
+              marginLeft: hp('12.5%')
+            }}
+            onPress={() => Validador()}
+          >
+            <Text style={CSS.siguientetext}>INICIAR SESIÓN</Text>
+          </TouchableOpacity>
+
+          
 
           {/* <TouchableOpacity
           style={{

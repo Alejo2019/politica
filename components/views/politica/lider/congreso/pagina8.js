@@ -7,6 +7,7 @@ import {
   View,
   Image,
   ImageBackground,
+  TextInput,
   TouchableOpacity, Alert
 } from 'react-native';
 import { images, COLORS, CSS } from "../../../../../constants";
@@ -71,12 +72,35 @@ function pagina8(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> REGISTRO A LA CAMARA
+        }}> REGISTRO DE METAS POR LIDER
         </Text>
 
         <View >
-        
-        <TouchableOpacity
+        <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Votos prometidos camara </Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            keyboardType="numeric"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Votos prometidos senado</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            keyboardType="numeric"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+        {/* <TouchableOpacity
           style={{
             ...CSS.siguiente2,
             backgroundColor: '#132196'
@@ -94,7 +118,24 @@ function pagina8(props) {
           onPress={() => navigation.navigate('Pagina6')}
         >
           <Text style={CSS.siguientetext}>VISUALIZAR TESTIGOS</Text>
+        </TouchableOpacity> */}
+        <Text style={CSS.pririodad}>
+          Los campos con * es obligatorio
+        </Text>
+
+
+        <TouchableOpacity
+          style={{
+            ...CSS.siguiente,
+            backgroundColor: '#132196'
+          }}
+
+          onPress={() => navigation.navigate({ routeName: 'Pagina1' })}
+
+        >
+          <Text style={CSS.siguientetext}>GUARDAR</Text>
         </TouchableOpacity>
+
       </View>
 
 
