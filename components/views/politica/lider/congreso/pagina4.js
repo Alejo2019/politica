@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import RNPickerSelect from "react-native-picker-select";
+import Checkbox from 'expo-checkbox';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { DataTable } from 'react-native-paper';
 import {
@@ -20,7 +21,7 @@ import axios from "axios";
 function pagina4(props) {
 
   let { navigation } = props;
-
+  const [isChecked, setChecked] = useState(false);
   useEffect(() => {
     getDataUsingSimpleGetCall()
   }, []);
@@ -144,36 +145,41 @@ function pagina4(props) {
           </View>
         </View>
         <TouchableOpacity >
-          <Icon name="book" style={CSS.pdf}/>
+          <Icon name="book" style={CSS.pdf} />
         </TouchableOpacity>
-        <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('3%'), }}>
-          <DataTable>
-            <DataTable.Header>
-              <DataTable.Title>Nombre</DataTable.Title>
-              <DataTable.Title>Cedula</DataTable.Title>
-              <DataTable.Title>Ciudad</DataTable.Title>
-              <DataTable.Title >¿Votos?</DataTable.Title>
-            </DataTable.Header>
+
+        <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('1%') }}>
 
 
 
-            <DataTable.Row>
+          <DataTable >
+              
+          <ScrollView horizontal={true} >
+            <View>
+                <DataTable.Header>
+                  <DataTable.Title style={{ marginRight: wp('25%') }}>Nombre</DataTable.Title>
+                  <DataTable.Title style={{ marginRight: wp('20%') }} numeric>Cedula</DataTable.Title>
+                  <DataTable.Title style={{ marginRight: wp('10%') }} numeric>Candidato</DataTable.Title>
+                  <DataTable.Title numeric>Si voto</DataTable.Title>
 
-              {/* <DataTable.Cell >{dato.nombre}</DataTable.Cell>
-                <DataTable.Cell >{dato.cedula}</DataTable.Cell>
-                <DataTable.Cell >{dato.lugar}</DataTable.Cell>
-                <DataTable.Cell >{dato.zona}</DataTable.Cell> */}
-              <DataTable.Cell >luis</DataTable.Cell>
-              <DataTable.Cell >Candidato</DataTable.Cell>
-              <DataTable.Cell >30</DataTable.Cell>
-              <DataTable.Cell >3</DataTable.Cell>
+                
+                </DataTable.Header>
 
-
-
-            </DataTable.Row>
-
-
+            
+                <DataTable.Row >
+                  <DataTable.Cell style={{ marginRight: wp('10%') }}></DataTable.Cell>
+                  <DataTable.Cell style={{ marginRight: wp('8%') }} numeric></DataTable.Cell>
+                  <DataTable.Cell style={{ marginRight: wp('15%') }} numeric> </DataTable.Cell>
+                  
+                  <DataTable.Cell>  <Checkbox style={{ margin: 8 }} value={isChecked} onValueChange={setChecked} />  </DataTable.Cell>
+                </DataTable.Row>
+                
+                </View>
+            </ScrollView>
+             
           </DataTable>
+
+
         </View>
         <TouchableOpacity
           style={{
