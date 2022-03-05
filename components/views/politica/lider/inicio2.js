@@ -12,9 +12,12 @@ import {
 import { images, COLORS, CSS } from "../../../../constants";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-function inicio(props) {
+function inicio2(props) {
 
-  let { navigation } = props;
+  let { navigation } = props;  
+  let partido = navigation.state.params.partido;
+
+  console.log('inicio2',partido);
 
   const Close = async () => {
     await AsyncStorage.removeItem('token');
@@ -92,7 +95,7 @@ function inicio(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate('Pagina1')}
+            onPress={() => navigation.navigate({ routeName: 'Pagina1', params: { partido } })}
           >
             <Text style={CSS.siguientetext}>CONGRESO</Text>
           </TouchableOpacity>
@@ -135,4 +138,4 @@ function inicio(props) {
   );
 };
 
-export default inicio;
+export default inicio2;

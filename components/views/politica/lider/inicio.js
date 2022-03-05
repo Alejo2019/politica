@@ -21,11 +21,9 @@ function inicio(props) {
     navigation.navigate({ routeName: 'Auth' })
   }
 
-
-  const cambio = () =>{
+  const cambio = () => {
     const partido = 'Partido';
-navigation.navigate({ routeName: 'Iniciov2', params: { partido } })
-console.log(partido)
+    navigation.navigate({ routeName: 'Iniciov2', params: { partido } })
   }
 
   return (
@@ -77,96 +75,96 @@ console.log(partido)
           source={images.logo2}
         />
 
-        
+
 
 
         <TouchableOpacity style={CSS.cardHome} onPress={() => cambio()}>
-            <View style={CSS.viewCardHome}>
-              <View style={{ flex: 3, marginLeft:10 }}>
-                <View style={{ flexDirection: 'row' }}>
-                  <View>
-                    <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                  </View>
-                  <View style={{ alignSelf: 'center' }}>
-                    <Text style={CSS.tituloHome}>
-                      PARTIDO 1
-                    </Text>
-                  </View>
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 3, marginLeft: 10 }}>
+              <View style={{ flexDirection: 'row' }}>
+                <View>
+                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
+                    PARTIDO 1
+                  </Text>
                 </View>
               </View>
-
-              <View style={{ flex: 1, alignSelf:'center' }} >
-                <Icon name="chevron-right" size={80}
-                  color={COLORS.blue} />
-              </View>
             </View>
-          </TouchableOpacity>
 
-          <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov2' })}>
-            <View style={CSS.viewCardHome}>
-              <View style={{ flex: 3, marginLeft:10 }}>
-                <View style={{ flexDirection: 'row' }}>
-                  <View>
-                    <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                  </View>
-                  <View style={{ alignSelf: 'center' }}>
-                    <Text style={CSS.tituloHome}>
+            <View style={{ flex: 1, alignSelf: 'center' }} >
+              <Icon name="chevron-right" size={80}
+                color={COLORS.blue} />
+            </View>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov2' })}>
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 3, marginLeft: 10 }}>
+              <View style={{ flexDirection: 'row' }}>
+                <View>
+                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
                     PARTIDO 2
-                    </Text>
-                  </View>
+                  </Text>
                 </View>
               </View>
-
-              <View style={{ flex: 1, alignSelf:'center' }} >
-                <Icon name="chevron-right" size={80}
-                  color={COLORS.blue} />
-              </View>
             </View>
-          </TouchableOpacity>
 
-          <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov2' })}>
-            <View style={CSS.viewCardHome}>
-              <View style={{ flex: 3, marginLeft:10 }}>
-                <View style={{ flexDirection: 'row' }}>
-                  <View>
-                    <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                  </View>
-                  <View style={{ alignSelf: 'center' }}>
-                    <Text style={CSS.tituloHome}>
+            <View style={{ flex: 1, alignSelf: 'center' }} >
+              <Icon name="chevron-right" size={80}
+                color={COLORS.blue} />
+            </View>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov2' })}>
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 3, marginLeft: 10 }}>
+              <View style={{ flexDirection: 'row' }}>
+                <View>
+                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
                     PARTIDO 3
-                    </Text>
-                  </View>
+                  </Text>
                 </View>
               </View>
-
-              <View style={{ flex: 1, alignSelf:'center' }} >
-                <Icon name="chevron-right" size={80}
-                  color={COLORS.blue} />
-              </View>
             </View>
-          </TouchableOpacity>
 
-          <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov2' })}>
-            <View style={CSS.viewCardHome}>
-              <View style={{ flex: 3, marginLeft:10 }}>
-                <View style={{ flexDirection: 'row' }}>
-                  <View>
-                    <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                  </View>
-                  <View style={{ alignSelf: 'center' }}>
-                    <Text style={CSS.tituloHome}>
+            <View style={{ flex: 1, alignSelf: 'center' }} >
+              <Icon name="chevron-right" size={80}
+                color={COLORS.blue} />
+            </View>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov2' })}>
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 3, marginLeft: 10 }}>
+              <View style={{ flexDirection: 'row' }}>
+                <View>
+                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
                     PARTIDO 4
-                    </Text>
-                  </View>
+                  </Text>
                 </View>
               </View>
-
-              <View style={{ flex: 1, alignSelf:'center' }} >
-                <Icon name="chevron-right" size={80}
-                  color={COLORS.blue} />
-              </View>
             </View>
-          </TouchableOpacity>
+
+            <View style={{ flex: 1, alignSelf: 'center' }} >
+              <Icon name="chevron-right" size={80}
+                color={COLORS.blue} />
+            </View>
+          </View>
+        </TouchableOpacity>
       </ScrollView>
 
     </ImageBackground>
