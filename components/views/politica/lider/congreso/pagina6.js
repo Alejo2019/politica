@@ -29,7 +29,7 @@ function pagina6(props) {
 
   const getDataUsingSimpleGetCall = () => {
     axios
-      .get('https://servicios-server.herokuapp.com/api/testigos')
+      .get('https://service-servicios.herokuapp.com/api/testigos')
       .then(function (response) {
         // handle success
         setdata(response.data.testigos);

@@ -24,12 +24,13 @@ function pagina2(props) {
   let { navigation } = props;
   const [isChecked, setChecked] = useState(false);
   const [isChecked1, setChecked1] = useState(false);
-
+  let partido = navigation.state.params.partido;
   const [country, setCountry] = useState('Unknown');
   const [token, setToken] = useState("");
 
   useEffect(() => {
     getToken()
+    console.log(partido)
   }, []);
 
   const getToken = async () => {
@@ -61,18 +62,19 @@ function pagina2(props) {
 
   const envio = () => {
     axios
-      .post('https://servicios-server.herokuapp.com/api/votantes', {
-        "nombre": (state.nombre),
-        "apellido": (state.apellido),
-        "cedula": (state.cedula),
-        "telefono": (state.telefono),
+      .post('https://service-servicios.herokuapp.com/api/votantes', {
+        "nombre": "Votante",
+        "apellido":"UNO",
+        "cedula": "11445560",
         "estado": false,
-        "departamento": (state.departamento),
-        "ciudad": (state.ciudad),
-        "mesa": (state.mesa),
-        "puesto": (state.puesto),
-        "lugar": (state.lugar),
-        "zona": (state.zona)
+        "mesa": 17,
+        "lugar": "colegio",
+        "puesto": 17,
+        "votoEnte": false,
+        "votoSena": false,
+        "campaña":"SENADO",
+        "candidatoSen":"lordPetrosky",
+        "candidatoCama": "Otro lordPetrosky"
       }, {
         
         headers: {
@@ -87,7 +89,7 @@ function pagina2(props) {
         // handle error
         alert(error.message);
       });
-    navigation.navigate({ routeName: 'Pagina7' }) 
+      navigation.navigate({ routeName: 'Pagina1' })
   };
 
   return (
@@ -142,7 +144,7 @@ function pagina2(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> REGISTRO DE VOTANTES
+        }}> REGISTRO DE VOTANTES 
         </Text>
 
         <View style={CSS.viewCardHome}>
@@ -201,7 +203,7 @@ function pagina2(props) {
           placeholderTextColor="#132196"
           autoCapitalize="none"
           selectionColor="#132196"
-          onChangeText={(value) => hableChangeText('zona', value)}
+          onChangeText={(value) => hableChangeText('mesa', value)}
 
         />
         {/* <View style={CSS.viewCardHome}>
@@ -342,7 +344,7 @@ function pagina2(props) {
             backgroundColor: '#132196'
           }}
 
-          onPress={() => navigation.navigate({ routeName: 'Pagina1' })}
+          onPress={() => envio()}
 
         >
           <Text style={CSS.siguientetext}>GUARDAR</Text>

@@ -57,7 +57,7 @@ function pagina5(props) {
 
   const envio = () => {
     axios
-    .post('https://servicios-server.herokuapp.com/api/testigos', {
+    .post('https://service-servicios.herokuapp.com/api/testigos', {
       "nombre":(state.nombre),
       "apellido":(state.apellido),
       "cedula":(state.cedula),

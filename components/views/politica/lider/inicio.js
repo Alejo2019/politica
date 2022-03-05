@@ -21,6 +21,13 @@ function inicio(props) {
     navigation.navigate({ routeName: 'Auth' })
   }
 
+
+  const cambio = () =>{
+    const partido = 'Partido';
+navigation.navigate({ routeName: 'Iniciov2', params: { partido } })
+console.log(partido)
+  }
+
   return (
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
@@ -73,7 +80,7 @@ function inicio(props) {
         
 
 
-        <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov2' })}>
+        <TouchableOpacity style={CSS.cardHome} onPress={() => cambio()}>
             <View style={CSS.viewCardHome}>
               <View style={{ flex: 3, marginLeft:10 }}>
                 <View style={{ flexDirection: 'row' }}>
