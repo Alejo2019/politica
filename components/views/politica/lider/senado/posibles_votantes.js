@@ -15,12 +15,10 @@ import { images, COLORS, CSS } from "../../../../../constants";
 
 function pagina7(props) {
 
-
+  
 
   let { navigation } = props;
-  Validador1 = async () => {
-    navigation.navigate('Login');
-  };
+ 
 
   return (
 
@@ -61,13 +59,13 @@ function pagina7(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-
+        
         <Image
           style={CSS.img}
           source={images.logo2}
         />
 
-        <Text style={{
+<Text style={{
           marginTop: hp('3%'),
           marginBottom: hp('4'),
           fontSize: hp('3%'),
@@ -145,49 +143,12 @@ function pagina7(props) {
               backgroundColor: '#132196'
             }}
 
-            onPress={() => navigation.navigate({ routeName: 'Pagina1' })}
+            onPress={() => navigation.navigate({ routeName: 'Entes_territoriales' })}
 
           >
             <Text style={CSS.siguientetext}>GUARDAR</Text>
           </TouchableOpacity>
-        </View>
-        {/* <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-            
-          }}
-          onPress={() => navigation.navigate({ routeName: 'Pagina2' })}
-        >
-          <Text style={CSS.siguientetext}>REGISTRO DE VOTANTES</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate('Pagina4')}
-        >
-          <Text style={CSS.siguientetext}>VISUALIZAR VOTANTES</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate('Pagina4')}
-        >
-          <Text style={CSS.siguientetext}>VISUALIZAR VOTANTES</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate('Pagina4')}
-        >
-          <Text style={CSS.siguientetext}>VISUALIZAR VOTANTES</Text>
-        </TouchableOpacity> */}
+      </View>
 
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>

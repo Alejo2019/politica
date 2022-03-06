@@ -1,46 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
-import RNPickerSelect from "react-native-picker-select";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import { DataTable } from 'react-native-paper';
 import {
   ScrollView,
   Text,
   View,
   Image,
-  TouchableOpacity,
-  TextInput,
   ImageBackground,
-  Alert
-
+  TouchableOpacity, Alert
 } from 'react-native';
 import { images, COLORS, CSS } from "../../../../../constants";
-import axios from "axios";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-function pagina6(props) {
+function pagina1(props) {
 
   let { navigation } = props;
+  let partido = navigation.state.params.partido;
 
-  useEffect(() => {
-    getDataUsingSimpleGetCall()
-  }, []);
+  console.log('pagina 1',partido);
 
-  const [data, setdata] = useState([]);
+  // useEffect(() => {
+  //   console.log(partido)
+  // }, []);
 
-  const getDataUsingSimpleGetCall = () => {
-    axios
-      .get('https://service-servicios.herokuapp.com/api/testigos')
-      .then(function (response) {
-        // handle success
-        setdata(response.data.testigos);
-        console.log(response.data.testigos)
-      })
-
-  };
-  //console.log(data)
   return (
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
+
 
       {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
         <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
@@ -52,6 +38,7 @@ function pagina6(props) {
           </View>
         </View>
       </TouchableOpacity> */}
+
       <ScrollView>
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
@@ -75,6 +62,11 @@ function pagina6(props) {
               </View>
             </View>
           </TouchableOpacity> */}
+        {/* <TouchableOpacity onPress={() => Close()}>
+
+          <Icon name="location-exit" style={CSS.icon}
+          />
+        </TouchableOpacity> */}
         <Image
           style={CSS.img}
           source={images.logo2}
@@ -82,52 +74,54 @@ function pagina6(props) {
 
         <Text style={{
           marginTop: hp('3%'),
-          marginBottom: hp('1'),
+          marginBottom: hp('4'),
           fontSize: hp('3%'),
           textAlign: 'center',
           color: '#132196',
           fontWeight: 'bold'
 
-          
-        }}> TESTIGOS A LA CAMARA
+        }}> CAMARA DE REPRESENTANTES
         </Text>
-        <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('3%'), }}>
-          <DataTable>
-            <DataTable.Header>
-              <DataTable.Title>Nombre</DataTable.Title>
-              <DataTable.Title>Candidato</DataTable.Title>
-              <DataTable.Title >Mesa</DataTable.Title>
-            </DataTable.Header>
 
+        <View >
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente2,
+              backgroundColor: '#132196'
+            }}
+            onPress={() => navigation.navigate({ routeName: 'Posibles_votantes' })}
+          >
+            <Text style={CSS.siguientetext}>REGISTRO POSIBLES VOTANTES</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
 
-            {data.map((dato, index) => (
-              <DataTable.Row>
-
-                <DataTable.Cell >{dato.nombre}</DataTable.Cell>
-                <DataTable.Cell >{dato.cedula}</DataTable.Cell>
-                <DataTable.Cell >{dato.lugar}</DataTable.Cell>
-
-              </DataTable.Row>
-
-            )
-            )
-            }
-
-
-          </DataTable>
+            style={{
+              ...CSS.siguiente2,
+              backgroundColor: '#132196'
+            }}
+            onPress={() => navigation.navigate('Metas')}
+          >
+            <Text style={CSS.siguientetext}>REGISTRO METAS POR LIDER</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente2,
+              backgroundColor: '#132196'
+            }}
+            onPress={() => navigation.navigate('Registro')}
+          >
+            <Text style={CSS.siguientetext}>REGISTRO DE VOTOS</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente2,
+              backgroundColor: '#132196'
+            }}
+            onPress={() => navigation.navigate('Reporte')}
+          >
+            <Text style={CSS.siguientetext}>REPORTE Y CONSULTA</Text>
+          </TouchableOpacity>
         </View>
-
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente,
-            backgroundColor: '#132196',
-            marginTop: hp('5%')
-          }}
-
-        >
-          <Text style={CSS.siguientetext}>GENERAR REPORTE</Text>
-        </TouchableOpacity>
-
 
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
@@ -151,11 +145,10 @@ function pagina6(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-
       </ScrollView>
 
     </ImageBackground>
   );
 };
 
-export default pagina6;
+export default pagina1;

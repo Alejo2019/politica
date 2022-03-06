@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import {
@@ -7,21 +7,18 @@ import {
   View,
   Image,
   ImageBackground,
+  TextInput,
   TouchableOpacity, Alert
 } from 'react-native';
 import { images, COLORS, CSS } from "../../../../../constants";
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
-function pagina1(props) {
+
+function pagina8(props) {
 
   let { navigation } = props;
-  let partido = navigation.state.params.partido;
-
-  console.log('pagina 1',partido);
-
-  // useEffect(() => {
-  //   console.log(partido)
-  // }, []);
+  Validador1 = async () => {
+    navigation.navigate('Login');
+  };
 
   return (
 
@@ -62,11 +59,6 @@ function pagina1(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-        {/* <TouchableOpacity onPress={() => Close()}>
-
-          <Icon name="location-exit" style={CSS.icon}
-          />
-        </TouchableOpacity> */}
         <Image
           style={CSS.img}
           source={images.logo2}
@@ -80,48 +72,71 @@ function pagina1(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> CAMARA DE REPRESENTANTES
+        }}> REGISTRO DE METAS POR LIDER
         </Text>
 
         <View >
-          <TouchableOpacity
-            style={{
-              ...CSS.siguiente2,
-              backgroundColor: '#132196'
-            }}
-            onPress={() => navigation.navigate({ routeName: 'Pagina7' })}
-          >
-            <Text style={CSS.siguientetext}>REGISTRO POSIBLES VOTANTES</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
+        <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Votos prometidos camara </Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            keyboardType="numeric"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Votos prometidos senado</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            keyboardType="numeric"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+        {/* <TouchableOpacity
+          style={{
+            ...CSS.siguiente2,
+            backgroundColor: '#132196'
+          }}
+          onPress={() => navigation.navigate('Pagina5')}
+        >
+          <Text style={CSS.siguientetext}>REGISTRO DE TESTIGOS</Text>
+          
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            ...CSS.siguiente2,
+            backgroundColor: '#132196'
+          }}
+          onPress={() => navigation.navigate('Pagina6')}
+        >
+          <Text style={CSS.siguientetext}>VISUALIZAR TESTIGOS</Text>
+        </TouchableOpacity> */}
+        <Text style={CSS.pririodad}>
+          Los campos con * es obligatorio
+        </Text>
 
-            style={{
-              ...CSS.siguiente2,
-              backgroundColor: '#132196'
-            }}
-            onPress={() => navigation.navigate('Pagina8')}
-          >
-            <Text style={CSS.siguientetext}>REGISTRO METAS POR LIDER</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              ...CSS.siguiente2,
-              backgroundColor: '#132196'
-            }}
-          //onPress={() => navigation.navigate({routeName:'Pagina2', params:{partido}})}
-          >
-            <Text style={CSS.siguientetext}>REGISTRO DE VOTOS</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              ...CSS.siguiente2,
-              backgroundColor: '#132196'
-            }}
-            onPress={() => navigation.navigate('Pagina4')}
-          >
-            <Text style={CSS.siguientetext}>REPORTE Y CONSULTA</Text>
-          </TouchableOpacity>
-        </View>
+
+        <TouchableOpacity
+          style={{
+            ...CSS.siguiente,
+            backgroundColor: '#132196'
+          }}
+
+          onPress={() => navigation.navigate({ routeName: 'Congreso' })}
+
+        >
+          <Text style={CSS.siguientetext}>GUARDAR</Text>
+        </TouchableOpacity>
+
+      </View>
 
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
@@ -151,4 +166,4 @@ function pagina1(props) {
   );
 };
 
-export default pagina1;
+export default pagina8;

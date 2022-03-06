@@ -25,7 +25,7 @@ const Inicio = createStackNavigator({
 
     inicio:{
       screen:createStackNavigator({       
-        Pagina1E: {
+        Pagina1L: {
           screen: Pagina1escreen,
           navigationOptions: ({ navigation }) => ({
             title: 'Atras',
@@ -36,7 +36,7 @@ const Inicio = createStackNavigator({
             },
           })
         },
-        Pagina2E: {
+        Pagina2L: {
           screen: Pagina2escreen,
           navigationOptions: ({ navigation }) => ({
             title: 'Atras',
@@ -47,7 +47,7 @@ const Inicio = createStackNavigator({
             },
           })
         }, 
-        Pagina3E: {
+        Pagina3L: {
           screen: Pagina3escreen,
           navigationOptions: ({ navigation }) => ({
             title: 'Atras',
@@ -58,7 +58,7 @@ const Inicio = createStackNavigator({
             },
           })
         },
-        Pagina4E: {
+        Pagina4L: {
           screen: Pagina4escreen,
           navigationOptions: ({ navigation }) => ({
             title: 'Atras',
@@ -69,7 +69,7 @@ const Inicio = createStackNavigator({
             },
           })
         },  
-        Pagina5E: {
+        Pagina5L: {
           screen: Pagina5escreen,
           navigationOptions: ({ navigation }) => ({
             title: 'Atras',

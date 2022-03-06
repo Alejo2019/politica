@@ -188,7 +188,7 @@ function pagina4(props) {
             marginTop: hp('5%')
           }}
 
-          onPress={() => navigation.navigate({ routeName: 'Pagina1' })}
+          onPress={() => navigation.navigate({ routeName: 'Congreso' })}
 
         >
           <Text style={CSS.siguientetext}>GUARDAR</Text>

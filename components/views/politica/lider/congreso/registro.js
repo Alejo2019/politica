@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import RNPickerSelect from "react-native-picker-select";
+import { Picker } from "@react-native-picker/picker";
 import Checkbox from 'expo-checkbox';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import {
@@ -13,7 +14,6 @@ import {
   TextInput,
 
 } from 'react-native';
-import { Picker } from "@react-native-picker/picker";
 import { images, COLORS, CSS } from "../../../../../constants";
 import axios from "axios";
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -24,13 +24,13 @@ function pagina2(props) {
   let { navigation } = props;
   const [isChecked, setChecked] = useState(false);
   const [isChecked1, setChecked1] = useState(false);
-
+  let partido = navigation.state.params.partido;
   const [country, setCountry] = useState('Unknown');
   const [token, setToken] = useState("");
 
-
   useEffect(() => {
     getToken()
+    console.log(partido)
   }, []);
 
   const getToken = async () => {
@@ -63,18 +63,20 @@ function pagina2(props) {
   const envio = () => {
     axios
       .post('https://service-servicios.herokuapp.com/api/votantes', {
-        "nombre": (state.nombre),
-        "apellido": (state.apellido),
-        "cedula": (state.cedula),
-        "telefono": (state.telefono),
+        "nombre": "Votante",
+        "apellido":"UNO",
+        "cedula": "11445560",
         "estado": false,
-        "departamento": (state.departamento),
-        "ciudad": (state.ciudad),
-        "mesa": (state.mesa),
-        "puesto": (state.puesto),
-        "lugar": (state.lugar),
-        "zona": (state.zona)
+        "mesa": 17,
+        "lugar": "colegio",
+        "puesto": 17,
+        "votoEnte": false,
+        "votoSena": false,
+        "campaña":"SENADO",
+        "candidatoSen":"lordPetrosky",
+        "candidatoCama": "Otro lordPetrosky"
       }, {
+        
         headers: {
           'x-token': token
         }
@@ -86,12 +88,8 @@ function pagina2(props) {
       .catch(function (error) {
         // handle error
         alert(error.message);
-      })
-      .finally(function () {
-        // always executed
-        alert('Finally called');
       });
-    navigation.navigate({ routeName: 'Pagina7I' })
+      navigation.navigate({ routeName: 'Pagina1' })
   };
 
   return (
@@ -132,6 +130,7 @@ function pagina2(props) {
               </View>
             </View>
           </TouchableOpacity> */}
+
         <Image
           style={CSS.img}
           source={images.logo2}
@@ -145,7 +144,7 @@ function pagina2(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> REGISTRO DE VOTANTES
+        }}> REGISTRO DE VOTANTES 
         </Text>
 
         <View style={CSS.viewCardHome}>
@@ -204,70 +203,70 @@ function pagina2(props) {
           placeholderTextColor="#132196"
           autoCapitalize="none"
           selectionColor="#132196"
-          onChangeText={(value) => hableChangeText('zona', value)}
+          onChangeText={(value) => hableChangeText('mesa', value)}
 
         />
         {/* <View style={CSS.viewCardHome}>
-<Text style={CSS.asterisco}>*</Text>
-<Text style={CSS.asterisco1}>Telefono</Text>
-</View>
-<TextInput style={CSS.input}
-underlineColorAndroid="transparent"
-placeholderTextColor="#132196"
-autoCapitalize="none"
-selectionColor="#132196"
-onChangeText={(value) => hableChangeText('telefono', value)}
-keyboardType="numeric"
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Telefono</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+          selectionColor="#132196"
+          onChangeText={(value) => hableChangeText('telefono', value)}
+          keyboardType="numeric"
 
-/> */}
+        /> */}
 
 
         {/* <View style={CSS.viewCardHome}>
-<Text style={CSS.asterisco}>*</Text>
-<Text style={CSS.asterisco1}>Departamento</Text>
-</View>
-<TextInput style={CSS.input}
-underlineColorAndroid="transparent"
-placeholderTextColor="#132196"
-autoCapitalize="none"
-selectionColor="#132196"
-onChangeText={(value) => hableChangeText('departamento', value)}
-/>
-
-<View style={CSS.viewCardHome}>
-<Text style={CSS.asterisco}>*</Text>
-<Text style={CSS.asterisco1}>Ciudad</Text>
-</View>
-<TextInput style={CSS.input}
-underlineColorAndroid="transparent"
-placeholderTextColor="#132196"
-autoCapitalize="none"
-selectionColor="#132196"
-onChangeText={(value) => hableChangeText('ciudad', value)}
-/>
-
-
-
-
-*/}
-
-        {/* <View style={CSS.viewCardHome}>
-<Text style={CSS.asterisco}>*</Text>
-<Text style={CSS.asterisco1}> Puesto</Text>
-</View>
-<TextInput style={CSS.input}
-underlineColorAndroid="transparent"
-placeholderTextColor="#132196"
-autoCapitalize="none"
-selectionColor="#132196"
-keyboardType="numeric"
-onChangeText={(value) => hableChangeText('puesto', value)}
-
-/> */}
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Departamento</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+          selectionColor="#132196"
+          onChangeText={(value) => hableChangeText('departamento', value)}
+        />
 
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Selección de candidato camara</Text>
+          <Text style={CSS.asterisco1}>Ciudad</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+          selectionColor="#132196"
+          onChangeText={(value) => hableChangeText('ciudad', value)}
+        />
+
+        
+
+
+         */}
+
+        {/* <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}> Puesto</Text>
+        </View>
+        <TextInput style={CSS.input}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#132196"
+          autoCapitalize="none"
+          selectionColor="#132196"
+          keyboardType="numeric"
+          onChangeText={(value) => hableChangeText('puesto', value)}
+
+        /> */}
+
+        <View style={CSS.viewCardHome}>
+          <Text style={CSS.asterisco}>*</Text>
+          <Text style={CSS.asterisco1}>Selección de candidato por camara</Text>
         </View>
         <View style={CSS.input}
           underlineColorAndroid="transparent"
@@ -284,7 +283,7 @@ onChangeText={(value) => hableChangeText('puesto', value)}
             <Picker.Item label="Candidato 1" value="Candidato 1" />
             <Picker.Item label="Candidato 2" value="Candidato 2" />
             <Picker.Item label="Candidato 3" value="Candidato 3" />
-
+            
           </Picker>
         </View>
         <View style={CSS.viewCardHome}>
@@ -345,7 +344,7 @@ onChangeText={(value) => hableChangeText('puesto', value)}
             backgroundColor: '#132196'
           }}
 
-          onPress={() => navigation.navigate({ routeName: 'Pagina1' })}
+          onPress={() => navigation.navigate({ routeName: 'Congreso' })}
 
         >
           <Text style={CSS.siguientetext}>GUARDAR</Text>

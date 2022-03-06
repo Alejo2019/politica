@@ -201,7 +201,7 @@ function pagina4(props) {
             marginTop: hp('5%')
           }}
 
-          onPress={() => navigation.navigate({ routeName: 'Pagina1I' })}
+          onPress={() => navigation.navigate({ routeName: 'Entes_territoriales' })}
 
         >
           <Text style={CSS.siguientetext}>GUARDAR</Text>
