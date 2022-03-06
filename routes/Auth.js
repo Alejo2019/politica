@@ -2,26 +2,24 @@ import React from "react";
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { Image, Text } from 'react-native';
-import Iniciov1screen from '../components/views/politica/lider/inicio';
-import Iniciov2screen from '../components/views/politica/lider/inicio2';
-import Pagina1screen from '../components/views/politica/lider/congreso/pagina1';
-import Pagina2screen from '../components/views/politica/lider/congreso/pagina2';
-import Pagina3screen from '../components/views/politica/lider/congreso/pagina3';
-import Pagina4screen from '../components/views/politica/lider/congreso/pagina4';
-import Pagina5screen from '../components/views/politica/lider/congreso/pagina5';
-import Pagina6screen from '../components/views/politica/lider/congreso/pagina6';
-import Pagina7screen from '../components/views/politica/lider/congreso/pagina7';
-import Pagina8screen from '../components/views/politica/lider/congreso/pagina8';
-import Pagina9screen from '../components/views/politica/lider/congreso/pagina9';
-import Pagina1Sscreen from '../components/views/politica/lider/senado/pagina1';
-import Pagina2Sscreen from '../components/views/politica/lider/senado/pagina2';
-import Pagina3Sscreen from '../components/views/politica/lider/senado/pagina3';
-import Pagina4Sscreen from '../components/views/politica/lider/senado/pagina4';
-import Pagina5Sscreen from '../components/views/politica/lider/senado/pagina5';
-import Pagina6Sscreen from '../components/views/politica/lider/senado/pagina6';
-import Pagina7Sscreen from '../components/views/politica/lider/senado/pagina7';
-import Pagina8Sscreen from '../components/views/politica/lider/senado/pagina8';
-import Pagina9Sscreen from '../components/views/politica/lider/senado/pagina9';
+import Partidoscreen from '../components/views/politica/lider/partido';
+import Campañascreen from '../components/views/politica/lider/campaña';
+import Moduloscreen from '../components/views/politica/lider/modulo';
+import Congresoscreen from '../components/views/politica/lider/congreso/congreso';
+import Registroscreen from '../components/views/politica/lider/congreso/registro';
+import Reportescreen from '../components/views/politica/lider/congreso/reporte';
+import Posibles_votantesscreen from '../components/views/politica/lider/congreso/posibles_votantes';
+import Metasscreen from '../components/views/politica/lider/congreso/metas';
+import Entes_territorialesscreen from '../components/views/politica/lider/senado/entes_territoriales';
+import RegistroSscreen from '../components/views/politica/lider/senado/registro';
+import ReporteSscreen from '../components/views/politica/lider/senado/reporte';
+import Posibles_votantesSscreen from '../components/views/politica/lider/senado/posibles_votantes';
+import MetasSscreen from '../components/views/politica/lider/senado/metas';
+import Pagina1escreen from '../components/views/politica/testigos/pagina1';
+import Pagina2escreen from '../components/views/politica/testigos/pagina2';
+import Pagina3escreen from '../components/views/politica/testigos/pagina3';
+import Pagina4escreen from '../components/views/politica/testigos/pagina4';
+import Pagina5escreen from '../components/views/politica/testigos/pagina5';
 import { images, COLORS } from "../constants";
 
 function LogoTitle() {
@@ -40,8 +38,8 @@ const Inicio = createStackNavigator({
 
   inicio: {
     screen: createStackNavigator({
-      Iniciov1: {
-        screen: Iniciov1screen,
+      Partido: {
+        screen: Partidoscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,
@@ -51,8 +49,8 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Iniciov2: {
-        screen: Iniciov2screen,
+      Campaña: {
+        screen: Campañascreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,
@@ -62,8 +60,8 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina1: {
-        screen: Pagina1screen,
+      Modulo: {
+        screen: Moduloscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,
@@ -73,8 +71,8 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina2: {
-        screen: Pagina2screen,
+      Congreso: {
+        screen: Congresoscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,
@@ -84,8 +82,8 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina3: {
-        screen: Pagina3screen,
+      Registro: {
+        screen: Registroscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,
@@ -95,8 +93,19 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina4: {
-        screen: Pagina4screen,
+      Reporte: {
+        screen: Reportescreen,
+        navigationOptions: ({ navigation }) => ({
+          title: 'Atras',
+          headerTitle: props => <LogoTitle />,
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: COLORS.blue,
+          },
+        })
+      },      
+      Posibles_votantes: {
+        screen: Posibles_votantesscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,
@@ -106,8 +115,8 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina5: {
-        screen: Pagina5screen,
+      Metas: {
+        screen: Metasscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,
@@ -117,8 +126,8 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina6: {
-        screen: Pagina6screen,
+      Entes_territoriales: {
+        screen: Entes_territorialesscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,
@@ -128,8 +137,8 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina7: {
-        screen: Pagina7screen,
+      RegistroI: {
+        screen: RegistroSscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,
@@ -139,8 +148,8 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina8: {
-        screen: Pagina8screen,
+      ReporteI: {
+        screen: ReporteSscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,
@@ -150,8 +159,8 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina9: {
-        screen: Pagina9screen,
+      Posibles_votantesI: {
+        screen: Posibles_votantesSscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,
@@ -161,8 +170,8 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina1I: {
-        screen: Pagina1Sscreen,
+      MetasI: {
+        screen: MetasSscreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,
@@ -172,8 +181,8 @@ const Inicio = createStackNavigator({
           },
         })
       },
-    Pagina2I: {
-        screen: Pagina2Sscreen,
+      Pagina1E: {
+        screen: Pagina1escreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,
@@ -183,8 +192,8 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina3I: {
-        screen: Pagina3Sscreen,
+      Pagina2E: {
+        screen: Pagina2escreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,
@@ -194,8 +203,8 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina4I: {
-        screen: Pagina4Sscreen,
+      Pagina3E: {
+        screen: Pagina3escreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,
@@ -205,8 +214,8 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina5I: {
-        screen: Pagina5Sscreen,
+      Pagina4E: {
+        screen: Pagina4escreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,
@@ -216,41 +225,8 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      Pagina6I: {
-        screen: Pagina6Sscreen,
-        navigationOptions: ({ navigation }) => ({
-          title: 'Atras',
-          headerTitle: props => <LogoTitle />,
-          headerTitleAlign: 'center',
-          headerStyle: {
-            backgroundColor: COLORS.blue,
-          },
-        })
-      },
-      Pagina7I: {
-        screen: Pagina7Sscreen,
-        navigationOptions: ({ navigation }) => ({
-          title: 'Atras',
-          headerTitle: props => <LogoTitle />,
-          headerTitleAlign: 'center',
-          headerStyle: {
-            backgroundColor: COLORS.blue,
-          },
-        })
-      },
-      Pagina8I: {
-        screen: Pagina8Sscreen,
-        navigationOptions: ({ navigation }) => ({
-          title: 'Atras',
-          headerTitle: props => <LogoTitle />,
-          headerTitleAlign: 'center',
-          headerStyle: {
-            backgroundColor: COLORS.blue,
-          },
-        })
-      },
-      Pagina9I: {
-        screen: Pagina9Sscreen,
+      Pagina5E: {
+        screen: Pagina5escreen,
         navigationOptions: ({ navigation }) => ({
           title: 'Atras',
           headerTitle: props => <LogoTitle />,

@@ -18,9 +18,6 @@ import {
 import { images, COLORS, CSS } from "../../../../../constants";
 import axios from "axios";
 
-
-
-const optionsPerPage = [2, 3, 4];
 function pagina4(props) {
 
   let { navigation } = props;
@@ -33,23 +30,14 @@ function pagina4(props) {
 
   const getDataUsingSimpleGetCall = () => {
     axios
-      .get('https://servicios-server.herokuapp.com/api/users')
+      .get('https://servicios-server.herokuapp.com/api/votantes')
       .then(function (response) {
         // handle success
-        setdata(response.data.usuarios);
-        console.log(response.data.usuarios)
+        setdata(response.data.votantes);
+        console.log(response.data.votantes)
       })
 
   };
-
-
-
-  const [page, setPage] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(optionsPerPage[0]);
-
-  useEffect(() => {
-    setPage(0);
-  }, [itemsPerPage]);
   //console.log(data)
   return (
 
@@ -94,16 +82,16 @@ function pagina4(props) {
         />
 
         <Text style={{
-          marginTop: hp('3%'),
           marginBottom: hp('1'),
           fontSize: hp('3%'),
           textAlign: 'center',
           color: '#132196',
-
           fontWeight: 'bold'
 
-        }}> VOTANTES A ENTES TERRITORIALES
+        }}> VOTANTES A LA CAMARA
+
         </Text>
+
         <View style={{ ...CSS.viewCardHome, marginTop: hp('5%') }}>
           <View style={{ flex: 3, alignItems: 'center' }}>
 
@@ -193,7 +181,6 @@ function pagina4(props) {
 
 
         </View>
-
         <TouchableOpacity
           style={{
             ...CSS.siguiente,
@@ -201,7 +188,7 @@ function pagina4(props) {
             marginTop: hp('5%')
           }}
 
-          onPress={() => navigation.navigate({ routeName: 'Pagina1I' })}
+          onPress={() => navigation.navigate({ routeName: 'Congreso' })}
 
         >
           <Text style={CSS.siguientetext}>GUARDAR</Text>

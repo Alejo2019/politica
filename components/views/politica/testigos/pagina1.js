@@ -59,11 +59,11 @@ function pagina1(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-        <TouchableOpacity  onPress={() => Close()}>
+        {/* <TouchableOpacity  onPress={() => Close()}>
 
           <Icon name="location-exit" style={CSS.icon}
           />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <Image
           style={CSS.img}
           source={images.logo2}

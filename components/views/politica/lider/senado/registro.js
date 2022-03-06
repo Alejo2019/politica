@@ -345,7 +345,7 @@ onChangeText={(value) => hableChangeText('puesto', value)}
             backgroundColor: '#132196'
           }}
 
-          onPress={() => navigation.navigate({ routeName: 'Pagina1' })}
+          onPress={() => navigation.navigate({ routeName: 'Entes_territoriales' })}
 
         >
           <Text style={CSS.siguientetext}>GUARDAR</Text>

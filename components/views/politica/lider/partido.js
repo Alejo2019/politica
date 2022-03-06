@@ -73,7 +73,7 @@ function inicio(props) {
         
 
 
-        <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov2' })}>
+        <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Modulo' })}>
             <View style={CSS.viewCardHome}>
               <View style={{ flex: 3, marginLeft:10 }}>
                 <View style={{ flexDirection: 'row' }}>
@@ -95,7 +95,7 @@ function inicio(props) {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov2' })}>
+          <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Modulo' })}>
             <View style={CSS.viewCardHome}>
               <View style={{ flex: 3, marginLeft:10 }}>
                 <View style={{ flexDirection: 'row' }}>
@@ -117,7 +117,7 @@ function inicio(props) {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov2' })}>
+          <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Modulo' })}>
             <View style={CSS.viewCardHome}>
               <View style={{ flex: 3, marginLeft:10 }}>
                 <View style={{ flexDirection: 'row' }}>
@@ -139,7 +139,7 @@ function inicio(props) {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov2' })}>
+          <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Modulo' })}>
             <View style={CSS.viewCardHome}>
               <View style={{ flex: 3, marginLeft:10 }}>
                 <View style={{ flexDirection: 'row' }}>

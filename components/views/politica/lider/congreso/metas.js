@@ -130,7 +130,7 @@ function pagina8(props) {
             backgroundColor: '#132196'
           }}
 
-          onPress={() => navigation.navigate({ routeName: 'Pagina1' })}
+          onPress={() => navigation.navigate({ routeName: 'Congreso' })}
 
         >
           <Text style={CSS.siguientetext}>GUARDAR</Text>

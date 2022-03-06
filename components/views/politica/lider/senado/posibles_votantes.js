@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import {
@@ -7,16 +7,18 @@ import {
   View,
   Image,
   ImageBackground,
+  TextInput,
   TouchableOpacity, Alert
 } from 'react-native';
 import { images, COLORS, CSS } from "../../../../../constants";
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
-function pagina1(props) {
 
-  let { navigation } = props;
+function pagina7(props) {
 
   
+
+  let { navigation } = props;
+ 
 
   return (
 
@@ -57,17 +59,13 @@ function pagina1(props) {
               </View>
             </View>
           </TouchableOpacity> */}
-        {/* <TouchableOpacity onPress={() => Close()}>
-
-          <Icon name="location-exit" style={CSS.icon}
-          />
-        </TouchableOpacity> */}
+        
         <Image
           style={CSS.img}
           source={images.logo2}
         />
 
-        <Text style={{
+<Text style={{
           marginTop: hp('3%'),
           marginBottom: hp('4'),
           fontSize: hp('3%'),
@@ -75,48 +73,82 @@ function pagina1(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> CAMARA DE REPRESENTANTES
+        }}> REGISTRO POSIBLES VOTANTES
         </Text>
 
         <View >
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Numero de cedula</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            keyboardType="numeric"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Nombre</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Apellido</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Lugar de votación</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Mesa de votación </Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            keyboardType="numeric"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <Text style={CSS.pririodad}>
+            Los campos con * es obligatorio
+          </Text>
           <TouchableOpacity
             style={{
-              ...CSS.siguiente2,
+              ...CSS.siguiente,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate({ routeName: 'Pagina7' })}
+
+            onPress={() => navigation.navigate({ routeName: 'Entes_territoriales' })}
+
           >
-            <Text style={CSS.siguientetext}>REGISTRO POSIBLES VOTANTES</Text>
+            <Text style={CSS.siguientetext}>GUARDAR</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-          
-            style={{
-              ...CSS.siguiente2,
-              backgroundColor: '#132196'
-            }}
-            onPress={() => navigation.navigate('Pagina8')}
-          >
-            <Text style={CSS.siguientetext}>REGISTRO METAS POR LIDER</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              ...CSS.siguiente2,
-              backgroundColor: '#132196'
-            }}
-            onPress={() => navigation.navigate('Pagina2')}
-          >
-            <Text style={CSS.siguientetext}>REGISTRO DE VOTOS</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              ...CSS.siguiente2,
-              backgroundColor: '#132196'
-            }}
-            onPress={() => navigation.navigate('Pagina4')}
-          >
-            <Text style={CSS.siguientetext}>REPORTE Y CONSULTA</Text>
-          </TouchableOpacity>
-        </View>
+      </View>
 
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
@@ -146,4 +178,4 @@ function pagina1(props) {
   );
 };
 
-export default pagina1;
+export default pagina7;

@@ -44,11 +44,11 @@ function Login(props) {
         AsyncStorage.setItem('id', response.data.usuario.uid);
         AsyncStorage.setItem('user', JSON.stringify(response.data.usuario));
         if (response.data.usuario.rol === 'LIDER_ROLE') {
-          navigation.navigate('Iniciov1');
+          navigation.navigate('Partido');
         } else if (response.data.usuario.rol === 'TESTIGO_ROLE') {
           navigation.navigate('Pagina1E');
         } else {
-          navigation.navigate('Iniciov1');
+          navigation.navigate('Partido');
         }
       })
       .catch(function (error) {
