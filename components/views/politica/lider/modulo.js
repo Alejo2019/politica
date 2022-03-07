@@ -15,6 +15,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 function inicio2(props) {
 
   let { navigation } = props;
+  let partido = navigation.state.params.partido;
+  console.log('pagina 1',partido);
 
   const Close = async () => {
     await AsyncStorage.removeItem('token');
@@ -83,7 +85,7 @@ function inicio2(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate('Campaña')}
+            onPress={() => navigation.navigate({ routeName: 'Campaña', params: { partido } })}
           >
             <Text style={CSS.siguientetext}>Monitoreo electoral</Text>
           </TouchableOpacity>

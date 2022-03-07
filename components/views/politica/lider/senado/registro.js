@@ -25,8 +25,10 @@ function pagina2(props) {
   const [isChecked, setChecked] = useState(false);
   const [isChecked1, setChecked1] = useState(false);
 
-  const [country, setCountry] = useState('Unknown');
+  const [Candidato, setCandidato] = useState("PRUEBA");
   const [token, setToken] = useState("");
+  let partido = navigation.state.params.partido;
+
 
 
   useEffect(() => {
@@ -45,53 +47,49 @@ function pagina2(props) {
 
   const [state, setState] = useState({
     nombre: '',
-    apellido: '',
+    apellido:'',
     cedula: '',
-    telefono: '',
     mesa: '',
-    puesto: '',
-    departamento: '',
-    ciudad: '',
     lugar: '',
-    zona: ''
+    puesto: '',
+    candidatoSen:'',
+    candidatoCama: ''
   });
 
   const hableChangeText = (nombre, value) => {
     setState({ ...state, [nombre]: value });
   }
-
+console.log("a")
+console.log(Candidato)
   const envio = () => {
     axios
-      .post('https://servicios-server.herokuapp.com/api/votantes', {
-        "nombre": (state.nombre),
-        "apellido": (state.apellido),
-        "cedula": (state.cedula),
-        "telefono": (state.telefono),
-        "estado": false,
-        "departamento": (state.departamento),
-        "ciudad": (state.ciudad),
-        "mesa": (state.mesa),
-        "puesto": (state.puesto),
-        "lugar": (state.lugar),
-        "zona": (state.zona)
-      }, {
-        headers: {
-          'x-token': token
-        }
-      }).then(function (response) {
-        // handle success
-        alert(JSON.stringify(response.data));
-        console.log((response.data))
-      })
-      .catch(function (error) {
-        // handle error
-        alert(error.message);
-      })
-      .finally(function () {
-        // always executed
-        alert('Finally called');
-      });
-    navigation.navigate({ routeName: 'Pagina7I' })
+    .post('https://service-servicios.herokuapp.com/api/votantes', {
+      "nombre": (state.nombre),
+      "apellido":(state.apellido),
+      "cedula": (state.cedula),
+      "estado": false,
+      "mesa": (state.mesa),
+      "lugar": (state.lugar),
+      "puesto": (state.puesto),
+      "votoEnte": false,
+      "votoSena": true,
+      "tipoCampaña": "Senado",
+      "partido": partido,
+      "candidatoSen":Candidato
+    }, {
+      headers: {
+        'x-token': token
+      }
+    }).then(function (response) {
+      // handle success
+      alert(JSON.stringify(response.data));
+      console.log((response.data))
+    })
+    .catch(function (error) {
+      // handle error
+      alert(error.message);
+    });
+    navigation.navigate({ routeName: 'Entes_territoriales' })
   };
 
   return (
@@ -204,7 +202,8 @@ function pagina2(props) {
           placeholderTextColor="#132196"
           autoCapitalize="none"
           selectionColor="#132196"
-          onChangeText={(value) => hableChangeText('zona', value)}
+          keyboardType="numeric"
+          onChangeText={(value) => hableChangeText('mesa', value)}
 
         />
         {/* <View style={CSS.viewCardHome}>
@@ -275,8 +274,7 @@ onChangeText={(value) => hableChangeText('puesto', value)}
           autoCapitalize="none"
           selectionColor="#132196">
           <Picker
-            selectedValue={country}
-            onValueChange={(value, index) => setCountry(value)}
+             onValueChange={(itemValue, itemIndex) => setCandidato(itemValue)}
             mode="dropdown" // Android only
             style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
           >
@@ -297,7 +295,7 @@ onChangeText={(value) => hableChangeText('puesto', value)}
           autoCapitalize="none"
           selectionColor="#132196">
           <Picker
-            selectedValue={country}
+            selectedValue={Candidato}
             onValueChange={(value, index) => setCountry(value)}
             mode="dropdown" // Android only
             style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
@@ -309,7 +307,7 @@ onChangeText={(value) => hableChangeText('puesto', value)}
             
           </Picker>
         </View>
-        <View style={CSS.viewCardHome}>
+        {/* <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}>¿Voto?</Text>
         </View>
@@ -330,7 +328,7 @@ onChangeText={(value) => hableChangeText('puesto', value)}
 
             
           </Picker>
-        </View>
+        </View> */}
 
 
 
@@ -345,7 +343,7 @@ onChangeText={(value) => hableChangeText('puesto', value)}
             backgroundColor: '#132196'
           }}
 
-          onPress={() => navigation.navigate({ routeName: 'Entes_territoriales' })}
+          onPress={() => envio()}
 
         >
           <Text style={CSS.siguientetext}>GUARDAR</Text>

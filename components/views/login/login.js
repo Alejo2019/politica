@@ -34,7 +34,7 @@ function Login(props) {
   const Validador = async (dispatch) => {
     console.log(state);
     await axios
-      .post('https://servicios-server.herokuapp.com/api/auth/login', {
+      .post('https://service-servicios.herokuapp.com/api/auth/login', {
         "correo": (state.correo),
         "contraseña": (state.contraseña)
       }).then(function (response) {
