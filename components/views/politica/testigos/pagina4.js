@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import { images, COLORS, CSS } from "../../../../constants";
 import { Picker } from "@react-native-picker/picker";
+import { List } from 'react-native-paper';
 
 
 function pagina3(props) {
@@ -37,82 +38,93 @@ function pagina3(props) {
       </TouchableOpacity> */}
 
       <ScrollView>
-        <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate('Pagina5E')}>
-          <View style={CSS.viewCardHome}>
-            <View style={{ flex: 4, marginLeft: 10 }}>
-              <View style={{ flexDirection: 'row' }}>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    DEPARTAMENTO
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    12 - CESAR
-                  </Text>
+        <List.Section>
+          <List.Accordion title='Desplegable' titleStyle={{ color: COLORS.gray, fontWeight: 'bold' }}
+            left={props => <List.Icon {...props} icon="shower" color={COLORS.gray} />}
+            style={{ backgroundColor: COLORS.blue }}>
+            <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate('Pagina5E')}>
+              <View style={CSS.viewCardHome}>
+                <View style={{ flex: 4, marginLeft: 10 }}>
+                  <View style={{ flexDirection: 'row' }}>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome}>
+                        DEPARTAMENTO
+                      </Text>
+                    </View>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome}>
+                        12 - CESAR
+                      </Text>
+                    </View>
+                  </View>
+                  <View style={{ flexDirection: 'row' }}>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome}>
+                        MUNICIPIO
+                      </Text>
+                    </View>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome}>
+                        180 - BECERRIL
+                      </Text>
+                    </View>
+                  </View>
+                  <View style={{ flexDirection: 'row' }}>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome}>
+                        LUGAR DE PUESTO
+                      </Text>
+                    </View>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome}>
+                        CABECERA MUNICIPAL
+                      </Text>
+                    </View>
+                  </View>
+                  <View style={{ flexDirection: 'row' }}>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome}>
+                        ZONA
+                      </Text>
+                    </View>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome}>
+                        80
+                      </Text>
+                    </View>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome}>
+                        PUESTO
+                      </Text>
+                    </View>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome}>
+                        00
+                      </Text>
+                    </View>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome}>
+                        MESA
+                      </Text>
+                    </View>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome}>
+                        003
+                      </Text>
+                    </View>
+                  </View>
                 </View>
               </View>
-              <View style={{ flexDirection: 'row' }}>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    MUNICIPIO
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    180 - BECERRIL
-                  </Text>
-                </View>
-              </View>
-              <View style={{ flexDirection: 'row' }}>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    LUGAR DE PUESTO
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    CABECERA MUNICIPAL
-                  </Text>
-                </View>
-              </View>
-              <View style={{ flexDirection: 'row' }}>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    ZONA
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    80
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    PUESTO
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    00
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    MESA
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    003
-                  </Text>
-                </View>
-              </View>
-            </View>
-          </View>
-        </TouchableOpacity>
+            </TouchableOpacity>
 
-        {/* <View style={CSS.cardHome}>
+          </List.Accordion>
+        </List.Section>
+
+        <List.Section>
+          <List.Accordion title='Desplegable' titleStyle={{ color: COLORS.gray, fontWeight: 'bold' }}
+            left={props => <List.Icon {...props} icon="shower" color={COLORS.gray} />}
+            style={{ backgroundColor: COLORS.blue }}>
+        <View style={CSS.cardHome}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 3, alignItems: 'center' }}>
               <View style={{ flexDirection: 'row' }}>
@@ -191,9 +203,9 @@ function pagina3(props) {
               </View>
             </View>
           </View>
-        </View> */}
+        </View>
 
-        {/* <View style={CSS.cardHome} >
+        <View style={CSS.cardHome} >
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 3, alignItems: 'center' }}>
               <View style={{ flexDirection: 'row' }}>
@@ -408,10 +420,13 @@ function pagina3(props) {
 
         >
           <Text style={CSS.siguientetext}>VOLVER</Text>
-        </TouchableOpacity> */}
+        </TouchableOpacity>
+        
+        </List.Accordion>
+        </List.Section>
 
       </ScrollView>
-    </ImageBackground>
+    </ImageBackground >
   );
 };
 

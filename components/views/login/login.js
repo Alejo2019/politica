@@ -7,7 +7,7 @@ import {
   View,
   ImageBackground,
   Image,
-  TextInput,
+  TextInput, Modal, StyleSheet,
   TouchableOpacity, Alert, ActivityIndicator, ScrollView
 } from 'react-native';
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
@@ -30,8 +30,10 @@ function Login(props) {
   const hableChangeText = (nombre, value) => {
     setState({ ...state, [nombre]: value });
   }
+  const [modalVisible, setModalVisible] = useState(false);
 
   const Validador = async (dispatch) => {
+    setModalVisible(true);
     console.log(state);
     await axios
       .post('https://service-servicios.herokuapp.com/api/auth/login', {
@@ -50,8 +52,10 @@ function Login(props) {
         } else {
           navigation.navigate('Partido');
         }
+        setModalVisible(false);
       })
       .catch(function (error) {
+        setModalVisible(false);
         setShowAlert(true);
       })
   };
@@ -115,6 +119,22 @@ function Login(props) {
 
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
+      <View style={styles.centeredView}>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            setModalVisible(!modalVisible);
+          }}
+        >
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <ActivityIndicator size="large" color="#efb43b" />
+            </View>
+          </View>
+        </Modal>
+      </View>
 
       {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
         <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
@@ -198,7 +218,7 @@ function Login(props) {
             selectedValue={country}
             onValueChange={(value, index) => setCountry(value)}
             mode="dropdown" // Android only
-            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", color: '#132196'}}
+            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", color: '#132196' }}
           >
             {/* <Picker.Item label="Seleccione el pais" value="Unknown" /> */}
             <Picker.Item label="Colombia" value="Colombia" />
@@ -223,7 +243,7 @@ function Login(props) {
             <Picker.Item label="Venezuela" value="Venezuela" />
           </Picker>
         </View>
-        
+
         <View style={CSS.siguientecontainer}>
           <TouchableOpacity
             style={{
@@ -236,7 +256,7 @@ function Login(props) {
             <Text style={CSS.siguientetext}>INICIAR SESIÓN</Text>
           </TouchableOpacity>
 
-          
+
 
           {/* <TouchableOpacity
           style={{
@@ -278,5 +298,49 @@ function Login(props) {
   );
 
 }
+
+const styles = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2
+  },
+  buttonOpen: {
+    backgroundColor: "#F194FF",
+  },
+  buttonClose: {
+    backgroundColor: "#2196F3",
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center"
+  }
+});
 
 export default Login
