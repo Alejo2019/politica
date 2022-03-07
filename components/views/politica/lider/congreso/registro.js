@@ -82,10 +82,12 @@ function pagina2(props) {
         // handle success
         (JSON.stringify(response.data));
         console.log((response.data))
+        alert("Resgistro Existoso!")
       })
       .catch(function (error) {
         // handle error
-        alert(error.message);
+        alert("Ha ocurrido un error, verifica los datos!");
+        console.log(error.message)
       });
       navigation.navigate({ routeName: 'Congreso' })
   };

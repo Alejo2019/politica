@@ -84,9 +84,12 @@ console.log(Candidato)
       // handle success
       (JSON.stringify(response.data));
       console.log((response.data))
+      alert("Resgistro Existoso!")
+
     })
     .catch(function (error) {
-      // handle error
+              alert("Ha ocurrido un error, verifica los datos!");
+
     });
     navigation.navigate({ routeName: 'Entes_territoriales' })
   };
