@@ -16,8 +16,7 @@ function inicio2(props) {
 
   let { navigation } = props;  
   let partido = navigation.state.params.partido;
-
-  console.log('inicio2',partido);
+  console.log('pagina 2',partido);
 
   const Close = async () => {
     await AsyncStorage.removeItem('token');
@@ -95,7 +94,7 @@ function inicio2(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate('Congreso')}
+            onPress={() => navigation.navigate({ routeName: 'Congreso', params: { partido } })}
           >
             <Text style={CSS.siguientetext}>CONGRESO</Text>
           </TouchableOpacity>
@@ -104,8 +103,9 @@ function inicio2(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate('Entes_territoriales')}
+            onPress={() => navigation.navigate({ routeName: 'Entes_territoriales', params: { partido } })}
           >
+
             <Text style={CSS.siguientetext}>ENTES TERRITORIALES</Text>
           </TouchableOpacity>
         </View>

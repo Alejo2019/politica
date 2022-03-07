@@ -33,26 +33,17 @@ function pagina4(props) {
 
   const getDataUsingSimpleGetCall = () => {
     axios
-      .get('https://service-servicios.herokuapp.com/api/users')
+      .get('https://service-servicios.herokuapp.com/api/votantes')
       .then(function (response) {
         // handle success
-        setdata(response.data.usuarios);
-        console.log(response.data.usuarios)
+        setdata(response.data.votantes);
+        console.log(response.data.votantes)
       })
 
   };
-
-
-
-  const [page, setPage] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(optionsPerPage[0]);
-
-  useEffect(() => {
-    setPage(0);
-  }, [itemsPerPage]);
-  //console.log(data)
   return (
 
+  
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
 
       {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
@@ -94,16 +85,16 @@ function pagina4(props) {
         />
 
         <Text style={{
-          marginTop: hp('3%'),
           marginBottom: hp('1'),
           fontSize: hp('3%'),
           textAlign: 'center',
           color: '#132196',
-
           fontWeight: 'bold'
 
-        }}> VOTANTES A ENTES TERRITORIALES
+        }}> VOTANTES A LA CAMARA
+
         </Text>
+
         <View style={{ ...CSS.viewCardHome, marginTop: hp('5%') }}>
           <View style={{ flex: 3, alignItems: 'center' }}>
 
@@ -133,7 +124,7 @@ function pagina4(props) {
                   autoCapitalize="none"
                   keyboardType="numeric"
                   onChangeText={(value) => hableChangeText('totalSufragantes', value)}
-                >30</TextInput>
+                >0</TextInput>
               </View>
               <View style={{ alignSelf: 'center' }}>
                 <TextInput style={CSS.tituloHome1}
@@ -142,7 +133,7 @@ function pagina4(props) {
                   autoCapitalize="none"
                   keyboardType="numeric"
                   onChangeText={(value) => hableChangeText('totalSufragantes', value)}
-                >30</TextInput>
+                >0</TextInput>
               </View>
               <View style={{ alignSelf: 'center' }}>
                 <TextInput style={CSS.tituloHome1}
@@ -151,7 +142,7 @@ function pagina4(props) {
                   autoCapitalize="none"
                   keyboardType="numeric"
                   onChangeText={(value) => hableChangeText('totalSufragantes', value)}
-                >30</TextInput>
+                >0</TextInput>
               </View>
             </View>
           </View>
@@ -165,35 +156,33 @@ function pagina4(props) {
 
 
           <DataTable >
-              
-          <ScrollView horizontal={true} >
-            <View>
-                <DataTable.Header>
-                  <DataTable.Title style={{ marginRight: wp('25%') }}>Nombre</DataTable.Title>
-                  <DataTable.Title style={{ marginRight: wp('20%') }} numeric>Cedula</DataTable.Title>
-                  <DataTable.Title style={{ marginRight: wp('10%') }} numeric>Candidato</DataTable.Title>
-                  <DataTable.Title numeric>Si voto</DataTable.Title>
 
-                
+            <ScrollView horizontal={true} >
+              <View>
+                <DataTable.Header>
+                  <DataTable.Title style={{ marginRight: wp('20%') }}>Nombre</DataTable.Title>
+                  <DataTable.Title style={{ marginRight: wp('20%') }} numeric>Cedula</DataTable.Title>
+                  <DataTable.Title style={{ marginRight: wp('20%') }} numeric>Si voto</DataTable.Title>
                 </DataTable.Header>
 
-            
-                <DataTable.Row >
-                  <DataTable.Cell style={{ marginRight: wp('10%') }}></DataTable.Cell>
-                  <DataTable.Cell style={{ marginRight: wp('8%') }} numeric></DataTable.Cell>
-                  <DataTable.Cell style={{ marginRight: wp('15%') }} numeric> </DataTable.Cell>
-                  
-                  <DataTable.Cell>  <Checkbox style={{ margin: 8 }} value={isChecked} onValueChange={setChecked} />  </DataTable.Cell>
-                </DataTable.Row>
-                
-                </View>
+                {data.map((dato, index) => (
+                  <DataTable.Row >
+                    <DataTable.Cell style={{ marginRight: wp('10%') }}>{dato.nombre}</DataTable.Cell>
+                    <DataTable.Cell style={{ marginRight: wp('10px') }} numeric>{dato.cedula}</DataTable.Cell>
+                    <DataTable.Cell style={{ marginRight: wp('8%') }}>  <Checkbox style={{ margin: 8 }} value={isChecked} onValueChange={setChecked} />  </DataTable.Cell>
+                  </DataTable.Row>
+                )
+                )
+                }
+
+
+              </View>
             </ScrollView>
-             
+
           </DataTable>
 
 
         </View>
-
         <TouchableOpacity
           style={{
             ...CSS.siguiente,
@@ -201,7 +190,7 @@ function pagina4(props) {
             marginTop: hp('5%')
           }}
 
-          onPress={() => navigation.navigate({ routeName: 'Entes_territoriales' })}
+          onPress={() => navigation.navigate({ routeName: 'Congreso' })}
 
         >
           <Text style={CSS.siguientetext}>GUARDAR</Text>

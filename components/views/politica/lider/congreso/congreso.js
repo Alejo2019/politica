@@ -15,9 +15,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 function pagina1(props) {
 
   let { navigation } = props;
-  let partido = navigation.state.params.partido;
-
-  console.log('pagina 1',partido);
+ let partido = navigation.state.params.partido;
+console.log('pagina 3',partido);
 
   // useEffect(() => {
   //   console.log(partido)
@@ -108,7 +107,7 @@ function pagina1(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate('Registro')}
+            onPress={() => navigation.navigate({ routeName: 'Registro', params: { partido } })}
           >
             <Text style={CSS.siguientetext}>REGISTRO DE VOTOS</Text>
           </TouchableOpacity>

@@ -153,30 +153,29 @@ function pagina4(props) {
 
 
           <DataTable >
-              
-          <ScrollView horizontal={true} >
-            <View>
-                <DataTable.Header>
-                  <DataTable.Title style={{ marginRight: wp('25%') }}>Nombre</DataTable.Title>
-                  <DataTable.Title style={{ marginRight: wp('20%') }} numeric>Cedula</DataTable.Title>
-                  <DataTable.Title style={{ marginRight: wp('10%') }} numeric>Candidato</DataTable.Title>
-                  <DataTable.Title numeric>Si voto</DataTable.Title>
 
-                
+            <ScrollView horizontal={true} >
+              <View>
+                <DataTable.Header>
+                  <DataTable.Title style={{ marginRight: wp('20%') }}>Nombre</DataTable.Title>
+                  <DataTable.Title style={{ marginRight: wp('20%') }} numeric>Cedula</DataTable.Title>
+                  <DataTable.Title style={{ marginRight: wp('20%') }} numeric>Si voto</DataTable.Title>
                 </DataTable.Header>
 
-            
-                <DataTable.Row >
-                  <DataTable.Cell style={{ marginRight: wp('10%') }}></DataTable.Cell>
-                  <DataTable.Cell style={{ marginRight: wp('8%') }} numeric></DataTable.Cell>
-                  <DataTable.Cell style={{ marginRight: wp('15%') }} numeric> </DataTable.Cell>
-                  
-                  <DataTable.Cell>  <Checkbox style={{ margin: 8 }} value={isChecked} onValueChange={setChecked} />  </DataTable.Cell>
-                </DataTable.Row>
-                
-                </View>
+                {data.map((dato, index) => (
+                  <DataTable.Row >
+                    <DataTable.Cell style={{ marginRight: wp('10%') }}>{dato.nombre}</DataTable.Cell>
+                    <DataTable.Cell style={{ marginRight: wp('10px') }} numeric>{dato.cedula}</DataTable.Cell>
+                    <DataTable.Cell style={{ marginRight: wp('8%') }}>  <Checkbox style={{ margin: 8 }} value={isChecked} onValueChange={setChecked} />  </DataTable.Cell>
+                  </DataTable.Row>
+                )
+                )
+                }
+
+
+              </View>
             </ScrollView>
-             
+
           </DataTable>
 
 

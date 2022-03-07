@@ -24,13 +24,14 @@ function pagina2(props) {
   let { navigation } = props;
   const [isChecked, setChecked] = useState(false);
   const [isChecked1, setChecked1] = useState(false);
-  let partido = navigation.state.params.partido;
   const [country, setCountry] = useState('Unknown');
   const [token, setToken] = useState("");
 
+  let partido = navigation.state.params.partido;
+  console.log(partido);
+
   useEffect(() => {
     getToken()
-    console.log(partido)
   }, []);
 
   const getToken = async () => {
@@ -45,15 +46,13 @@ function pagina2(props) {
 
   const [state, setState] = useState({
     nombre: '',
-    apellido: '',
+    apellido:'',
     cedula: '',
-    telefono: '',
     mesa: '',
-    puesto: '',
-    departamento: '',
-    ciudad: '',
     lugar: '',
-    zona: ''
+    puesto: '',
+    candidatoSen:"lordPetrosky",
+    candidatoCama: "Otro lordPetrosky"
   });
 
   const hableChangeText = (nombre, value) => {
@@ -63,20 +62,19 @@ function pagina2(props) {
   const envio = () => {
     axios
       .post('https://service-servicios.herokuapp.com/api/votantes', {
-        "nombre": "Votante",
-        "apellido":"UNO",
-        "cedula": "11445560",
+        "nombre": (state.nombre),
+        "apellido":(state.apellido),
+        "cedula": (state.cedula),
         "estado": false,
-        "mesa": 17,
-        "lugar": "colegio",
-        "puesto": 17,
-        "votoEnte": false,
+        "mesa": (state.mesa),
+        "lugar": (state.lugar),
+        "puesto": (state.puesto),
+        "votoEnte": true,
         "votoSena": false,
-        "campaña":"SENADO",
-        "candidatoSen":"lordPetrosky",
-        "candidatoCama": "Otro lordPetrosky"
+        "tipoCampaña": "Congreso",
+        "partido": partido,
+        "candidatoSen":" CUATRO lordPetrosky"
       }, {
-        
         headers: {
           'x-token': token
         }
@@ -89,7 +87,7 @@ function pagina2(props) {
         // handle error
         alert(error.message);
       });
-      navigation.navigate({ routeName: 'Pagina1' })
+      navigation.navigate({ routeName: 'Congreso' })
   };
 
   return (
@@ -203,6 +201,7 @@ function pagina2(props) {
           placeholderTextColor="#132196"
           autoCapitalize="none"
           selectionColor="#132196"
+          keyboardType="numeric"
           onChangeText={(value) => hableChangeText('mesa', value)}
 
         />
@@ -308,7 +307,7 @@ function pagina2(props) {
             
           </Picker>
         </View>
-        <View style={CSS.viewCardHome}>
+        {/* <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
           <Text style={CSS.asterisco1}>¿Voto?</Text>
         </View>
@@ -329,7 +328,7 @@ function pagina2(props) {
 
             
           </Picker>
-        </View>
+        </View> */}
 
 
 
@@ -344,7 +343,7 @@ function pagina2(props) {
             backgroundColor: '#132196'
           }}
 
-          onPress={() => navigation.navigate({ routeName: 'Congreso' })}
+          onPress={() => envio()}
 
         >
           <Text style={CSS.siguientetext}>GUARDAR</Text>
