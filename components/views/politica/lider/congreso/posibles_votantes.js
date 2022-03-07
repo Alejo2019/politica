@@ -22,6 +22,10 @@ function pagina7(props) {
     navigation.navigate('Login');
   };
 
+  const hableChangeText = (nombre, value) => {
+    setState({ ...state, [nombre]: value });
+  }
+
   return (
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>

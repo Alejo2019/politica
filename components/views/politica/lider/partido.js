@@ -96,7 +96,7 @@ function inicio(props) {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Modulo' })}>
+        <TouchableOpacity style={CSS.cardHome} onPress={() => cambio()}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 3, marginLeft: 10 }}>
               <View style={{ flexDirection: 'row' }}>
@@ -118,7 +118,7 @@ function inicio(props) {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Modulo' })}>
+        <TouchableOpacity style={CSS.cardHome} onPress={() => cambio()}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 3, marginLeft: 10 }}>
               <View style={{ flexDirection: 'row' }}>
@@ -140,7 +140,7 @@ function inicio(props) {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Modulo' })}>
+        <TouchableOpacity style={CSS.cardHome} onPress={() =>cambio()}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 3, marginLeft: 10 }}>
               <View style={{ flexDirection: 'row' }}>

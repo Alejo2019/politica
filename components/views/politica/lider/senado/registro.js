@@ -82,12 +82,11 @@ console.log(Candidato)
       }
     }).then(function (response) {
       // handle success
-      alert(JSON.stringify(response.data));
+      (JSON.stringify(response.data));
       console.log((response.data))
     })
     .catch(function (error) {
       // handle error
-      alert(error.message);
     });
     navigation.navigate({ routeName: 'Entes_territoriales' })
   };

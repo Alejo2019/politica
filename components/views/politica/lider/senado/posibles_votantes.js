@@ -19,6 +19,9 @@ function pagina7(props) {
 
   let { navigation } = props;
  
+  const hableChangeText = (nombre, value) => {
+    setState({ ...state, [nombre]: value });
+  }
 
   return (
 
