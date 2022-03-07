@@ -68,7 +68,7 @@ function pagina2(props) {
       </TouchableOpacity> */}
 
       <ScrollView>
-        <View style={CSS.cardHome} onPress={() => navigation.navigate('Pagina3E')}>
+        <TouchableOpacity style={CSS.cardHome}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 4, marginLeft: 10 }}>
               <View style={{ flexDirection: 'row' }}>
@@ -141,7 +141,7 @@ function pagina2(props) {
               </View>
             </View>
           </View>
-        </View>
+        </TouchableOpacity>
 
         <View style={CSS.cardHome}>
           <View style={CSS.viewCardHome}>

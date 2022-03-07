@@ -4,9 +4,9 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { Image, Text } from 'react-native';
 import Pagina1escreen from '../components/views/politica/testigos/pagina1';
 import Pagina2escreen from '../components/views/politica/testigos/pagina2';
-import Pagina3escreen from '../components/views/politica/testigos/pagina3';
+//import Pagina3escreen from '../components/views/politica/testigos/pagina3';
 import Pagina4escreen from '../components/views/politica/testigos/pagina4';
-import Pagina5escreen from '../components/views/politica/testigos/pagina5';
+//import Pagina5escreen from '../components/views/politica/testigos/pagina5';
 import { images, COLORS } from "../constants";
 
 function LogoTitle() {
@@ -47,17 +47,7 @@ const Inicio = createStackNavigator({
             },
           })
         }, 
-        Pagina3L: {
-          screen: Pagina3escreen,
-          navigationOptions: ({ navigation }) => ({
-            title: 'Atras',
-            headerTitle: props => <LogoTitle />,
-            headerTitleAlign: 'center',
-            headerStyle: {
-              backgroundColor: COLORS.blue,
-            },
-          })
-        },
+        
         Pagina4L: {
           screen: Pagina4escreen,
           navigationOptions: ({ navigation }) => ({
@@ -69,17 +59,7 @@ const Inicio = createStackNavigator({
             },
           })
         },  
-        Pagina5L: {
-          screen: Pagina5escreen,
-          navigationOptions: ({ navigation }) => ({
-            title: 'Atras',
-            headerTitle: props => <LogoTitle />,
-            headerTitleAlign: 'center',
-            headerStyle: {
-              backgroundColor: COLORS.blue,
-            },
-          })
-        }, 
+         
       },{
         navigationOptions:{
           headerShown:false

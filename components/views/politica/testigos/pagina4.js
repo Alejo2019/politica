@@ -37,7 +37,7 @@ function pagina3(props) {
       </TouchableOpacity> */}
 
       <ScrollView>
-        <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate('Pagina5E')}>
+        <TouchableOpacity style={CSS.cardHome}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 4, marginLeft: 10 }}>
               <View style={{ flexDirection: 'row' }}>
@@ -112,7 +112,7 @@ function pagina3(props) {
           </View>
         </TouchableOpacity>
 
-        {/* <View style={CSS.cardHome}>
+        <View style={CSS.cardHome}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 3, alignItems: 'center' }}>
               <View style={{ flexDirection: 'row' }}>
@@ -191,9 +191,9 @@ function pagina3(props) {
               </View>
             </View>
           </View>
-        </View> */}
+        </View>
 
-        {/* <View style={CSS.cardHome} >
+        <View style={CSS.cardHome} >
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 3, alignItems: 'center' }}>
               <View style={{ flexDirection: 'row' }}>
@@ -408,7 +408,7 @@ function pagina3(props) {
 
         >
           <Text style={CSS.siguientetext}>VOLVER</Text>
-        </TouchableOpacity> */}
+        </TouchableOpacity>
 
       </ScrollView>
     </ImageBackground>
