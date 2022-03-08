@@ -69,87 +69,7 @@ function pagina2(props) {
       </TouchableOpacity> */}
 
       <ScrollView>
-        <List.Section>
-          <List.Accordion title='Desplegable' titleStyle={{ color: COLORS.gray, fontWeight:'bold' }}
-            left={props => <List.Icon {...props} icon="shower" color={COLORS.gray} />}
-            style={{ backgroundColor: COLORS.blue }}>
-            <View style={CSS.cardHome} onPress={() => navigation.navigate('Pagina3E')}>
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 4, marginLeft: 10 }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome}>
-                        DEPARTAMENTO
-                      </Text>
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome}>
-                        12 - CESAR
-                      </Text>
-                    </View>
-                  </View>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome}>
-                        MUNICIPIO
-                      </Text>
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome}>
-                        180 - BECERRIL
-                      </Text>
-                    </View>
-                  </View>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome}>
-                        LUGAR DE PUESTO
-                      </Text>
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome}>
-                        CABECERA MUNICIPAL
-                      </Text>
-                    </View>
-                  </View>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome}>
-                        ZONA
-                      </Text>
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome}>
-                        80
-                      </Text>
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome}>
-                        PUESTO
-                      </Text>
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome}>
-                        00
-                      </Text>
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome}>
-                        MESA
-                      </Text>
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome}>
-                        003
-                      </Text>
-                    </View>
-                  </View>
-                </View>
-              </View>
-            </View>
-          </List.Accordion>
-        </List.Section>
-        <TouchableOpacity style={CSS.cardHome}>
+        <View style={CSS.cardHome} onPress={() => navigation.navigate('Pagina3E')}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 4, marginLeft: 10 }}>
               <View style={{ flexDirection: 'row' }}>
@@ -222,7 +142,7 @@ function pagina2(props) {
               </View>
             </View>
           </View>
-        </TouchableOpacity>
+        </View>
 
         <View style={CSS.cardHome}>
           <View style={CSS.viewCardHome}>

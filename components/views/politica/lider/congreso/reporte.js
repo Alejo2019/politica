@@ -154,19 +154,19 @@ function pagina4(props) {
 
           <DataTable >
 
-            <ScrollView horizontal={true} >
+            
               <View>
                 <DataTable.Header>
-                  <DataTable.Title style={{ marginRight: wp('20%') }}>Nombre</DataTable.Title>
-                  <DataTable.Title style={{ marginRight: wp('20%') }} numeric>Cedula</DataTable.Title>
-                  <DataTable.Title style={{ marginRight: wp('20%') }} numeric>Si voto</DataTable.Title>
+                  <DataTable.Title >Nombre</DataTable.Title>
+                  <DataTable.Title >Cedula</DataTable.Title>
+                  <DataTable.Title>Si voto</DataTable.Title>
                 </DataTable.Header>
 
                 {data.map((dato, index) => (
                   <DataTable.Row >
-                    <DataTable.Cell style={{ marginRight: wp('10%') }}>{dato.nombre}</DataTable.Cell>
-                    <DataTable.Cell style={{ marginRight: wp('10px') }} numeric>{dato.cedula}</DataTable.Cell>
-                    <DataTable.Cell style={{ marginRight: wp('8%') }}>  <Checkbox style={{ margin: 8 }} value={isChecked} onValueChange={setChecked} />  </DataTable.Cell>
+                    <DataTable.Cell >{dato.nombre}</DataTable.Cell>
+                    <DataTable.Cell >{dato.cedula}</DataTable.Cell>
+                    <DataTable.Cell >  <Checkbox style={{ margin: 8 }} value={isChecked} onValueChange={setChecked} />  </DataTable.Cell>
                   </DataTable.Row>
                 )
                 )
@@ -174,7 +174,7 @@ function pagina4(props) {
 
 
               </View>
-            </ScrollView>
+            
 
           </DataTable>
 
