@@ -335,6 +335,114 @@ function pagina2(props) {
             </View>
           </View>
         </View>
+        <View style={CSS.cardHome} >
+              <View style={CSS.viewCardHome}>
+                <View style={{ flex: 3, alignItems: 'center' }}>
+                  <View style={{ flexDirection: 'row' }}>
+                    <View>
+                      <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                    </View>
+                    <View>
+                      <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                    </View>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome5}>
+                        CANDIDATO 3
+                      </Text>
+                      <Text style={CSS.tituloHome6}
+                        underlineColorAndroid="transparent"
+                        placeholderTextColor="#132196"
+                        autoCapitalize="none"
+                        keyboardType="numeric">900</Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </View>
+
+            <View style={CSS.cardHome3}>
+              <View style={CSS.viewCardHome}>
+                <View style={{ flex: 2, alignItems: 'center' }}>
+                  <View style={{ flexDirection: 'row' }}>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome5}>
+                        VOTO EN BLANCO:
+                      </Text>
+
+                    </View>
+                    <Text style={CSS.tituloHome6}
+                      underlineColorAndroid="transparent"
+                      placeholderTextColor="#132196"
+                      autoCapitalize="none"
+                      keyboardType="numeric">900</Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+            <View style={CSS.cardHome3}>
+              <View style={CSS.viewCardHome}>
+                <View style={{ flex: 3, alignItems: 'center' }}>
+                  <View style={{ flexDirection: 'row' }}>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome5}>
+                        VOTO NULOS:
+                      </Text>
+
+                    </View>
+                    <Text style={CSS.tituloHome6}
+                      underlineColorAndroid="transparent"
+                      placeholderTextColor="#132196"
+                      autoCapitalize="none"
+                      keyboardType="numeric">900</Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+            <View style={CSS.cardHome3}>
+              <View style={CSS.viewCardHome}>
+                <View style={{ flex: 2, alignItems: 'center' }}>
+                  <View style={{ flexDirection: 'row' }}>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome5}>
+                        VOTOS NO MARCADOS:
+                      </Text>
+
+                    </View>
+                    <Text style={CSS.tituloHome6}
+                      underlineColorAndroid="transparent"
+                      placeholderTextColor="#132196"
+                      autoCapitalize="none"
+                      keyboardType="numeric">900</Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+            <View style={CSS.cardHome3}>
+              <View style={CSS.viewCardHome}>
+                <View style={{ flex: 2, alignItems: 'center' }}>
+                  <View style={{ flexDirection: 'row' }}>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={{
+                        fontSize: hp('1.9%'),
+                        width: wp('50%'),
+                        color: '#132196',
+                        textAlign: 'left',
+                        fontWeight: 'bold',
+                        marginLeft: wp('3%')
+                      }}>
+                        TOTAL VOTOS EN LA MESA:
+                      </Text>
+
+                    </View>
+                    <Text style={CSS.tituloHome6}
+                      underlineColorAndroid="transparent"
+                      placeholderTextColor="#132196"
+                      autoCapitalize="none"
+                      keyboardType="numeric">900</Text>
+                  </View>
+                </View>
+              </View>
+            </View>
 
         <TouchableOpacity
           style={{
