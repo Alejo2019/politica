@@ -12,6 +12,8 @@ import {
   ImageBackground,
   TouchableOpacity,
   TextInput,
+  SafeAreaView,
+  FlatList
 
 } from 'react-native';
 import { images, COLORS, CSS } from "../../../../../constants";
@@ -26,12 +28,15 @@ function pagina2(props) {
   const [isChecked1, setChecked1] = useState(false);
   const [country, setCountry] = useState('Unknown');
   const [token, setToken] = useState("");
+  const [data, setdata] = useState([]);
+
 
   let partido = navigation.state.params.partido;
   console.log(partido);
 
   useEffect(() => {
     getToken()
+    getCandidatos()
   }, []);
 
   const getToken = async () => {
@@ -43,15 +48,29 @@ function pagina2(props) {
     }
   };
 
+  const getCandidatos = async () => {
+    axios
+      .get('https://service-servicios.herokuapp.com/api/buscar/partidos/radical')
+      .then(function (response) {
+        // handle success
+        setdata(response.data.result);
+        //console.log(response.data.result)
+      })
+
+  };
+
+  const dennis = data;
+
+
 
   const [state, setState] = useState({
     nombre: '',
-    apellido:'',
+    apellido: '',
     cedula: '',
     mesa: '',
     lugar: '',
     puesto: '',
-    candidatoSen:"lordPetrosky",
+    candidatoSen: "lordPetrosky",
     candidatoCama: "Otro lordPetrosky"
   });
 
@@ -63,7 +82,7 @@ function pagina2(props) {
     axios
       .post('https://service-servicios.herokuapp.com/api/votantes', {
         "nombre": (state.nombre),
-        "apellido":(state.apellido),
+        "apellido": (state.apellido),
         "cedula": (state.cedula),
         "estado": false,
         "mesa": (state.mesa),
@@ -73,7 +92,7 @@ function pagina2(props) {
         "votoSena": false,
         "tipoCampaña": "Congreso",
         "partido": partido,
-        "candidatoSen":" CUATRO lordPetrosky"
+        "candidatoSen": " CUATRO lordPetrosky"
       }, {
         headers: {
           'x-token': token
@@ -89,7 +108,7 @@ function pagina2(props) {
         alert("Ha ocurrido un error, verifica los datos!");
         console.log(error.message)
       });
-      navigation.navigate({ routeName: 'Congreso' })
+    navigation.navigate({ routeName: 'Congreso' })
   };
 
   return (
@@ -144,7 +163,7 @@ function pagina2(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> REGISTRO DE VOTANTES 
+        }}> REGISTRO DE VOTANTES
         </Text>
 
         <View style={CSS.viewCardHome}>
@@ -280,11 +299,13 @@ function pagina2(props) {
             mode="dropdown" // Android only
             style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
           >
-            <Picker.Item label="Seleccione" value="Unknown" />
-            <Picker.Item label="Candidato 1" value="Candidato 1" />
-            <Picker.Item label="Candidato 2" value="Candidato 2" />
-            <Picker.Item label="Candidato 3" value="Candidato 3" />
-            
+            {/* { data.map((dato, index) => (
+              <Picker.Item value={dato.NOMBRE1} key={index} />
+            )
+            )
+            } */}
+
+
           </Picker>
         </View>
         <View style={CSS.viewCardHome}>
@@ -306,7 +327,7 @@ function pagina2(props) {
             <Picker.Item label="Candidato 1" value="Candidato 1" />
             <Picker.Item label="Candidato 2" value="Candidato 2" />
             <Picker.Item label="Candidato 3" value="Candidato 3" />
-            
+
           </Picker>
         </View>
         {/* <View style={CSS.viewCardHome}>
