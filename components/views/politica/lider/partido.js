@@ -79,19 +79,14 @@ function inicio(props) {
             <View style={{ flex: 3, marginLeft: 10 }}>
               <View style={{ flexDirection: 'row' }}>
                 <View>
-                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                  <Image source={images.partido1} style={CSS.HomeProviderimagen} />
                 </View>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome}>
-                    PARTIDO 1
+                   PARTIDO CAMBIO RADICAL
                   </Text>
                 </View>
               </View>
-            </View>
-
-            <View style={{ flex: 1, alignSelf: 'center' }} >
-              <Icon name="chevron-right" size={80}
-                color={COLORS.blue} />
             </View>
           </View>
         </TouchableOpacity>
@@ -101,66 +96,21 @@ function inicio(props) {
             <View style={{ flex: 3, marginLeft: 10 }}>
               <View style={{ flexDirection: 'row' }}>
                 <View>
-                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                  <Image source={images.partido2} style={CSS.HomeProviderimagen} />
                 </View>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome}>
-                    PARTIDO 2
+                    PARTIDO LIBERAL
                   </Text>
                 </View>
               </View>
             </View>
-
-            <View style={{ flex: 1, alignSelf: 'center' }} >
-              <Icon name="chevron-right" size={80}
-                color={COLORS.blue} />
-            </View>
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={CSS.cardHome} onPress={() => cambio()}>
-          <View style={CSS.viewCardHome}>
-            <View style={{ flex: 3, marginLeft: 10 }}>
-              <View style={{ flexDirection: 'row' }}>
-                <View>
-                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    PARTIDO 3
-                  </Text>
-                </View>
-              </View>
-            </View>
+        
 
-            <View style={{ flex: 1, alignSelf: 'center' }} >
-              <Icon name="chevron-right" size={80}
-                color={COLORS.blue} />
-            </View>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={CSS.cardHome} onPress={() =>cambio()}>
-          <View style={CSS.viewCardHome}>
-            <View style={{ flex: 3, marginLeft: 10 }}>
-              <View style={{ flexDirection: 'row' }}>
-                <View>
-                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    PARTIDO 4
-                  </Text>
-                </View>
-              </View>
-            </View>
-
-            <View style={{ flex: 1, alignSelf: 'center' }} >
-              <Icon name="chevron-right" size={80}
-                color={COLORS.blue} />
-            </View>
-          </View>
-        </TouchableOpacity>
+        
       </ScrollView>
 
     </ImageBackground>
