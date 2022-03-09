@@ -19,6 +19,7 @@ import {
 import { images, COLORS, CSS } from "../../../../../constants";
 import axios from "axios";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import ModalSelector from 'react-native-modal-selector';
 
 
 function pagina2(props) {
@@ -26,7 +27,7 @@ function pagina2(props) {
   let { navigation } = props;
   const [isChecked, setChecked] = useState(false);
   const [isChecked1, setChecked1] = useState(false);
-  const [country, setCountry] = useState('Unknown');
+  const [country, setCountry] = useState();
   const [token, setToken] = useState("");
   const [data, setdata] = useState([]);
 
@@ -50,18 +51,14 @@ function pagina2(props) {
 
   const getCandidatos = async () => {
     axios
-      .get('https://service-servicios.herokuapp.com/api/buscar/partidos/radical')
+      .get('https://service-servicios.herokuapp.com/api/buscar/partidos/liberal/')
       .then(function (response) {
         // handle success
         setdata(response.data.result);
-        //console.log(response.data.result)
+        console.log(response.data.result)
       })
 
   };
-
-  const dennis = data;
-
-
 
   const [state, setState] = useState({
     nombre: '',
@@ -110,6 +107,13 @@ function pagina2(props) {
       });
     navigation.navigate({ routeName: 'Congreso' })
   };
+
+  const candidato = data.map(item => {
+    return {
+      key: item._id,
+      label: item.NOMBRE1
+    }
+  })
 
   return (
 
@@ -293,20 +297,37 @@ function pagina2(props) {
           placeholderTextColor="#132196"
           autoCapitalize="none"
           selectionColor="#132196">
-          <Picker
+          {/* <Picker
             selectedValue={country}
             onValueChange={(value, index) => setCountry(value)}
             mode="dropdown" // Android only
             style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
           >
-            {/* { data.map((dato, index) => (
+            {data.map((dato, index) => (
               <Picker.Item value={dato.NOMBRE1} key={index} />
             )
             )
-            } */}
+            }
 
 
-          </Picker>
+          </Picker> */}
+          <ModalSelector
+            data={candidato}
+            supportedOrientations={['landscape']}
+            accessible={true}
+            scrollViewAccessibilityLabel={'Scrollable options'}
+            cancelButtonAccessibilityLabel={'Cancel Button'}
+            onChange={(value) => { setCountry(value.label) }}
+            cancelText="Cancelar"
+            optionTextStyle={{ color: COLORS.blue }}
+            optionContainerStyle={{ backgroundColor: COLORS.white }}>
+
+            <TextInput
+              style={{ marginVertical: 10, paddingLeft: 10, color:COLORS.blue}}
+              editable={false}
+              value={country} />
+
+          </ModalSelector>
         </View>
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
@@ -317,7 +338,7 @@ function pagina2(props) {
           placeholderTextColor="#132196"
           autoCapitalize="none"
           selectionColor="#132196">
-          <Picker
+          {/* <Picker
             selectedValue={country}
             onValueChange={(value, index) => setCountry(value)}
             mode="dropdown" // Android only
@@ -328,7 +349,24 @@ function pagina2(props) {
             <Picker.Item label="Candidato 2" value="Candidato 2" />
             <Picker.Item label="Candidato 3" value="Candidato 3" />
 
-          </Picker>
+          </Picker> */}
+          <ModalSelector
+            data={candidato}
+            supportedOrientations={['landscape']}
+            accessible={true}
+            scrollViewAccessibilityLabel={'Scrollable options'}
+            cancelButtonAccessibilityLabel={'Cancel Button'}
+            onChange={(value) => { setCountry(value.label) }}
+            cancelText="Cancelar"
+            optionTextStyle={{ color: COLORS.blue }}
+            optionContainerStyle={{ backgroundColor: COLORS.white }}>
+
+            <TextInput
+              style={{ marginVertical: 10, paddingLeft: 10, color:COLORS.blue}}
+              editable={false}
+              value={country} />
+
+          </ModalSelector>
         </View>
         {/* <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
