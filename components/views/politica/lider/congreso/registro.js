@@ -28,6 +28,7 @@ function pagina2(props) {
   const [isChecked, setChecked] = useState(false);
   const [isChecked1, setChecked1] = useState(false);
   const [country, setCountry] = useState();
+  const [country2, setCountry2] = useState();
   const [token, setToken] = useState("");
   const [data, setdata] = useState([]);
 
@@ -85,11 +86,12 @@ function pagina2(props) {
         "mesa": (state.mesa),
         "lugar": (state.lugar),
         "puesto": (state.puesto),
-        "votoEnte": true,
+        "votosCam": true,
         "votoSena": false,
+        "votoPresi": false,
         "tipoCampaña": "Congreso",
         "partido": partido,
-        "candidatoSen": " CUATRO lordPetrosky"
+        "candidatoSen": "Falta confi"
       }, {
         headers: {
           'x-token': token
@@ -111,7 +113,8 @@ function pagina2(props) {
   const candidato = data.map(item => {
     return {
       key: item._id,
-      label: item.NOMBRE1
+      label: item.NOMBRE1 + item.NOMBRE2 + item.APELLIDO1
+
     }
   })
 
@@ -297,27 +300,25 @@ function pagina2(props) {
           placeholderTextColor="#132196"
           autoCapitalize="none"
           selectionColor="#132196">
-          {/* <Picker
-            selectedValue={country}
-            onValueChange={(value, index) => setCountry(value)}
+        <Picker
+            selectedValue={country2}
+            onValueChange={(value, index) => setCountry2(value)}
             mode="dropdown" // Android only
             style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
           >
-            {data.map((dato, index) => (
-              <Picker.Item value={dato.NOMBRE1} key={index} />
-            )
-            )
-            }
+            <Picker.Item label="Seleccione" value="Unknown" />
+            <Picker.Item label="Candidato 1" value="Candidato 1" />
+            <Picker.Item label="Candidato 2" value="Candidato 2" />
+            <Picker.Item label="Candidato 3" value="Candidato 3" />
 
-
-          </Picker> */}
-          <ModalSelector
+          </Picker>
+          {/* <ModalSelector
             data={candidato}
             supportedOrientations={['landscape']}
-            accessible={true}
+            //accessible={true}
             scrollViewAccessibilityLabel={'Scrollable options'}
             cancelButtonAccessibilityLabel={'Cancel Button'}
-            onChange={(value) => { setCountry(value.label) }}
+            //onChange={(value) => { setCountry(value.label) }}
             cancelText="Cancelar"
             optionTextStyle={{ color: COLORS.blue }}
             optionContainerStyle={{ backgroundColor: COLORS.white }}>
@@ -327,7 +328,7 @@ function pagina2(props) {
               editable={false}
               value={country} />
 
-          </ModalSelector>
+          </ModalSelector> */}
         </View>
         <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>
@@ -338,7 +339,7 @@ function pagina2(props) {
           placeholderTextColor="#132196"
           autoCapitalize="none"
           selectionColor="#132196">
-          {/* <Picker
+          <Picker
             selectedValue={country}
             onValueChange={(value, index) => setCountry(value)}
             mode="dropdown" // Android only
@@ -349,8 +350,8 @@ function pagina2(props) {
             <Picker.Item label="Candidato 2" value="Candidato 2" />
             <Picker.Item label="Candidato 3" value="Candidato 3" />
 
-          </Picker> */}
-          <ModalSelector
+          </Picker>
+            {/* <ModalSelector
             data={candidato}
             supportedOrientations={['landscape']}
             accessible={true}
@@ -366,7 +367,7 @@ function pagina2(props) {
               editable={false}
               value={country} />
 
-          </ModalSelector>
+          </ModalSelector> */}
         </View>
         {/* <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>

@@ -22,6 +22,51 @@ function pagina7(props) {
   const hableChangeText = (nombre, value) => {
     setState({ ...state, [nombre]: value });
   }
+  const [state, setState] = useState({
+    nombre: '',
+    apellido: '',
+    cedula: '',
+    mesa: '',
+    lugar: '',
+    puesto: '',
+    candidatoSen: "lordPetrosky",
+    candidatoCama: "Otro lordPetrosky"
+  });
+
+
+  const envio = () => {
+    axios
+      .post('https://service-servicios.herokuapp.com/api/votantes', {
+        "nombre": (state.nombre),
+        "apellido": (state.apellido),
+        "cedula": (state.cedula),
+        "estado": false,
+        "mesa": (state.mesa),
+        "lugar": (state.lugar),
+        "puesto": (state.puesto),
+        "votoEnte": false,
+        "votoSena": false,
+        "votoPresi": false,
+        "posible": true,
+        "tipoCampaña": "NULL",
+        "partido": "Liberal",
+        "candidatoSen": "NULL"
+      }, {
+        headers: {
+          'x-token': token
+        }
+      }).then(function (response) {
+        // handle success
+        (JSON.stringify(response.data));
+        console.log((response.data))
+        alert("Resgistro Existoso!")
+      })
+      .catch(function (error) {
+        // handle error
+        alert("Ha ocurrido un error, verifica los datos!");
+        console.log(error.message)
+      });
+      navigation.navigate({ routeName: 'Entes_territoriales' })  };
 
   return (
 
@@ -146,7 +191,7 @@ function pagina7(props) {
               backgroundColor: '#132196'
             }}
 
-            onPress={() => navigation.navigate({ routeName: 'Entes_territoriales' })}
+            onPress={() => enviar()}
 
           >
             <Text style={CSS.siguientetext}>GUARDAR</Text>

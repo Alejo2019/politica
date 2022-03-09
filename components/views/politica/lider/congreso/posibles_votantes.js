@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import {
@@ -11,20 +11,82 @@ import {
   TouchableOpacity, Alert
 } from 'react-native';
 import { images, COLORS, CSS } from "../../../../../constants";
-
+import axios from "axios";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function pagina7(props) {
 
-
+  const [token, setToken] = useState("");
+  const [data, setdata] = useState([]);
 
   let { navigation } = props;
-  Validador1 = async () => {
-    navigation.navigate('Login');
+  // Validador1 = async () => {
+  //   navigation.navigate('Login');
+  // };
+  useEffect(() => {
+    getToken()
+
+  }, []);
+
+  const getToken = async () => {
+    try {
+      let value = await AsyncStorage.getItem('token');
+      setToken(value);
+    } catch (error) {
+      console.log(error)
+    }
   };
+
 
   const hableChangeText = (nombre, value) => {
     setState({ ...state, [nombre]: value });
   }
+  const [state, setState] = useState({
+    nombre: '',
+    apellido: '',
+    cedula: '',
+    mesa: '',
+    lugar: '',
+    puesto: '',
+    candidatoSen: "lordPetrosky",
+    candidatoCama: "Otro lordPetrosky"
+  });
+
+
+  const envio = () => {
+    axios
+      .post('https://service-servicios.herokuapp.com/api/votantes', {
+        "nombre": (state.nombre),
+        "apellido": (state.apellido),
+        "cedula": (state.cedula),
+        "estado": false,
+        "mesa": (state.mesa),
+        "lugar": (state.lugar),
+        "puesto": (state.puesto),
+        "votoEnte": false,
+        "votoSena": false,
+        "votoPresi": false,
+        "posible": true,
+        "tipoCampaña": "NULL",
+        "partido": "Liberal",
+        "candidatoSen": "NULL"
+      }, {
+        headers: {
+          'x-token': token
+        }
+      }).then(function (response) {
+        // handle success
+        (JSON.stringify(response.data));
+        console.log((response.data))
+        alert("Resgistro Existoso!")
+      })
+      .catch(function (error) {
+        // handle error
+        alert("Ha ocurrido un error, verifica los datos!");
+        console.log(error.message)
+      });
+      navigation.navigate({ routeName: 'Congreso' })  };
+
 
   return (
 
@@ -93,7 +155,7 @@ function pagina7(props) {
             autoCapitalize="none"
             selectionColor="#132196"
             keyboardType="numeric"
-            onChangeText={(value) => hableChangeText('nombre', value)}
+            onChangeText={(value) => hableChangeText('cedula', value)}
           />
           <View style={CSS.viewCardHome}>
             <Text style={CSS.asterisco}>*</Text>
@@ -115,7 +177,7 @@ function pagina7(props) {
             placeholderTextColor="#132196"
             autoCapitalize="none"
             selectionColor="#132196"
-            onChangeText={(value) => hableChangeText('nombre', value)}
+            onChangeText={(value) => hableChangeText('apellido', value)}
           />
           <View style={CSS.viewCardHome}>
             <Text style={CSS.asterisco}>*</Text>
@@ -126,7 +188,7 @@ function pagina7(props) {
             placeholderTextColor="#132196"
             autoCapitalize="none"
             selectionColor="#132196"
-            onChangeText={(value) => hableChangeText('nombre', value)}
+            onChangeText={(value) => hableChangeText('lugar', value)}
           />
           <View style={CSS.viewCardHome}>
             <Text style={CSS.asterisco}>*</Text>
@@ -138,7 +200,7 @@ function pagina7(props) {
             autoCapitalize="none"
             selectionColor="#132196"
             keyboardType="numeric"
-            onChangeText={(value) => hableChangeText('nombre', value)}
+            onChangeText={(value) => hableChangeText('mesa', value)}
           />
           <Text style={CSS.pririodad}>
             Los campos con * es obligatorio
@@ -149,7 +211,7 @@ function pagina7(props) {
               backgroundColor: '#132196'
             }}
 
-            onPress={() => navigation.navigate({ routeName: 'Congreso' })}
+            onPress={() => envio()}
 
           >
             <Text style={CSS.siguientetext}>GUARDAR</Text>

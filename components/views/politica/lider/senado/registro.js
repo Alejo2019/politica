@@ -65,17 +65,18 @@ console.log(Candidato)
     axios
     .post('https://service-servicios.herokuapp.com/api/votantes', {
       "nombre": (state.nombre),
-      "apellido":(state.apellido),
+      "apellido": (state.apellido),
       "cedula": (state.cedula),
       "estado": false,
       "mesa": (state.mesa),
       "lugar": (state.lugar),
       "puesto": (state.puesto),
-      "votoEnte": false,
-      "votoSena": true,
-      "tipoCampaña": "Senado",
+      "votosCam": true,
+      "votoSena": false,
+      "votoPresi": false,
+      "tipoCampaña": "Congreso",
       "partido": partido,
-      "candidatoSen":Candidato
+      "candidatoSen": "Falta confi"
     }, {
       headers: {
         'x-token': token
