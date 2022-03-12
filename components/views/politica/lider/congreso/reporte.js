@@ -21,7 +21,7 @@ import axios from "axios";
 function pagina4(props) {
 
   let { navigation } = props;
-  const [isChecked, setChecked] = useState(false);
+  const [isChecked, setChecked] = useState([]);
   useEffect(() => {
     getDataUsingSimpleGetCall()
   }, []);

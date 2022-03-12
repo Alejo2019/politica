@@ -15,8 +15,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 function inicio2(props) {
 
   let { navigation } = props;  
-  let partido = navigation.state.params.partido;
-  console.log('pagina 2',partido);
+  let partidoR2 = navigation.state.params.partidoR1;  
+  let partidoL2 = navigation.state.params.partidoL1;
+
+  console.log('paginac',partidoR2);
+  console.log('paginac',partidoL2);
 
   const Close = async () => {
     await AsyncStorage.removeItem('token');
@@ -94,7 +97,7 @@ function inicio2(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate({ routeName: 'Congreso', params: { partido } })}
+            onPress={() => navigation.navigate({ routeName: 'Congreso', params: { partidoR2,partidoL2} })}
           >
             <Text style={CSS.siguientetext}>CONGRESO</Text>
           </TouchableOpacity>
@@ -103,7 +106,7 @@ function inicio2(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate({ routeName: 'Entes_territoriales', params: { partido } })}
+            onPress={() => navigation.navigate({ routeName: 'Entes_territoriales', params: {partidoR2,partidoL2} })}
           >
 
             <Text style={CSS.siguientetext}>ENTES TERRITORIALES</Text>

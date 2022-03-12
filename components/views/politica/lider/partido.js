@@ -22,9 +22,15 @@ function inicio(props) {
   }
 
   const cambio = () => {
-    const partido = 'Partido Verde';
-    navigation.navigate({ routeName: 'Modulo', params: { partido } })
-    console.log(partido)
+    const partidoR = 'radical';
+    navigation.navigate({ routeName: 'Modulo', params: { partidoR } })
+    console.log(partidoR)
+  }
+
+    const cambioL = () => {
+    const partidoL = 'liberal';
+    navigation.navigate({ routeName: 'Modulo', params: { partidoL} })
+    console.log(partidoL)
   }
   return (
 
@@ -91,7 +97,7 @@ function inicio(props) {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={CSS.cardHome} onPress={() => cambio()}>
+        <TouchableOpacity style={CSS.cardHome} onPress={() => cambioL()}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 3, marginLeft: 10 }}>
               <View style={{ flexDirection: 'row' }}>

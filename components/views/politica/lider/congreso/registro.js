@@ -31,14 +31,15 @@ function pagina2(props) {
   const [country2, setCountry2] = useState();
   const [token, setToken] = useState("");
   const [data, setdata] = useState([]);
+const [partido,setPartido]=useState("");
 
-
-  let partido = navigation.state.params.partido;
-  console.log(partido);
+ // let partidoR4 = navigation.state.params.partidoR3;
+ // console.log(partidoR4);
 
   useEffect(() => {
     getToken()
     getCandidatos()
+    getPartido()
   }, []);
 
   const getToken = async () => {
@@ -50,9 +51,19 @@ function pagina2(props) {
     }
   };
 
+  
+  const getPartido = async () => {
+    try {
+      let value = await AsyncStorage.getItem('partido')
+      setPartido(value);
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
   const getCandidatos = async () => {
     axios
-      .get('https://service-servicios.herokuapp.com/api/buscar/partidos/liberal/')
+      .get(`https://service-servicios.herokuapp.com/api/buscar/partidos/partido` )  
       .then(function (response) {
         // handle success
         setdata(response.data.result);
@@ -90,7 +101,7 @@ function pagina2(props) {
         "votoSena": false,
         "votoPresi": false,
         "tipoCampaña": "Congreso",
-        "partido": partido,
+        "partido": "",
         "candidatoSen": "Falta confi"
       }, {
         headers: {
@@ -117,6 +128,8 @@ function pagina2(props) {
 
     }
   })
+
+  console.log(partido)
 
   return (
 
@@ -339,7 +352,7 @@ function pagina2(props) {
           placeholderTextColor="#132196"
           autoCapitalize="none"
           selectionColor="#132196">
-          <Picker
+          {/* <Picker
             selectedValue={country}
             onValueChange={(value, index) => setCountry(value)}
             mode="dropdown" // Android only
@@ -350,8 +363,8 @@ function pagina2(props) {
             <Picker.Item label="Candidato 2" value="Candidato 2" />
             <Picker.Item label="Candidato 3" value="Candidato 3" />
 
-          </Picker>
-            {/* <ModalSelector
+          </Picker> */}
+            <ModalSelector
             data={candidato}
             supportedOrientations={['landscape']}
             accessible={true}
@@ -367,7 +380,7 @@ function pagina2(props) {
               editable={false}
               value={country} />
 
-          </ModalSelector> */}
+          </ModalSelector>
         </View>
         {/* <View style={CSS.viewCardHome}>
           <Text style={CSS.asterisco}>*</Text>

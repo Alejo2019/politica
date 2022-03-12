@@ -45,6 +45,7 @@ function Login(props) {
         AsyncStorage.setItem('rol', response.data.usuario.rol);
         AsyncStorage.setItem('id', response.data.usuario.uid);
         AsyncStorage.setItem('user', JSON.stringify(response.data.usuario));
+        AsyncStorage.setItem('partido', response.data.usuario.partido);
         if (response.data.usuario.rol === 'LIDER_ROLE') {
           navigation.navigate('Partido');
         } else if (response.data.usuario.rol === 'TESTIGO_ROLE') {
