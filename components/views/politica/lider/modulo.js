@@ -89,7 +89,7 @@ function inicio2(props) {
           >
             <Text style={CSS.siguientetext}>Monitoreo electoral</Text>
           </TouchableOpacity>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             style={{
               ...CSS.siguiente2,
               backgroundColor: '#132196'
@@ -97,7 +97,7 @@ function inicio2(props) {
             onPress={() => navigation.navigate('Pagina1E')}
           >
             <Text style={CSS.siguientetext}>Testigos electorales</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
 
 

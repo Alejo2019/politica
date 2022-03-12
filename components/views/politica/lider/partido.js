@@ -76,7 +76,7 @@ function inicio(props) {
 
         <TouchableOpacity style={CSS.cardHome} onPress={() =>cambio()}>
           <View style={CSS.viewCardHome}>
-            <View style={{ flex: 3, marginLeft: 10 }}>
+            <View style={{ flex: 2}}>
               <View style={{ flexDirection: 'row' }}>
                 <View>
                   <Image source={images.partido1} style={CSS.HomeProviderimagen} />
@@ -91,7 +91,7 @@ function inicio(props) {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={CSS.cardHome} onPress={() => cambio()}>
+        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => cambio()}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 3, marginLeft: 10 }}>
               <View style={{ flexDirection: 'row' }}>
@@ -106,7 +106,7 @@ function inicio(props) {
               </View>
             </View>
           </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         
 
