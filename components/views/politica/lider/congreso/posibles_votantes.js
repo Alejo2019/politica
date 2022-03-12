@@ -181,7 +181,62 @@ function pagina7(props) {
           />
           <View style={CSS.viewCardHome}>
             <Text style={CSS.asterisco}>*</Text>
-            <Text style={CSS.asterisco1}>Lugar de votación</Text>
+            <Text style={CSS.asterisco1}>Telefono</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('apellido', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Meta</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('apellido', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Departamento</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('apellido', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Municipio</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('apellido', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Puesto</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('apellido', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Mesa de votación</Text>
           </View>
           <TextInput style={CSS.input}
             underlineColorAndroid="transparent"
@@ -192,7 +247,7 @@ function pagina7(props) {
           />
           <View style={CSS.viewCardHome}>
             <Text style={CSS.asterisco}>*</Text>
-            <Text style={CSS.asterisco1}>Mesa de votación </Text>
+            <Text style={CSS.asterisco1}>Comuna </Text>
           </View>
           <TextInput style={CSS.input}
             underlineColorAndroid="transparent"
@@ -217,66 +272,7 @@ function pagina7(props) {
             <Text style={CSS.siguientetext}>GUARDAR</Text>
           </TouchableOpacity>
         </View>
-        {/* <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-            
-          }}
-          onPress={() => navigation.navigate({ routeName: 'Pagina2' })}
-        >
-          <Text style={CSS.siguientetext}>REGISTRO DE VOTANTES</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate('Pagina4')}
-        >
-          <Text style={CSS.siguientetext}>VISUALIZAR VOTANTES</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate('Pagina4')}
-        >
-          <Text style={CSS.siguientetext}>VISUALIZAR VOTANTES</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente2,
-            backgroundColor: '#132196'
-          }}
-          onPress={() => navigation.navigate('Pagina4')}
-        >
-          <Text style={CSS.siguientetext}>VISUALIZAR VOTANTES</Text>
-        </TouchableOpacity> */}
-
-
-        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
-            <View style={CSS.viewCardHome}>
-              <View style={{ flex: 4, marginLeft:10 }}>
-                <View style={{ flexDirection: 'row' }}>
-                  <View>
-                    <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                  </View>
-                  <View style={{ alignSelf: 'center' }}>
-                    <Text style={CSS.tituloHome}>
-                      algun texto
-                    </Text>
-                  </View>
-                </View>
-              </View>
-
-              <View style={{ flex: 1, alignSelf:'center' }} >
-                <Icon name="chevron-right" size={80}
-                  color={COLORS.blue} />
-              </View>
-            </View>
-          </TouchableOpacity> */}
+        
       </ScrollView>
 
     </ImageBackground>
