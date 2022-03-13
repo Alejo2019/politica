@@ -16,7 +16,8 @@ import {
   StyleSheet
 
 } from 'react-native';
-import { SearchBar } from 'react-native-elements';
+import { Picker } from "@react-native-picker/picker";
+//import { SearchBar } from 'react-native-elements';
 import { images, COLORS, CSS } from "../../../../../constants";
 import axios from "axios";
 
@@ -44,167 +45,161 @@ function pagina4(props) {
       })
 
   };
-  
+
   //console.log(data)
-   const data1 = {
-    nombre: 'nicolas',
-    apellido: 'arenas',
-    correo: 'nicola@arenas.com'
-   }
+
   return (
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
-      <ScrollView>
-
-        
-        <Image
-          style={CSS.img}
-          source={images.logo2}
-        />
-
-        <Text style={{
-          marginBottom: hp('1'),
-          fontSize: hp('3%'),
-          textAlign: 'center',
-          color: '#132196',
-          fontWeight: 'bold'
-
-        }}> VOTANTES A LA CAMARA
-
-        </Text>
-        <View style={styles.view}>
-      <SearchBar
-        placeholder="Buscar cedula..."
-        onChangeText={updateSearch}
-        value={search}
-      />
-    </View>
-    <TouchableOpacity
-          style={{
-            ...CSS.siguiente,
-            backgroundColor: '#132196',
-            
-          }}
-
-          onPress={console.log('Aqui va buscar')}
-
-        >
-          <Text style={CSS.siguientetext}>Buscar</Text>
-        </TouchableOpacity>
-
-        <View style={{ ...CSS.viewCardHome, marginTop: hp('5%') }}>
-          <View style={{ flex: 3, alignItems: 'center' }}>
 
 
-            <View style={{ flexDirection: 'row' }}>
-              <View style={{ alignSelf: 'center' }}>
-                <Text style={CSS.tituloHome4}>
-                  META
-                </Text>
-              </View>
-              <View style={{ alignSelf: 'center' }}>
-                <Text style={CSS.tituloHome4}>
-                  VOTOS SI
-                </Text>
-              </View>
-              <View style={{ alignSelf: 'center' }}>
-                <Text style={CSS.tituloHome4}>
-                  VOTOS NO
-                </Text>
-              </View>
-            </View>
-            <View style={{ flexDirection: 'row' }}>
-              <View style={{ alignSelf: 'center' }}>
-                <TextInput style={CSS.tituloHome1}
-                  underlineColorAndroid="transparent"
-                  placeholderTextColor="#132196"
-                  autoCapitalize="none"
-                  keyboardType="numeric"
-                  onChangeText={(value) => hableChangeText('totalSufragantes', value)}
-                >0</TextInput>
-              </View>
-              <View style={{ alignSelf: 'center' }}>
-                <TextInput style={CSS.tituloHome1}
-                  underlineColorAndroid="transparent"
-                  placeholderTextColor="#132196"
-                  autoCapitalize="none"
-                  keyboardType="numeric"
-                  onChangeText={(value) => hableChangeText('totalSufragantes', value)}
-                >0</TextInput>
-              </View>
-              <View style={{ alignSelf: 'center' }}>
-                <TextInput style={CSS.tituloHome1}
-                  underlineColorAndroid="transparent"
-                  placeholderTextColor="#132196"
-                  autoCapitalize="none"
-                  keyboardType="numeric"
-                  onChangeText={(value) => hableChangeText('totalSufragantes', value)}
-                >0</TextInput>
-              </View>
-            </View>
+
+
+
+      <Text style={{
+        marginBottom: hp('1'),
+        fontSize: hp('3%'),
+        textAlign: 'center',
+        color: '#132196',
+        fontWeight: 'bold',
+        marginTop: hp('5%')
+
+
+      }}> VOTANTES
+
+      </Text>
+
+      <View style={{ flexDirection: 'row' }}>
+        <View style={{ alignSelf: 'center' }}>
+          <View style={{ ...CSS.input, width: wp('56%'), marginLeft: wp('10%'), marginRight: hp('5%') }}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196">
+            <Picker
+              onValueChange={(itemValue, itemIndex) => setCandidato(itemValue)}
+              mode="dropdown" // Android only
+              style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
+            >
+              <Picker.Item label="Seleccione" value="Unknown" />
+              <Picker.Item label="Candidato 1" value="Candidato 1" />
+              <Picker.Item label="Candidato 2" value="Candidato 2" />
+              <Picker.Item label="Candidato 3" value="Candidato 3" />
+
+            </Picker>
           </View>
         </View>
-        
+        <View style={{ alignSelf: 'center' }}>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente,
+              backgroundColor: '#132196',
+              width: wp('17%'),
+              marginLeft: wp('-2%'),
+              marginTop: hp('1%')
 
+            }}
+
+            onPress={console.log('Aqui va buscar')}
+
+          >
+            <Text style={CSS.siguientetext}>Buscar</Text>
+          </TouchableOpacity>
+        </View>
+
+      </View>
+      <View style={{ flexDirection: 'row' }}>
+        <View style={{ alignSelf: 'center' }}>
+          <View>
+            <TextInput
+              placeholder="Buscar cedula..."
+              onChangeText={updateSearch}
+              value={search}
+              style={{ ...CSS.input, width: wp('56%'), marginLeft: wp('10%'), marginRight: hp('5%') }}
+              underlineColorAndroid="transparent"
+              placeholderTextColor="#132196"
+              autoCapitalize="none"
+              selectionColor="#132196"
+
+            />
+
+          </View>
+        </View>
+        <View style={{ alignSelf: 'center' }}>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente,
+              backgroundColor: '#132196',
+              width: wp('17%'),
+              marginLeft: wp('-2%'),
+              marginTop: hp('1%')
+
+            }}
+
+            onPress={console.log('Aqui va buscar')}
+
+          >
+            <Text style={CSS.siguientetext}>Buscar</Text>
+          </TouchableOpacity>
+        </View>
+
+      </View>
+
+
+
+
+
+
+      <ScrollView>
         <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('1%') }}>
 
 
 
           <DataTable >
-              <View>
-                <DataTable.Header>
-                  <DataTable.Title >Nombre</DataTable.Title>
-                  <DataTable.Title  >Cedula</DataTable.Title>
-                  <DataTable.Title  >Si voto</DataTable.Title>
-                </DataTable.Header>
+            <View>
+              <DataTable.Header>
+                <DataTable.Title >Nombre</DataTable.Title>
+                <DataTable.Title  >Cedula</DataTable.Title>
+                <DataTable.Title  >Si voto</DataTable.Title>
+              </DataTable.Header>
 
-                {data.map((dato, index) => (
-                  <DataTable.Row >
-                    <DataTable.Cell >{dato.nombres}</DataTable.Cell>
-                    <DataTable.Cell > {dato.identificacion}</DataTable.Cell>
-                    <DataTable.Cell > <Checkbox style={{ margin: 8 }} value={isChecked} onValueChange={setChecked} />  </DataTable.Cell>
-                  </DataTable.Row>
-                )
-                )
-                }
+              {data.map((dato, index) => (
+                <DataTable.Row >
+                  <DataTable.Cell >{dato.nombres}</DataTable.Cell>
+                  <DataTable.Cell > {dato.identificacion}</DataTable.Cell>
+                  <DataTable.Cell > <Checkbox style={{ margin: 8 }} value={isChecked} onValueChange={setChecked} />  </DataTable.Cell>
+                </DataTable.Row>
+              )
+              )
+              }
 
 
-              </View>
+            </View>
           </DataTable>
 
-
         </View>
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente,
-            backgroundColor: '#132196',
-            marginTop: hp('5%')
-          }}
-
-          onPress={() => navigation.navigate({ routeName: 'Generar' })}
-
-        >
-          <Text style={CSS.siguientetext}>GENERAR REPORTE</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente,
-            backgroundColor: '#132196',
-            
-          }}
-
-          onPress={() => navigation.navigate({ routeName: 'Congreso' })}
-
-        >
-          <Text style={CSS.siguientetext}>GUARDAR</Text>
-        </TouchableOpacity>
-
       </ScrollView>
+
+      <TouchableOpacity
+        style={{
+          ...CSS.siguiente,
+          backgroundColor: '#132196',
+          marginTop: hp('49%')
+
+        }}
+
+        onPress={() => navigation.navigate({ routeName: 'Congreso' })}
+
+      >
+        <Text style={CSS.siguientetext}>GUARDAR</Text>
+      </TouchableOpacity>
+
+
 
     </ImageBackground>
   );
 };
- const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#0d0d0d",
@@ -212,5 +207,5 @@ function pagina4(props) {
     justifyContent: "center",
   },
 
-}); 
+});
 export default pagina4;
