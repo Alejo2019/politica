@@ -150,8 +150,8 @@ function pagina4(props) {
 
 
 
-      <ScrollView>
-        <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('1%') }}>
+      <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('1%') }}>
+        <ScrollView>
 
 
 
@@ -177,8 +177,8 @@ function pagina4(props) {
             </View>
           </DataTable>
 
-        </View>
-      </ScrollView>
+        </ScrollView>
+      </View>
 
       <TouchableOpacity
         style={{
