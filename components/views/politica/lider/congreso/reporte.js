@@ -12,9 +12,11 @@ import {
   TouchableOpacity,
   TextInput,
   ImageBackground,
-  Alert
+  Alert,
+  StyleSheet
 
 } from 'react-native';
+import { SearchBar } from 'react-native-elements';
 import { images, COLORS, CSS } from "../../../../../constants";
 import axios from "axios";
 
@@ -27,7 +29,11 @@ function pagina4(props) {
   }, []);
 
   const [data, setdata] = useState([]);
+  const [search, setSearch] = useState("");
 
+  const updateSearch = (search) => {
+    setSearch(search);
+  };
   const getDataUsingSimpleGetCall = () => {
     axios
       .get('http://3.236.142.25:8060/api/lider/622d1e86257755f652ff120e/tipo/SENADO')
@@ -38,6 +44,7 @@ function pagina4(props) {
       })
 
   };
+  
   //console.log(data)
    const data1 = {
     nombre: 'nicolas',
@@ -65,6 +72,25 @@ function pagina4(props) {
         }}> VOTANTES A LA CAMARA
 
         </Text>
+        <View style={styles.view}>
+      <SearchBar
+        placeholder="Buscar cedula..."
+        onChangeText={updateSearch}
+        value={search}
+      />
+    </View>
+    <TouchableOpacity
+          style={{
+            ...CSS.siguiente,
+            backgroundColor: '#132196',
+            
+          }}
+
+          onPress={console.log('Aqui va buscar')}
+
+        >
+          <Text style={CSS.siguientetext}>Buscar</Text>
+        </TouchableOpacity>
 
         <View style={{ ...CSS.viewCardHome, marginTop: hp('5%') }}>
           <View style={{ flex: 3, alignItems: 'center' }}>
@@ -178,5 +204,13 @@ function pagina4(props) {
     </ImageBackground>
   );
 };
+ const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#0d0d0d",
+    alignItems: "center",
+    justifyContent: "center",
+  },
 
+}); 
 export default pagina4;
