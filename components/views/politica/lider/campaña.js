@@ -106,7 +106,7 @@ function inicio2(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate({ routeName: 'Entes_territoriales', params: {partidoR2,partidoL2} })}
+            onPress={() => navigation.navigate({ routeName: '' })}
           >
 
             <Text style={CSS.siguientetext}>ENTES TERRITORIALES</Text>

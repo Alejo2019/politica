@@ -186,224 +186,122 @@ const [partido,setPartido]=useState("");
         }}> REGISTRO DE VOTANTES
         </Text>
 
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Numero de cedula</Text>
+        <View >
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Numero de cedula</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            keyboardType="numeric"
+            onChangeText={(value) => hableChangeText('cedula', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Nombre</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('nombre', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Apellido</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('apellido', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Telefono</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('apellido', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Meta</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('apellido', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Departamento</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('apellido', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Municipio</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('apellido', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Puesto</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('apellido', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Mesa de votación</Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            onChangeText={(value) => hableChangeText('lugar', value)}
+          />
+          <View style={CSS.viewCardHome}>
+            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco1}>Comuna </Text>
+          </View>
+          <TextInput style={CSS.input}
+            underlineColorAndroid="transparent"
+            placeholderTextColor="#132196"
+            autoCapitalize="none"
+            selectionColor="#132196"
+            keyboardType="numeric"
+            onChangeText={(value) => hableChangeText('mesa', value)}
+          />
+         
+          
         </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          selectionColor="#132196"
-          onChangeText={(value) => hableChangeText('cedula', value)}
-          keyboardType="numeric"
-
-        />
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Nombre</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          selectionColor="#132196"
-          onChangeText={(value) => hableChangeText('nombre', value)}
-        />
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Apellido</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          selectionColor="#132196"
-          onChangeText={(value) => hableChangeText('apellido', value)}
-        />
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Lugar de votacion</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          selectionColor="#132196"
-          onChangeText={(value) => hableChangeText('lugar', value)}
-
-        />
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Mesa de votación </Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          selectionColor="#132196"
-          keyboardType="numeric"
-          onChangeText={(value) => hableChangeText('mesa', value)}
-
-        />
-        {/* <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Telefono</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          selectionColor="#132196"
-          onChangeText={(value) => hableChangeText('telefono', value)}
-          keyboardType="numeric"
-
-        /> */}
-
-
-        {/* <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Departamento</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          selectionColor="#132196"
-          onChangeText={(value) => hableChangeText('departamento', value)}
-        />
-
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Ciudad</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          selectionColor="#132196"
-          onChangeText={(value) => hableChangeText('ciudad', value)}
-        />
-
-        
-
-
-         */}
-
-        {/* <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}> Puesto</Text>
-        </View>
-        <TextInput style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          selectionColor="#132196"
-          keyboardType="numeric"
-          onChangeText={(value) => hableChangeText('puesto', value)}
-
-        /> */}
-
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Selección de candidato por camara</Text>
-        </View>
-        <View style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          selectionColor="#132196">
-        <Picker
-            selectedValue={country2}
-            onValueChange={(value, index) => setCountry2(value)}
-            mode="dropdown" // Android only
-            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
-          >
-            <Picker.Item label="Seleccione" value="Unknown" />
-            <Picker.Item label="Candidato 1" value="Candidato 1" />
-            <Picker.Item label="Candidato 2" value="Candidato 2" />
-            <Picker.Item label="Candidato 3" value="Candidato 3" />
-
-          </Picker>
-          {/* <ModalSelector
-            data={candidato}
-            supportedOrientations={['landscape']}
-            //accessible={true}
-            scrollViewAccessibilityLabel={'Scrollable options'}
-            cancelButtonAccessibilityLabel={'Cancel Button'}
-            //onChange={(value) => { setCountry(value.label) }}
-            cancelText="Cancelar"
-            optionTextStyle={{ color: COLORS.blue }}
-            optionContainerStyle={{ backgroundColor: COLORS.white }}>
-
-            <TextInput
-              style={{ marginVertical: 10, paddingLeft: 10, color:COLORS.blue}}
-              editable={false}
-              value={country} />
-
-          </ModalSelector> */}
-        </View>
-        <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>Selección de candidato por senado</Text>
-        </View>
-        <View style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          selectionColor="#132196">
-          {/* <Picker
-            selectedValue={country}
-            onValueChange={(value, index) => setCountry(value)}
-            mode="dropdown" // Android only
-            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
-          >
-            <Picker.Item label="Seleccione" value="Unknown" />
-            <Picker.Item label="Candidato 1" value="Candidato 1" />
-            <Picker.Item label="Candidato 2" value="Candidato 2" />
-            <Picker.Item label="Candidato 3" value="Candidato 3" />
-
-          </Picker> */}
-            <ModalSelector
-            data={candidato}
-            supportedOrientations={['landscape']}
-            accessible={true}
-            scrollViewAccessibilityLabel={'Scrollable options'}
-            cancelButtonAccessibilityLabel={'Cancel Button'}
-            onChange={(value) => { setCountry(value.label) }}
-            cancelText="Cancelar"
-            optionTextStyle={{ color: COLORS.blue }}
-            optionContainerStyle={{ backgroundColor: COLORS.white }}>
-
-            <TextInput
-              style={{ marginVertical: 10, paddingLeft: 10, color:COLORS.blue}}
-              editable={false}
-              value={country} />
-
-          </ModalSelector>
-        </View>
-        {/* <View style={CSS.viewCardHome}>
-          <Text style={CSS.asterisco}>*</Text>
-          <Text style={CSS.asterisco1}>¿Voto?</Text>
-        </View>
-        <View style={CSS.input}
-          underlineColorAndroid="transparent"
-          placeholderTextColor="#132196"
-          autoCapitalize="none"
-          selectionColor="#132196">
-          <Picker
-            selectedValue={country}
-            onValueChange={(value, index) => setCountry(value)}
-            mode="dropdown" // Android only
-            style={{ marginVertical: 10, padding: 10, borderWidth: 5, borderColor: "#666", }}
-          >
-            <Picker.Item label="Seleccione" value="Unknown" />
-            <Picker.Item label="Si" value="Si" />
-            <Picker.Item label="No" value="No" />
-
-            
-          </Picker>
-        </View> */}
 
 
 

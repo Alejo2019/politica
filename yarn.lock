@@ -3403,6 +3403,11 @@
   dependencies:
     "expo-modules-core" "~0.2.0"
 
+"expo-print@^11.1.1":
+  "integrity" "sha512-JRJNzk67nCqAgRBauikLQ7rPz/M+4m0XYkxPDQF2PkrqAyhBbDPcAmySYJKczpD++XBwPkQkbmBHShefFsNcOQ=="
+  "resolved" "https://registry.npmjs.org/expo-print/-/expo-print-11.1.1.tgz"
+  "version" "11.1.1"
+
 "expo-splash-screen@~0.11.2":
   "integrity" "sha512-WycJfWaBuj/W9KSgYTUHjm90VkwZ0Pv/EIqh2pW4/zw10AoSLHVgVA0CoC5R944iE42m6KWioax/0ydHU61qzA=="
   "resolved" "https://registry.npmjs.org/expo-splash-screen/-/expo-splash-screen-0.11.4.tgz"
@@ -5853,6 +5858,11 @@
     "lodash.debounce" "^4.0.8"
     "prop-types" "^15.7.2"
     "qs" "~6.9.1"
+
+"react-native-html-to-pdf@^0.12.0":
+  "integrity" "sha512-Yb5WO9SfF86s5Yv9PqXQ7fZDr9zZOJ+6jtweT9zFLraPNHWX7pSxe2dSkeg3cGiNrib65ZXGN6ksHymfYLFSSg=="
+  "resolved" "https://registry.npmjs.org/react-native-html-to-pdf/-/react-native-html-to-pdf-0.12.0.tgz"
+  "version" "0.12.0"
 
 "react-native-iphone-x-helper@^1.0.3", "react-native-iphone-x-helper@^1.3.0", "react-native-iphone-x-helper@^1.3.1":
   "integrity" "sha512-HOf0jzRnq2/aFUcdCJ9w9JGzN3gdEg0zFE4FyYlp4jtidqU03D5X7ZegGKfT1EWteR0gPBGp9ye5T5FvSWi9Yg=="

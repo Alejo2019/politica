@@ -191,7 +191,7 @@ function pagina7(props) {
               backgroundColor: '#132196'
             }}
 
-            onPress={() => enviar()}
+            onPress={() => envio()}
 
           >
             <Text style={CSS.siguientetext}>GUARDAR</Text>
