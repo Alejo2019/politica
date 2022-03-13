@@ -36,7 +36,7 @@ function Login(props) {
     setModalVisible(true);
     console.log(state);
     await axios
-      .post('https://service-servicios.herokuapp.com/api/auth/login', {
+      .post('http://3.236.142.25:8060/api/auth/login', {
         "correo": (state.correo),
         "contraseña": (state.contraseña)
       }).then(function (response) {

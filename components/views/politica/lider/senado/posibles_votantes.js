@@ -36,7 +36,7 @@ function pagina7(props) {
 
   const envio = () => {
     axios
-      .post('https://service-servicios.herokuapp.com/api/votantes', {
+      .post('http://3.236.142.25:8060/api/votantes', {
         "nombre": (state.nombre),
         "apellido": (state.apellido),
         "cedula": (state.cedula),

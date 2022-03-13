@@ -23,14 +23,14 @@ function generar_reporte(props) {
   let { navigation } = props;
   const [isChecked, setChecked] = useState(false);
   useEffect(() => {
-    getDataUsingSimpleGetCall()
+    //getDataUsingSimpleGetCall()
   }, []);
 
   const [data, setdata] = useState([]);
 
   const getDataUsingSimpleGetCall = () => {
     axios
-      .get('https://service-servicios.herokuapp.com/api/votantes')
+      .get('http://3.236.142.25:8060/api/lider/622d529ac74d0b5b45bc9160/tipo/SENADO')
       .then(function (response) {
         // handle success
         setdata(response.data.votantes);

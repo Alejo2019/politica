@@ -42,34 +42,35 @@ function pagina7(props) {
     setState({ ...state, [nombre]: value });
   }
   const [state, setState] = useState({
-    nombre: '',
-    apellido: '',
-    cedula: '',
-    mesa: '',
-    lugar: '',
-    puesto: '',
-    candidatoSen: "lordPetrosky",
-    candidatoCama: "Otro lordPetrosky"
+    identificacion:'',
+    nombres:'',
+    apellidos:'',
+    telefono:'',
+    departamento:'',
+    municipio:'',
+    puesto:'',
+    mesa:'',
+    comuna:''
   });
 
 
   const envio = () => {
     axios
-      .post('https://service-servicios.herokuapp.com/api/votantes', {
-        "nombre": (state.nombre),
-        "apellido": (state.apellido),
-        "cedula": (state.cedula),
-        "estado": false,
-        "mesa": (state.mesa),
-        "lugar": (state.lugar),
-        "puesto": (state.puesto),
-        "votoEnte": false,
-        "votoSena": false,
-        "votoPresi": false,
-        "posible": true,
-        "tipoCampaña": "NULL",
-        "partido": "Liberal",
-        "candidatoSen": "NULL"
+      .post('http://3.236.142.25:8060/api/votantes', {
+    "identificacion":(state.identificacion),
+    "nombres":(state.nombres),
+    "apellidos":(state.apellidos),
+    "telefono":(state.telefono),
+    "departamento":(state.departamento),
+    "municipio":(state.municipio),
+    "puesto":(state.puesto),
+    "mesa":(state.mesa),
+    "comuna":(state.comuna),
+    "posible":true,
+    "estado":false,
+    "votoSen":true,
+    "votoCam":true,
+    "campaña":''
       }, {
         headers: {
           'x-token': token
@@ -155,7 +156,7 @@ function pagina7(props) {
             autoCapitalize="none"
             selectionColor="#132196"
             keyboardType="numeric"
-            onChangeText={(value) => hableChangeText('cedula', value)}
+            onChangeText={(value) => hableChangeText('identificacion', value)}
           />
           <View style={CSS.viewCardHome}>
             <Text style={CSS.asterisco}>*</Text>
@@ -166,7 +167,7 @@ function pagina7(props) {
             placeholderTextColor="#132196"
             autoCapitalize="none"
             selectionColor="#132196"
-            onChangeText={(value) => hableChangeText('nombre', value)}
+            onChangeText={(value) => hableChangeText('nombres', value)}
           />
           <View style={CSS.viewCardHome}>
             <Text style={CSS.asterisco}>*</Text>
@@ -177,22 +178,11 @@ function pagina7(props) {
             placeholderTextColor="#132196"
             autoCapitalize="none"
             selectionColor="#132196"
-            onChangeText={(value) => hableChangeText('apellido', value)}
+            onChangeText={(value) => hableChangeText('apellidos', value)}
           />
           <View style={CSS.viewCardHome}>
             <Text style={CSS.asterisco}>*</Text>
             <Text style={CSS.asterisco1}>Telefono</Text>
-          </View>
-          <TextInput style={CSS.input}
-            underlineColorAndroid="transparent"
-            placeholderTextColor="#132196"
-            autoCapitalize="none"
-            selectionColor="#132196"
-            onChangeText={(value) => hableChangeText('apellido', value)}
-          />
-          <View style={CSS.viewCardHome}>
-            <Text style={CSS.asterisco}>*</Text>
-            <Text style={CSS.asterisco1}>Meta</Text>
           </View>
           <TextInput style={CSS.input}
             underlineColorAndroid="transparent"
@@ -210,7 +200,7 @@ function pagina7(props) {
             placeholderTextColor="#132196"
             autoCapitalize="none"
             selectionColor="#132196"
-            onChangeText={(value) => hableChangeText('apellido', value)}
+            onChangeText={(value) => hableChangeText('departamento', value)}
           />
           <View style={CSS.viewCardHome}>
             <Text style={CSS.asterisco}>*</Text>
@@ -221,7 +211,7 @@ function pagina7(props) {
             placeholderTextColor="#132196"
             autoCapitalize="none"
             selectionColor="#132196"
-            onChangeText={(value) => hableChangeText('apellido', value)}
+            onChangeText={(value) => hableChangeText('municipio', value)}
           />
           <View style={CSS.viewCardHome}>
             <Text style={CSS.asterisco}>*</Text>
@@ -232,7 +222,7 @@ function pagina7(props) {
             placeholderTextColor="#132196"
             autoCapitalize="none"
             selectionColor="#132196"
-            onChangeText={(value) => hableChangeText('apellido', value)}
+            onChangeText={(value) => hableChangeText('puesto', value)}
           />
           <View style={CSS.viewCardHome}>
             <Text style={CSS.asterisco}>*</Text>
@@ -243,7 +233,7 @@ function pagina7(props) {
             placeholderTextColor="#132196"
             autoCapitalize="none"
             selectionColor="#132196"
-            onChangeText={(value) => hableChangeText('lugar', value)}
+            onChangeText={(value) => hableChangeText('mesa', value)}
           />
           <View style={CSS.viewCardHome}>
             <Text style={CSS.asterisco}>*</Text>
@@ -255,7 +245,7 @@ function pagina7(props) {
             autoCapitalize="none"
             selectionColor="#132196"
             keyboardType="numeric"
-            onChangeText={(value) => hableChangeText('mesa', value)}
+            onChangeText={(value) => hableChangeText('comuna', value)}
           />
           <Text style={CSS.pririodad}>
             Los campos con * es obligatorio

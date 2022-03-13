@@ -23,14 +23,14 @@ function pagina4(props) {
   let { navigation } = props;
   const [isChecked, setChecked] = useState([]);
   useEffect(() => {
-    getDataUsingSimpleGetCall()
+    //getDataUsingSimpleGetCall()
   }, []);
 
   const [data, setdata] = useState([]);
 
   const getDataUsingSimpleGetCall = () => {
     axios
-      .get('https://service-servicios.herokuapp.com/api/votantes')
+      .get('http://3.236.142.25:8060/api/lider/622d1e86257755f652ff120e/tipo/SENADO')
       .then(function (response) {
         // handle success
         setdata(response.data.votantes);
@@ -134,8 +134,8 @@ function pagina4(props) {
 
                 {data.map((dato, index) => (
                   <DataTable.Row >
-                    <DataTable.Cell >{dato.nombre}</DataTable.Cell>
-                    <DataTable.Cell > {dato.cedula}</DataTable.Cell>
+                    <DataTable.Cell >{dato.nombres}</DataTable.Cell>
+                    <DataTable.Cell > {dato.identificacion}</DataTable.Cell>
                     <DataTable.Cell > <Checkbox style={{ margin: 8 }} value={isChecked} onValueChange={setChecked} />  </DataTable.Cell>
                   </DataTable.Row>
                 )
