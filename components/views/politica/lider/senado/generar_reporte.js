@@ -30,7 +30,7 @@ function generar_reporte(props) {
 
   const getDataUsingSimpleGetCall = () => {
     axios
-      .get('http://3.236.142.25:8060/api/votantes')
+      .get('http://44.200.184.156:8060api/votantes')
       .then(function (response) {
         // handle success
         setdata(response.data.votantes);

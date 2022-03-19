@@ -63,7 +63,7 @@ console.log("a")
 console.log(Candidato)
   const envio = () => {
     axios
-    .post('http://3.236.142.25:8060/api/votantes', {
+    .post('http://44.200.184.156:8060api/votantes', {
       "nombre": (state.nombre),
       "apellido": (state.apellido),
       "cedula": (state.cedula),

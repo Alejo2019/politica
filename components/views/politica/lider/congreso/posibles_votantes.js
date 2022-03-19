@@ -56,7 +56,7 @@ function pagina7(props) {
 
   const envio = () => {
     axios
-      .post('http://3.236.142.25:8060/api/votantes', {
+      .post('http://44.200.184.156:8060api/votantes', {
     "identificacion":(state.identificacion),
     "nombres":(state.nombres),
     "apellidos":(state.apellidos),
