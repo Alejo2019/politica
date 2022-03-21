@@ -30,7 +30,7 @@ function generar_reporte(props) {
 
   const getDataUsingSimpleGetCall = () => {
     axios
-      .get('http://44.200.184.156:8060api/lider/622d529ac74d0b5b45bc9160/tipo/SENADO')
+      .get('http://http://52.55.26.143:8060api/lider/622d529ac74d0b5b45bc9160/tipo/SENADO')
       .then(function (response) {
         // handle success
         setdata(response.data.votantes);

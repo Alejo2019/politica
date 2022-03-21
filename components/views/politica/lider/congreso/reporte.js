@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import RNPickerSelect from "react-native-picker-select";
 import Checkbox from 'expo-checkbox';
@@ -29,12 +29,14 @@ function pagina4(props) {
   const [isChecked, setChecked] = useState([]);
   useEffect(() => {
     getPuesto()
-    setPage(0);
-    getToken()
-  }, [itemsPerPage]);
+    getToken();
+    getCedula()
+  }, []);
 
-  const optionsPerPage = [2, 3, 4];
-  const [page, setPage] = React.useState<number>(0);
+  const [page, setPage] = React.useState(0);
+  const from = page * itemsPerPage;
+  const to = (page + 1) * itemsPerPage;
+  const itemsPerPage = 10;
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
   const [puesto, setPuesto] = useState([])
@@ -47,7 +49,7 @@ function pagina4(props) {
   };
   // const getDataUsingSimpleGetCall = () => {
   //   axios
-  //     .get('http://44.200.184.156:8060api/lider/622d1e86257755f652ff120e/tipo/SENADO')
+  //     .get('http://http://52.55.26.143:8060api/lider/622d1e86257755f652ff120e/tipo/SENADO')
   //     .then(function (response) {
   //       // handle success
   //       setdata(response.data.votantes);
@@ -57,7 +59,7 @@ function pagina4(props) {
 
   const getPuesto = () => {
     axios
-      .get('http://44.200.184.156:8060/api/puestos')
+      .get('http://http://52.55.26.143:8060/api/puestos')
       .then(function (response) {
         // handle success
         setPuesto(response.data.Puestos);
@@ -65,18 +67,18 @@ function pagina4(props) {
       })
   };
 
-  console.log(identificacion)
+  //console.log(identificacion)
 
   const getCedula = async () => {
-    axios.get(`http://44.200.184.156:8060/api/votantes/cedula/${identificacion}`, {
+    axios.get('http://52.55.26.143:8060/api/lider/622d1e86257755f652ff120e/tipo/SENADO', {
       headers: {
         'x-token': `${token}`
       }
     })
       .then((response) => {
         //console.log(response.data.votante)
-        setData([response.data.votante]);
-        setId(response.data.votante._id)
+        setData(response.data.votantes);
+        //setId(response.data.votante._id)
       })
       .catch((error) => {
         console.error(error)
@@ -94,7 +96,7 @@ function pagina4(props) {
 
   const update= async () => {
     try {
-      axios.put(`http://44.200.184.156:8060/api/votos/${id}/tipo/SENADO`, {
+      axios.put(`http://http://52.55.26.143:8060/api/votos/${id}/tipo/SENADO`, {
         headers: {
           'x-token': `${token}`
         }
@@ -120,7 +122,7 @@ function pagina4(props) {
   const [state, setState] = useState({
     identificacion:''
   });
-
+console.log(data)
 
   return (
 
@@ -182,37 +184,21 @@ function pagina4(props) {
 <ScrollView>
       <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('1%') }}>
 
-        <DataTable >
-          <View>
-            <DataTable.Header>
-              <DataTable.Title >Nombre</DataTable.Title>
-              <DataTable.Title  >Cedula</DataTable.Title>
-              <DataTable.Title  >Si voto</DataTable.Title>
-            </DataTable.Header>
 
+      <Fragment>
             {data.map((dato, index) => (
-              <DataTable.Row >
-                <DataTable.Cell > {dato.nombres}</DataTable.Cell>
-                <DataTable.Cell > {dato.identificacion}</DataTable.Cell>
-                <DataTable.Cell > <Checkbox style={{ margin: 8 }} value={isChecked} onValueChange={setChecked} />  </DataTable.Cell>
-              </DataTable.Row>
+     <><><Text>
+                {dato.nombres}
+              </Text><Text>
+                  {dato.identificacion}
+                </Text></><Checkbox style={{ margin: 8 }} value={isChecked} onValueChange={setChecked} /></>
+
             )
             )
             }
 
-          </View>
-          <DataTable.Pagination
-        page={page}
-        numberOfPages={3}
-        onPageChange={(page) => setPage(page)}
-        label="1-2 of 6"
-        optionsPerPage={optionsPerPage}
-        itemsPerPage={itemsPerPage}
-        setItemsPerPage={setItemsPerPage}
-        showFastPagination
-        optionsLabel={'Rows per page'}
-      />
-        </DataTable>
+</Fragment>
+
 
       </View>
 
