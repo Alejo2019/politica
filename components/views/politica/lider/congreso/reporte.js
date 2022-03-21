@@ -5,6 +5,7 @@ import Checkbox from 'expo-checkbox';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { DataTable } from 'react-native-paper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Pagination from 'rc-pagination';
 
 import {
   ScrollView,
@@ -43,7 +44,7 @@ function pagina4(props) {
   const [token, setToken] = useState("");
   const [identificacion, setidentificacion] = useState("");
   const [id, setId] = useState("");
-
+  const [currentPage, setCurrentPage] = useState(1);
   const updateSearch = (search) => {
     setSearch(search);
   };
@@ -56,6 +57,8 @@ function pagina4(props) {
   //       console.log(response.data.votantes)
   //     })
   // };
+
+
 
   const getPuesto = () => {
     axios
@@ -70,7 +73,7 @@ function pagina4(props) {
   //console.log(identificacion)
 
   const getCedula = async () => {
-    axios.get('http://52.55.26.143:8060/api/lider/622d1e86257755f652ff120e/tipo/SENADO', {
+    axios.get('http://52.55.26.143:8060/api/lider/622d5addc74d0b5b45bc9196/tipo/SENADO', {
       headers: {
         'x-token': `${token}`
       }
@@ -94,7 +97,7 @@ function pagina4(props) {
     }
   };
 
-  const update= async () => {
+  const update = async () => {
     try {
       axios.put(`http://http://52.55.26.143:8060/api/votos/${id}/tipo/SENADO`, {
         headers: {
@@ -120,9 +123,9 @@ function pagina4(props) {
   }
 
   const [state, setState] = useState({
-    identificacion:''
+    identificacion: ''
   });
-console.log(data)
+  //console.log(data)
 
   return (
 
@@ -181,41 +184,42 @@ console.log(data)
 
       </View>
 
-<ScrollView>
-      <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('1%') }}>
+      <ScrollView>
+        <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('1%') }}>
 
 
-      <Fragment>
-            {data.map((dato, index) => (
-     <><><Text>
-                {dato.nombres}
-              </Text><Text>
-                  {dato.identificacion}
-                </Text></><Checkbox style={{ margin: 8 }} value={isChecked} onValueChange={setChecked} /></>
+          <Fragment>
+            {data
+              .map((dato, index) => (
+                <><><Text>
+                  {dato.nombres}
+                </Text><Text>
+                    {dato.identificacion}
+                  </Text></><Checkbox style={{ margin: 8 }} value={isChecked} onValueChange={setChecked} /></>
 
-            )
-            )
+              )
+              )
             }
 
-</Fragment>
+          </Fragment>
 
 
-      </View>
+        </View>
 
 
-      <TouchableOpacity
-        style={{
-          ...CSS.siguiente,
-          backgroundColor: '#132196',
-          marginTop: hp('49%')
+        <TouchableOpacity
+          style={{
+            ...CSS.siguiente,
+            backgroundColor: '#132196',
+            marginTop: hp('49%')
 
-        }}
+          }}
 
-        onPress={() =>update()}
+          onPress={() => update()}
 
-      >
-        <Text style={CSS.siguientetext}>GUARDAR</Text>
-      </TouchableOpacity>
+        >
+          <Text style={CSS.siguientetext}>GUARDAR</Text>
+        </TouchableOpacity>
       </ScrollView>
 
 
