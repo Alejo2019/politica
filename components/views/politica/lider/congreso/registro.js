@@ -63,7 +63,7 @@ const [partido,setPartido]=useState("");
 
   const getCandidatos = async () => {
     axios
-      .get(`http://3.236.142.25:8060/api/buscar/partidos/partido` )  
+      .get(`http://http://52.55.26.143:8060api/buscar/partidos/partido` )  
       .then(function (response) {
         // handle success
         setdata(response.data.result);
@@ -90,7 +90,7 @@ const [partido,setPartido]=useState("");
 
   const envio = () => {
     axios
-    .post('http://3.236.142.25:8060//api/votantes', {
+    .post('http://http://52.55.26.143:8060/api/votantes', {
       "identificacion":(state.identificacion),
       "nombres":(state.nombres),
       "apellidos":(state.apellidos),

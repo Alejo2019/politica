@@ -33,7 +33,7 @@ function pagina4(props) {
 
   const getDataUsingSimpleGetCall = () => {
     axios
-      .get('http://3.236.142.25:8060/api/votantes')
+      .get('http://http://52.55.26.143:8060api/votantes')
       .then(function (response) {
         // handle success
         setdata(response.data.votantes);
