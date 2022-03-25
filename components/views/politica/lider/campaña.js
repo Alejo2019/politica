@@ -88,7 +88,7 @@ function inicio2(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate({ routeName: '' })}
+            onPress={() => navigation.navigate({ routeName: 'Congreso', params: { partidoR2,partidoL2} })}
           >
             <Text style={CSS.siguientetext}>CAMPAÑA PRESIDENCIAL</Text>
           </TouchableOpacity>
@@ -97,7 +97,7 @@ function inicio2(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate({ routeName: 'Congreso', params: { partidoR2,partidoL2} })}
+            onPress={() => navigation.navigate({ routeName: '', params: { partidoR2,partidoL2} })}
           >
             <Text style={CSS.siguientetext}>CONGRESO</Text>
           </TouchableOpacity>

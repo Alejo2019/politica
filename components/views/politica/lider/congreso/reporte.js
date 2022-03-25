@@ -1,11 +1,8 @@
 import React, { useEffect, useState, Fragment } from "react";
-import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
-import RNPickerSelect from "react-native-picker-select";
 import Checkbox from 'expo-checkbox';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import { DataTable } from 'react-native-paper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Pagination from 'rc-pagination';
+
 
 import {
   ScrollView,
@@ -184,24 +181,65 @@ function pagina4(props) {
 
       </View>
 
-      <ScrollView>
+      <ScrollView >
         <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('1%') }}>
 
 
-          <Fragment>
-            {data
-              .map((dato, index) => (
-                <><><Text>
-                  {dato.nombres}
-                </Text><Text>
-                    {dato.identificacion}
-                  </Text></><Checkbox style={{ margin: 8 }} value={isChecked} onValueChange={setChecked} /></>
+  
+          <ScrollView>
+          <View style={{ flexDirection: 'row'}}>
+              <View>
+                <Text style={{...CSS.tituloHome, marginRight: wp('20%') }}>
+                  Nombre
+                </Text>
+              </View>
+              <View style={{ alignSelf: 'center', marginRight: wp('20%') }}>
+                <Text style={CSS.tituloHome}>
+                  Cedula
+                </Text>   
+              </View>
+              <View style={{ alignSelf: 'center' }}>
+                <Text style={CSS.tituloHome}>
+                  ¿Voto?
+                </Text>
+                
+                
+              </View>
+            </View>
+            <View style={{ flexDirection: 'row' }}>
+              <View>
+                {data
+                  .map((dato, index) => (
+                    <Text style={CSS.tituloHome}>
+                      {dato.nombres}
+                    </Text>
+                  )
+                  )
+                }
+              </View>
+              <View>
+                {data
+                  .map((dato, index) => (
+                    <Text style={CSS.tituloHome}>
+                      {dato.identificacion}
+                    </Text>
+                  )
+                  )
+                }
+              </View>
+              <View>
+                {data
+                  .map((dato, index) => (
+                    <Text style={{...CSS.tituloHome, marginLeft: wp('15%')}}>
+                      <Checkbox style={{ margin: 10 }} value={isChecked} onValueChange={setChecked}/>
+                    </Text>
+                  )
+                  )
+                }
+              </View>
+            </View>
+            </ScrollView>
 
-              )
-              )
-            }
-
-          </Fragment>
 
 
         </View>
