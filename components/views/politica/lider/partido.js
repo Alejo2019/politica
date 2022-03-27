@@ -85,11 +85,43 @@ function inicio(props) {
             <View style={{ flex: 2}}>
               <View style={{ flexDirection: 'row' }}>
                 <View>
-                  <Image source={images.partido1} style={CSS.HomeProviderimagen} />
+                  <Image source={images.candidato1} style={CSS.HomeProviderimagen} />
                 </View>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome}>
-                   PARTIDO CAMBIO RADICAL
+                   Gustavo Petro
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={CSS.cardHome} onPress={() =>cambio()}>
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 2}}>
+              <View style={{ flexDirection: 'row' }}>
+                <View>
+                  <Image source={images.candidato2} style={CSS.HomeProviderimagen} />
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
+                   Sergio Fajardo
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={CSS.cardHome} onPress={() =>cambio()}>
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 2}}>
+              <View style={{ flexDirection: 'row' }}>
+                <View>
+                  <Image source={images.candidato3} style={CSS.HomeProviderimagen} />
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
+                   Federico Gutiérrez
                   </Text>
                 </View>
               </View>

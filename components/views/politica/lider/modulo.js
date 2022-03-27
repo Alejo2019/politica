@@ -90,15 +90,15 @@ function inicio2(props) {
           >
             <Text style={CSS.siguientetext}>Monitoreo electoral</Text>
           </TouchableOpacity>
-          {/* <TouchableOpacity
+          <TouchableOpacity
             style={{
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate('Pagina1E')}
+            onPress={() => navigation.navigate({ routeName: 'Pagina1E', params: { partidoR1,partidoL1 } })}
           >
             <Text style={CSS.siguientetext}>Testigos electorales</Text>
-          </TouchableOpacity> */}
+          </TouchableOpacity>
         </View>
 
 

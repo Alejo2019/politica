@@ -49,7 +49,7 @@ function Login(props) {
         if (response.data.usuario.rol === 'LIDER_ROLE') {
           navigation.navigate('Partido');
         } else if (response.data.usuario.rol === 'TESTIGO_ROLE') {
-          navigation.navigate('Pagina1E');
+          navigation.navigate('Partido');
         } else {
           navigation.navigate('Partido');
         }

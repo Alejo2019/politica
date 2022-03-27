@@ -79,7 +79,7 @@ console.log('pagina 3',partidoR3);
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> CAMARA DE REPRESENTANTES
+        }}> CAMPAÑA PRESIDENCIAL
         </Text>
 
         <View >

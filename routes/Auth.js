@@ -14,9 +14,12 @@ import Metasscreen from '../components/views/politica/lider/congreso/metas';
 import Entes_territorialesscreen from '../components/views/politica/lider/senado/entes_territoriales';
 import RegistroSscreen from '../components/views/politica/lider/senado/registro';
 import ReporteSscreen from '../components/views/politica/lider/senado/reporte';
-import GenerarSscreen from '../components/views/politica/lider/senado/generar_reporte'; 
+import GenerarSscreen from '../components/views/politica/lider/senado/generar_reporte';
 import Posibles_votantesSscreen from '../components/views/politica/lider/senado/posibles_votantes';
 import MetasSscreen from '../components/views/politica/lider/senado/metas';
+import Pagina1screen from '../components/views/politica/testigos/pagina1';
+import Pagina2screen from '../components/views/politica/testigos/pagina2';
+import Pagina4screen from '../components/views/politica/testigos/pagina4';
 import { images, COLORS } from "../constants";
 
 function LogoTitle() {
@@ -100,7 +103,7 @@ const Inicio = createStackNavigator({
             backgroundColor: COLORS.blue,
           },
         })
-      },   
+      },
       Generar: {
         screen: Generarscreen,
         navigationOptions: ({ navigation }) => ({
@@ -111,7 +114,7 @@ const Inicio = createStackNavigator({
             backgroundColor: COLORS.blue,
           },
         })
-      },    
+      },
       Posibles_votantes: {
         screen: Posibles_votantesscreen,
         navigationOptions: ({ navigation }) => ({
@@ -200,8 +203,40 @@ const Inicio = createStackNavigator({
           },
         })
       },
-      
-      
+      Pagina1E: {
+        screen: Pagina1screen,
+        navigationOptions: ({ navigation }) => ({
+          title: 'Atras',
+          headerTitle: props => <LogoTitle />,
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: COLORS.blue,
+          },
+        })
+      },
+      Pagina2E: {
+        screen: Pagina2screen,
+        navigationOptions: ({ navigation }) => ({
+          title: 'Atras',
+          headerTitle: props => <LogoTitle />,
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: COLORS.blue,
+          },
+        })
+      },
+      Pagina4E: {
+        screen: Pagina4screen,
+        navigationOptions: ({ navigation }) => ({
+          title: 'Atras',
+          headerTitle: props => <LogoTitle />,
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: COLORS.blue,
+          },
+        })
+      },
+
     }, {
       navigationOptions: {
         headerShown: false
