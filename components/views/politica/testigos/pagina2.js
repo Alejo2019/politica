@@ -17,22 +17,45 @@ import { images, COLORS, CSS } from "../../../../constants";
 import { Picker } from "@react-native-picker/picker";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { List } from 'react-native-paper';
-
+import axios from "axios";
 
 function pagina2(props) {
 
   let { navigation } = props;
 
   const [token, setToken] = useState("");
+  const [comuna, setComuna] = useState("");
+  const [ciudad, setCiudad] = useState("");
+
 
   useEffect(() => {
     getToken()
+    getCiudad()
+    getComuna()
   }, []);
 
   const getToken = async () => {
     try {
       let value = await AsyncStorage.getItem('token');
       setToken(value);
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+  const getCiudad = async () => {
+    try {
+      let value = await AsyncStorage.getItem('ciudad');
+      setCiudad(value);
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+  const getComuna = async () => {
+    try {
+      let value = await AsyncStorage.getItem('comuna');
+      setComuna(value);
     } catch (error) {
       console.log(error)
     }
@@ -51,14 +74,14 @@ function pagina2(props) {
     votosNoMarcados: '',
     totalVotosMesa: ''
   });
-
+console.log(state)
   const hableChangeText = (nombre, value) => {
     setState({ ...state, [nombre]: value });
   }
 
   const envio = () => {
     axios
-    .post('http://localhost:8060/api/e14', {
+    .post('http://52.55.26.143:8060/api/e14', {
       "mesa": (state.mesa),
       "totalSufragantes":(state.totalSufragantes),
       "totalVotosUrna":(state.totalVotosUrna),
@@ -76,8 +99,8 @@ function pagina2(props) {
         }
       }).then(function (response) {
         // handle success
-        (JSON.stringify(response.data));
-        console.log((response.data))
+        (JSON.stringify(response));
+        console.log((response))
         alert("Resgistro Existoso!")
       })
       .catch(function (error) {
@@ -162,7 +185,7 @@ function pagina2(props) {
                     placeholderTextColor="#132196"
                     autoCapitalize="none"
                     keyboardType="numeric"
-
+                    onChangeText={(value) => hableChangeText('mesa', value)}
                   />
                   </View>
                 </View>
@@ -259,7 +282,7 @@ function pagina2(props) {
                     placeholderTextColor="#132196"
                     autoCapitalize="none"
                     keyboardType="numeric"
-
+                    onChangeText={(value) => hableChangeText('totalVotosUrna', value)}
                   />
                 </View>
                 <View style={{ alignSelf: 'center' }}>
@@ -268,7 +291,7 @@ function pagina2(props) {
                     placeholderTextColor="#132196"
                     autoCapitalize="none"
                     keyboardType="numeric"
-
+                    onChangeText={(value) => hableChangeText('totalVotosIncinerados', value)}
                   />
                 </View>
               </View>
@@ -293,6 +316,7 @@ function pagina2(props) {
                     placeholderTextColor="#132196"
                     autoCapitalize="none"
                     keyboardType="numeric"
+                    onChangeText={(value) => hableChangeText('votacionCan1', value)}
 
                   />
                 </View>
@@ -318,6 +342,7 @@ function pagina2(props) {
                     placeholderTextColor="#132196"
                     autoCapitalize="none"
                     keyboardType="numeric"
+                    onChangeText={(value) => hableChangeText('votacionCan2', value)}
 
                   />
                 </View>
@@ -343,6 +368,7 @@ function pagina2(props) {
                     placeholderTextColor="#132196"
                     autoCapitalize="none"
                     keyboardType="numeric"
+                    onChangeText={(value) => hableChangeText('votacionCan3', value)}
 
                   />
                 </View>
@@ -368,6 +394,7 @@ function pagina2(props) {
                   placeholderTextColor="#132196"
                   autoCapitalize="none"
                   keyboardType="numeric"
+                  onChangeText={(value) => hableChangeText('votosBlanco', value)}
 
                 />
               </View>
@@ -389,6 +416,7 @@ function pagina2(props) {
                   placeholderTextColor="#132196"
                   autoCapitalize="none"
                   keyboardType="numeric"
+                  onChangeText={(value) => hableChangeText('votosNulos', value)}
 
                 />
               </View>
@@ -410,6 +438,7 @@ function pagina2(props) {
                   placeholderTextColor="#132196"
                   autoCapitalize="none"
                   keyboardType="numeric"
+                  onChangeText={(value) => hableChangeText('votosNoMarcados', value)}
 
                 />
               </View>
@@ -438,6 +467,7 @@ function pagina2(props) {
                   placeholderTextColor="#132196"
                   autoCapitalize="none"
                   keyboardType="numeric"
+                  onChangeText={(value) => hableChangeText('totalVotosMesa', value)}
 
                 />
               </View>
@@ -451,7 +481,7 @@ function pagina2(props) {
             backgroundColor: '#132196'
           }}
 
-          onPress={() => navigation.navigate('Pagina1E')}
+          onPress={() => envio()}
 
         >
           <Text style={CSS.siguientetext}>FINALIZAR</Text>

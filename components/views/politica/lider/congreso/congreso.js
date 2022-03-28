@@ -15,8 +15,13 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 function pagina1(props) {
 
   let { navigation } = props;
- let partidoR3 = navigation.state.params.partidoR2;
-console.log('pagina 3',partidoR3);
+ let petro3 = navigation.state.params.petro2;
+ let fajardo3 = navigation.state.params.fajardo2;
+ let fico3 = navigation.state.params.fico3;
+
+console.log('pagina 3',petro3);
+console.log('pagina 3',fajardo3);
+console.log('pagina 3',fico3);
 
   // useEffect(() => {
   //   console.log(partido)
@@ -88,7 +93,7 @@ console.log('pagina 3',partidoR3);
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate({ routeName: 'Posibles_votantes' })}
+            onPress={() => navigation.navigate({ routeName: 'Posibles_votantes', params: { petro3,fajardo3,fico3 } })}
           >
             <Text style={CSS.siguientetext}>REGISTRO POSIBLES VOTANTES</Text>
           </TouchableOpacity>
@@ -98,7 +103,7 @@ console.log('pagina 3',partidoR3);
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate('Metas')}
+            onPress={() => navigation.navigate({ routeName: 'Metas', params: { petro3,fajardo3,fico3 } })}
           >
             <Text style={CSS.siguientetext}>REGISTRO METAS POR LIDER</Text>
           </TouchableOpacity>
@@ -107,7 +112,7 @@ console.log('pagina 3',partidoR3);
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate({ routeName: 'Registro', params: { partidoR3 } })}
+            onPress={() => navigation.navigate({ routeName: 'Registro', params: { petro3,fajardo3,fico3 } })}
           >
             <Text style={CSS.siguientetext}>REGISTRO DE VOTOS</Text>
           </TouchableOpacity>
@@ -116,7 +121,7 @@ console.log('pagina 3',partidoR3);
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate('Reporte')}
+            onPress={() => navigation.navigate({ routeName: 'Reporte', params: { petro3,fajardo3,fico3 } })}
           >
             <Text style={CSS.siguientetext}>REPORTE Y CONSULTA</Text>
           </TouchableOpacity>

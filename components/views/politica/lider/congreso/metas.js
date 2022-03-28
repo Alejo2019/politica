@@ -20,6 +20,14 @@ function pagina8(props) {
     navigation.navigate('Login');
   };
 
+  
+  let petro4 = navigation.state.params.petro3;
+  let fajardo4 = navigation.state.params.fajardo3;
+  let fico4 = navigation.state.params.fico3;
+   console.log(petro4);
+   console.log(fajardo4);
+   console.log(fico4);
+
   return (
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>

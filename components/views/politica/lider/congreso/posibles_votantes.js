@@ -20,6 +20,13 @@ function pagina7(props) {
   const [data, setdata] = useState([]);
 
   let { navigation } = props;
+  
+  let petro4 = navigation.state.params.petro3;
+  let fajardo4 = navigation.state.params.fajardo3;
+  let fico4 = navigation.state.params.fico3;
+   console.log(petro4);
+   console.log(fajardo4);
+   console.log(fico4);
   // Validador1 = async () => {
   //   navigation.navigate('Login');
   // };

@@ -15,10 +15,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 function inicio2(props) {
 
   let { navigation } = props;
-  let partidoR1= navigation.state.params.partidoR;
-  let partidoL1= navigation.state.params.partidoL;
-  console.log('pagina 1',partidoR1);
-  console.log('pagina 1',partidoL1);
+  let petro1= navigation.state.params.petro;
+  let fajardo1= navigation.state.params.fajardo;
+  let fico1= navigation.state.params.fico;
+  console.log('pagina 1',petro1);
+  console.log('pagina 1',fajardo1);
+  console.log('pagina 1',fico1);
   const Close = async () => {
     await AsyncStorage.removeItem('token');
     navigation.navigate({ routeName: 'Auth' })
@@ -86,7 +88,7 @@ function inicio2(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate({ routeName: 'Campaña', params: { partidoR1,partidoL1 } })}
+            onPress={() => navigation.navigate({ routeName: 'Campaña', params: { petro1,fajardo1,fico1} })}
           >
             <Text style={CSS.siguientetext}>Monitoreo electoral</Text>
           </TouchableOpacity>
@@ -95,7 +97,7 @@ function inicio2(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate({ routeName: 'Pagina1E', params: { partidoR1,partidoL1 } })}
+            onPress={() => navigation.navigate({ routeName: 'Pagina1E'})}
           >
             <Text style={CSS.siguientetext}>Testigos electorales</Text>
           </TouchableOpacity>

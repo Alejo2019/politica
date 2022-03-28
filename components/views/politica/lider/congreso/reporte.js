@@ -47,6 +47,14 @@ function pagina4(props) {
     setSearch(search);
   };
 
+  
+  let petro4 = navigation.state.params.petro3;
+  let fajardo4 = navigation.state.params.fajardo3;
+  let fico4 = navigation.state.params.fico3;
+   console.log(petro4);
+   console.log(fajardo4);
+   console.log(fico4);
+
 console.log(identificacion)
   const getDatos = async () => {
     axios.get('http://52.55.26.143:8060/api/lider/622d5addc74d0b5b45bc9196/tipo/SENADO', {

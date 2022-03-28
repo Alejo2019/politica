@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import RNPickerSelect from "react-native-picker-select";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -16,11 +16,46 @@ import {
 import { images, COLORS, CSS } from "../../../../constants";
 import { Picker } from "@react-native-picker/picker";
 import { List } from 'react-native-paper';
-
+import axios from "axios";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function pagina3(props) {
 
   let { navigation } = props;
+
+  const [data, setData] = useState([]);
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    getData();
+    getToken();
+  }, []);
+
+  const getToken = async () => {
+    try {
+      let value = await AsyncStorage.getItem('token');
+      setToken(value);
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+
+  const getData = async () => {
+    axios.get('http://52.55.26.143:8060/api/e14', {
+      headers: {
+        'x-token': `${token}`
+      }
+    })
+      .then((response) => {
+        //console.log(response.data.votante)
+        setData(response.data.e14);
+      console.log(data)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  };
 
   return (
     < ImageBackground source={images.fondo} style={CSS.Logincontainer} >
@@ -94,6 +129,8 @@ function pagina3(props) {
             </View>
           </View>
         </View>
+        {data
+                  .map((dato, index) => (
         <List.Section>
           <List.Accordion title='Desplegable' titleStyle={{ color: COLORS.gray, fontWeight: 'bold' }}
 
@@ -158,7 +195,7 @@ function pagina3(props) {
                         underlineColorAndroid="transparent"
                         placeholderTextColor="#132196"
                         autoCapitalize="none"
-                        keyboardType="numeric">520</Text>
+                        keyboardType="numeric">{data.totalSufragantes}</Text>
                     </View>
                     <View style={{ alignSelf: 'center' }}>
                       <Text style={CSS.tituloHome1}
@@ -351,7 +388,9 @@ function pagina3(props) {
             </TouchableOpacity>
           </List.Accordion>
         </List.Section>
-
+    )
+    )
+  }
       </ScrollView>
     </ImageBackground >
   );

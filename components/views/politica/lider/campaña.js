@@ -15,11 +15,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 function inicio2(props) {
 
   let { navigation } = props;  
-  let partidoR2 = navigation.state.params.partidoR1;  
-  let partidoL2 = navigation.state.params.partidoL1;
+  let petro2 = navigation.state.params.petro1;  
+  let fajardo2 = navigation.state.params.fajardo1;
+  let fico2 = navigation.state.params.fico1;
 
-  console.log('paginac',partidoR2);
-  console.log('paginac',partidoL2);
+  console.log('paginac',petro2);
+  console.log('paginac',fajardo2);
+  console.log('paginac',fico2);
+
 
   const Close = async () => {
     await AsyncStorage.removeItem('token');
@@ -88,7 +91,7 @@ function inicio2(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate({ routeName: 'Congreso', params: { partidoR2,partidoL2} })}
+            onPress={() => navigation.navigate({ routeName: 'Congreso', params: { petro2,fajardo2,fico2} })}
           >
             <Text style={CSS.siguientetext}>CAMPAÑA PRESIDENCIAL</Text>
           </TouchableOpacity>
@@ -97,7 +100,7 @@ function inicio2(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate({ routeName: '', params: { partidoR2,partidoL2} })}
+            onPress={() => navigation.navigate({ routeName: ''})}
           >
             <Text style={CSS.siguientetext}>CONGRESO</Text>
           </TouchableOpacity>

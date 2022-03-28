@@ -31,11 +31,15 @@ function pagina2(props) {
   const [country2, setCountry2] = useState();
   const [token, setToken] = useState("");
   const [data, setdata] = useState([]);
-const [partido,setPartido]=useState("");
+  const [partido, setPartido] = useState("");
 
- // let partidoR4 = navigation.state.params.partidoR3;
- // console.log(partidoR4);
-
+  let petro4 = navigation.state.params.petro3;
+  let fajardo4 = navigation.state.params.fajardo3;
+  let fico4 = navigation.state.params.fico3;
+   console.log(petro4);
+   console.log(fajardo4);
+   console.log(fico4);
+  
   useEffect(() => {
     getToken()
     getCandidatos()
@@ -51,7 +55,7 @@ const [partido,setPartido]=useState("");
     }
   };
 
-  
+
   const getPartido = async () => {
     try {
       let value = await AsyncStorage.getItem('partido')
@@ -63,7 +67,7 @@ const [partido,setPartido]=useState("");
 
   const getCandidatos = async () => {
     axios
-      .get(`http://http://52.55.26.143:8060api/buscar/partidos/partido` )  
+      .get(`http://http://52.55.26.143:8060api/buscar/partidos/partido`)
       .then(function (response) {
         // handle success
         setdata(response.data.result);
@@ -73,15 +77,15 @@ const [partido,setPartido]=useState("");
   };
 
   const [state, setState] = useState({
-    identificacion:'',
-    nombres:'',
-    apellidos:'',
-    telefono:'',
-    departamento:'',
-    municipio:'',
-    puesto:'',
-    mesa:'',
-    comuna:''
+    identificacion: '',
+    nombres: '',
+    apellidos: '',
+    telefono: '',
+    departamento: '',
+    municipio: '',
+    puesto: '',
+    mesa: '',
+    comuna: ''
   });
 
   const hableChangeText = (nombre, value) => {
@@ -90,21 +94,21 @@ const [partido,setPartido]=useState("");
 
   const envio = () => {
     axios
-    .post('http://http://52.55.26.143:8060/api/votantes', {
-      "identificacion":(state.identificacion),
-      "nombres":(state.nombres),
-      "apellidos":(state.apellidos),
-      "telefono":(state.telefono),
-      "departamento":(state.departamento),
-      "municipio":(state.municipio),
-      "puesto":(state.puesto),
-      "mesa":(state.mesa),
-      "comuna":(state.comuna),
-      "posible":false,
-      "estado":false,
-      "votoSen":true,
-      "votoCam":true,
-      "campaña":''
+      .post('http://http://52.55.26.143:8060/api/votantes', {
+        "identificacion": (state.identificacion),
+        "nombres": (state.nombres),
+        "apellidos": (state.apellidos),
+        "telefono": (state.telefono),
+        "departamento": (state.departamento),
+        "municipio": (state.municipio),
+        "puesto": (state.puesto),
+        "mesa": (state.mesa),
+        "comuna": (state.comuna),
+        "posible": false,
+        "estado": false,
+        "votoSen": true,
+        "votoCam": true,
+        "campaña": ''
       }, {
         headers: {
           'x-token': token
@@ -276,8 +280,8 @@ const [partido,setPartido]=useState("");
             underlineColorAndroid="transparent"
             placeholderTextColor="#132196"
             autoCapitalize="none"
-              selectionColor="#132196"
-              keyboardType="numeric"
+            selectionColor="#132196"
+            keyboardType="numeric"
             onChangeText={(value) => hableChangeText('mesa', value)}
           />
           <View style={CSS.viewCardHome}>
@@ -292,8 +296,8 @@ const [partido,setPartido]=useState("");
             keyboardType="numeric"
             onChangeText={(value) => hableChangeText('comuna', value)}
           />
-         
-          
+
+
         </View>
 
 

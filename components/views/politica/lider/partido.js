@@ -21,16 +21,22 @@ function inicio(props) {
     navigation.navigate({ routeName: 'Auth' })
   }
 
-  const cambio = () => {
-    const partidoR = 'radical';
-    navigation.navigate({ routeName: 'Modulo', params: { partidoR } })
-    console.log(partidoR)
+  const cambioP = () => {
+    const petro = 'petro';
+    navigation.navigate({ routeName: 'Modulo', params: { petro } })
+    console.log(petro)
   }
 
-    const cambioL = () => {
-    const partidoL = 'liberal';
-    navigation.navigate({ routeName: 'Modulo', params: { partidoL} })
-    console.log(partidoL)
+    const cambioF = () => {
+    const fajardo = 'fajardo';
+    navigation.navigate({ routeName: 'Modulo', params: { fajardo} })
+    console.log(fajardo)
+  }
+
+  const cambioFG = () => {
+    const fico = 'fico';
+    navigation.navigate({ routeName: 'Modulo', params: { fico} })
+    console.log(fico)
   }
   return (
 
@@ -80,7 +86,7 @@ function inicio(props) {
           source={images.logo2}
         />
 
-        <TouchableOpacity style={CSS.cardHome} onPress={() =>cambio()}>
+        <TouchableOpacity style={CSS.cardHome} onPress={() =>cambioP()}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 2}}>
               <View style={{ flexDirection: 'row' }}>
@@ -96,7 +102,7 @@ function inicio(props) {
             </View>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={CSS.cardHome} onPress={() =>cambio()}>
+        <TouchableOpacity style={CSS.cardHome} onPress={() =>cambioF()}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 2}}>
               <View style={{ flexDirection: 'row' }}>
@@ -112,7 +118,7 @@ function inicio(props) {
             </View>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={CSS.cardHome} onPress={() =>cambio()}>
+        <TouchableOpacity style={CSS.cardHome} onPress={() =>cambioFG()}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 2}}>
               <View style={{ flexDirection: 'row' }}>
@@ -146,9 +152,6 @@ function inicio(props) {
           </View>
         </TouchableOpacity> */}
 
-        
-
-        
       </ScrollView>
 
     </ImageBackground>
