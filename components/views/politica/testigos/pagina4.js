@@ -44,24 +44,36 @@ function pagina3(props) {
               <View style={{ flexDirection: 'row' }}>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome}>
-                    DEPARTAMENTO
+                    CIUDAD
                   </Text>
                 </View>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome}>
-                    12 - CESAR
+                    CALI
                   </Text>
                 </View>
               </View>
               <View style={{ flexDirection: 'row' }}>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome}>
-                    MUNICIPIO
+                    COMUNA
                   </Text>
                 </View>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome}>
-                    180 - BECERRIL
+                    6
+                  </Text>
+                </View>
+              </View>
+              <View style={{ flexDirection: 'row' }}>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
+                    NUEMRO DE MESA
+                  </Text>
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
+                    26
                   </Text>
                 </View>
               </View>
@@ -77,44 +89,14 @@ function pagina3(props) {
                   </Text>
                 </View>
               </View>
-              <View style={{ flexDirection: 'row' }}>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    ZONA
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    80
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    PUESTO
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    00
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    MESA
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    003
-                  </Text>
-                </View>
-              </View>
+              
+              
             </View>
           </View>
         </View>
         <List.Section>
           <List.Accordion title='Desplegable' titleStyle={{ color: COLORS.gray, fontWeight: 'bold' }}
-           
+
             style={{ backgroundColor: COLORS.blue }}>
             <View style={CSS.cardHome}>
               <View style={CSS.viewCardHome}>
@@ -198,126 +180,80 @@ function pagina3(props) {
             </View>
 
             <View style={CSS.cardHome} >
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 3, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View>
-                      <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                    </View>
-                    <View>
-                      <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                        CANDIDATO 1
-                      </Text>
-                      <Text style={CSS.tituloHome6}
-                        underlineColorAndroid="transparent"
-                        placeholderTextColor="#132196"
-                        autoCapitalize="none"
-                        keyboardType="numeric">405</Text>
 
-                    </View>
-                  </View>
-                </View>
-              </View>
-            </View>
-            <View style={CSS.cardHome} >
               <View style={CSS.viewCardHome}>
-                <View style={{ flex: 3, alignItems: 'center' }}>
+                <View style={{ flex: 2 }}>
                   <View style={{ flexDirection: 'row' }}>
                     <View>
-                      <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                    </View>
-                    <View>
-                      <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                      <Image source={images.candidato1} style={CSS.HomeProviderimagen} />
                     </View>
                     <View style={{ alignSelf: 'center' }}>
                       <Text style={CSS.tituloHome5}>
-                        CANDIDATO 2
+                      Gustavo Petro
                       </Text>
                       <Text style={CSS.tituloHome6}
-                        underlineColorAndroid="transparent"
-                        placeholderTextColor="#132196"
-                        autoCapitalize="none"
-                        keyboardType="numeric">588</Text>
+                    underlineColorAndroid="transparent"
+                    placeholderTextColor="#132196"
+                    autoCapitalize="none"
+                    keyboardType="numeric"
+
+                  >100</Text>
                     </View>
                   </View>
                 </View>
               </View>
+
             </View>
             <View style={CSS.cardHome} >
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 3, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View>
-                      <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                    </View>
-                    <View>
-                      <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                        CANDIDATO 3
-                      </Text>
-                      <Text style={CSS.tituloHome6}
-                        underlineColorAndroid="transparent"
-                        placeholderTextColor="#132196"
-                        autoCapitalize="none"
-                        keyboardType="numeric">100</Text>
-                    </View>
-                  </View>
+     
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 2}}>
+              <View style={{ flexDirection: 'row' }}>
+                <View>
+                  <Image source={images.candidato2} style={CSS.HomeProviderimagen} />
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome5}>
+                  Sergio Fajardo
+                  </Text>
+                  <Text style={CSS.tituloHome6}
+                    underlineColorAndroid="transparent"
+                    placeholderTextColor="#132196"
+                    autoCapitalize="none"
+                    keyboardType="numeric"
+
+                  >100</Text>
                 </View>
               </View>
             </View>
-            <View style={CSS.cardHome} >
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 3, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View>
-                      <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                    </View>
-                    <View>
-                      <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                        CANDIDATO 4
-                      </Text>
-                      <Text style={CSS.tituloHome6}
-                        underlineColorAndroid="transparent"
-                        placeholderTextColor="#132196"
-                        autoCapitalize="none"
-                        keyboardType="numeric">900</Text>
-                    </View>
-                  </View>
+          </View>
+  
+        </View>
+        <View style={CSS.cardHome} >
+     
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 2}}>
+              <View style={{ flexDirection: 'row' }}>
+                <View>
+                  <Image source={images.candidato3} style={CSS.HomeProviderimagen} />
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome5}>
+                  Federico Gutiérrez
+                  </Text>
+                  <Text style={CSS.tituloHome6}
+                    underlineColorAndroid="transparent"
+                    placeholderTextColor="#132196"
+                    autoCapitalize="none"
+                    keyboardType="numeric"
+
+                  >100</Text>
                 </View>
               </View>
             </View>
-            <View style={CSS.cardHome} >
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 3, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View>
-                      <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                    </View>
-                    <View>
-                      <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                        CANDIDATO 3
-                      </Text>
-                      <Text style={CSS.tituloHome6}
-                        underlineColorAndroid="transparent"
-                        placeholderTextColor="#132196"
-                        autoCapitalize="none"
-                        keyboardType="numeric">900</Text>
-                    </View>
-                  </View>
-                </View>
-              </View>
-            </View>
+          </View>
+  
+        </View>
 
             <View style={CSS.cardHome3}>
               <View style={CSS.viewCardHome}>

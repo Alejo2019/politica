@@ -104,81 +104,91 @@ function pagina2(props) {
       </TouchableOpacity> */}
 
       <ScrollView>
-        <View style={CSS.cardHome} onPress={() => navigation.navigate('Pagina3E')}>
+
+        <View style={CSS.cardHome3}>
           <View style={CSS.viewCardHome}>
-            <View style={{ flex: 4, marginLeft: 10 }}>
+            <View style={{ flex: 2, alignItems: 'center' }}>
               <View style={{ flexDirection: 'row' }}>
                 <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    DEPARTAMENTO
+                  <Text style={CSS.tituloHome5}>
+                    CIUDAD:
                   </Text>
+
                 </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    12 - CESAR
-                  </Text>
-                </View>
-              </View>
-              <View style={{ flexDirection: 'row' }}>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    MUNICIPIO
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    180 - BECERRIL
-                  </Text>
-                </View>
-              </View>
-              <View style={{ flexDirection: 'row' }}>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    LUGAR DE PUESTO
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    CABECERA MUNICIPAL
-                  </Text>
-                </View>
-              </View>
-              <View style={{ flexDirection: 'row' }}>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    ZONA
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    80
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    PUESTO
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    00
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    MESA
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    003
-                  </Text>
-                </View>
+                <TextInput style={CSS.tituloHome6}
+                  underlineColorAndroid="transparent"
+                  placeholderTextColor="#132196"
+                  autoCapitalize="none"
+                  keyboardType="numeric"
+
+                />
               </View>
             </View>
           </View>
         </View>
+        <View style={CSS.cardHome3}>
+              <View style={CSS.viewCardHome}>
+                <View style={{ flex: 2, alignItems: 'center' }}>
+                  <View style={{ flexDirection: 'row' }}>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome5}>
+                        COMUNA:
+                      </Text>
 
+                    </View>
+                    <TextInput style={CSS.tituloHome6}
+                    underlineColorAndroid="transparent"
+                    placeholderTextColor="#132196"
+                    autoCapitalize="none"
+                    keyboardType="numeric"
+
+                  />
+                  </View>
+                </View>
+              </View>
+            </View>
+            <View style={CSS.cardHome3}>
+              <View style={CSS.viewCardHome}>
+                <View style={{ flex: 2, alignItems: 'center' }}>
+                  <View style={{ flexDirection: 'row' }}>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome5}>
+                        NUMERO DE MESA:
+                      </Text>
+
+                    </View>
+                    <TextInput style={CSS.tituloHome6}
+                    underlineColorAndroid="transparent"
+                    placeholderTextColor="#132196"
+                    autoCapitalize="none"
+                    keyboardType="numeric"
+
+                  />
+                  </View>
+                </View>
+              </View>
+            </View>
+            <View style={CSS.cardHome3}>
+              <View style={CSS.viewCardHome}>
+                <View style={{ flex: 2, alignItems: 'center' }}>
+                  <View style={{ flexDirection: 'row' }}>
+                    <View style={{ alignSelf: 'center' }}>
+                      <Text style={CSS.tituloHome5}>
+                        LUGAR:
+                      </Text>
+
+                    </View>
+                    <TextInput style={CSS.tituloHome6}
+                    underlineColorAndroid="transparent"
+                    placeholderTextColor="#132196"
+                    autoCapitalize="none"
+                    keyboardType="numeric"
+
+                  />
+                  </View>
+                </View>
+              </View>
+            </View>
         <View style={CSS.cardHome}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 3, alignItems: 'center' }}>
@@ -267,18 +277,16 @@ function pagina2(props) {
         </View>
 
         <View style={CSS.cardHome} >
+
           <View style={CSS.viewCardHome}>
-            <View style={{ flex: 3, alignItems: 'center' }}>
+            <View style={{ flex: 2 }}>
               <View style={{ flexDirection: 'row' }}>
                 <View>
-                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                </View>
-                <View>
-                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                  <Image source={images.candidato1} style={CSS.HomeProviderimagen} />
                 </View>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome5}>
-                    CANDIDATO 1
+                    Gustavo Petro
                   </Text>
                   <TextInput style={CSS.tituloHome6}
                     underlineColorAndroid="transparent"
@@ -291,20 +299,19 @@ function pagina2(props) {
               </View>
             </View>
           </View>
+
         </View>
         <View style={CSS.cardHome} >
+
           <View style={CSS.viewCardHome}>
-            <View style={{ flex: 3, alignItems: 'center' }}>
+            <View style={{ flex: 2 }}>
               <View style={{ flexDirection: 'row' }}>
                 <View>
-                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                </View>
-                <View>
-                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                  <Image source={images.candidato2} style={CSS.HomeProviderimagen} />
                 </View>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome5}>
-                    CANDIDATO 2
+                    Sergio Fajardo
                   </Text>
                   <TextInput style={CSS.tituloHome6}
                     underlineColorAndroid="transparent"
@@ -317,20 +324,19 @@ function pagina2(props) {
               </View>
             </View>
           </View>
+
         </View>
         <View style={CSS.cardHome} >
+
           <View style={CSS.viewCardHome}>
-            <View style={{ flex: 3, alignItems: 'center' }}>
+            <View style={{ flex: 2 }}>
               <View style={{ flexDirection: 'row' }}>
                 <View>
-                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                </View>
-                <View>
-                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
+                  <Image source={images.candidato3} style={CSS.HomeProviderimagen} />
                 </View>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome5}>
-                    CANDIDATO 3
+                    Federico Gutiérrez
                   </Text>
                   <TextInput style={CSS.tituloHome6}
                     underlineColorAndroid="transparent"
@@ -343,141 +349,101 @@ function pagina2(props) {
               </View>
             </View>
           </View>
+
         </View>
-        <View style={CSS.cardHome} >
+
+
+        <View style={CSS.cardHome3}>
           <View style={CSS.viewCardHome}>
-            <View style={{ flex: 3, alignItems: 'center' }}>
+            <View style={{ flex: 2, alignItems: 'center' }}>
               <View style={{ flexDirection: 'row' }}>
-                <View>
-                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                </View>
-                <View>
-                  <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                </View>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome5}>
-                    CANDIDATO 4
+                    VOTO EN BLANCO:
                   </Text>
-                  <TextInput style={CSS.tituloHome6}
-                    underlineColorAndroid="transparent"
-                    placeholderTextColor="#132196"
-                    autoCapitalize="none"
-                    keyboardType="numeric"
 
-                  />
                 </View>
+                <TextInput style={CSS.tituloHome6}
+                  underlineColorAndroid="transparent"
+                  placeholderTextColor="#132196"
+                  autoCapitalize="none"
+                  keyboardType="numeric"
+
+                />
               </View>
             </View>
           </View>
         </View>
-        <View style={CSS.cardHome} >
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 3, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View>
-                      <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                    </View>
-                    <View>
-                      <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                        CANDIDATO 3
-                      </Text>
-                      <Text style={CSS.tituloHome6}
-                        underlineColorAndroid="transparent"
-                        placeholderTextColor="#132196"
-                        autoCapitalize="none"
-                        keyboardType="numeric">900</Text>
-                    </View>
-                  </View>
+        <View style={CSS.cardHome3}>
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 3, alignItems: 'center' }}>
+              <View style={{ flexDirection: 'row' }}>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome5}>
+                    VOTO NULOS:
+                  </Text>
+
                 </View>
+                <TextInput style={CSS.tituloHome6}
+                  underlineColorAndroid="transparent"
+                  placeholderTextColor="#132196"
+                  autoCapitalize="none"
+                  keyboardType="numeric"
+
+                />
               </View>
             </View>
+          </View>
+        </View>
+        <View style={CSS.cardHome3}>
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 2, alignItems: 'center' }}>
+              <View style={{ flexDirection: 'row' }}>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome5}>
+                    VOTOS NO MARCADOS:
+                  </Text>
 
-            <View style={CSS.cardHome3}>
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 2, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                        VOTO EN BLANCO:
-                      </Text>
-
-                    </View>
-                    <Text style={CSS.tituloHome6}
-                      underlineColorAndroid="transparent"
-                      placeholderTextColor="#132196"
-                      autoCapitalize="none"
-                      keyboardType="numeric">900</Text>
-                  </View>
                 </View>
+                <TextInput style={CSS.tituloHome6}
+                  underlineColorAndroid="transparent"
+                  placeholderTextColor="#132196"
+                  autoCapitalize="none"
+                  keyboardType="numeric"
+
+                />
               </View>
             </View>
-            <View style={CSS.cardHome3}>
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 3, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                        VOTO NULOS:
-                      </Text>
+          </View>
+        </View>
+        <View style={CSS.cardHome3}>
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 2, alignItems: 'center' }}>
+              <View style={{ flexDirection: 'row' }}>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={{
+                    fontSize: hp('1.9%'),
+                    width: wp('50%'),
+                    color: '#132196',
+                    textAlign: 'left',
+                    fontWeight: 'bold',
+                    marginLeft: wp('3%')
+                  }}>
+                    TOTAL VOTOS EN LA MESA:
+                  </Text>
 
-                    </View>
-                    <Text style={CSS.tituloHome6}
-                      underlineColorAndroid="transparent"
-                      placeholderTextColor="#132196"
-                      autoCapitalize="none"
-                      keyboardType="numeric">900</Text>
-                  </View>
                 </View>
+                <TextInput style={CSS.tituloHome6}
+                  underlineColorAndroid="transparent"
+                  placeholderTextColor="#132196"
+                  autoCapitalize="none"
+                  keyboardType="numeric"
+
+                />
               </View>
             </View>
-            <View style={CSS.cardHome3}>
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 2, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                        VOTOS NO MARCADOS:
-                      </Text>
-
-                    </View>
-                    <Text style={CSS.tituloHome6}
-                      underlineColorAndroid="transparent"
-                      placeholderTextColor="#132196"
-                      autoCapitalize="none"
-                      keyboardType="numeric">900</Text>
-                  </View>
-                </View>
-              </View>
-            </View>
-            <View style={CSS.cardHome3}>
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 2, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={{
-                        fontSize: hp('1.9%'),
-                        width: wp('50%'),
-                        color: '#132196',
-                        textAlign: 'left',
-                        fontWeight: 'bold',
-                        marginLeft: wp('3%')
-                      }}>
-                        TOTAL VOTOS EN LA MESA:
-                      </Text>
-
-                    </View>
-                    <Text style={CSS.tituloHome6}
-                      underlineColorAndroid="transparent"
-                      placeholderTextColor="#132196"
-                      autoCapitalize="none"
-                      keyboardType="numeric">900</Text>
-                  </View>
-                </View>
-              </View>
-            </View>
+          </View>
+        </View>
 
         <TouchableOpacity
           style={{
