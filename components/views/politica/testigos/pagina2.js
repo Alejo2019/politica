@@ -69,14 +69,45 @@ function pagina2(props) {
       </TouchableOpacity> */}
 
       <ScrollView>
+        <View style={CSS.cardHome} onPress={() => navigation.navigate('Pagina3E')}>
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 4, marginLeft: 10 }}>
+              <View style={{ flexDirection: 'row' }}>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
+                    CIUDAD
+                  </Text>
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
+                    Cali
+                  </Text>
+                </View>
+              </View>
+              <View style={{ flexDirection: 'row' }}>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
+                    COMUNA
+                  </Text>
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
+                    1
+                  </Text>
+                </View>
+              </View>
 
+
+            </View>
+          </View>
+        </View>
         <View style={CSS.cardHome3}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 2, alignItems: 'center' }}>
               <View style={{ flexDirection: 'row' }}>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome5}>
-                    CIUDAD:
+                    MESA
                   </Text>
 
                 </View>
@@ -84,76 +115,11 @@ function pagina2(props) {
                   underlineColorAndroid="transparent"
                   placeholderTextColor="#132196"
                   autoCapitalize="none"
-                  keyboardType="numeric"
-
-                />
+                  keyboardType="numeric"/>
               </View>
             </View>
           </View>
         </View>
-        <View style={CSS.cardHome3}>
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 2, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                        COMUNA:
-                      </Text>
-
-                    </View>
-                    <TextInput style={CSS.tituloHome6}
-                    underlineColorAndroid="transparent"
-                    placeholderTextColor="#132196"
-                    autoCapitalize="none"
-                    keyboardType="numeric"
-
-                  />
-                  </View>
-                </View>
-              </View>
-            </View>
-            <View style={CSS.cardHome3}>
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 2, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                        NUMERO DE MESA:
-                      </Text>
-
-                    </View>
-                    <TextInput style={CSS.tituloHome6}
-                    underlineColorAndroid="transparent"
-                    placeholderTextColor="#132196"
-                    autoCapitalize="none"
-                    keyboardType="numeric"
-
-                  />
-                  </View>
-                </View>
-              </View>
-            </View>
-            <View style={CSS.cardHome3}>
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 2, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                        LUGAR:
-                      </Text>
-
-                    </View>
-                    <TextInput style={CSS.tituloHome6}
-                    underlineColorAndroid="transparent"
-                    placeholderTextColor="#132196"
-                    autoCapitalize="none"
-                    keyboardType="numeric"
-
-                  />
-                  </View>
-                </View>
-              </View>
-            </View>
         <View style={CSS.cardHome}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 3, alignItems: 'center' }}>
@@ -317,7 +283,6 @@ function pagina2(props) {
 
         </View>
 
-
         <View style={CSS.cardHome3}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 2, alignItems: 'center' }}>
@@ -332,9 +297,7 @@ function pagina2(props) {
                   underlineColorAndroid="transparent"
                   placeholderTextColor="#132196"
                   autoCapitalize="none"
-                  keyboardType="numeric"
-
-                />
+                  keyboardType="numeric"/>
               </View>
             </View>
           </View>
@@ -353,9 +316,7 @@ function pagina2(props) {
                   underlineColorAndroid="transparent"
                   placeholderTextColor="#132196"
                   autoCapitalize="none"
-                  keyboardType="numeric"
-
-                />
+                  keyboardType="numeric"/>
               </View>
             </View>
           </View>
@@ -374,9 +335,7 @@ function pagina2(props) {
                   underlineColorAndroid="transparent"
                   placeholderTextColor="#132196"
                   autoCapitalize="none"
-                  keyboardType="numeric"
-
-                />
+                  keyboardType="numeric"/>
               </View>
             </View>
           </View>
@@ -402,9 +361,7 @@ function pagina2(props) {
                   underlineColorAndroid="transparent"
                   placeholderTextColor="#132196"
                   autoCapitalize="none"
-                  keyboardType="numeric"
-
-                />
+                  keyboardType="numeric"/>
               </View>
             </View>
           </View>
