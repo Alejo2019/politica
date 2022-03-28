@@ -127,14 +127,45 @@ console.log(state)
       </TouchableOpacity> */}
 
       <ScrollView>
+        <View style={CSS.cardHome} onPress={() => navigation.navigate('Pagina3E')}>
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 4, marginLeft: 10 }}>
+              <View style={{ flexDirection: 'row' }}>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
+                    CIUDAD
+                  </Text>
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
+                    Cali
+                  </Text>
+                </View>
+              </View>
+              <View style={{ flexDirection: 'row' }}>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
+                    COMUNA
+                  </Text>
+                </View>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome}>
+                    1
+                  </Text>
+                </View>
+              </View>
 
+
+            </View>
+          </View>
+        </View>
         <View style={CSS.cardHome3}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 2, alignItems: 'center' }}>
               <View style={{ flexDirection: 'row' }}>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome5}>
-                    CIUDAD:
+                    MESA
                   </Text>
 
                 </View>
@@ -142,9 +173,7 @@ console.log(state)
                   underlineColorAndroid="transparent"
                   placeholderTextColor="#132196"
                   autoCapitalize="none"
-                  keyboardType="numeric"
-
-                />
+                  keyboardType="numeric"/>
               </View>
             </View>
           </View>
@@ -377,7 +406,6 @@ console.log(state)
           </View>
 
         </View>
-
 
         <View style={CSS.cardHome3}>
           <View style={CSS.viewCardHome}>

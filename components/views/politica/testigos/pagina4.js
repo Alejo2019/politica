@@ -103,7 +103,7 @@ function pagina3(props) {
               <View style={{ flexDirection: 'row' }}>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome}>
-                    NUEMRO DE MESA
+                    MESA
                   </Text>
                 </View>
                 <View style={{ alignSelf: 'center' }}>
@@ -111,21 +111,7 @@ function pagina3(props) {
                     26
                   </Text>
                 </View>
-              </View>
-              <View style={{ flexDirection: 'row' }}>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    LUGAR DE PUESTO
-                  </Text>
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    CABECERA MUNICIPAL
-                  </Text>
-                </View>
-              </View>
-              
-              
+              </View>  
             </View>
           </View>
         </View>
