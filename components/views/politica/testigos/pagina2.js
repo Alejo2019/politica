@@ -39,19 +39,54 @@ function pagina2(props) {
   };
 
   const [state, setState] = useState({
-    totalSufragantes: '',
-    totalVotosUrna: '',
-    totalVotosIncinerados: '',
-    telefono: '',
-    correo: '',
     mesa: '',
-    partido: '',
-    candidato: '',
+    totalSufragantes:'',
+    totalVotosUrna:'',
+    totalVotosIncinerados:'',
+    votacionCan1:'',
+    votacionCan2:'',
+    votacionCan3:'',   
+    votosBlanco:'',
+    votosNulos: '',
+    votosNoMarcados: '',
+    totalVotosMesa: ''
   });
 
   const hableChangeText = (nombre, value) => {
     setState({ ...state, [nombre]: value });
   }
+
+  const envio = () => {
+    axios
+    .post('http://localhost:8060/api/e14', {
+      "mesa": (state.mesa),
+      "totalSufragantes":(state.totalSufragantes),
+      "totalVotosUrna":(state.totalVotosUrna),
+      "totalVotosIncinerados":(state.totalVotosIncinerados),
+      "votacionCan1":(state.votacionCan1),
+      "votacionCan2":(state.votacionCan2),
+      "votacionCan3":(state.votacionCan3),   
+      "votosBlanco":(state.votosBlanco),
+      "votosNulos": (state.votosNulos),
+      "votosNoMarcados": (state.votosNoMarcados),
+      "totalVotosMesa": (state.totalVotosMesa)
+      }, {
+        headers: {
+          'x-token': token
+        }
+      }).then(function (response) {
+        // handle success
+        (JSON.stringify(response.data));
+        console.log((response.data))
+        alert("Resgistro Existoso!")
+      })
+      .catch(function (error) {
+        // handle error
+        alert("Ha ocurrido un error, verifica los datos!");
+        console.log(error.message)
+      });
+    navigation.navigate({ routeName: 'Pagina1E' })
+  };
 
   return (
     < ImageBackground source={images.fondo} style={CSS.Logincontainer} >

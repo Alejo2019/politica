@@ -27,9 +27,8 @@ function pagina4(props) {
   let { navigation } = props;
   const [isChecked, setChecked] = useState([]);
   useEffect(() => {
-    getPuesto()
     getToken();
-    getCedula()
+    getDatos()
   }, []);
 
   const [page, setPage] = React.useState(0);
@@ -43,34 +42,13 @@ function pagina4(props) {
   const [identificacion, setidentificacion] = useState("");
   const [id, setId] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [cedula, setCedula] = useState([])
   const updateSearch = (search) => {
     setSearch(search);
   };
-  // const getDataUsingSimpleGetCall = () => {
-  //   axios
-  //     .get('http://http://52.55.26.143:8060api/lider/622d1e86257755f652ff120e/tipo/SENADO')
-  //     .then(function (response) {
-  //       // handle success
-  //       setdata(response.data.votantes);
-  //       console.log(response.data.votantes)
-  //     })
-  // };
 
-
-
-  const getPuesto = () => {
-    axios
-      .get('http://http://52.55.26.143:8060/api/puestos')
-      .then(function (response) {
-        // handle success
-        setPuesto(response.data.Puestos);
-        console.log(response.data.Puestos)
-      })
-  };
-
-  //console.log(identificacion)
-
-  const getCedula = async () => {
+console.log(identificacion)
+  const getDatos = async () => {
     axios.get('http://52.55.26.143:8060/api/lider/622d5addc74d0b5b45bc9196/tipo/SENADO', {
       headers: {
         'x-token': `${token}`
@@ -80,6 +58,22 @@ function pagina4(props) {
         //console.log(response.data.votante)
         setData(response.data.votantes);
         //setId(response.data.votante._id)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  };
+
+  const getCedula = async () => {
+    axios.get(`http://52.55.26.143:8060/api/votantes/cedula/${identificacion}`, {
+      headers: {
+        'x-token': `${token}`
+      }
+    })
+      .then((response) => {
+        //console.log(response.data.votante)
+        setCedula(response.data.votantes);
+      console.log(cedula)
       })
       .catch((error) => {
         console.error(error)
@@ -185,7 +179,7 @@ function pagina4(props) {
           <ScrollView>
           <View style={{ flexDirection: 'row'}}>
               <View>
-                <Text style={{...CSS.tituloHome, marginRight: wp('20%') }}>
+                <Text style={{...CSS.tituloHome, marginRight: wp('20%'), }}>
                   Nombre
                 </Text>
               </View>
@@ -226,7 +220,7 @@ function pagina4(props) {
               <View>
                 {data
                   .map((dato, index) => (
-                    <Text style={{...CSS.tituloHome, marginLeft: wp('15%')}}>
+                    <Text style={{...CSS.tituloHome, marginLeft: wp('15%'), marginTop:1}}>
                       <Checkbox style={{ margin: 10 }} value={isChecked} onValueChange={setChecked}/>
                     </Text>
                   )
