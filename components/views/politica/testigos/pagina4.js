@@ -23,32 +23,52 @@ function pagina3(props) {
 
   let { navigation } = props;
 
-  const [data, setData] = useState([]);
   const [token, setToken] = useState("");
-
+  const [comuna, setComuna] = useState("");
+  const [ciudad, setCiudad] = useState("");
+  const [data, setData] = useState([]);
   useEffect(() => {
-    getData();
+
     getToken();
+    getCiudad();
+    getComuna();
+    getData();
   }, []);
 
   const getToken = async () => {
     try {
-      let value = await AsyncStorage.getItem('token');
-      setToken(value);
+      let valor = await AsyncStorage.getItem('token');
+      setToken(valor);
     } catch (error) {
       console.log(error)
     }
   };
 
+  const getCiudad = async () => {
+    try {
+      let value = await AsyncStorage.getItem('ciudad');
+      setCiudad(value);
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+  const getComuna = async () => {
+    try {
+      let value = await AsyncStorage.getItem('comuna');
+      setComuna(value);
+    } catch (error) {
+      console.log(error)
+    }
+  };
 
   const getData = async () => {
     axios.get('http://52.55.26.143:8060/api/e14', {
       headers: {
-        'x-token': `${token}`
-      }
+'x-token': token      }
     })
       .then((response) => {
-        //console.log(response.data.votante)
+        console.log(response.data.e14)
         setData(response.data.e14);
       console.log(data)
       })
@@ -56,7 +76,7 @@ function pagina3(props) {
         console.error(error)
       })
   };
-
+console.log(token)
   return (
     < ImageBackground source={images.fondo} style={CSS.Logincontainer} >
 
@@ -115,8 +135,7 @@ function pagina3(props) {
             </View>
           </View>
         </View>
-        {data
-                  .map((dato, index) => (
+        {data.map((dato, index) => (
         <List.Section>
           <List.Accordion title='Desplegable' titleStyle={{ color: COLORS.gray, fontWeight: 'bold' }}
 
@@ -181,21 +200,21 @@ function pagina3(props) {
                         underlineColorAndroid="transparent"
                         placeholderTextColor="#132196"
                         autoCapitalize="none"
-                        keyboardType="numeric">{data.totalSufragantes}</Text>
+                        keyboardType="numeric">{dato.totalSufragantes}</Text>
                     </View>
                     <View style={{ alignSelf: 'center' }}>
                       <Text style={CSS.tituloHome1}
                         underlineColorAndroid="transparent"
                         placeholderTextColor="#132196"
                         autoCapitalize="none"
-                        keyboardType="numeric">10</Text>
+                        keyboardType="numeric">{dato.totalVotosUrna}</Text>
                     </View>
                     <View style={{ alignSelf: 'center' }}>
                       <Text style={CSS.tituloHome1}
                         underlineColorAndroid="transparent"
                         placeholderTextColor="#132196"
                         autoCapitalize="none"
-                        keyboardType="numeric">400</Text>
+                        keyboardType="numeric">{dato.totalVotosIncinerados}</Text>
                     </View>
                   </View>
                 </View>
@@ -220,7 +239,7 @@ function pagina3(props) {
                     autoCapitalize="none"
                     keyboardType="numeric"
 
-                  >100</Text>
+                  >{dato.votacionCan1}</Text>
                     </View>
                   </View>
                 </View>
@@ -245,8 +264,8 @@ function pagina3(props) {
                     autoCapitalize="none"
                     keyboardType="numeric"
 
-                  >100</Text>
-                </View>
+                    >{dato.votacionCan2}</Text>
+                    </View>
               </View>
             </View>
           </View>
@@ -270,8 +289,8 @@ function pagina3(props) {
                     autoCapitalize="none"
                     keyboardType="numeric"
 
-                  >100</Text>
-                </View>
+                    >{dato.votacionCan3}</Text>
+                    </View>
               </View>
             </View>
           </View>
@@ -292,7 +311,7 @@ function pagina3(props) {
                       underlineColorAndroid="transparent"
                       placeholderTextColor="#132196"
                       autoCapitalize="none"
-                      keyboardType="numeric">900</Text>
+                      keyboardType="numeric">{dato.votosBlanco}</Text>
                   </View>
                 </View>
               </View>
@@ -311,7 +330,7 @@ function pagina3(props) {
                       underlineColorAndroid="transparent"
                       placeholderTextColor="#132196"
                       autoCapitalize="none"
-                      keyboardType="numeric">900</Text>
+                      keyboardType="numeric">{dato.votosBlanco}</Text>
                   </View>
                 </View>
               </View>
@@ -330,7 +349,7 @@ function pagina3(props) {
                       underlineColorAndroid="transparent"
                       placeholderTextColor="#132196"
                       autoCapitalize="none"
-                      keyboardType="numeric">900</Text>
+                      keyboardType="numeric">{dato.votosNoMarcados}</Text>
                   </View>
                 </View>
               </View>
@@ -356,7 +375,7 @@ function pagina3(props) {
                       underlineColorAndroid="transparent"
                       placeholderTextColor="#132196"
                       autoCapitalize="none"
-                      keyboardType="numeric">900</Text>
+                      keyboardType="numeric">{dato.totalVotosMesa}</Text>
                   </View>
                 </View>
               </View>

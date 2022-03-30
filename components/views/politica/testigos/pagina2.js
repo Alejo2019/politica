@@ -138,7 +138,7 @@ console.log(state)
                 </View>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome}>
-                    Cali
+                   {ciudad}
                   </Text>
                 </View>
               </View>
@@ -150,7 +150,7 @@ console.log(state)
                 </View>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome}>
-                    1
+                {comuna}
                   </Text>
                 </View>
               </View>
