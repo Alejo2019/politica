@@ -27,12 +27,11 @@ function pagina3(props) {
   const [comuna, setComuna] = useState("");
   const [ciudad, setCiudad] = useState("");
   const [data, setData] = useState([]);
-  useEffect(() => {
 
+  useEffect(() => {
     getToken();
     getCiudad();
     getComuna();
-    getData();
   }, []);
 
   const getToken = async () => {
@@ -65,21 +64,36 @@ function pagina3(props) {
   const getData = async () => {
     axios.get('http://52.55.26.143:8060/api/e14', {
       headers: {
-'x-token': token      }
+        'x-token': `${token}`      }
     })
       .then((response) => {
         console.log(response.data.e14)
         setData(response.data.e14);
-      console.log(data)
+        console.log(data)
       })
       .catch((error) => {
         console.error(error)
       })
   };
-console.log(token)
+  
+  console.log(token)
   return (
     < ImageBackground source={images.fondo} style={CSS.Logincontainer} >
+        <View style={{ alignSelf: 'center' }}>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente,
+              backgroundColor: '#132196',
+              width: wp('17%'),
+              marginLeft: wp('-2%'),
+              marginTop: hp('1%')
+            }}
+            onPress={() => getData()}
 
+          >
+            <Text style={CSS.siguientetext}>Buscar</Text>
+          </TouchableOpacity>
+        </View>
 
       {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
         <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
@@ -131,271 +145,271 @@ console.log(token)
                     26
                   </Text>
                 </View>
-              </View>  
+              </View>
             </View>
           </View>
         </View>
         {data.map((dato, index) => (
-        <List.Section>
-          <List.Accordion title='Desplegable' titleStyle={{ color: COLORS.gray, fontWeight: 'bold' }}
+          <List.Section>
+            <List.Accordion title='Desplegable' titleStyle={{ color: COLORS.gray, fontWeight: 'bold' }}
 
-            style={{ backgroundColor: COLORS.blue }}>
-            <View style={CSS.cardHome}>
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 3, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome2}>
-                        TOTAL
-                      </Text>
+              style={{ backgroundColor: COLORS.blue }}>
+              <View style={CSS.cardHome}>
+                <View style={CSS.viewCardHome}>
+                  <View style={{ flex: 3, alignItems: 'center' }}>
+                    <View style={{ flexDirection: 'row' }}>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome2}>
+                          TOTAL
+                        </Text>
+                      </View>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome2}>
+                          TOTAL
+                        </Text>
+                      </View>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome2}>
+                          TOTAL
+                        </Text>
+                      </View>
                     </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome2}>
-                        TOTAL
-                      </Text>
+                    <View style={{ flexDirection: 'row' }}>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome3}>
+                          SUFRAGANTES
+                        </Text>
+                      </View>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome3}>
+                          VOTOS
+                        </Text>
+                      </View>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome3}>
+                          VOTOS
+                        </Text>
+                      </View>
                     </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome2}>
-                        TOTAL
-                      </Text>
+                    <View style={{ flexDirection: 'row' }}>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome4}>
+                          FORMATO E-11
+                        </Text>
+                      </View>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome4}>
+                          EN LA URNA
+                        </Text>
+                      </View>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome4}>
+                          INCINERADOS
+                        </Text>
+                      </View>
                     </View>
-                  </View>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome3}>
-                        SUFRAGANTES
-                      </Text>
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome3}>
-                        VOTOS
-                      </Text>
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome3}>
-                        VOTOS
-                      </Text>
-                    </View>
-                  </View>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome4}>
-                        FORMATO E-11
-                      </Text>
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome4}>
-                        EN LA URNA
-                      </Text>
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome4}>
-                        INCINERADOS
-                      </Text>
-                    </View>
-                  </View>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome1}
-                        underlineColorAndroid="transparent"
-                        placeholderTextColor="#132196"
-                        autoCapitalize="none"
-                        keyboardType="numeric">{dato.totalSufragantes}</Text>
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome1}
-                        underlineColorAndroid="transparent"
-                        placeholderTextColor="#132196"
-                        autoCapitalize="none"
-                        keyboardType="numeric">{dato.totalVotosUrna}</Text>
-                    </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome1}
-                        underlineColorAndroid="transparent"
-                        placeholderTextColor="#132196"
-                        autoCapitalize="none"
-                        keyboardType="numeric">{dato.totalVotosIncinerados}</Text>
+                    <View style={{ flexDirection: 'row' }}>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome1}
+                          underlineColorAndroid="transparent"
+                          placeholderTextColor="#132196"
+                          autoCapitalize="none"
+                          keyboardType="numeric">{dato.totalSufragantes}</Text>
+                      </View>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome1}
+                          underlineColorAndroid="transparent"
+                          placeholderTextColor="#132196"
+                          autoCapitalize="none"
+                          keyboardType="numeric">{dato.totalVotosUrna}</Text>
+                      </View>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome1}
+                          underlineColorAndroid="transparent"
+                          placeholderTextColor="#132196"
+                          autoCapitalize="none"
+                          keyboardType="numeric">{dato.totalVotosIncinerados}</Text>
+                      </View>
                     </View>
                   </View>
                 </View>
               </View>
-            </View>
 
-            <View style={CSS.cardHome} >
+              <View style={CSS.cardHome} >
 
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 2 }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View>
-                      <Image source={images.candidato1} style={CSS.HomeProviderimagen} />
+                <View style={CSS.viewCardHome}>
+                  <View style={{ flex: 2 }}>
+                    <View style={{ flexDirection: 'row' }}>
+                      <View>
+                        <Image source={images.candidato1} style={CSS.HomeProviderimagen} />
+                      </View>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome5}>
+                          Gustavo Petro
+                        </Text>
+                        <Text style={CSS.tituloHome6}
+                          underlineColorAndroid="transparent"
+                          placeholderTextColor="#132196"
+                          autoCapitalize="none"
+                          keyboardType="numeric"
+
+                        >{dato.votacionCan1}</Text>
+                      </View>
                     </View>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                      Gustavo Petro
-                      </Text>
+                  </View>
+                </View>
+
+              </View>
+              <View style={CSS.cardHome} >
+
+                <View style={CSS.viewCardHome}>
+                  <View style={{ flex: 2 }}>
+                    <View style={{ flexDirection: 'row' }}>
+                      <View>
+                        <Image source={images.candidato2} style={CSS.HomeProviderimagen} />
+                      </View>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome5}>
+                          Sergio Fajardo
+                        </Text>
+                        <Text style={CSS.tituloHome6}
+                          underlineColorAndroid="transparent"
+                          placeholderTextColor="#132196"
+                          autoCapitalize="none"
+                          keyboardType="numeric"
+
+                        >{dato.votacionCan2}</Text>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+
+              </View>
+              <View style={CSS.cardHome} >
+
+                <View style={CSS.viewCardHome}>
+                  <View style={{ flex: 2 }}>
+                    <View style={{ flexDirection: 'row' }}>
+                      <View>
+                        <Image source={images.candidato3} style={CSS.HomeProviderimagen} />
+                      </View>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome5}>
+                          Federico Gutiérrez
+                        </Text>
+                        <Text style={CSS.tituloHome6}
+                          underlineColorAndroid="transparent"
+                          placeholderTextColor="#132196"
+                          autoCapitalize="none"
+                          keyboardType="numeric"
+
+                        >{dato.votacionCan3}</Text>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+
+              </View>
+
+              <View style={CSS.cardHome3}>
+                <View style={CSS.viewCardHome}>
+                  <View style={{ flex: 2, alignItems: 'center' }}>
+                    <View style={{ flexDirection: 'row' }}>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome5}>
+                          VOTO EN BLANCO:
+                        </Text>
+
+                      </View>
                       <Text style={CSS.tituloHome6}
-                    underlineColorAndroid="transparent"
-                    placeholderTextColor="#132196"
-                    autoCapitalize="none"
-                    keyboardType="numeric"
-
-                  >{dato.votacionCan1}</Text>
+                        underlineColorAndroid="transparent"
+                        placeholderTextColor="#132196"
+                        autoCapitalize="none"
+                        keyboardType="numeric">{dato.votosBlanco}</Text>
                     </View>
                   </View>
                 </View>
               </View>
+              <View style={CSS.cardHome3}>
+                <View style={CSS.viewCardHome}>
+                  <View style={{ flex: 3, alignItems: 'center' }}>
+                    <View style={{ flexDirection: 'row' }}>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome5}>
+                          VOTO NULOS:
+                        </Text>
 
-            </View>
-            <View style={CSS.cardHome} >
-     
-          <View style={CSS.viewCardHome}>
-            <View style={{ flex: 2}}>
-              <View style={{ flexDirection: 'row' }}>
-                <View>
-                  <Image source={images.candidato2} style={CSS.HomeProviderimagen} />
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome5}>
-                  Sergio Fajardo
-                  </Text>
-                  <Text style={CSS.tituloHome6}
-                    underlineColorAndroid="transparent"
-                    placeholderTextColor="#132196"
-                    autoCapitalize="none"
-                    keyboardType="numeric"
-
-                    >{dato.votacionCan2}</Text>
+                      </View>
+                      <Text style={CSS.tituloHome6}
+                        underlineColorAndroid="transparent"
+                        placeholderTextColor="#132196"
+                        autoCapitalize="none"
+                        keyboardType="numeric">{dato.votosBlanco}</Text>
                     </View>
-              </View>
-            </View>
-          </View>
-  
-        </View>
-        <View style={CSS.cardHome} >
-     
-          <View style={CSS.viewCardHome}>
-            <View style={{ flex: 2}}>
-              <View style={{ flexDirection: 'row' }}>
-                <View>
-                  <Image source={images.candidato3} style={CSS.HomeProviderimagen} />
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome5}>
-                  Federico Gutiérrez
-                  </Text>
-                  <Text style={CSS.tituloHome6}
-                    underlineColorAndroid="transparent"
-                    placeholderTextColor="#132196"
-                    autoCapitalize="none"
-                    keyboardType="numeric"
-
-                    >{dato.votacionCan3}</Text>
-                    </View>
-              </View>
-            </View>
-          </View>
-  
-        </View>
-
-            <View style={CSS.cardHome3}>
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 2, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                        VOTO EN BLANCO:
-                      </Text>
-
-                    </View>
-                    <Text style={CSS.tituloHome6}
-                      underlineColorAndroid="transparent"
-                      placeholderTextColor="#132196"
-                      autoCapitalize="none"
-                      keyboardType="numeric">{dato.votosBlanco}</Text>
                   </View>
                 </View>
               </View>
-            </View>
-            <View style={CSS.cardHome3}>
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 3, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                        VOTO NULOS:
-                      </Text>
+              <View style={CSS.cardHome3}>
+                <View style={CSS.viewCardHome}>
+                  <View style={{ flex: 2, alignItems: 'center' }}>
+                    <View style={{ flexDirection: 'row' }}>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={CSS.tituloHome5}>
+                          VOTOS NO MARCADOS:
+                        </Text>
 
+                      </View>
+                      <Text style={CSS.tituloHome6}
+                        underlineColorAndroid="transparent"
+                        placeholderTextColor="#132196"
+                        autoCapitalize="none"
+                        keyboardType="numeric">{dato.votosNoMarcados}</Text>
                     </View>
-                    <Text style={CSS.tituloHome6}
-                      underlineColorAndroid="transparent"
-                      placeholderTextColor="#132196"
-                      autoCapitalize="none"
-                      keyboardType="numeric">{dato.votosBlanco}</Text>
                   </View>
                 </View>
               </View>
-            </View>
-            <View style={CSS.cardHome3}>
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 2, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                        VOTOS NO MARCADOS:
-                      </Text>
+              <View style={CSS.cardHome3}>
+                <View style={CSS.viewCardHome}>
+                  <View style={{ flex: 2, alignItems: 'center' }}>
+                    <View style={{ flexDirection: 'row' }}>
+                      <View style={{ alignSelf: 'center' }}>
+                        <Text style={{
+                          fontSize: hp('1.9%'),
+                          width: wp('50%'),
+                          color: '#132196',
+                          textAlign: 'left',
+                          fontWeight: 'bold',
+                          marginLeft: wp('3%')
+                        }}>
+                          TOTAL VOTOS EN LA MESA:
+                        </Text>
 
+                      </View>
+                      <Text style={CSS.tituloHome6}
+                        underlineColorAndroid="transparent"
+                        placeholderTextColor="#132196"
+                        autoCapitalize="none"
+                        keyboardType="numeric">{dato.totalVotosMesa}</Text>
                     </View>
-                    <Text style={CSS.tituloHome6}
-                      underlineColorAndroid="transparent"
-                      placeholderTextColor="#132196"
-                      autoCapitalize="none"
-                      keyboardType="numeric">{dato.votosNoMarcados}</Text>
                   </View>
                 </View>
               </View>
-            </View>
-            <View style={CSS.cardHome3}>
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 2, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={{
-                        fontSize: hp('1.9%'),
-                        width: wp('50%'),
-                        color: '#132196',
-                        textAlign: 'left',
-                        fontWeight: 'bold',
-                        marginLeft: wp('3%')
-                      }}>
-                        TOTAL VOTOS EN LA MESA:
-                      </Text>
+              <TouchableOpacity
+                style={{
+                  ...CSS.siguiente,
+                  backgroundColor: '#132196'
+                }}
 
-                    </View>
-                    <Text style={CSS.tituloHome6}
-                      underlineColorAndroid="transparent"
-                      placeholderTextColor="#132196"
-                      autoCapitalize="none"
-                      keyboardType="numeric">{dato.totalVotosMesa}</Text>
-                  </View>
-                </View>
-              </View>
-            </View>
-            <TouchableOpacity
-              style={{
-                ...CSS.siguiente,
-                backgroundColor: '#132196'
-              }}
+                onPress={() => navigation.navigate('Pagina1E')}
 
-              onPress={() => navigation.navigate('Pagina1E')}
-
-            >
-              <Text style={CSS.siguientetext}>VOLVER</Text>
-            </TouchableOpacity>
-          </List.Accordion>
-        </List.Section>
-    )
-    )
-  }
+              >
+                <Text style={CSS.siguientetext}>VOLVER</Text>
+              </TouchableOpacity>
+            </List.Accordion>
+          </List.Section>
+        )
+        )
+        }
       </ScrollView>
     </ImageBackground >
   );
