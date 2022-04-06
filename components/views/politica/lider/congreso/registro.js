@@ -36,10 +36,10 @@ function pagina2(props) {
   let petro4 = navigation.state.params.petro3;
   let fajardo4 = navigation.state.params.fajardo3;
   let fico4 = navigation.state.params.fico3;
-   console.log(petro4);
-   console.log(fajardo4);
-   console.log(fico4);
-  
+  console.log(petro4);
+  console.log(fajardo4);
+  console.log(fico4);
+
   useEffect(() => {
     getToken()
     getCandidatos()
@@ -141,16 +141,10 @@ function pagina2(props) {
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
 
-      {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
-        <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
-          <View>
-            <Text style={CSS.tituloHome}>
-            <Text style={CSS.cardHomeTitleTitle}>Hola usuario
-              </Text>
-            </Text>
-          </View>
-        </View>
-      </TouchableOpacity> */}
+      <Image
+        style={{ ...CSS.img, marginBottom: hp('-27%'), marginTop: hp('-20%'), marginLeft: wp('2%') }}
+        source={images.logo3}
+      />
 
       <ScrollView>
 

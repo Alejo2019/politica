@@ -20,13 +20,13 @@ function pagina7(props) {
   const [data, setdata] = useState([]);
 
   let { navigation } = props;
-  
+
   let petro4 = navigation.state.params.petro3;
   let fajardo4 = navigation.state.params.fajardo3;
   let fico4 = navigation.state.params.fico3;
-   console.log(petro4);
-   console.log(fajardo4);
-   console.log(fico4);
+  console.log(petro4);
+  console.log(fajardo4);
+  console.log(fico4);
   // Validador1 = async () => {
   //   navigation.navigate('Login');
   // };
@@ -49,35 +49,35 @@ function pagina7(props) {
     setState({ ...state, [nombre]: value });
   }
   const [state, setState] = useState({
-    identificacion:'',
-    nombres:'',
-    apellidos:'',
-    telefono:'',
-    departamento:'',
-    municipio:'',
-    puesto:'',
-    mesa:'',
-    comuna:''
+    identificacion: '',
+    nombres: '',
+    apellidos: '',
+    telefono: '',
+    departamento: '',
+    municipio: '',
+    puesto: '',
+    mesa: '',
+    comuna: ''
   });
 
 
   const envio = () => {
     axios
       .post('http://http://52.55.26.143:8060api/votantes', {
-    "identificacion":(state.identificacion),
-    "nombres":(state.nombres),
-    "apellidos":(state.apellidos),
-    "telefono":(state.telefono),
-    "departamento":(state.departamento),
-    "municipio":(state.municipio),
-    "puesto":(state.puesto),
-    "mesa":(state.mesa),
-    "comuna":(state.comuna),
-    "posible":true,
-    "estado":false,
-    "votoSen":true,
-    "votoCam":true,
-    "campaña":''
+        "identificacion": (state.identificacion),
+        "nombres": (state.nombres),
+        "apellidos": (state.apellidos),
+        "telefono": (state.telefono),
+        "departamento": (state.departamento),
+        "municipio": (state.municipio),
+        "puesto": (state.puesto),
+        "mesa": (state.mesa),
+        "comuna": (state.comuna),
+        "posible": true,
+        "estado": false,
+        "votoSen": true,
+        "votoCam": true,
+        "campaña": ''
       }, {
         headers: {
           'x-token': token
@@ -93,7 +93,8 @@ function pagina7(props) {
         alert("Ha ocurrido un error, verifica los datos!");
         console.log(error.message)
       });
-      navigation.navigate({ routeName: 'Congreso' })  };
+    navigation.navigate({ routeName: 'Congreso' })
+  };
 
 
   return (
@@ -101,16 +102,10 @@ function pagina7(props) {
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
 
 
-      {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
-        <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
-          <View>
-            <Text style={CSS.tituloHome}>
-            <Text style={CSS.cardHomeTitleTitle}>Hola usuario
-              </Text>
-            </Text>
-          </View>
-        </View>
-      </TouchableOpacity> */}
+      <Image
+        style={{ ...CSS.img, marginBottom: hp('-27%'), marginTop: hp('-20%'), marginLeft: wp('2%') }}
+        source={images.logo3}
+      />
 
       <ScrollView>
 
@@ -269,7 +264,7 @@ function pagina7(props) {
             <Text style={CSS.siguientetext}>GUARDAR</Text>
           </TouchableOpacity>
         </View>
-        
+
       </ScrollView>
 
     </ImageBackground>

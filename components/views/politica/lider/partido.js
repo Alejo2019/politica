@@ -27,112 +27,64 @@ function inicio(props) {
     console.log(petro)
   }
 
-    const cambioF = () => {
+  const cambioF = () => {
     const fajardo = 'fajardo';
-    navigation.navigate({ routeName: 'Modulo', params: { fajardo} })
+    navigation.navigate({ routeName: 'Modulo', params: { fajardo } })
     console.log(fajardo)
   }
 
   const cambioFG = () => {
     const fico = 'fico';
-    navigation.navigate({ routeName: 'Modulo', params: { fico} })
+    navigation.navigate({ routeName: 'Modulo', params: { fico } })
     console.log(fico)
   }
   return (
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
 
+      <Image
+        style={{ ...CSS.img, marginBottom: hp('-27%'), marginTop: hp('-20%'), marginLeft: wp('2%') }}
+        source={images.logo3}
+      />
+      <TouchableOpacity onPress={() => Close()}>
 
-      {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
-        <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
-          <View>
-            <Text style={CSS.tituloHome}>
-            <Text style={CSS.cardHomeTitleTitle}>Hola usuario
-              </Text>
-            </Text>
-          </View>
-        </View>
-      </TouchableOpacity> */}
-
+        <Icon name="location-exit" style={CSS.icon}
+        />
+      </TouchableOpacity>
       <ScrollView>
 
-        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
-            <View style={CSS.viewCardHome}>
-              <View style={{ flex: 4, marginLeft:10 }}>
-                <View style={{ flexDirection: 'row' }}>
-                  <View>
-                    <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                  </View>
-                  <View style={{ alignSelf: 'center' }}>
-                    <Text style={CSS.tituloHome}>
-                      algun texto
-                    </Text>
-                  </View>
-                </View>
-              </View>
-              <View style={{ flex: 1, alignSelf:'center' }} >
-                <Icon name="chevron-right" size={80}
-                  color={COLORS.blue} />
-              </View>
-            </View>
-          </TouchableOpacity> */}
-        <TouchableOpacity onPress={() => Close()}>
 
-          <Icon name="location-exit" style={CSS.icon}
-          />
-        </TouchableOpacity>
+
+
         <Image
-          style={CSS.img}
+          style={{ ...CSS.img, marginTop: hp('-10') }}
           source={images.logo2}
         />
 
-        <TouchableOpacity style={CSS.cardHome} onPress={() =>cambioP()}>
+        <TouchableOpacity style={CSS.cardHome} onPress={() => cambioP()}>
           <View style={CSS.viewCardHome}>
-            <View style={{ flex: 2}}>
-              <View style={{ flexDirection: 'row' }}>
-                <View>
-                  <Image source={images.candidato1} style={CSS.HomeProviderimagen} />
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                   Gustavo Petro
-                  </Text>
-                </View>
-              </View>
+            <View>
+              <Image source={images.candidato1} style={CSS.HomeProviderimagen1} />
             </View>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={CSS.cardHome} onPress={() =>cambioF()}>
+        <TouchableOpacity style={CSS.cardHome} onPress={() => cambioF()}>
           <View style={CSS.viewCardHome}>
-            <View style={{ flex: 2}}>
-              <View style={{ flexDirection: 'row' }}>
-                <View>
-                  <Image source={images.candidato2} style={CSS.HomeProviderimagen} />
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                   Sergio Fajardo
-                  </Text>
-                </View>
-              </View>
+
+            <View>
+              <Image source={images.candidato2} style={CSS.HomeProviderimagen1} />
             </View>
+
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={CSS.cardHome} onPress={() =>cambioFG()}>
+        <TouchableOpacity style={CSS.cardHome} onPress={() => cambioFG()}>
           <View style={CSS.viewCardHome}>
-            <View style={{ flex: 2}}>
-              <View style={{ flexDirection: 'row' }}>
-                <View>
-                  <Image source={images.candidato3} style={CSS.HomeProviderimagen} />
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                   Federico Gutiérrez
-                  </Text>
-                </View>
-              </View>
-            </View>
+
+
+            <Image source={images.candidato3} style={CSS.HomeProviderimagen1} />
           </View>
+
+
         </TouchableOpacity>
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => cambio()}>
@@ -154,7 +106,7 @@ function inicio(props) {
 
       </ScrollView>
 
-    </ImageBackground>
+    </ImageBackground >
   );
 };
 

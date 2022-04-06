@@ -20,24 +20,27 @@ function pagina8(props) {
     navigation.navigate('Login');
   };
 
-  
+
   let petro4 = navigation.state.params.petro3;
   let fajardo4 = navigation.state.params.fajardo3;
   let fico4 = navigation.state.params.fico3;
-   console.log(petro4);
-   console.log(fajardo4);
-   console.log(fico4);
+  console.log(petro4);
+  console.log(fajardo4);
+  console.log(fico4);
 
   return (
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
 
 
-      
 
+      <Image
+        style={{ ...CSS.img, marginBottom: hp('-27%'), marginTop: hp('-20%'), marginLeft: wp('2%') }}
+        source={images.logo3}
+      />
       <ScrollView>
 
-       
+
         <Image
           style={CSS.img}
           source={images.logo2}
@@ -55,7 +58,7 @@ function pagina8(props) {
         </Text>
 
         <View >
-        <View style={CSS.viewCardHome}>
+          <View style={CSS.viewCardHome}>
             <Text style={CSS.asterisco}>*</Text>
             <Text style={CSS.asterisco1}>Votos prometidos </Text>
           </View>
@@ -67,29 +70,29 @@ function pagina8(props) {
             keyboardType="numeric"
             onChangeText={(value) => hableChangeText('nombre', value)}
           />
-          
-       
-        <Text style={CSS.pririodad}>
-          Los campos con * es obligatorio
-        </Text>
 
 
-        <TouchableOpacity
-          style={{
-            ...CSS.siguiente,
-            backgroundColor: '#132196'
-          }}
-
-          onPress={() => navigation.navigate({ routeName: 'Congreso' })}
-
-        >
-          <Text style={CSS.siguientetext}>GUARDAR</Text>
-        </TouchableOpacity>
-
-      </View>
+          <Text style={CSS.pririodad}>
+            Los campos con * es obligatorio
+          </Text>
 
 
-        
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente,
+              backgroundColor: '#132196'
+            }}
+
+            onPress={() => navigation.navigate({ routeName: 'Congreso' })}
+
+          >
+            <Text style={CSS.siguientetext}>GUARDAR</Text>
+          </TouchableOpacity>
+
+        </View>
+
+
+
       </ScrollView>
 
     </ImageBackground>

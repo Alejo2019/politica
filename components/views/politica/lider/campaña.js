@@ -14,14 +14,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function inicio2(props) {
 
-  let { navigation } = props;  
-  let petro2 = navigation.state.params.petro1;  
+  let { navigation } = props;
+  let petro2 = navigation.state.params.petro1;
   let fajardo2 = navigation.state.params.fajardo1;
   let fico2 = navigation.state.params.fico1;
 
-  console.log('paginac',petro2);
-  console.log('paginac',fajardo2);
-  console.log('paginac',fico2);
+  console.log('paginac', petro2);
+  console.log('paginac', fajardo2);
+  console.log('paginac', fico2);
 
 
   const Close = async () => {
@@ -34,41 +34,15 @@ function inicio2(props) {
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
 
 
-      {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
-        <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
-          <View>
-            <Text style={CSS.tituloHome}>
-            <Text style={CSS.cardHomeTitleTitle}>Hola usuario
-              </Text>
-            </Text>
-          </View>
-        </View>
-      </TouchableOpacity> */}
+      <Image
+        style={{ ...CSS.img, marginBottom: hp('-27%'), marginTop: hp('-20%'), marginLeft: wp('2%') }}
+        source={images.logo3}
+      />
 
       <ScrollView>
 
-        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
-            <View style={CSS.viewCardHome}>
-              <View style={{ flex: 4, marginLeft:10 }}>
-                <View style={{ flexDirection: 'row' }}>
-                  <View>
-                    <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                  </View>
-                  <View style={{ alignSelf: 'center' }}>
-                    <Text style={CSS.tituloHome}>
-                      algun texto
-                    </Text>
-                  </View>
-                </View>
-              </View>
 
-              <View style={{ flex: 1, alignSelf:'center' }} >
-                <Icon name="chevron-right" size={80}
-                  color={COLORS.blue} />
-              </View>
-            </View>
-          </TouchableOpacity> */}
-        
+
         <Image
           style={CSS.img}
           source={images.logo2}
@@ -91,7 +65,7 @@ function inicio2(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate({ routeName: 'Congreso', params: { petro2,fajardo2,fico2} })}
+            onPress={() => navigation.navigate({ routeName: 'Congreso', params: { petro2, fajardo2, fico2 } })}
           >
             <Text style={CSS.siguientetext}>CAMPAÑA PRESIDENCIAL</Text>
           </TouchableOpacity>
@@ -100,7 +74,7 @@ function inicio2(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate({ routeName: ''})}
+            onPress={() => navigation.navigate({ routeName: '' })}
           >
             <Text style={CSS.siguientetext}>CONGRESO</Text>
           </TouchableOpacity>

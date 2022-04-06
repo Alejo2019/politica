@@ -12,7 +12,7 @@ import {
 import { images, COLORS, CSS } from "../../../../constants";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-function pagina1(props) {  
+function pagina1(props) {
 
   let { navigation } = props;
   const Close = async () => {
@@ -24,9 +24,14 @@ function pagina1(props) {
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
 
+      <Image
+        style={{ ...CSS.img, marginBottom: hp('-27%'), marginTop: hp('-20%'), marginLeft: wp('2%') }}
+        source={images.logo3}
+      />
+
       <ScrollView>
 
-        
+
         <Image
           style={CSS.img}
           source={images.logo2}
@@ -71,7 +76,7 @@ function pagina1(props) {
         </View>
 
 
-       
+
       </ScrollView>
 
     </ImageBackground>

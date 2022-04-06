@@ -63,36 +63,36 @@ function pagina2(props) {
 
   const [state, setState] = useState({
     mesa: '',
-    totalSufragantes:'',
-    totalVotosUrna:'',
-    totalVotosIncinerados:'',
-    votacionCan1:'',
-    votacionCan2:'',
-    votacionCan3:'',   
-    votosBlanco:'',
+    totalSufragantes: '',
+    totalVotosUrna: '',
+    totalVotosIncinerados: '',
+    votacionCan1: '',
+    votacionCan2: '',
+    votacionCan3: '',
+    votosBlanco: '',
     votosNulos: '',
     votosNoMarcados: '',
     totalVotosMesa: ''
   });
-console.log(state)
+  console.log(state)
   const hableChangeText = (nombre, value) => {
     setState({ ...state, [nombre]: value });
   }
 
   const envio = () => {
     axios
-    .post('http://52.55.26.143:8060/api/e14', {
-      "mesa": (state.mesa),
-      "totalSufragantes":(state.totalSufragantes),
-      "totalVotosUrna":(state.totalVotosUrna),
-      "totalVotosIncinerados":(state.totalVotosIncinerados),
-      "votacionCan1":(state.votacionCan1),
-      "votacionCan2":(state.votacionCan2),
-      "votacionCan3":(state.votacionCan3),   
-      "votosBlanco":(state.votosBlanco),
-      "votosNulos": (state.votosNulos),
-      "votosNoMarcados": (state.votosNoMarcados),
-      "totalVotosMesa": (state.totalVotosMesa)
+      .post('http://52.55.26.143:8060/api/e14', {
+        "mesa": (state.mesa),
+        "totalSufragantes": (state.totalSufragantes),
+        "totalVotosUrna": (state.totalVotosUrna),
+        "totalVotosIncinerados": (state.totalVotosIncinerados),
+        "votacionCan1": (state.votacionCan1),
+        "votacionCan2": (state.votacionCan2),
+        "votacionCan3": (state.votacionCan3),
+        "votosBlanco": (state.votosBlanco),
+        "votosNulos": (state.votosNulos),
+        "votosNoMarcados": (state.votosNoMarcados),
+        "totalVotosMesa": (state.totalVotosMesa)
       }, {
         headers: {
           'x-token': token
@@ -138,7 +138,7 @@ console.log(state)
                 </View>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome}>
-                   {ciudad}
+                    Cali
                   </Text>
                 </View>
               </View>
@@ -150,7 +150,7 @@ console.log(state)
                 </View>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome}>
-                {comuna}
+                    16
                   </Text>
                 </View>
               </View>
@@ -173,74 +173,74 @@ console.log(state)
                   underlineColorAndroid="transparent"
                   placeholderTextColor="#132196"
                   autoCapitalize="none"
-                  keyboardType="numeric"/>
+                  keyboardType="numeric" />
               </View>
             </View>
           </View>
         </View>
         <View style={CSS.cardHome3}>
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 2, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                        COMUNA:
-                      </Text>
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 2, alignItems: 'center' }}>
+              <View style={{ flexDirection: 'row' }}>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome5}>
+                    COMUNA:
+                  </Text>
 
-                    </View>
-                    <TextInput style={CSS.tituloHome6}
-                    underlineColorAndroid="transparent"
-                    placeholderTextColor="#132196"
-                    autoCapitalize="none"
-                    keyboardType="numeric"
-
-                  />
-                  </View>
                 </View>
+                <TextInput style={CSS.tituloHome6}
+                  underlineColorAndroid="transparent"
+                  placeholderTextColor="#132196"
+                  autoCapitalize="none"
+                  keyboardType="numeric"
+
+                />
               </View>
             </View>
-            <View style={CSS.cardHome3}>
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 2, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                        NUMERO DE MESA:
-                      </Text>
+          </View>
+        </View>
+        <View style={CSS.cardHome3}>
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 2, alignItems: 'center' }}>
+              <View style={{ flexDirection: 'row' }}>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome5}>
+                    NUMERO DE MESA:
+                  </Text>
 
-                    </View>
-                    <TextInput style={CSS.tituloHome6}
-                    underlineColorAndroid="transparent"
-                    placeholderTextColor="#132196"
-                    autoCapitalize="none"
-                    keyboardType="numeric"
-                    onChangeText={(value) => hableChangeText('mesa', value)}
-                  />
-                  </View>
                 </View>
+                <TextInput style={CSS.tituloHome6}
+                  underlineColorAndroid="transparent"
+                  placeholderTextColor="#132196"
+                  autoCapitalize="none"
+                  keyboardType="numeric"
+                  onChangeText={(value) => hableChangeText('mesa', value)}
+                />
               </View>
             </View>
-            <View style={CSS.cardHome3}>
-              <View style={CSS.viewCardHome}>
-                <View style={{ flex: 2, alignItems: 'center' }}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ alignSelf: 'center' }}>
-                      <Text style={CSS.tituloHome5}>
-                        LUGAR:
-                      </Text>
+          </View>
+        </View>
+        <View style={CSS.cardHome3}>
+          <View style={CSS.viewCardHome}>
+            <View style={{ flex: 2, alignItems: 'center' }}>
+              <View style={{ flexDirection: 'row' }}>
+                <View style={{ alignSelf: 'center' }}>
+                  <Text style={CSS.tituloHome5}>
+                    LUGAR:
+                  </Text>
 
-                    </View>
-                    <TextInput style={CSS.tituloHome6}
-                    underlineColorAndroid="transparent"
-                    placeholderTextColor="#132196"
-                    autoCapitalize="none"
-                    keyboardType="numeric"
-
-                  />
-                  </View>
                 </View>
+                <TextInput style={CSS.tituloHome6}
+                  underlineColorAndroid="transparent"
+                  placeholderTextColor="#132196"
+                  autoCapitalize="none"
+                  keyboardType="numeric"
+
+                />
               </View>
             </View>
+          </View>
+        </View>
         <View style={CSS.cardHome}>
           <View style={CSS.viewCardHome}>
             <View style={{ flex: 3, alignItems: 'center' }}>
@@ -334,12 +334,10 @@ console.log(state)
             <View style={{ flex: 2 }}>
               <View style={{ flexDirection: 'row' }}>
                 <View>
-                  <Image source={images.candidato1} style={CSS.HomeProviderimagen} />
+                  <Image source={images.candidato1} style={CSS.HomeProviderimagen1} />
                 </View>
                 <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome5}>
-                    Gustavo Petro
-                  </Text>
+
                   <TextInput style={CSS.tituloHome6}
                     underlineColorAndroid="transparent"
                     placeholderTextColor="#132196"
@@ -360,12 +358,10 @@ console.log(state)
             <View style={{ flex: 2 }}>
               <View style={{ flexDirection: 'row' }}>
                 <View>
-                  <Image source={images.candidato2} style={CSS.HomeProviderimagen} />
+                  <Image source={images.candidato2} style={CSS.HomeProviderimagen1} />
                 </View>
                 <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome5}>
-                    Sergio Fajardo
-                  </Text>
+
                   <TextInput style={CSS.tituloHome6}
                     underlineColorAndroid="transparent"
                     placeholderTextColor="#132196"
@@ -386,12 +382,10 @@ console.log(state)
             <View style={{ flex: 2 }}>
               <View style={{ flexDirection: 'row' }}>
                 <View>
-                  <Image source={images.candidato3} style={CSS.HomeProviderimagen} />
+                  <Image source={images.candidato3} style={CSS.HomeProviderimagen1} />
                 </View>
                 <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome5}>
-                    Federico Gutiérrez
-                  </Text>
+
                   <TextInput style={CSS.tituloHome6}
                     underlineColorAndroid="transparent"
                     placeholderTextColor="#132196"

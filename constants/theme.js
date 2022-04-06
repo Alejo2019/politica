@@ -203,6 +203,13 @@ export const CSS = StyleSheet.create({
         margin: hp('1%'),
         resizeMode: 'contain'
     },
+    HomeProviderimagen1: {
+        height: hp('10%'),
+        width: wp('30%'),
+        margin: hp('1%'),
+        resizeMode: 'contain'
+    },
+    
 
     HomeProviderimagenSolicitud: {
         width: 60,
@@ -335,10 +342,10 @@ export const CSS = StyleSheet.create({
         fontSize: 20
     },
     img: {
-        width: wp('60%'),
+        width: wp('30%'),
         height: hp('50'),
         resizeMode: "contain",
-        marginLeft: wp('24%'),
+        marginLeft: wp('36%'),
         marginBottom: hp('-10%'),
 
     },

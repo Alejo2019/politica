@@ -79,21 +79,8 @@ function pagina3(props) {
   console.log(token)
   return (
     < ImageBackground source={images.fondo} style={CSS.Logincontainer} >
-        <View style={{ alignSelf: 'center' }}>
-          <TouchableOpacity
-            style={{
-              ...CSS.siguiente,
-              backgroundColor: '#132196',
-              width: wp('17%'),
-              marginLeft: wp('-2%'),
-              marginTop: hp('1%')
-            }}
-            onPress={() => getData()}
-
-          >
-            <Text style={CSS.siguientetext}>Buscar</Text>
-          </TouchableOpacity>
-        </View>
+        
+        
 
       {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
         <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
@@ -148,6 +135,21 @@ function pagina3(props) {
               </View>
             </View>
           </View>
+        </View>
+        <View style={{ alignSelf: 'center' }}>
+          <TouchableOpacity
+            style={{
+              ...CSS.siguiente,
+              backgroundColor: '#132196',
+              width: wp('70%'),
+              marginLeft: wp('-2%'),
+              marginTop: hp('1%')
+            }}
+            onPress={() => getData()}
+
+          >
+            <Text style={CSS.siguientetext}>GENERAR</Text>
+          </TouchableOpacity>
         </View>
         {data.map((dato, index) => (
           <List.Section>

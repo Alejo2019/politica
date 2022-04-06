@@ -15,12 +15,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 function inicio2(props) {
 
   let { navigation } = props;
-  let petro1= navigation.state.params.petro;
-  let fajardo1= navigation.state.params.fajardo;
-  let fico1= navigation.state.params.fico;
-  console.log('pagina 1',petro1);
-  console.log('pagina 1',fajardo1);
-  console.log('pagina 1',fico1);
+  let petro1 = navigation.state.params.petro;
+  let fajardo1 = navigation.state.params.fajardo;
+  let fico1 = navigation.state.params.fico;
+  console.log('pagina 1', petro1);
+  console.log('pagina 1', fajardo1);
+  console.log('pagina 1', fico1);
   const Close = async () => {
     await AsyncStorage.removeItem('token');
     navigation.navigate({ routeName: 'Auth' })
@@ -31,40 +31,13 @@ function inicio2(props) {
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
 
 
-      {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
-        <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
-          <View>
-            <Text style={CSS.tituloHome}>
-            <Text style={CSS.cardHomeTitleTitle}>Hola usuario
-              </Text>
-            </Text>
-          </View>
-        </View>
-      </TouchableOpacity> */}
+      <Image
+        style={{ ...CSS.img, marginBottom: hp('-27%'), marginTop: hp('-20%'), marginLeft: wp('2%') }}
+        source={images.logo3}
+      />
 
       <ScrollView>
 
-        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
-            <View style={CSS.viewCardHome}>
-              <View style={{ flex: 4, marginLeft:10 }}>
-                <View style={{ flexDirection: 'row' }}>
-                  <View>
-                    <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                  </View>
-                  <View style={{ alignSelf: 'center' }}>
-                    <Text style={CSS.tituloHome}>
-                      algun texto
-                    </Text>
-                  </View>
-                </View>
-              </View>
-
-              <View style={{ flex: 1, alignSelf:'center' }} >
-                <Icon name="chevron-right" size={80}
-                  color={COLORS.blue} />
-              </View>
-            </View>
-          </TouchableOpacity> */}
         
         <Image
           style={CSS.img}
@@ -88,7 +61,7 @@ function inicio2(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate({ routeName: 'Campaña', params: { petro1,fajardo1,fico1} })}
+            onPress={() => navigation.navigate({ routeName: 'Campaña', params: { petro1, fajardo1, fico1 } })}
           >
             <Text style={CSS.siguientetext}>Monitoreo electoral</Text>
           </TouchableOpacity>
@@ -97,7 +70,7 @@ function inicio2(props) {
               ...CSS.siguiente2,
               backgroundColor: '#132196'
             }}
-            onPress={() => navigation.navigate({ routeName: 'Pagina1E'})}
+            onPress={() => navigation.navigate({ routeName: 'Pagina1E' })}
           >
             <Text style={CSS.siguientetext}>Testigos electorales</Text>
           </TouchableOpacity>
