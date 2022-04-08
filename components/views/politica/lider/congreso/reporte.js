@@ -57,7 +57,7 @@ function pagina4(props) {
 
 console.log(identificacion)
   const getDatos = async () => {
-    axios.get('http://52.55.26.143:8060/api/lider/622d5addc74d0b5b45bc9196/tipo/SENADO', {
+    axios.get(`http://52.55.26.143:8060/api/lider/${id}/tipo/SENADO`, {
       headers: {
         'x-token': `${token}`
       }
