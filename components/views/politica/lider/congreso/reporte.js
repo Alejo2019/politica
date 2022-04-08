@@ -196,13 +196,13 @@ console.log(identificacion)
                   Cedula
                 </Text>   
               </View>
-              <View style={{ alignSelf: 'center' }}>
+              {/* <View style={{ alignSelf: 'center' }}>
                 <Text style={CSS.tituloHome}>
                   ¿Voto?
                 </Text>
                 
                 
-              </View>
+              </View> */}
             </View>
             <View style={{ flexDirection: 'row' }}>
               <View>
@@ -225,7 +225,7 @@ console.log(identificacion)
                   )
                 }
               </View>
-              <View>
+              {/* <View>
                 {data
                   .map((dato, index) => (
                     <Text style={{...CSS.tituloHome, marginLeft: wp('15%'), marginTop:1}}>
@@ -234,7 +234,7 @@ console.log(identificacion)
                   )
                   )
                 }
-              </View>
+              </View> */}
             </View>
             </ScrollView>
 
