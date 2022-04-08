@@ -94,7 +94,7 @@ function pagina2(props) {
 
   const envio = () => {
     axios
-      .post('http://http://52.55.26.143:8060/api/votantes', {
+      .post('http://52.55.26.143:8060/api/votantes', {
         "identificacion": (state.identificacion),
         "nombres": (state.nombres),
         "apellidos": (state.apellidos),
@@ -141,13 +141,10 @@ function pagina2(props) {
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
 
-      
+
 
       <ScrollView>
-      <Image
-        style={{ ...CSS.img, marginBottom: hp('-27%'), marginTop: hp('-20%'), marginLeft: wp('2%') }}
-        source={images.logo3}
-      />
+
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
             <View style={CSS.viewCardHome}>
@@ -172,8 +169,12 @@ function pagina2(props) {
           </TouchableOpacity> */}
 
         <Image
-          style={CSS.img}
-          source={images.logo2}
+          style={{
+            ...CSS.img, height: hp('30%'),
+            width: wp('50%'), marginLeft: wp('28%'),
+            marginBottom: hp('-5%'),
+          }}
+          source={images.logo6}
         />
 
         <Text style={{

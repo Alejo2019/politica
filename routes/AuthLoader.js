@@ -8,7 +8,7 @@ import {
   View,
   Image
 } from 'react-native';
-import bgImage from '../img/Fondos/logo.png';
+import bgImage from '../img/Fondos/logo2.png';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 class AuthLoader extends Component {

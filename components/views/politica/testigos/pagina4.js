@@ -64,7 +64,8 @@ function pagina3(props) {
   const getData = async () => {
     axios.get('http://52.55.26.143:8060/api/e14', {
       headers: {
-        'x-token': `${token}`      }
+        'x-token': `${token}`
+      }
     })
       .then((response) => {
         console.log(response.data.e14)
@@ -75,12 +76,12 @@ function pagina3(props) {
         console.error(error)
       })
   };
-  
+
   console.log(token)
   return (
     < ImageBackground source={images.fondo} style={CSS.Logincontainer} >
-        
-        
+
+
 
       {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
         <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
@@ -243,12 +244,13 @@ function pagina3(props) {
                   <View style={{ flex: 2 }}>
                     <View style={{ flexDirection: 'row' }}>
                       <View>
-                        <Image source={images.candidato1} style={CSS.HomeProviderimagen} />
+                        <Image source={images.candidato1} style={{
+                          ...CSS.HomeProviderimagen1, height: hp('10%'),
+                          width: wp('50%')
+                        }} />
                       </View>
                       <View style={{ alignSelf: 'center' }}>
-                        <Text style={CSS.tituloHome5}>
-                          Gustavo Petro
-                        </Text>
+
                         <Text style={CSS.tituloHome6}
                           underlineColorAndroid="transparent"
                           placeholderTextColor="#132196"
@@ -268,12 +270,13 @@ function pagina3(props) {
                   <View style={{ flex: 2 }}>
                     <View style={{ flexDirection: 'row' }}>
                       <View>
-                        <Image source={images.candidato2} style={CSS.HomeProviderimagen} />
+                        <Image source={images.candidato2} style={{
+                          ...CSS.HomeProviderimagen1, height: hp('10%'),
+                          width: wp('50%')
+                        }} />
                       </View>
                       <View style={{ alignSelf: 'center' }}>
-                        <Text style={CSS.tituloHome5}>
-                          Sergio Fajardo
-                        </Text>
+
                         <Text style={CSS.tituloHome6}
                           underlineColorAndroid="transparent"
                           placeholderTextColor="#132196"
@@ -293,12 +296,13 @@ function pagina3(props) {
                   <View style={{ flex: 2 }}>
                     <View style={{ flexDirection: 'row' }}>
                       <View>
-                        <Image source={images.candidato3} style={CSS.HomeProviderimagen} />
+                        <Image source={images.candidato3} style={{
+                          ...CSS.HomeProviderimagen1, height: hp('10%'),
+                          width: wp('50%')
+                        }} />
                       </View>
                       <View style={{ alignSelf: 'center' }}>
-                        <Text style={CSS.tituloHome5}>
-                          Federico Gutiérrez
-                        </Text>
+
                         <Text style={CSS.tituloHome6}
                           underlineColorAndroid="transparent"
                           placeholderTextColor="#132196"

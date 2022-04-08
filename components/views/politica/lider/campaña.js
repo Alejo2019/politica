@@ -34,10 +34,7 @@ function inicio2(props) {
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
 
 
-      <Image
-        style={{ ...CSS.img, marginBottom: hp('-27%'), marginTop: hp('-20%'), marginLeft: wp('2%') }}
-        source={images.logo3}
-      />
+      
 
       <ScrollView>
 

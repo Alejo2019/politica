@@ -42,10 +42,7 @@ function inicio(props) {
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
 
-      <Image
-        style={{ ...CSS.img, marginBottom: hp('-27%'), marginTop: hp('-20%'), marginLeft: wp('2%') }}
-        source={images.logo3}
-      />
+     
       <TouchableOpacity onPress={() => Close()}>
 
         <Icon name="location-exit" style={CSS.icon}
@@ -64,24 +61,25 @@ function inicio(props) {
         <TouchableOpacity style={CSS.cardHome} onPress={() => cambioP()}>
           <View style={CSS.viewCardHome}>
             <View>
-              <Image source={images.candidato1} style={CSS.HomeProviderimagen1} />
+              <Image source={images.candidato1} style={{...CSS.HomeProviderimagen,height: hp('50%'),
+        width: wp('100%'), }} />
             </View>
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={CSS.cardHome} onPress={() => cambioF()}>
           <View style={CSS.viewCardHome}>
-
             <View>
-              <Image source={images.candidato2} style={CSS.HomeProviderimagen1} />
+              <Image source={images.candidato2} style={{...CSS.HomeProviderimagen,height: hp('50%'),
+        width: wp('100%'), }} />
             </View>
-
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={CSS.cardHome} onPress={() => cambioFG()}>
           <View style={CSS.viewCardHome}>
 
 
-            <Image source={images.candidato3} style={CSS.HomeProviderimagen1} />
+            <Image source={images.candidato3} style={{...CSS.HomeProviderimagen,height: hp('50%'),
+        width: wp('100%'), }} />
           </View>
 
 
