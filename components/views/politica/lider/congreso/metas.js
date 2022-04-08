@@ -34,17 +34,18 @@ function pagina8(props) {
 
 
 
-      
+
       <ScrollView>
-      <Image
-        style={{ ...CSS.img, marginBottom: hp('-27%'), marginTop: hp('-20%'), marginLeft: wp('2%') }}
-        source={images.logo3}
-      />
+
 
 
         <Image
-          style={CSS.img}
-          source={images.logo2}
+          style={{
+            ...CSS.img, height: hp('30%'),
+            width: wp('50%'), marginLeft: wp('28%'),
+            marginBottom: hp('-5%'),
+          }}
+          source={images.logo6}
         />
 
         <Text style={{

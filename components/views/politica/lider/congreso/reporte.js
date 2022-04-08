@@ -47,15 +47,15 @@ function pagina4(props) {
     setSearch(search);
   };
 
-  
+
   let petro4 = navigation.state.params.petro3;
   let fajardo4 = navigation.state.params.fajardo3;
   let fico4 = navigation.state.params.fico3;
-   console.log(petro4);
-   console.log(fajardo4);
-   console.log(fico4);
+  console.log(petro4);
+  console.log(fajardo4);
+  console.log(fico4);
 
-console.log(identificacion)
+  console.log(identificacion)
   const getDatos = async () => {
     axios.get('http://52.55.26.143:8060/api/lider/622d5addc74d0b5b45bc9196/tipo/SENADO', {
       headers: {
@@ -81,7 +81,7 @@ console.log(identificacion)
       .then((response) => {
         //console.log(response.data.votante)
         setCedula(response.data.votantes);
-      console.log(cedula)
+        console.log(cedula)
       })
       .catch((error) => {
         console.error(error)
@@ -130,6 +130,14 @@ console.log(identificacion)
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
 
+      <Image
+        style={{
+          ...CSS.img, height: hp('30%'),
+          width: wp('50%'), marginLeft: wp('28%'),
+          marginBottom: hp('-5%'),
+        }}
+        source={images.logo6}
+      />
       <Text style={{
         marginBottom: hp('1'),
         fontSize: hp('3%'),
@@ -183,25 +191,25 @@ console.log(identificacion)
         <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('1%') }}>
 
 
-  
+
           <ScrollView>
-          <View style={{ flexDirection: 'row'}}>
+            <View style={{ flexDirection: 'row' }}>
               <View>
-                <Text style={{...CSS.tituloHome, marginRight: wp('20%'), }}>
+                <Text style={{ ...CSS.tituloHome, marginRight: wp('20%'), }}>
                   Nombre
                 </Text>
               </View>
               <View style={{ alignSelf: 'center', marginRight: wp('20%') }}>
                 <Text style={CSS.tituloHome}>
                   Cedula
-                </Text>   
+                </Text>
               </View>
               <View style={{ alignSelf: 'center' }}>
                 <Text style={CSS.tituloHome}>
                   ¿Voto?
                 </Text>
-                
-                
+
+
               </View>
             </View>
             <View style={{ flexDirection: 'row' }}>
@@ -228,15 +236,15 @@ console.log(identificacion)
               <View>
                 {data
                   .map((dato, index) => (
-                    <Text style={{...CSS.tituloHome, marginLeft: wp('15%'), marginTop:1}}>
-                      <Checkbox style={{ margin: 10 }} value={isChecked} onValueChange={setChecked}/>
+                    <Text style={{ ...CSS.tituloHome, marginLeft: wp('15%'), marginTop: 1 }}>
+                      <Checkbox style={{ margin: 10 }} value={isChecked} onValueChange={setChecked} />
                     </Text>
                   )
                   )
                 }
               </View>
             </View>
-            </ScrollView>
+          </ScrollView>
 
 
 
