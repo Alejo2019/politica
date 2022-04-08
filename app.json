@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Politica",
-    "slug": "Politica",
+    "name": "Votapp",
+    "slug": "Votapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
@@ -15,7 +15,7 @@
       "icon": "./assets/96.png",
       "color": "#FFA73F",
       "androidMode": "default",
-      "androidCollapsedTitle": "Updates from Politica",
+      "androidCollapsedTitle": "Updates from Votapp",
       "iosDisplayInForeground": true
     },
     "updates": {
