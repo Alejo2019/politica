@@ -57,7 +57,7 @@ function pagina4(props) {
 
   console.log(identificacion)
   const getDatos = async () => {
-    axios.get('http://52.55.26.143:8060/api/lider/622d5addc74d0b5b45bc9196/tipo/SENADO', {
+    axios.get(`http://52.55.26.143:8060/api/lider/624fc2c450c2f6b858c8d753/tipo/SENADO`, {
       headers: {
         'x-token': `${token}`
       }
@@ -130,14 +130,6 @@ function pagina4(props) {
 
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
 
-      <Image
-        style={{
-          ...CSS.img, height: hp('30%'),
-          width: wp('50%'), marginLeft: wp('28%'),
-          marginBottom: hp('-5%'),
-        }}
-        source={images.logo6}
-      />
       <Text style={{
         marginBottom: hp('1'),
         fontSize: hp('3%'),
@@ -204,17 +196,18 @@ function pagina4(props) {
                   Cedula
                 </Text>
               </View>
-              <View style={{ alignSelf: 'center' }}>
+              {/* <View style={{ alignSelf: 'center' }}>
                 <Text style={CSS.tituloHome}>
                   ¿Voto?
                 </Text>
-
-
-              </View>
+                
+                
+              </View> */}
             </View>
             <View style={{ flexDirection: 'row' }}>
               <View>
-                {data
+                {
+                data
                   .map((dato, index) => (
                     <Text style={CSS.tituloHome}>
                       {dato.nombres}
@@ -233,16 +226,16 @@ function pagina4(props) {
                   )
                 }
               </View>
-              <View>
+              {/* <View>
                 {data
                   .map((dato, index) => (
-                    <Text style={{ ...CSS.tituloHome, marginLeft: wp('15%'), marginTop: 1 }}>
-                      <Checkbox style={{ margin: 10 }} value={isChecked} onValueChange={setChecked} />
+                    <Text style={{...CSS.tituloHome, marginLeft: wp('15%'), marginTop:1}}>
+                      <Checkbox style={{ margin: 10 }} value={isChecked} onValueChange={setChecked}/>
                     </Text>
                   )
                   )
                 }
-              </View>
+              </View> */}
             </View>
           </ScrollView>
 
