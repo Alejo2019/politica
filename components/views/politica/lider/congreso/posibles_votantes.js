@@ -102,12 +102,13 @@ function pagina7(props) {
     <ImageBackground source={images.fondo} style={CSS.Logincontainer}>
 
 
+      
+
+      <ScrollView>
       <Image
         style={{ ...CSS.img, marginBottom: hp('-27%'), marginTop: hp('-20%'), marginLeft: wp('2%') }}
         source={images.logo3}
       />
-
-      <ScrollView>
 
         {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
             <View style={CSS.viewCardHome}>
