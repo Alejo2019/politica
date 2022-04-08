@@ -5,14 +5,14 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
-    "icon": "./assets/voto.png",
+    "icon": "./assets/96.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "notification": {
-      "icon": "./assets/voto.png",
+      "icon": "./assets/96.png",
       "color": "#FFA73F",
       "androidMode": "default",
       "androidCollapsedTitle": "Updates from Politica",
@@ -31,7 +31,7 @@
     "android": {
       "versionCode": 2,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/voto.png",
+        "foregroundImage": "./assets/96.png",
         "backgroundColor": "#FFFFFF"
       },
       "useNextNotificationsApi": true,
