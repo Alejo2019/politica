@@ -214,8 +214,8 @@ function pagina4(props) {
                 
               </View> */}
             </View>
-            <View style={{ flexDirection: 'row' }}>
-              <View>
+            <View style={{ flexDirection: 'row',marginTop: 10 }}>
+              <View> 
                 {
                 data
                   .map((dato, index) => (
@@ -226,7 +226,7 @@ function pagina4(props) {
                   )
                 }
               </View>
-              <View >
+              <View style={{marginLeft: 50}} >
                 {data
                   .map((dato, index) => (
                     <Text style={CSS.tituloHome}>
