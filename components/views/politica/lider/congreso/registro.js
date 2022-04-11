@@ -191,7 +191,8 @@ function pagina2(props) {
         <View >
           <View style={CSS.viewCardHome}>
             <Text style={CSS.asterisco}>*</Text>
-            <Text style={CSS.asterisco1}>Numero de cedula</Text>
+            <Text style={CSS.asterisco1}>Numero de Cédula
+</Text>
           </View>
           <TextInput style={CSS.input}
             underlineColorAndroid="transparent"
@@ -225,7 +226,7 @@ function pagina2(props) {
           />
           <View style={CSS.viewCardHome}>
             <Text style={CSS.asterisco}>*</Text>
-            <Text style={CSS.asterisco1}>Telefono</Text>
+            <Text style={CSS.asterisco1}>Teléfono</Text>
           </View>
           <TextInput style={CSS.input}
             underlineColorAndroid="transparent"

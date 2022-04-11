@@ -29,6 +29,7 @@ function pagina4(props) {
   useEffect(() => {
     getToken();
     getDatos()
+    getId()
   }, []);
 
   const [page, setPage] = React.useState(0);
@@ -57,7 +58,7 @@ function pagina4(props) {
 
   console.log(identificacion)
   const getDatos = async () => {
-    axios.get(`http://52.55.26.143:8060/api/lider/${id}/tipo/SENADO`, {
+    axios.get(`http://52.55.26.143:8060/api/lider/624fc2c450c2f6b858c8d753/tipo/SENADO`, {
       headers: {
         'x-token': `${token}`
       }
@@ -91,6 +92,15 @@ function pagina4(props) {
   const getToken = async () => {
     try {
       let value = await AsyncStorage.getItem('token');
+      setToken(value);
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+  const getId = async () => {
+    try {
+      let value = await AsyncStorage.getItem('id');
       setToken(value);
     } catch (error) {
       console.log(error)
@@ -148,7 +158,7 @@ function pagina4(props) {
         <View style={{ alignSelf: 'center' }}>
           <View>
             <TextInput
-              placeholder="Buscar cedula..."
+              placeholder="Buscar cédula..."
               onChangeText={newText => setidentificacion(newText)}
               defaultValue={identificacion}
               style={{ ...CSS.input, width: wp('56%'), marginLeft: wp('10%'), marginRight: hp('5%') }}
@@ -193,7 +203,7 @@ function pagina4(props) {
               </View>
               <View style={{ alignSelf: 'center', marginRight: wp('20%') }}>
                 <Text style={CSS.tituloHome}>
-                  Cedula
+                  Cédula
                 </Text>
               </View>
               {/* <View style={{ alignSelf: 'center' }}>
@@ -216,7 +226,7 @@ function pagina4(props) {
                   )
                 }
               </View>
-              <View>
+              <View >
                 {data
                   .map((dato, index) => (
                     <Text style={CSS.tituloHome}>
