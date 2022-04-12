@@ -28,7 +28,7 @@ function pagina4(props) {
     getId();
     getToken();
     getDatos();
-    
+
   }, []);
 
   const [page, setPage] = React.useState(0);
@@ -55,7 +55,7 @@ function pagina4(props) {
   // console.log(fico4);
 
   console.log(identificacion)
-  
+
   const getDatos = async () => {
     axios.get(`http://52.55.26.143:8060/api/lider/${uid}/tipo/presi`, {
       headers: {
@@ -87,7 +87,7 @@ function pagina4(props) {
         console.error(error)
       })
 
- 
+
   };
 
   const getToken = async () => {
@@ -189,6 +189,21 @@ function pagina4(props) {
         </View>
 
       </View>
+      <TouchableOpacity
+        style={{
+          ...CSS.siguiente,
+          backgroundColor: '#132196',
+          marginTop: hp('3%'),
+   
+
+        }}
+
+        onPress={() => update()}
+
+      >
+        <Text style={CSS.siguientetext}>GENERAR</Text>
+      </TouchableOpacity>
+
 
       <ScrollView >
         <View style={{ paddingTop: hp('5%'), paddingHorizontal: wp('1%') }}>
@@ -215,19 +230,19 @@ function pagina4(props) {
                 
               </View> */}
             </View>
-            <View style={{ flexDirection: 'row',marginTop: 10 }}>
-              <View> 
+            <View style={{ flexDirection: 'row', marginTop: 10 }}>
+              <View>
                 {
-                data
-                  .map((dato, index) => (
-                    <Text style={CSS.tituloHome}>
-                      {dato.nombres}
-                    </Text>
-                  )
-                  )
+                  data
+                    .map((dato, index) => (
+                      <Text style={CSS.tituloHome}>
+                        {dato.nombres}
+                      </Text>
+                    )
+                    )
                 }
               </View>
-              <View style={{marginLeft: 50}} >
+              <View style={{ marginLeft: 50 }} >
                 {data
                   .map((dato, index) => (
                     <Text style={CSS.tituloHome}>
