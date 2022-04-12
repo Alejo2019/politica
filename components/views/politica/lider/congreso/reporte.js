@@ -27,8 +27,7 @@ function pagina4(props) {
   useEffect(() => {
     getId();
     getToken();
-    getDatos();
-
+    getCedula()
   }, []);
 
   const [page, setPage] = React.useState(0);
@@ -86,8 +85,6 @@ function pagina4(props) {
       .catch((error) => {
         console.error(error)
       })
-
-
   };
 
   const getToken = async () => {
@@ -194,11 +191,11 @@ function pagina4(props) {
           ...CSS.siguiente,
           backgroundColor: '#132196',
           marginTop: hp('3%'),
-   
+
 
         }}
 
-        onPress={() => update()}
+        onPress={() => getDatos()}
 
       >
         <Text style={CSS.siguientetext}>GENERAR</Text>

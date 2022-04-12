@@ -75,9 +75,11 @@ function pagina7(props) {
         "comuna": (state.comuna),
         "posible": true,
         "estado": false,
-        "votoSen": true,
-        "votoCam": true,
-        "campaña": ''
+        "votoCam": false,
+        "votoPres": true,
+        "votoSen": false,
+        "campaña": '',
+        "candidato": "Petro"
       }, {
         headers: {
           'x-token': token
