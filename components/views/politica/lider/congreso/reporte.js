@@ -3,8 +3,6 @@ import React, { useEffect, useState, Fragment } from "react";
 import Checkbox from 'expo-checkbox';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
-
 import {
   ScrollView,
   Text,
@@ -27,9 +25,10 @@ function pagina4(props) {
   let { navigation } = props;
   const [isChecked, setChecked] = useState([]);
   useEffect(() => {
+    getId();
     getToken();
-    getDatos()
-    getId()
+    getDatos();
+    
   }, []);
 
   const [page, setPage] = React.useState(0);
@@ -40,25 +39,25 @@ function pagina4(props) {
   const [search, setSearch] = useState("");
   const [puesto, setPuesto] = useState([])
   const [token, setToken] = useState("");
+  const [uid, setUid] = useState("");
+
   const [identificacion, setidentificacion] = useState("");
-  const [id, setId] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [cedula, setCedula] = useState([])
   const updateSearch = (search) => {
     setSearch(search);
   };
-
-
   let petro4 = navigation.state.params.petro3;
   let fajardo4 = navigation.state.params.fajardo3;
   let fico4 = navigation.state.params.fico3;
-  console.log(petro4);
-  console.log(fajardo4);
-  console.log(fico4);
+  // console.log(petro4);
+  // console.log(fajardo4);
+  // console.log(fico4);
 
   console.log(identificacion)
+  
   const getDatos = async () => {
-    axios.get(`http://52.55.26.143:8060/api/lider/624fc2c450c2f6b858c8d753/tipo/SENADO`, {
+    axios.get(`http://52.55.26.143:8060/api/lider/${uid}/tipo/presi`, {
       headers: {
         'x-token': `${token}`
       }
@@ -81,12 +80,14 @@ function pagina4(props) {
     })
       .then((response) => {
         //console.log(response.data.votante)
-        setCedula(response.data.votantes);
+        setCedula(response.data.votante);
         console.log(cedula)
       })
       .catch((error) => {
         console.error(error)
       })
+
+ 
   };
 
   const getToken = async () => {
@@ -101,7 +102,7 @@ function pagina4(props) {
   const getId = async () => {
     try {
       let value = await AsyncStorage.getItem('id');
-      setToken(value);
+      setUid(value)
     } catch (error) {
       console.log(error)
     }
