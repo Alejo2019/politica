@@ -56,7 +56,7 @@ function pagina8(props) {
           color: '#132196',
           fontWeight: 'bold'
 
-        }}> REGISTRO DE METAS POR LIDER
+        }}> REGISTRO DE METAS POR LÍDER
         </Text>
 
         <View >
@@ -75,7 +75,7 @@ function pagina8(props) {
 
 
           <Text style={CSS.pririodad}>
-            Los campos con * es obligatorio
+            Los campos con * son obligatorios
           </Text>
 
 

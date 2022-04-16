@@ -126,7 +126,7 @@ function pagina7(props) {
         <View >
           <View style={CSS.viewCardHome}>
             <Text style={CSS.asterisco}>*</Text>
-            <Text style={CSS.asterisco1}>Numero de cédula</Text>
+            <Text style={CSS.asterisco1}>Número de cédula</Text>
           </View>
           <TextInput style={CSS.input}
             underlineColorAndroid="transparent"
@@ -226,7 +226,7 @@ function pagina7(props) {
             onChangeText={(value) => hableChangeText('comuna', value)}
           />
           <Text style={CSS.pririodad}>
-            Los campos con * es obligatorio
+            Los campos con * son obligatorios
           </Text>
           <TouchableOpacity
             style={{

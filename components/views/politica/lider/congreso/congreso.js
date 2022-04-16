@@ -65,7 +65,7 @@ function pagina1(props) {
         </TouchableOpacity> */}
         <Image
           style={CSS.img}
-          source={images.logo2}
+          source={images.logo5}
         />
 
         <Text style={{
@@ -97,7 +97,7 @@ function pagina1(props) {
             }}
             onPress={() => navigation.navigate({ routeName: 'Metas', params: { petro3, fajardo3, fico3 } })}
           >
-            <Text style={CSS.siguientetext}>REGISTRO METAS POR LIDER</Text>
+            <Text style={CSS.siguientetext}>REGISTRO METAS POR LÍDER</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={{

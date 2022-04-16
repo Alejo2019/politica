@@ -205,7 +205,7 @@ function pagina2(props) {
               <View style={{ flexDirection: 'row' }}>
                 <View style={{ alignSelf: 'center' }}>
                   <Text style={CSS.tituloHome5}>
-                    NUMERO DE MESA:
+                    NÚMERO DE MESA:
                   </Text>
 
                 </View>
