@@ -31,18 +31,10 @@ function pagina1(props) {
 
         <Image
           style={CSS.img}
-          source={images.logo2}
+          source={images.logo5}
         />
 
-        <Text style={{
-          marginBottom: hp('4'),
-          fontSize: hp('4%'),
-          textAlign: 'center',
-          color: '#132196',
-          fontWeight: 'bold'
-
-        }}> Hola, bienvenido!
-        </Text>
+        
 
         <View style={CSS.botonGrande2}>
           <TouchableOpacity

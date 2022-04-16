@@ -55,7 +55,7 @@ function inicio(props) {
 
         <Image
           style={{ ...CSS.img, marginTop: hp('-10') }}
-          source={images.logo2}
+          source={images.logo5}
         />
 
         <TouchableOpacity style={CSS.cardHome} onPress={() => cambioP()}>
