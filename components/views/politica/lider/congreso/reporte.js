@@ -252,16 +252,6 @@ function pagina4(props) {
                   )
                 }
               </View>
-              {/* <View>
-                {data
-                  .map((dato, index) => (
-                    <Text style={{...CSS.tituloHome, marginLeft: wp('15%'), marginTop:1}}>
-                      <Checkbox style={{ margin: 10 }} value={isChecked} onValueChange={setChecked}/>
-                    </Text>
-                  )
-                  )
-                }
-              </View> */}
             </View>
           </ScrollView>
 

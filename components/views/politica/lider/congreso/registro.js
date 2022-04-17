@@ -116,28 +116,20 @@ function pagina2(props) {
           'x-token': token
         }
       }).then(function (response) {
-        // handle success
+      
         (JSON.stringify(response.data));
         console.log((response.data))
         alert("Resgistro Existoso!")
       })
       .catch(function (error) {
-        // handle error
+       
         alert("Ha ocurrido un error, verifica los datos!");
         console.log(error.message)
       });
     navigation.navigate({ routeName: 'Congreso' })
   };
 
-  // const candidato = data.map(item => {
-  //   return {
-  //     key: item._id,
-  //     label: item.NOMBRE1 + item.NOMBRE2 + item.APELLIDO1
-
-  //   }
-  // })
-
-  // console.log(partido)
+ 
 
   return (
 
@@ -147,28 +139,6 @@ function pagina2(props) {
 
       <ScrollView>
 
-
-        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
-            <View style={CSS.viewCardHome}>
-              <View style={{ flex: 4, marginLeft:10 }}>
-                <View style={{ flexDirection: 'row' }}>
-                  <View>
-                    <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                  </View>
-                  <View style={{ alignSelf: 'center' }}>
-                    <Text style={CSS.tituloHome}>
-                      algun texto
-                    </Text>
-                  </View>
-                </View>
-              </View>
-
-              <View style={{ flex: 1, alignSelf:'center' }} >
-                <Icon name="chevron-right" size={80}
-                  color={COLORS.blue} />
-              </View>
-            </View>
-          </TouchableOpacity> */}
 
         <Image
           style={{
@@ -321,27 +291,7 @@ function pagina2(props) {
 
 
 
-        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => navigation.navigate({ routeName: 'Iniciov1' })}>
-            <View style={CSS.viewCardHome}>
-              <View style={{ flex: 4, marginLeft:10 }}>
-                <View style={{ flexDirection: 'row' }}>
-                  <View>
-                    <Image source={images.logo2} style={CSS.HomeProviderimagen} />
-                  </View>
-                  <View style={{ alignSelf: 'center' }}>
-                    <Text style={CSS.tituloHome}>
-                      algun texto
-                    </Text>
-                  </View>
-                </View>
-              </View>
-
-              <View style={{ flex: 1, alignSelf:'center' }} >
-                <Icon name="chevron-right" size={80}
-                  color={COLORS.blue} />
-              </View>
-            </View>
-          </TouchableOpacity> */}
+        
 
       </ScrollView>
     </ImageBackground>
