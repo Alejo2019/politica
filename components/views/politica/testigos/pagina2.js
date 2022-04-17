@@ -115,16 +115,7 @@ function pagina2(props) {
     < ImageBackground source={images.fondo} style={CSS.Logincontainer} >
 
 
-      {/* <TouchableOpacity style={CSS.cardTitleContainer} onPress={() => navigation.navigate({ routeName: 'ProfileProviders'})}>
-        <View style={{ alignSelf: "center", alignItems: "flex-start" }}>
-          <View>
-            <Text style={CSS.tituloHome}>
-            <Text style={CSS.cardHomeTitleTitle}>Hola usuario
-              </Text>
-            </Text>
-          </View>
-        </View>
-      </TouchableOpacity> */}
+      
 
       <ScrollView>
         <View style={CSS.cardHome} onPress={() => navigation.navigate('Pagina3E')}>

@@ -85,22 +85,7 @@ function inicio(props) {
 
         </TouchableOpacity>
 
-        {/* <TouchableOpacity style={CSS.cardHome} onPress={() => cambio()}>
-          <View style={CSS.viewCardHome}>
-            <View style={{ flex: 3, marginLeft: 10 }}>
-              <View style={{ flexDirection: 'row' }}>
-                <View>
-                  <Image source={images.partido2} style={CSS.HomeProviderimagen} />
-                </View>
-                <View style={{ alignSelf: 'center' }}>
-                  <Text style={CSS.tituloHome}>
-                    PARTIDO LIBERAL
-                  </Text>
-                </View>
-              </View>
-            </View>
-          </View>
-        </TouchableOpacity> */}
+        
 
       </ScrollView>
 
