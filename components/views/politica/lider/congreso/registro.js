@@ -109,7 +109,7 @@ function pagina2(props) {
         "votoCam": false,
         "votoPres": true,
         "votoSen": false,
-        "campaña": '',
+        "campaña": 'Presidencia',
         "candidato": "Petro"
       }, {
         headers: {
