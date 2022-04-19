@@ -38,7 +38,7 @@ function pagina1(props) {
         
         <Image
           style={CSS.img}
-          source={images.logo5}
+          source={images.logo4}
         />
 
         <Text style={{

@@ -42,7 +42,7 @@ function inicio2(props) {
 
         <Image
           style={CSS.img}
-          source={images.logo5}
+          source={images.logo4}
         />
 
         <Text style={{

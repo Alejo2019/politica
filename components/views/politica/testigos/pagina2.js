@@ -115,7 +115,7 @@ function pagina2(props) {
     < ImageBackground source={images.fondo} style={CSS.Logincontainer} >
 
 
-      
+
 
       <ScrollView>
         <View style={CSS.cardHome} onPress={() => navigation.navigate('Pagina3E')}>
@@ -325,8 +325,10 @@ function pagina2(props) {
             <View style={{ flex: 2 }}>
               <View style={{ flexDirection: 'row' }}>
                 <View>
-                  <Image source={images.candidato1} style={{...CSS.HomeProviderimagen1,height: hp('10%'),
-        width: wp('50%')}} />
+                  <Image source={images.candidato1} style={{
+                    ...CSS.HomeProviderimagen1, height: hp('10%'),
+                    width: wp('50%')
+                  }} />
                 </View>
                 <View style={{ alignSelf: 'center' }}>
 
@@ -350,8 +352,10 @@ function pagina2(props) {
             <View style={{ flex: 2 }}>
               <View style={{ flexDirection: 'row' }}>
                 <View>
-                  <Image source={images.candidato2} style={{...CSS.HomeProviderimagen1,height: hp('10%'),
-        width: wp('50%')}} />
+                  <Image source={images.candidato2} style={{
+                    ...CSS.HomeProviderimagen1, height: hp('10%'),
+                    width: wp('50%')
+                  }} />
                 </View>
                 <View style={{ alignSelf: 'center' }}>
 
@@ -375,8 +379,10 @@ function pagina2(props) {
             <View style={{ flex: 2 }}>
               <View style={{ flexDirection: 'row' }}>
                 <View>
-                  <Image source={images.candidato3} style={{...CSS.HomeProviderimagen1,height: hp('10%'),
-        width: wp('50%')}} />
+                  <Image source={images.candidato3} style={{
+                    ...CSS.HomeProviderimagen1, height: hp('10%'),
+                    width: wp('50%')
+                  }} />
                 </View>
                 <View style={{ alignSelf: 'center' }}>
 

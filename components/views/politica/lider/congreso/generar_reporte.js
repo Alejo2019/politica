@@ -59,7 +59,7 @@ function generar_reporte(props) {
       />
       <Image
         style={CSS.img}
-        source={images.logo5}
+        source={images.logo4}
       />
 
       <Text style={{

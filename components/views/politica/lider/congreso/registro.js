@@ -146,7 +146,7 @@ function pagina2(props) {
             width: wp('50%'), marginLeft: wp('28%'),
             marginBottom: hp('-5%'),
           }}
-          source={images.logo5}
+          source={images.logo4}
         />
 
         <Text style={{
@@ -163,7 +163,7 @@ function pagina2(props) {
         <View >
           <View style={CSS.viewCardHome}>
             <Text style={CSS.asterisco}>*</Text>
-            <Text style={CSS.asterisco1}>Numero de Cédula
+            <Text style={CSS.asterisco1}>Número de Cédula
 </Text>
           </View>
           <TextInput style={CSS.input}
@@ -272,7 +272,7 @@ function pagina2(props) {
 
 
         <Text style={CSS.pririodad}>
-          Los campos con * es obligatorio
+          Los campos con * son obligatorios
         </Text>
 
 
