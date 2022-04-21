@@ -45,7 +45,7 @@ function pagina8(props) {
             width: wp('50%'), marginLeft: wp('28%'),
             marginBottom: hp('-5%'),
           }}
-          source={images.logo4}
+          source={images.logo6}
         />
 
         <Text style={{

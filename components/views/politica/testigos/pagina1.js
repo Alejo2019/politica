@@ -31,7 +31,7 @@ function pagina1(props) {
 
         <Image
           style={CSS.img}
-          source={images.logo4}
+          source={images.logo6}
         />
 
         

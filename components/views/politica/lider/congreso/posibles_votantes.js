@@ -109,7 +109,7 @@ function pagina7(props) {
           style={{...CSS.img,height: hp('30%'),
           width: wp('50%'),marginLeft: wp('28%'),
           marginBottom: hp('-5%'), }}
-          source={images.logo4}
+          source={images.logo6}
         />
 
         <Text style={{
