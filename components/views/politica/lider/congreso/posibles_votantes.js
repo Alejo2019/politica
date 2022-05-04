@@ -89,13 +89,14 @@ function pagina7(props) {
         (JSON.stringify(response.data));
         console.log((response.data))
         alert("Resgistro Existoso!")
+        navigation.navigate({ routeName: 'Congreso' })
       })
       .catch(function (error) {
         // handle error
         alert("Ha ocurrido un error, verifica los datos!");
         console.log(error.message)
       });
-    navigation.navigate({ routeName: 'Congreso' })
+
   };
 
 
@@ -161,7 +162,7 @@ function pagina7(props) {
             onChangeText={(value) => hableChangeText('apellidos', value)}
           />
           <View style={CSS.viewCardHome}>
-            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco}></Text>
             <Text style={CSS.asterisco1}>Teléfono</Text>
           </View>
           <TextInput style={CSS.input}
@@ -172,7 +173,7 @@ function pagina7(props) {
             onChangeText={(value) => hableChangeText('apellido', value)}
           />
           <View style={CSS.viewCardHome}>
-            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco}></Text>
             <Text style={CSS.asterisco1}>Departamento</Text>
           </View>
           <TextInput style={CSS.input}
@@ -183,7 +184,7 @@ function pagina7(props) {
             onChangeText={(value) => hableChangeText('departamento', value)}
           />
           <View style={CSS.viewCardHome}>
-            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco}></Text>
             <Text style={CSS.asterisco1}>Municipio</Text>
           </View>
           <TextInput style={CSS.input}
@@ -194,7 +195,7 @@ function pagina7(props) {
             onChangeText={(value) => hableChangeText('municipio', value)}
           />
           <View style={CSS.viewCardHome}>
-            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco}></Text>
             <Text style={CSS.asterisco1}>Puesto</Text>
           </View>
           <TextInput style={CSS.input}
@@ -205,7 +206,7 @@ function pagina7(props) {
             onChangeText={(value) => hableChangeText('puesto', value)}
           />
           <View style={CSS.viewCardHome}>
-            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco}></Text>
             <Text style={CSS.asterisco1}>Mesa de votación</Text>
           </View>
           <TextInput style={CSS.input}
@@ -216,7 +217,7 @@ function pagina7(props) {
             onChangeText={(value) => hableChangeText('mesa', value)}
           />
           <View style={CSS.viewCardHome}>
-            <Text style={CSS.asterisco}>*</Text>
+            <Text style={CSS.asterisco}></Text>
             <Text style={CSS.asterisco1}>Comuna </Text>
           </View>
           <TextInput style={CSS.input}

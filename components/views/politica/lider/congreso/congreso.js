@@ -62,7 +62,7 @@ function pagina1(props) {
           >
             <Text style={CSS.siguientetext}>REGISTRO POSIBLES VOTANTES</Text>
           </TouchableOpacity>
-          <TouchableOpacity
+          {/* <TouchableOpacity
 
             style={{
               ...CSS.siguiente2,
@@ -71,7 +71,7 @@ function pagina1(props) {
             onPress={() => navigation.navigate({ routeName: 'Metas', params: { petro3, fajardo3, fico3 } })}
           >
             <Text style={CSS.siguientetext}>REGISTRO METAS POR LÍDER</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           <TouchableOpacity
             style={{
               ...CSS.siguiente2,

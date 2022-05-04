@@ -120,13 +120,14 @@ function pagina2(props) {
         (JSON.stringify(response.data));
         console.log((response.data))
         alert("Resgistro Existoso!")
+        navigation.navigate({ routeName: 'Congreso' })
+
       })
       .catch(function (error) {
        
         alert("Ha ocurrido un error, verifica los datos!");
         console.log(error.message)
       });
-    navigation.navigate({ routeName: 'Congreso' })
   };
 
  

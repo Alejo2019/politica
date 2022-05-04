@@ -219,13 +219,13 @@ function pagina4(props) {
                   Cédula
                 </Text>
               </View>
-              {/* <View style={{ alignSelf: 'center' }}>
+              <View style={{ alignSelf: 'center' }}>
                 <Text style={CSS.tituloHome}>
                   ¿Voto?
                 </Text>
                 
                 
-              </View> */}
+              </View>
             </View>
             <View style={{ flexDirection: 'row', marginTop: 10 }}>
               <View>
@@ -244,6 +244,16 @@ function pagina4(props) {
                   .map((dato, index) => (
                     <Text style={CSS.tituloHome}>
                       {dato.identificacion}
+                    </Text>
+                  )
+                  )
+                }
+              </View>
+              <View>
+                {data
+                  .map((dato, index) => (
+                    <Text style={{...CSS.tituloHome, marginLeft: wp('15%'), margin:1 }}>
+                      <Checkbox value={isChecked} onValueChange={setChecked}/>
                     </Text>
                   )
                   )
