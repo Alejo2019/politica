@@ -104,7 +104,7 @@ function Login(props) {
       />
       <Image
         style={CSS.img}
-        source={images.logo5}
+        source={images.logo6}
       />
       <ScrollView>
 
