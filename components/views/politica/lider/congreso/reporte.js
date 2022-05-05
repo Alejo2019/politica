@@ -267,7 +267,10 @@ function pagina4(props) {
         </View>
 
 
-        <TouchableOpacity
+        
+      </ScrollView>
+
+      <TouchableOpacity
           style={{
             ...CSS.siguiente,
             backgroundColor: '#132196',
@@ -280,9 +283,6 @@ function pagina4(props) {
         >
           <Text style={CSS.siguientetext}>GUARDAR</Text>
         </TouchableOpacity>
-      </ScrollView>
-
-
 
     </ImageBackground>
   );
