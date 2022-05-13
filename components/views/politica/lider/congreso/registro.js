@@ -105,10 +105,10 @@ function pagina2(props) {
         "mesa": (state.mesa),
         "comuna": (state.comuna),
         "posible": false,
-        "estado": false,
-        "votoCam": false,
+        "estado": true,
+        "votoCam": true,
         "votoPres": true,
-        "votoSen": false,
+        "votoSen": true,
         "campaña": 'Presidencia',
         "candidato": "Petro"
       }, {

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, Fragment } from "react";
 import Checkbox from 'expo-checkbox';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -23,13 +22,13 @@ import axios from "axios";
 function pagina4(props) {
 
   let { navigation } = props;
-  const [isChecked, setChecked] = useState([]);
   useEffect(() => {
     getId();
     getToken();
     getCedula()
   }, []);
-
+  
+  const [checked, setChecked] = useState([]);
   const [page, setPage] = React.useState(0);
   const from = page * itemsPerPage;
   const to = (page + 1) * itemsPerPage;
@@ -126,9 +125,18 @@ function pagina4(props) {
     navigation.navigate({ routeName: 'Congreso' })
   };
 
-  const hableChangeText = (nombre, value) => {
-    setState({ ...state, [nombre]: value });
-  }
+  const handleCheck = (event) => {
+    var updatedList = [...checked];
+    if (event.target.checked) {
+      updatedList = [...checked, event.target.value];
+    } else {
+      updatedList.splice(checked.indexOf(event.target.value), 1);
+    }
+    setChecked(updatedList);
+  };
+
+  const isChecked = (item) =>
+   checked.includes(item) ? "checked-item" : "not-checked-item";
 
   const [state, setState] = useState({
     identificacion: ''
@@ -250,10 +258,10 @@ function pagina4(props) {
                 }
               </View>
               <View>
-                {data
+              {data
                   .map((dato, index) => (
                     <Text style={{...CSS.tituloHome, marginLeft: wp('15%'), margin:1 }}>
-                      <Checkbox value={isChecked} onValueChange={setChecked}/>
+                      <Checkbox className={isChecked(dato)} onChange={handleCheck}/>
                     </Text>
                   )
                   )
@@ -267,10 +275,7 @@ function pagina4(props) {
         </View>
 
 
-        
-      </ScrollView>
-
-      <TouchableOpacity
+        <TouchableOpacity
           style={{
             ...CSS.siguiente,
             backgroundColor: '#132196',
@@ -283,6 +288,9 @@ function pagina4(props) {
         >
           <Text style={CSS.siguientetext}>GUARDAR</Text>
         </TouchableOpacity>
+      </ScrollView>
+
+
 
     </ImageBackground>
   );
